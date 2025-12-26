@@ -8,6 +8,57 @@
     --title-font: "Red Rose", serif;
 }
 
+/* Owl Carousel Base Styles */
+.owl-carousel {
+    display: none;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.owl-carousel .owl-stage {
+    position: relative;
+    -ms-touch-action: pan-Y;
+}
+
+.owl-carousel .owl-stage:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+}
+
+.owl-carousel.owl-loaded {
+    display: block;
+}
+
+.owl-carousel .owl-item {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.owl-carousel .owl-item img {
+    display: block;
+    width: 100%;
+}
+
 /* gridsystem */
 
 
@@ -960,11 +1011,48 @@
 
     .about-section .inner-content .image-box .image-content {
         width: 100%;
-        flex-direction: column;
-        gap: 20px;
+        /* flex-direction: column; REMOVED to keep side-by-side */
     }
 
     .about-section .inner-content .image-box .image-content .text-box::before {
         display: none;
+    }
+
+    .about-section .inner-content .award-box {
+        left: 0px;
+    }
+
+    .service-section .bg-layer,
+    .service-section .lower-box .owl-nav {
+        display: none;
+    }
+
+    .service-section .lower-box {
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+
+    .service-section .lower-box .single-service-box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .three-item-carousel {
+        width: 100%;
+    }
+
+    .service-block-one .inner-box {
+        padding: 40px 30px;
+        border-right: none;
+    }
+
+    .service-block-one .inner-box .image-inner .image-box {
+        width: 150px;
+        height: 150px;
+    }
+
+    .service-block-one .inner-box .image-inner .image-box .shape {
+        width: 150px;
+        height: 150px;
     }
 }
