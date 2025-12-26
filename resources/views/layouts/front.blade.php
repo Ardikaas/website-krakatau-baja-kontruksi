@@ -29,6 +29,7 @@
 
   <main>
     @yield('content')
+    @include('components.landingPageSection4,5')
   </main>
 
   @include('components.footer')
