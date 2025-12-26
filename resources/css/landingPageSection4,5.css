@@ -546,7 +546,6 @@
 /* Lower Box */
 .service-section .lower-box {
     position: relative;
-    display: flex;
     margin-right: -375px;
     padding-right: 375px;
     border-top: 1px solid #dbdfe3;
@@ -623,10 +622,10 @@
     top: 2px;
 }
 
-/* Three Item Carousel (static grid fallback) */
+/* Three Item Carousel */
 .three-item-carousel {
-    display: flex;
-    flex: 1;
+    position: relative;
+    display: block;
 }
 
 /* Service Block One */
@@ -641,7 +640,7 @@
     border-right: 1px solid #dbdfe3;
 }
 
-.service-block-one:last-child .inner-box {
+.owl-item:last-child .service-block-one .inner-box {
     border-right: none;
 }
 
@@ -832,7 +831,7 @@
 /* Carousel Navigation */
 .service-section .lower-box .owl-nav {
     position: absolute;
-    left: -56px;
+    left: -60px;
     bottom: 80px;
     display: flex;
     flex-direction: column;
@@ -861,7 +860,6 @@
 .service-section .lower-box .owl-nav button.owl-prev span {
     position: relative;
     display: inline-block;
-    transform: rotate(180deg);
 }
 
 .service-section .lower-box .owl-nav button:hover {
@@ -870,6 +868,17 @@
 }
 
 /* responsive styles */
+
+@media only screen and (max-width: 1699px) {
+    .service-section .lower-box {
+        padding-right: 0px;
+        margin-right: 0px;
+    }
+
+    .service-section .lower-box .single-service-box {
+        position: relative;
+    }
+}
 
 @media only screen and (max-width: 1199px) {
     .about-section .inner-content .award-box {
