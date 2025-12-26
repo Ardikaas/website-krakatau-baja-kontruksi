@@ -120,6 +120,10 @@ section {
 }
 
 /* Body reset */
+html {
+	overflow-x: hidden;
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -128,6 +132,16 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
+	width: 100%;
+	min-width: 300px;
+}
+
+.boxed_wrapper {
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden !important;
+	width: 100%;
+	min-width: 300px;
 }
 
 /* Lists */
