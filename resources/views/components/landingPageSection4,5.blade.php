@@ -96,8 +96,8 @@
                     </div>
                 </div>
                 
-                {{-- Three Item Carousel (Static Grid) --}}
-                <div class="three-item-carousel">
+                {{-- Three Item Carousel --}}
+                <div class="three-item-carousel owl-carousel owl-theme owl-dots-none">
                     {{-- Service Block 1 --}}
                     <div class="service-block-one">
                         <div class="inner-box">
@@ -163,12 +163,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                {{-- Carousel Navigation --}}
-                <div class="owl-nav">
-                    <button type="button" class="owl-prev"><span>›</span></button>
-                    <button type="button" class="owl-next"><span>›</span></button>
                 </div>
             </div>
         </div>
