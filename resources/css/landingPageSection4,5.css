@@ -1,8 +1,3 @@
-/* ============================================
-   Landing Page Section 4,5 - About & Service
-   Native CSS (No Bootstrap/Tailwind)
-   ============================================ */
-
 /* CSS Variables (inherit from app.css/footer.css) */
 :root {
     --theme-color: #f0571a;
@@ -13,9 +8,8 @@
     --title-font: "Red Rose", serif;
 }
 
-/* =============================================
-   GRID SYSTEM (Bootstrap-like grid, native CSS)
-   ============================================= */
+/* gridsystem */
+
 
 .row {
     display: flex;
@@ -81,10 +75,7 @@
     }
 }
 
-
-/* =============================================
-   COMMON SECTION STYLES
-   ============================================= */
+/*common section styles*/
 
 .auto-container {
     position: static;
@@ -154,9 +145,7 @@
 }
 
 
-/* =============================================
-   ABOUT SECTION
-   ============================================= */
+/* ABOUT SECTION*/
 
 .about-section {
     position: relative;
@@ -473,10 +462,7 @@
     background-color: var(--theme-color);
 }
 
-
-/* =============================================
-   SERVICE SECTION
-   ============================================= */
+/* service section */
 
 .service-section {
     position: relative;
@@ -883,10 +869,7 @@
     background-color: var(--theme-color);
 }
 
-
-/* =============================================
-   RESPONSIVE STYLES
-   ============================================= */
+/* responsive styles */
 
 @media only screen and (max-width: 1199px) {
     .about-section .inner-content .award-box {
