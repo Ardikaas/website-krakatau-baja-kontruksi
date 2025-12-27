@@ -92,12 +92,38 @@
                              <!-- Tab 12 - Infrastructure -->
                             <div class="p-tab" id="tab-12">
                                 <div class="single-item-carousel owl-carousel owl-theme nav-style-one">
-                                     <div class="project-block-one">
+                                    <div class="project-block-one">
                                         <div class="inner-box">
                                             <div class="bg-layer" style="background-image: url({{ asset('images/project/project-1.jpg') }});"></div>
                                             <span class="category">Infrastructure</span>
                                             <div class="content-box">
                                                 <h3>Titanium Arch Crossing</h3>
+                                                <p>Durable and innovative metal bridge, designed with precision...</p>
+                                                <h6>client</h6>
+                                                <span class="text">Energy Producer Ltd</span>
+                                                <a href="#"><i class="flaticon-right-arrow"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-2.jpg') }});"></div>
+                                            <span class="category">Infrastructure</span>
+                                            <div class="content-box">
+                                                <h3>Highway Bridge Project</h3>
+                                                <p>Durable and innovative metal bridge, designed with precision...</p>
+                                                <h6>client</h6>
+                                                <span class="text">Energy Producer Ltd</span>
+                                                <a href="#"><i class="flaticon-right-arrow"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-3.jpg') }});"></div>
+                                            <span class="category">Infrastructure</span>
+                                            <div class="content-box">
+                                                <h3>Urban Development Center</h3>
                                                 <p>Durable and innovative metal bridge, designed with precision...</p>
                                                 <h6>client</h6>
                                                 <span class="text">Energy Producer Ltd</span>
@@ -124,6 +150,32 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-1.jpg') }});"></div>
+                                            <span class="category">Industrial</span>
+                                            <div class="content-box">
+                                                <h3>Factory Renovation Project</h3>
+                                                <p>Durable and innovative metal bridge, designed with precision...</p>
+                                                <h6>client</h6>
+                                                <span class="text">Energy Producer Ltd</span>
+                                                <a href="#"><i class="flaticon-right-arrow"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-2.jpg') }});"></div>
+                                            <span class="category">Industrial</span>
+                                            <div class="content-box">
+                                                <h3>Manufacturing Plant Hub</h3>
+                                                <p>Durable and innovative metal bridge, designed with precision...</p>
+                                                <h6>client</h6>
+                                                <span class="text">Energy Producer Ltd</span>
+                                                <a href="#"><i class="flaticon-right-arrow"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -143,6 +195,32 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-1.jpg') }});"></div>
+                                            <span class="category">Energy</span>
+                                            <div class="content-box">
+                                                <h3>Solar Panel Installation</h3>
+                                                <p>Durable and innovative metal bridge, designed with precision...</p>
+                                                <h6>client</h6>
+                                                <span class="text">Energy Producer Ltd</span>
+                                                <a href="#"><i class="flaticon-right-arrow"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-3.jpg') }});"></div>
+                                            <span class="category">Energy</span>
+                                            <div class="content-box">
+                                                <h3>Power Plant Upgrade</h3>
+                                                <p>Durable and innovative metal bridge, designed with precision...</p>
+                                                <h6>client</h6>
+                                                <span class="text">Energy Producer Ltd</span>
+                                                <a href="#"><i class="flaticon-right-arrow"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -150,11 +228,37 @@
                              <div class="p-tab" id="tab-15">
                                 <div class="single-item-carousel owl-carousel owl-theme nav-style-one">
                                     <div class="project-block-one">
-                                         <div class="inner-box">
+                                        <div class="inner-box">
                                             <div class="bg-layer" style="background-image: url({{ asset('images/project/project-1.jpg') }});"></div>
                                             <span class="category">Transportation</span>
                                             <div class="content-box">
-                                                <h3>Transportation Hub</h3>
+                                                <h3>Transportation Hub Center</h3>
+                                                <p>Durable and innovative metal bridge, designed with precision...</p>
+                                                <h6>client</h6>
+                                                <span class="text">Energy Producer Ltd</span>
+                                                <a href="#"><i class="flaticon-right-arrow"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-2.jpg') }});"></div>
+                                            <span class="category">Transportation</span>
+                                            <div class="content-box">
+                                                <h3>Railway Station Project</h3>
+                                                <p>Durable and innovative metal bridge, designed with precision...</p>
+                                                <h6>client</h6>
+                                                <span class="text">Energy Producer Ltd</span>
+                                                <a href="#"><i class="flaticon-right-arrow"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-3.jpg') }});"></div>
+                                            <span class="category">Transportation</span>
+                                            <div class="content-box">
+                                                <h3>Airport Terminal Build</h3>
                                                 <p>Durable and innovative metal bridge, designed with precision...</p>
                                                 <h6>client</h6>
                                                 <span class="text">Energy Producer Ltd</span>
@@ -169,11 +273,37 @@
                              <div class="p-tab" id="tab-16">
                                 <div class="single-item-carousel owl-carousel owl-theme nav-style-one">
                                     <div class="project-block-one">
-                                         <div class="inner-box">
+                                        <div class="inner-box">
                                             <div class="bg-layer" style="background-image: url({{ asset('images/project/project-2.jpg') }});"></div>
                                             <span class="category">Custom</span>
                                             <div class="content-box">
                                                 <h3>Custom Steel Works</h3>
+                                                <p>Durable and innovative metal bridge, designed with precision...</p>
+                                                <h6>client</h6>
+                                                <span class="text">Energy Producer Ltd</span>
+                                                <a href="#"><i class="flaticon-right-arrow"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-1.jpg') }});"></div>
+                                            <span class="category">Custom</span>
+                                            <div class="content-box">
+                                                <h3>Custom Metal Fabrication</h3>
+                                                <p>Durable and innovative metal bridge, designed with precision...</p>
+                                                <h6>client</h6>
+                                                <span class="text">Energy Producer Ltd</span>
+                                                <a href="#"><i class="flaticon-right-arrow"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-3.jpg') }});"></div>
+                                            <span class="category">Custom</span>
+                                            <div class="content-box">
+                                                <h3>Bespoke Steel Solutions</h3>
                                                 <p>Durable and innovative metal bridge, designed with precision...</p>
                                                 <h6>client</h6>
                                                 <span class="text">Energy Producer Ltd</span>

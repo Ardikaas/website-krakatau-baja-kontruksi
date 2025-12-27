@@ -89,6 +89,65 @@
     position: relative;
 }
 
+/* Tab Button Box */
+.project-section .tab-btn-box {
+    position: relative;
+    z-index: 99;
+}
+
+.project-section .tab-btn-box .tab-btns {
+    position: relative;
+    z-index: 99;
+}
+
+.project-section .tab-btn-box .tab-btns li {
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.project-section .tab-btn-box .tab-btns li:last-child {
+    margin-bottom: 0px;
+}
+
+.project-section .tab-btn-box .tab-btns li h6 {
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 22px;
+    color: #a5aaaf;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 500ms ease;
+    font-family: var(--title-font);
+    font-weight: 600;
+    margin: 0;
+}
+
+.project-section .tab-btn-box .tab-btns li h6:hover {
+    color: var(--theme-color);
+}
+
+.project-section .tab-btn-box .tab-btns li.active-btn h6 {
+    padding-left: 22px;
+    color: var(--theme-color);
+}
+
+.project-section .tab-btn-box .tab-btns li h6:before {
+    position: absolute;
+    content: ">";
+    font-size: 14px;
+    left: 0px;
+    top: 0px;
+    color: var(--theme-color);
+    opacity: 0;
+    transition: all 500ms ease;
+}
+
+.project-section .tab-btn-box .tab-btns li.active-btn h6:before {
+    opacity: 1;
+}
+
 /* Custom Grid for Project Tab (No Bootstrap) */
 .project-tab .row {
     display: flex;
@@ -105,6 +164,7 @@
     flex: 0 0 16.666667%;
     /* col-lg-2 */
     max-width: 16.666667%;
+    z-index: 99;
 }
 
 .project-tab .content-column {
@@ -201,6 +261,7 @@
     display: block;
     background-color: var(--theme-color);
     max-width: 370px;
+    min-height: 320px;
     padding: 32px 30px 40px 40px;
     opacity: 0;
     visibility: hidden;
@@ -501,29 +562,75 @@
 }
 
 @media only screen and (max-width: 767px) {
+
+    /* Section padding for mobile */
     .project-section {
         padding: 62px 0px 40px 0px;
+        overflow: hidden;
+    }
+
+    /* Center the title/header section */
+    .project-section .sec-title {
+        padding-left: 0 !important;
+        text-align: center;
     }
 
     .project-section .upper-box .count-box h2 {
         font-size: 100px;
     }
 
+    /* Stack tab buttons vertically */
+    .project-section .tab-btn-box .tab-btns li {
+        display: block !important;
+        float: none !important;
+        width: 100% !important;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    .project-section .tab-btn-box .tab-btns li h6 {
+        font-size: 14px;
+        padding-left: 20px;
+    }
+
+    /* Reset container for mobile - no extension bleed */
+    .project-section .inner-container {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        padding-right: 0 !important;
+        overflow: hidden;
+    }
+
+    /* Owl carousel overflow hidden on mobile */
+    .project-section .owl-carousel .owl-stage-outer {
+        overflow: hidden !important;
+    }
+
+    /* Inner-box mobile - full width with correct padding */
     .project-block-one .inner-box {
-        width: 100%;
-        padding: 155px 15px 60px 15px;
+        width: 100% !important;
+        padding: 155px 20px 60px 20px !important;
     }
 
+    /* Background layer mobile - offset to the right like template */
+    .project-block-one .inner-box .bg-layer,
     .owl-item.active .project-block-one .inner-box .bg-layer {
-        left: 70px;
-        width: calc(100% - 70px);
+        left: 40px !important;
+        width: calc(100% - 40px) !important;
     }
 
-    .project-section .nav-style-one .owl-nav {
-        /* Adjust or hide nav on mobile if needed */
-        left: 0;
-        position: relative;
-        margin-top: 20px;
+    /* Content-box mobile - proper width to prevent cutoff */
+    .project-block-one .inner-box .content-box,
+    .owl-item.active .project-block-one .inner-box .content-box {
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 25px 20px 30px 25px;
+    }
+
+    /* Category badge mobile */
+    .project-block-one .inner-box .category {
+        right: 0 !important;
     }
 
     /* Hide owl counter on mobile */
