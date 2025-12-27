@@ -30,7 +30,7 @@
   <!-- Owl Carousel JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-  @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/owl.js'])
+  @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/owl.js', 'resources/css/landingPageSection7.css', 'resources/js/landingPageSection7.js'])
   @stack('styles')
 </head>
 
@@ -39,7 +39,7 @@
 
   <main>
     @yield('content')
-    @include('components.landingPageSection4,5')
+    @include('components.landingPageSection7')
   </main>
 
   @include('components.footer')
