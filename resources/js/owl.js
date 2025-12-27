@@ -1,4 +1,3 @@
-// Owl Carousel Initialization
 // Using Owl Carousel 2 library
 
 (function ($) {
