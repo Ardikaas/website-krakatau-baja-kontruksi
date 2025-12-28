@@ -5,5 +5,6 @@
 
 @section('content')
 
-  <h1>Hello World</h1>
+  <h1 style="height: 100vh; background-color:black; color: white; display: flex; align-items: center; justify-content: center;">Hello World</h1>
+  <h1 style="height: 100vh; background-color:black; color: white; display: flex; align-items: center; justify-content: center;">Hello World</h1>
 @endsection
