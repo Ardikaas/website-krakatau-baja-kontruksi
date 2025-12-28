@@ -8,7 +8,7 @@
                         <img src="{{ asset('images/logo.png') }}" alt="Logo" />
                         </a>
                     </figure>
-                    <h5>Based On <br />United States.</h5>
+                    <h5>Berbasis di <br />Indonesia.</h5>
                 </div>
 
                 <div class="single-item">
@@ -16,11 +16,11 @@
                         class="shape"
                     ></div>
                     <h2>28<span>+</span></h2>
-                    <h5>Countries <br />Served Proudly.</h5>
+                    <h5>Negara <br />Dilayani.</h5>
                 </div>
             </div>
 
-            <span class="rotate-text">Established Since, 1985</span>
+            <span class="rotate-text">Berdiri Sejak, 1992</span>
         </div>
 
         <div class="inner-box">
@@ -28,7 +28,7 @@
                 <div class="video-box">
                     <div class="bg-color"></div>
                     <div class="video-bg" style="background-image: url(assets/images/resource/video-1.jpg);"></div>
-                    <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption=""><i class="flaticon-play-button"></i></a>
+                    <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption="" target="_blank"><i class="flaticon-play-button"></i></a>
                 </div>
                 @php
                     [$first, $second, $third] = explode('|', $title);
@@ -40,7 +40,7 @@
                 </h2>
                 @endif
 
-                {{-- PAGE TITLE (ABOUT, CONTACT, DLL) --}}
+                <!-- {{-- PAGE TITLE (ABOUT, CONTACT, DLL) --}}
                 @if($type === 'page')
                     <h1>{{ $title }}</h1>
                     <ul class="bread-crumb">
@@ -58,7 +58,7 @@
                             @endif
                         @endforeach
                     </ul>
-                @endif
+                @endif -->
 
             </div>
         </div>
