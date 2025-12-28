@@ -1,0 +1,304 @@
+/* CSS Variables (inherit from app.css/footer.css) */
+:root {
+    --theme-color: #00a1d1;
+    --secondary-color: #00346a;
+    --text-color: #66696b;
+    --title-color: #0d202f;
+    --text-font: "Figtree", sans-serif;
+    --title-font: "Red Rose", serif;
+}
+/** banner-section **/
+
+.banner-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-section::before {
+    position: absolute;
+    content: "";
+    background-color: #ebe9ef;
+    width: 1px;
+    height: calc(100% - 200px);
+    top: 0px;
+    right: 100px;
+    z-index: 2;
+}
+
+.banner-section .pattern-layer {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    width: 286px;
+    height: 326px;
+    background-repeat: no-repeat;
+    background-image: url(../../public/images/shape/shape-2);
+}
+
+.banner-section .pattern-layer-2 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 445px;
+    height: calc(100% - 200px);
+    background-repeat: no-repeat;
+    background-image: url(../../public/images/shape/shape-3.png);
+    z-index: 2;
+}
+
+.banner-section .outer-container {
+    position: relative;
+}
+
+.banner-carousel .slide-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-section .banner-carousel .slide-item {
+    padding-bottom: 200px;
+}
+
+.banner-section .banner-carousel .content-box {
+    position: relative;
+    float: right;
+    background-color: #fff;
+    max-width: 750px;
+    padding: 24px 30px 100px 100px;
+    width: 100%;
+}
+
+.banner-section .banner-carousel .content-box .image-layer {
+    position: absolute;
+    left: -75px;
+    bottom: 179px;
+}
+
+.banner-section .banner-carousel .content-box .inner-box {
+    position: relative;
+    z-index: 5;
+}
+
+.banner-carousel .slide-item .bg-layer {
+    background-image: url(../../public/images/banner/banner-2.jpg);
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 8000ms linear;
+    -moz-transition: all 8000ms linear;
+    -ms-transition: all 8000ms linear;
+    -o-transition: all 8000ms linear;
+    transition: all 8000ms linear;
+}
+
+.banner-carousel .active .slide-item .bg-layer {
+    -webkit-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    transform: scale(1.25);
+}
+
+.banner-carousel .content-box h2 {
+    display: block;
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 42px;
+    text-transform: capitalize;
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    -o-transform: translateY(50px);
+    transform: translateY(50px);
+    -webkit-transition: all 1000ms ease;
+    -moz-transition: all 1000ms ease;
+    -ms-transition: all 1000ms ease;
+    -o-transition: all 1000ms ease;
+    transition: all 1000ms ease;
+}
+
+.banner-carousel .active .content-box h2 {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition-delay: 700ms;
+    -moz-transition-delay: 700ms;
+    -ms-transition-delay: 700ms;
+    -o-transition-delay: 700ms;
+    transition-delay: 700ms;
+}
+
+.banner-section .banner-carousel .content-box h2 {
+    padding-bottom: 30px;
+    font-family: var(--title-font);
+}
+
+.banner-section .banner-carousel .content-box h2::before {
+    position: absolute;
+    content: "";
+    background-color: var(--secondary-color);
+    width: 100px;
+    height: 1px;
+    left: 0px;
+    bottom: 0px;
+}
+
+.banner-carousel .content-box h2 span {
+    font-weight: 300;
+}
+
+.banner-carousel .content-box p {
+    margin-bottom: 42px;
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    -o-transform: translateY(50px);
+    transform: translateY(50px);
+    -webkit-transition: all 1000ms ease;
+    -moz-transition: all 1000ms ease;
+    -ms-transition: all 1000ms ease;
+    -o-transition: all 1000ms ease;
+    transition: all 1000ms ease;
+}
+
+.banner-section .banner-carousel .content-box p {
+    max-width: 420px;
+    padding-left: 100px;
+    font-family: var(--text-font);
+}
+
+.banner-carousel .active .content-box p {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition-delay: 1000ms;
+    -moz-transition-delay: 1000ms;
+    -ms-transition-delay: 1000ms;
+    -o-transition-delay: 1000ms;
+    transition-delay: 1000ms;
+}
+
+.banner-carousel .content-box .btn-box {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    -o-transform: translateY(50px);
+    transform: translateY(50px);
+    -webkit-transition: all 1000ms ease;
+    -moz-transition: all 1000ms ease;
+    -ms-transition: all 1000ms ease;
+    -o-transition: all 1000ms ease;
+    transition: all 1000ms ease;
+}
+
+.banner-section .banner-carousel .content-box .btn-box {
+    padding-left: 100px;
+}
+
+.banner-carousel .active .content-box .btn-box {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition-delay: 1300ms;
+    -moz-transition-delay: 1300ms;
+    -ms-transition-delay: 1300ms;
+    -o-transition-delay: 1300ms;
+    transition-delay: 1300ms;
+}
+
+.banner-section .banner-carousel .owl-nav {
+    position: absolute;
+    right: 750px;
+    bottom: 200px;
+}
+
+.banner-section .banner-carousel .owl-nav button {
+    position: relative;
+    display: block;
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    background-color: var(--theme-color);
+    margin: 0;
+}
+
+.banner-right-content .mail-box a:hover {
+    color: var(--theme-color);
+}
+
+.theme-btn.btn-one {
+    background-color: var(--secondary-color);
+    padding: 10px;
+}
+
+.theme-btn.btn-one span,
+.theme-btn.btn-one i {
+    color: #fff;
+}
+
+/* ============================
+   Responsive - Banner Carousel
+============================ */
+
+@media only screen and (max-width: 1699px) {
+    .banner-section .pattern-layer,
+    .banner-section .pattern-layer-2,
+    .banner-section::before {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .banner-section .outer-container {
+        padding-left: 0px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .banner-section .banner-carousel .owl-nav {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .banner-section .banner-carousel .content-box {
+        padding: 0px 15px 70px 15px;
+    }
+
+    .banner-section .banner-carousel .content-box .image-layer {
+        display: none;
+    }
+
+    .banner-section .banner-carousel .content-box p,
+    .banner-section .banner-carousel .content-box .btn-box {
+        padding-left: 0px;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .banner-section .banner-carousel .owl-nav {
+        left: 15px;
+        bottom: 15px;
+    }
+}

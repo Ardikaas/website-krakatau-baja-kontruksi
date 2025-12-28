@@ -1,0 +1,93 @@
+.right-side-menu {
+    position: absolute;
+    top: -70px;
+    right: 0px;
+    width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    z-index: 2;
+}
+
+.right-side-menu .mail-box {
+    position: relative;
+    display: block;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.right-side-menu .mail-box::before {
+    position: absolute;
+    content: "";
+    background-color: #ebe9ef;
+    width: 70px;
+    height: 1px;
+    left: -22px;
+    bottom: 0px;
+}
+
+.right-side-menu .mail-box a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 600;
+    color: #a5aaaf;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+}
+
+.right-side-menu .mail-box a i {
+    position: relative;
+    display: inline-block;
+    color: var(--theme-color);
+    transform: rotate(180deg);
+}
+
+.right-side-menu .social-links {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+.right-side-menu .social-links li {
+    position: relative;
+    display: block;
+    margin-bottom: 25px;
+}
+
+.right-side-menu .social-links li:last-child {
+    margin-bottom: 0px;
+}
+
+.right-side-menu .social-links li a {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    color: #afb3b8;
+}
+
+.right-side-menu .social-links li a:hover {
+    color: var(--theme-color);
+}
+
+.right-side-menu .social-links li h5 {
+    position: relative;
+    display: block;
+    font-size: 18px;
+    line-height: 26px;
+    color: #a5aaaf;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+}
+
+@media only screen and (max-width: 1400px) {
+    .right-side-menu {
+        display: none !important;
+    }
+}

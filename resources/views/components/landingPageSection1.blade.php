@@ -5,7 +5,7 @@
                 <div class="logo-box">
                     <figure class="logo">
                         <a href="{{ url('/') }}">
-                            <img src="assets/images/logo.png" alt="" />
+                        <img src="{{ asset('images/logo.png') }}" alt="Logo" />
                         </a>
                     </figure>
                     <h5>Based On <br />United States.</h5>
@@ -14,7 +14,6 @@
                 <div class="single-item">
                     <div
                         class="shape"
-                        style="background-image: url(assets/images/shape/shape-1.png);"
                     ></div>
                     <h2>28<span>+</span></h2>
                     <h5>Countries <br />Served Proudly.</h5>
@@ -37,8 +36,7 @@
                 {{-- HERO (HOME) --}}
                 @if($type === 'hero')
                 <h2>
-                    {{ $first }} <br> 
-                    <span>{{ $second }}</span>{{ $third }}
+                    {{ $first }} <br> <span>{{ $second }}</span>{{ $third }}
                 </h2>
                 @endif
 

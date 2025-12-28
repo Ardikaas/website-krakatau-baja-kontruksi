@@ -38,8 +38,10 @@
   @include('components.header')
 
   <main>
-    @yield('content')
-    @include('components.landingPageSection4,5')
+    <div class="boxed-wrapper">
+      @yield('content')
+      @include('components.landingPageSection4,5')
+    </div>
   </main>
 
   @include('components.footer')

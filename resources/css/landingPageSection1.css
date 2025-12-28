@@ -31,7 +31,7 @@
 .banner-top-section .inner-box {
     position: relative;
     display: block;
-    padding: 102.5px 95px;
+    padding: 102.5px 60px;
 }
 
 /* .banner-top-section .inner-box h2 {
@@ -66,7 +66,7 @@
 .banner-top-section .based-content .inner .logo-box {
     position: relative;
     display: block;
-    margin-bottom: 65px;
+    margin-bottom: 50px;
 }
 
 .banner-top-section .based-content .inner .logo-box .logo {
@@ -216,7 +216,7 @@
 .banner-top-section .inner-box .content-box h2 {
     position: relative;
     display: block;
-    font-size: 120px;
+    font-size: 100px;
     font-weight: 500;
     line-height: 1.1;
     text-transform: uppercase;
@@ -271,19 +271,15 @@
 /* ============================
    Responsive
 ============================ */
+/* ============================
+   Responsive - Banner Top Section
+============================ */
+
 @media only screen and (max-width: 1699px) {
-    .banner-section .pattern-layer,
-    .banner-section .pattern-layer-2,
-    .industries-style-three .image-layer,
     .banner-top-section .inner-box .video-box,
-    .banner-top-section .inner-box p,
-    .banner-section .banner-right-content,
-    .banner-section::before {
+    .banner-top-section .inner-box p {
         display: none;
     }
-}
-
-@media only screen and (max-width: 1649px) {
 }
 
 @media only screen and (max-width: 1599px) {
@@ -294,17 +290,9 @@
 }
 
 @media only screen and (max-width: 1200px) {
-    .banner-section .outer-container {
-        padding-left: 0px;
-    }
-
     .banner-top-section .based-content {
         position: relative;
         width: 100%;
-    }
-
-    .banner-style-three {
-        padding: 0px;
     }
 }
 
@@ -312,10 +300,6 @@
     .banner-top-section .inner-box {
         padding-left: 30px;
         padding-right: 30px;
-    }
-
-    .banner-style-four .owl-nav {
-        display: none;
     }
 }
 
@@ -328,70 +312,11 @@
     .banner-top-section .inner-box {
         padding: 70px 15px;
     }
-
-    .banner-section .banner-carousel .content-box {
-        padding: 0px 15px 70px 15px;
-    }
-
-    .banner-section .banner-carousel .content-box .image-layer {
-        display: none;
-    }
-
-    .banner-section .banner-carousel .content-box p,
-    .banner-section .banner-carousel .content-box .btn-box {
-        padding-left: 0px;
-    }
-
-    .banner-style-two .owl-nav,
-    .banner-style-two .owl-dots {
-        display: none;
-    }
-
-    .banner-style-two .content-box h2 {
-        font-size: 50px;
-        line-height: 58px;
-    }
-
-    .banner-style-two .slide-item {
-        padding: 230px 0px 100px 0px;
-    }
-
-    .banner-style-three .slide-item {
-        padding-top: 100px;
-    }
-    .banner-style-four .content-box h2 {
-        font-size: 50px;
-        line-height: 58px;
-    }
-
-    .banner-style-four .slide-item {
-        padding: 240px 0px 100px 0px;
-    }
 }
 
 @media only screen and (max-width: 599px) {
     .banner-top-section .inner-box .content-box h2 {
         font-size: 40px;
         line-height: 48px;
-    }
-
-    .banner-style-two .content-box .btn-box {
-        display: block;
-    }
-
-    .banner-style-two .content-box .btn-box .theme-btn {
-        margin-bottom: 15px;
-    }
-
-    .banner-style-three .slide-item {
-        padding-top: 250px;
-    }
-
-    .banner-style-four .content-box .btn-box {
-        display: block;
-    }
-
-    .banner-style-four .content-box .btn-box .btn-two {
-        margin-bottom: 15px;
     }
 }
