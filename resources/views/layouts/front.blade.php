@@ -20,7 +20,17 @@
   <!-- Flaticon -->
   <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
 
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  
+  <!-- Owl Carousel JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/owl.js'])
   @stack('styles')
 </head>
 
@@ -32,6 +42,7 @@
 
   <main>
     @yield('content')
+    @include('components.landingPageSection4,5')
   </main>
 
   @include('components.footer')
