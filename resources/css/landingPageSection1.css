@@ -82,6 +82,8 @@
     line-height: 24px;
     color: #a5aaaf;
     padding-right: 110px;
+    font-family: var(--title-font);
+    font-weight: 500;
 }
 
 .banner-top-section .based-content .inner .logo-box h5::before {
@@ -125,6 +127,8 @@
     line-height: 70px;
     color: #fff;
     margin-bottom: 3px;
+    font-family: var(--title-font);
+    font-weight: 500;
 }
 
 .banner-top-section .based-content .inner .single-item h5 {
@@ -132,6 +136,8 @@
     font-size: 18px;
     line-height: 24px;
     color: #a5aaaf;
+    font-family: var(--title-font);
+    font-weight: 500;
 }
 
 .banner-top-section .based-content .rotate-text {
@@ -171,6 +177,7 @@
     background-repeat: no-repeat;
     background-position: center;
     transform: rotate(-10deg);
+    background-image: url(../../public/images/resource/process-1.jpg);
 }
 
 .banner-top-section .inner-box .video-box .bg-color {
