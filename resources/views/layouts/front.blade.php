@@ -35,7 +35,10 @@
 </head>
 
 <body>
+  @include('components.preloader')
+  @include('components.sidebarpopup')
   @include('components.header')
+  @include('components.mobilemenu')
 
   <main>
     <div class="boxed-wrapper">
