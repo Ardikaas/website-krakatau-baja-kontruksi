@@ -25,10 +25,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
   <!-- jQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
   
   <!-- Owl Carousel JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
 
   @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/owl.js'])
   @stack('styles')
@@ -41,8 +41,10 @@
   @include('components.mobilemenu')
 
   <main>
-    @yield('content')
-    @include('components.landingPageSection4,5')
+    <div class="boxed-wrapper">
+      @yield('content')
+      @include('components.landingPageSection4,5')
+    </div>
   </main>
 
   @include('components.footer')

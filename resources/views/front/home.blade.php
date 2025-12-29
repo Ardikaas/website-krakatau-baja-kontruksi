@@ -4,7 +4,12 @@
 @section('meta_description', 'Official website of PT Krakatau Baja Konstruksi')
 
 @section('content')
-
-  <h1 style="height: 100vh; background-color:black; color: white; display: flex; align-items: center; justify-content: center;">Hello World</h1>
-  <h1 style="height: 100vh; background-color:black; color: white; display: flex; align-items: center; justify-content: center;">Hello World</h1>
+  <div class="banner-section">
+    <div
+        class="pattern-layer"
+    ></div>
+    <x-landingPageSection1 type="hero" title="Produsen|Baja |Berkualitas" />
+    <x-landingPageSection2 />
+    <x-landingPageSection3 />
+  </div>
 @endsection
