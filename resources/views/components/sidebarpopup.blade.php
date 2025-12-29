@@ -2,7 +2,7 @@
         <div id="sidebar-popup" class="sidebar-popup">
             <div class="popup-inner">
                 <div class="close-popup"><i class="flaticon-cross-button"></i></div>
-                <figure class="logo-box"><a href="index.html"><img src="assets/images/logo-3.png" alt=""></a></figure>
+                <figure class="logo-box"><a href="index.html"><img src="{{ asset('images/logo-3.png') }}" alt=""></a></figure>
                 <div class="form-inner">
                     <form action="index.html" method="post">
                         <div class="form-group">

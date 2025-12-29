@@ -27,7 +27,7 @@
             <div class="content-box">
                 <div class="video-box">
                     <div class="bg-color"></div>
-                    <div class="video-bg" style="background-image: url(assets/images/resource/video-1.jpg);"></div>
+                    <div class="video-bg"></div>
                     <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption="" target="_blank"><i class="flaticon-play-button"></i></a>
                 </div>
                 @php
