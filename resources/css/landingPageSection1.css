@@ -1,0 +1,329 @@
+/* CSS Variables (inherit from app.css/footer.css) */
+:root {
+    --theme-color: #00a1d1;
+    --secondary-color: #00346a;
+    --text-color: #66696b;
+    --title-color: #0d202f;
+    --text-font: "Figtree", sans-serif;
+    --title-font: "Red Rose", serif;
+}
+
+.boxed_wrapper {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden !important;
+    width: 100%;
+    min-width: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner-top-section {
+    position: relative;
+}
+
+.banner-top-section .outer-container {
+    position: relative;
+    padding-left: 375px;
+}
+
+.banner-top-section .inner-box {
+    position: relative;
+    display: block;
+    padding: 102.5px 60px;
+}
+
+/* .banner-top-section .inner-box h2 {
+    position: relative;
+    display: block;
+    font-size: 120px;
+    line-height: 110px;
+    text-transform: uppercase;
+    max-width: 1020px;
+} */
+
+.banner-top-section .inner-box h2 span {
+    color: var(--theme-color);
+}
+
+.banner-top-section .based-content {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 375px;
+    padding-right: 40px;
+    border-right: 1px solid #ebe9ef;
+}
+
+.banner-top-section .based-content .inner {
+    position: relative;
+    display: block;
+    background-color: var(--secondary-color);
+    padding: 50px 45px 46px 50px;
+}
+
+.banner-top-section .based-content .inner .logo-box {
+    position: relative;
+    display: block;
+    margin-bottom: 50px;
+}
+
+.banner-top-section .based-content .inner .logo-box .logo {
+    position: relative;
+    display: block;
+    margin-bottom: 45px;
+}
+
+.banner-top-section .based-content .inner .logo-box h5 {
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 24px;
+    color: #a5aaaf;
+    padding-right: 110px;
+    font-family: var(--title-font);
+    font-weight: 500;
+}
+
+.banner-top-section .based-content .inner .logo-box h5::before {
+    position: absolute;
+    content: "";
+    background-color: var(--theme-color);
+    width: 100px;
+    height: 3px;
+    right: 0px;
+    bottom: 11px;
+}
+
+.banner-top-section .based-content .inner .logo-box h5::after {
+    position: absolute;
+    content: "";
+    background-color: var(--theme-color);
+    width: 50px;
+    height: 1px;
+    right: 50px;
+    bottom: 7px;
+}
+
+.banner-top-section .based-content .inner .single-item {
+    position: relative;
+    display: block;
+    padding-left: 100px;
+}
+
+.banner-top-section .based-content .inner .single-item .shape {
+    position: absolute;
+    left: 0px;
+    bottom: 5px;
+    width: 90px;
+    height: 162px;
+    background-repeat: no-repeat;
+}
+
+.banner-top-section .based-content .inner .single-item h2 {
+    display: block;
+    font-size: 60px;
+    line-height: 70px;
+    color: #fff;
+    margin-bottom: 3px;
+    font-family: var(--title-font);
+    font-weight: 500;
+}
+
+.banner-top-section .based-content .inner .single-item h5 {
+    display: block;
+    font-size: 18px;
+    line-height: 24px;
+    color: #a5aaaf;
+    font-family: var(--title-font);
+    font-weight: 500;
+}
+
+.banner-top-section .based-content .rotate-text {
+    position: absolute;
+    top: 0px;
+    right: 7px;
+    writing-mode: vertical-lr;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    line-height: 24px;
+    font-family: var(--title-font);
+    color: #a5aaaf;
+    font-weight: 600;
+    transform: rotate(180deg);
+}
+
+.banner-top-section .inner-box .video-box {
+    position: absolute;
+    top: -10px;
+    right: 220px;
+    width: 168px;
+    height: 136px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-top-section .inner-box .video-box .video-bg {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(-10deg);
+    background-image: url(../../public/images/resource/process-1.jpg);
+}
+
+.banner-top-section .inner-box .video-box .bg-color {
+    position: absolute;
+    background-color: #f7d8cb;
+    width: 100%;
+    height: 100%;
+    left: 12px;
+    top: 10px;
+    transform: rotate(-10deg);
+}
+
+.banner-top-section .inner-box .video-box a {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 64px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 30px;
+    color: var(--secondary-color);
+    z-index: 1;
+}
+
+.banner-top-section .inner-box .video-box a:hover {
+    color: #fff;
+    background-color: var(--theme-color);
+}
+
+.banner-top-section .inner-box .content-box {
+    position: relative;
+    max-width: 1020px;
+}
+
+.banner-top-section .inner-box p {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+}
+
+.banner-top-section .inner-box .content-box h2 {
+    position: relative;
+    display: block;
+    font-size: 100px;
+    font-weight: 500;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-family: var(--title-font);
+}
+
+.banner-top-section .inner-box .content-box h2 span {
+    white-space: nowrap;
+}
+
+/** banner-section **/
+
+.banner-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-section::before {
+    position: absolute;
+    content: "";
+    background-color: #ebe9ef;
+    width: 1px;
+    height: calc(100% - 200px);
+    top: 0px;
+    right: 100px;
+    z-index: 2;
+}
+
+.banner-section .pattern-layer {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    width: 286px;
+    height: 326px;
+    background-repeat: no-repeat;
+}
+
+.banner-section .pattern-layer-2 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 445px;
+    height: calc(100% - 200px);
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+.banner-section .outer-container {
+    position: relative;
+}
+
+/* ============================
+   Responsive
+============================ */
+/* ============================
+   Responsive - Banner Top Section
+============================ */
+
+@media only screen and (max-width: 1699px) {
+    .banner-top-section .inner-box .video-box,
+    .banner-top-section .inner-box p {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1599px) {
+    .banner-top-section .inner-box .content-box h2 {
+        font-size: 80px;
+        line-height: 90px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .banner-top-section .based-content {
+        position: relative;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .banner-top-section .inner-box {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .banner-top-section .inner-box .content-box h2 {
+        font-size: 60px;
+        line-height: 70px;
+    }
+
+    .banner-top-section .inner-box {
+        padding: 70px 15px;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .banner-top-section .inner-box .content-box h2 {
+        font-size: 40px;
+        line-height: 48px;
+    }
+}
