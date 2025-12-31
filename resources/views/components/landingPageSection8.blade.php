@@ -11,7 +11,7 @@
                         <div class="chooseus-block-one">
                             <div class="inner-box">
                                 <div class="light-icon"><i class="flaticon-gear"></i></div>
-                                <div class="block-shape" style="background-image: url(assets/images/shape/shape-11.png);"></div>
+                                <div class="block-shape" style="background-image: url({{ asset('images/shape/shape-11.png') }});"></div>
                                 <div class="icon-box">
                                     <div class="icon"><i class="flaticon-manufacturing"></i></div>
                                     <div class="bar-shape"></div>
@@ -27,7 +27,7 @@
                         <div class="chooseus-block-one">
                             <div class="inner-box">
                                 <div class="light-icon"><i class="flaticon-gear"></i></div>
-                                <div class="block-shape" style="background-image: url(assets/images/shape/shape-11.png);"></div>
+                                <div class="block-shape" style="background-image: url({{ asset('images/shape/shape-11.png') }});"></div>
                                 <div class="icon-box">
                                     <div class="icon"><i class="flaticon-engineer"></i></div>
                                     <div class="bar-shape"></div>
@@ -42,7 +42,7 @@
                         <div class="chooseus-block-one">
                             <div class="inner-box">
                                 <div class="light-icon"><i class="flaticon-gear"></i></div>
-                                <div class="block-shape" style="background-image: url(assets/images/shape/shape-11.png);"></div>
+                                <div class="block-shape" style="background-image: url({{ asset('images/shape/shape-11.png') }});"></div>
                                 <div class="icon-box">
                                     <div class="icon"><i class="flaticon-manufacturing-1"></i></div>
                                     <div class="bar-shape"></div>
@@ -57,7 +57,7 @@
                         <div class="chooseus-block-one">
                             <div class="inner-box">
                                 <div class="light-icon"><i class="flaticon-gear"></i></div>
-                                <div class="block-shape" style="background-image: url(assets/images/shape/shape-11.png);"></div>
+                                <div class="block-shape" style="background-image: url({{ asset('images/shape/shape-11.png') }});"></div>
                                 <div class="icon-box">
                                     <div class="icon"><i class="flaticon-goal"></i></div>
                                     <div class="bar-shape"></div>
@@ -72,7 +72,7 @@
                         <div class="chooseus-block-one">
                             <div class="inner-box">
                                 <div class="light-icon"><i class="flaticon-gear"></i></div>
-                                <div class="block-shape" style="background-image: url(assets/images/shape/shape-11.png);"></div>
+                                <div class="block-shape" style="background-image: url({{ asset('images/shape/shape-11.png') }});"></div>
                                 <div class="icon-box">
                                     <div class="icon"><i class="flaticon-test"></i></div>
                                     <div class="bar-shape"></div>
@@ -87,7 +87,7 @@
                         <div class="chooseus-block-one">
                             <div class="inner-box">
                                 <div class="light-icon"><i class="flaticon-gear"></i></div>
-                                <div class="block-shape" style="background-image: url(assets/images/shape/shape-11.png);"></div>
+                                <div class="block-shape" style="background-image: url({{ asset('images/shape/shape-11.png') }});"></div>
                                 <div class="icon-box">
                                     <div class="icon"><i class="flaticon-certificate"></i></div>
                                     <div class="bar-shape"></div>
