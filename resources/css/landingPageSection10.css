@@ -275,3 +275,47 @@
 .nav-style-one button:hover::before {
     color: var(--theme-color) !important;
 }
+
+/* =========================================================
+   NEWS SECTION - RESPONSIVE
+========================================================= */
+
+/* <= 991px */
+@media only screen and (max-width: 991px) {
+    .news-section .sec-title a {
+        position: relative;
+        bottom: 0px;
+        margin-top: 15px;
+    }
+}
+
+/* <= 767px */
+@media only screen and (max-width: 767px) {
+    .working-section,
+    .news-section {
+        padding: 62px 0px 55px 0px;
+    }
+}
+
+/* <= 599px */
+@media only screen and (max-width: 599px) {
+}
+
+/* <= 499px */
+@media only screen and (max-width: 499px) {
+    .news-section .owl-nav {
+        display: none;
+    }
+
+    .news-section {
+        padding-bottom: 40px;
+    }
+
+    .news-block-one .inner-box .upper-content {
+        display: block;
+    }
+
+    .news-block-one .inner-box .upper-content .info-box {
+        margin-bottom: 20px;
+    }
+}

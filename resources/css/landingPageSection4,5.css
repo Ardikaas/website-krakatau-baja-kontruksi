@@ -1,13 +1,3 @@
-/* CSS Variables (inherit from app.css/footer.css) */
-:root {
-    --theme-color: #f0571a;
-    --secondary-color: #192f42;
-    --text-color: #66696b;
-    --title-color: #0d202f;
-    --text-font: "Figtree", sans-serif;
-    --title-font: "Red Rose", serif;
-}
-
 /* Owl Carousel Base Styles */
 .owl-carousel {
     display: none;
@@ -60,7 +50,6 @@
 }
 
 /* gridsystem */
-
 
 .row {
     display: flex;
@@ -173,7 +162,7 @@
 
 .sec-title h6::before {
     position: absolute;
-    content: '';
+    content: "";
     background-color: var(--theme-color);
     width: 2px;
     height: 17px;
@@ -194,7 +183,6 @@
     font-weight: 300;
     color: var(--theme-color);
 }
-
 
 /* ABOUT SECTION*/
 
@@ -291,7 +279,7 @@
     text-align: center;
     color: transparent;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgba(255, 255, 255, 0.10);
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.1);
     text-transform: uppercase;
     transform: rotate(180deg);
 }
@@ -439,7 +427,7 @@
 
 .about-section .inner-content .image-box .image-content .text-box::before {
     position: absolute;
-    content: '';
+    content: "";
     background-color: #dbdfe3;
     width: 1px;
     height: 97px;
@@ -536,7 +524,7 @@
 
 .service-section .inner-container::before {
     position: absolute;
-    content: '';
+    content: "";
     background-color: #f0f4f8;
     width: 5000px;
     height: 100%;
@@ -730,7 +718,7 @@
 .service-block-one .inner-box .image-inner .image-box .image {
     position: relative;
     display: block;
-    transition: all .3s cubic-bezier(.25, .8, .25, 1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     transform: scaleX(0);
     transform-origin: left center;
 }
@@ -754,8 +742,8 @@
     text-align: center;
     font-size: 50px;
     color: var(--theme-color);
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.10);
-    transition: all .3s cubic-bezier(.25, .8, .25, 1);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .service-block-one .inner-box:hover .image-inner .image-box .icon-box {
@@ -788,7 +776,7 @@
 .service-block-one .inner-box .lower-content .block-title .line-shape::before,
 .service-block-one .inner-box .lower-content .block-title .line-shape::after {
     position: absolute;
-    content: '';
+    content: "";
     background-color: var(--theme-color);
     width: 7px;
     height: 7px;
