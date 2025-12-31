@@ -5,9 +5,7 @@
 
 @section('content')
   <div class="banner-section">
-    <div
-        class="pattern-layer"
-    ></div>
+    <div class="pattern-layer"></div>
     <x-landingPageSection1 type="hero" title="Produsen|Baja |Berkualitas" />
     <x-landingPageSection2 />
     <x-landingPageSection3 />
