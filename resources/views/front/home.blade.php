@@ -11,5 +11,8 @@
     <x-landingPageSection1 type="hero" title="Produsen|Baja |Berkualitas" />
     <x-landingPageSection2 />
     <x-landingPageSection3 />
+    <x-landingPageSection4dan5 />
+    <x-landingPageSection8 />
+    <x-landingPageSection9 />
   </div>
 @endsection

@@ -43,9 +43,6 @@
   <main>
     <div class="boxed-wrapper">
       @yield('content')
-      @include('components.landingPageSection4,5')
-      @include('components.landingPageSection8')
-      @include('components.landingPageSection9')
     </div>
   </main>
 
