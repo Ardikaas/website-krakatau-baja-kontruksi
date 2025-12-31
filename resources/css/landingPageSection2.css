@@ -1,12 +1,3 @@
-/* CSS Variables (inherit from app.css/footer.css) */
-:root {
-    --theme-color: #00a1d1;
-    --secondary-color: #00346a;
-    --text-color: #66696b;
-    --title-color: #0d202f;
-    --text-font: "Figtree", sans-serif;
-    --title-font: "Red Rose", serif;
-}
 /** banner-section **/
 
 .banner-section {
