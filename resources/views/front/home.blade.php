@@ -13,6 +13,9 @@
     <x-landingPageSection3 />
     <x-landingPageSection4 />
     <x-landingPageSection5 />
+    <x-landingPageSection7 />
+    <x-landingPageSection8 />
+    <x-landingPageSection9 />
     <x-landingPageSection10 />
   </div>
 @endsection

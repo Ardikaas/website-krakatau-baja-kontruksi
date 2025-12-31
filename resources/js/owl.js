@@ -49,6 +49,7 @@ if ($(".single-item-carousel").length) {
         loop: true,
         margin: 30,
         nav: true,
+        dots: false,
         smartSpeed: 500,
         autoplay: 1000,
         navText: [
