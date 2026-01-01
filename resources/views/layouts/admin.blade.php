@@ -37,6 +37,7 @@
 </head>
 
 <body>
+  @include('components.sidebarAdmin')
   <main>
     <div class="boxed-wrapper">
       @yield('content')
