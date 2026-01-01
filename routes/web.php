@@ -9,3 +9,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/admin/landingEdit', function () {
     return view('admin.adminLanding');
 })->name('admin.landingEdit');
+
+Route::get('/admin/newsEdit', function () {
+    return view('admin.adminNewsView');
+})->name('admin.adminNewsViews');
