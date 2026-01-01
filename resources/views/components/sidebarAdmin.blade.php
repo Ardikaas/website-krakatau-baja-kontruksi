@@ -1,12 +1,10 @@
-<div class="admin-landing-page">
+<div class="SidebarandTopbarAdmin">
   <button class="hamburger" onclick="toggleSidebar()">☰</button>
   <div class="sidebar-overlay" onclick="closeSidebar()"></div>
 
   <div class="content-wrapper">
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
-      <img src="{{ asset('images/logo.png') }}" alt="Krakatau Logo" class="sidebar-logo">
-
       <nav class="sidebar-menu">
         <a href="#" class="menu-item active">
           <img src="{{ asset('images/icons/img_home_3_streamline.svg') }}" class="menu-icon">
@@ -40,17 +38,22 @@
     <!-- Main Area -->
     <div class="main-area">
       <header class="header">
-        <div class="search-container">
-          <img src="{{ asset('images/icons/img_magnifying_glass.svg') }}" class="search-icon">
-          <span class="search-text">Search for menu</span>
-        </div>
+        <img src="{{ asset('images/logo-3.png') }}" alt="Krakatau Logo" class="sidebar-logo">
+        
+        <div class="fitur-header">
 
-        <div class="user-section">
-          <span class="divider-line"></span>
-          <div class="user-info">
-            <img src="{{ asset('images/icons/icon-1.png') }}" class="user-avatar">
-            <span class="user-name">Admin User</span>
-          </div>
+            <div class="search-container">
+                <img src="{{ asset('images/icons/img_magnifying_glass.svg') }}" class="search-icon">
+                <span class="search-text">Search for menu</span>   
+            </div>        
+            
+            <div class="user-section">
+                <span class="divider-line"></span>
+                <div class="user-info">
+                    <img src="{{ asset('images/icons/icon-1.png') }}" class="user-avatar">
+                    <span class="user-name">Admin User</span>
+                </div>
+            </div>
         </div>
       </header>
     </div>

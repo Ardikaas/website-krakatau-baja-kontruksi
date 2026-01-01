@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     width: 72px;
+    margin-top: 53px;
     background: #ffffff;
     border-right: 1px solid #00000033;
     padding: 20px 0;
@@ -17,8 +18,8 @@
 }
 
 .sidebar-logo {
-    width: 150px;
-    margin: 0 0 40px 24px;
+    width: 100px;
+    /* margin: 0 0 40px 24px; */
 }
 
 .sidebar-menu {
@@ -41,6 +42,7 @@
     padding: 14px 16px;
     text-decoration: none;
     cursor: pointer;
+    gap: 1rem;
 }
 
 .menu-item:hover {
@@ -70,26 +72,33 @@
 }
 
 .logout {
-    color: #00a1d1;
+    color: #d10000;
 }
-
 
 /* Header */
 .header {
     position: fixed;
     top: 0;
-    z-index: 900;
+    z-index: 2000;
 
     width: 100%;
     margin-left: 0;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
 
     padding: 16px 20px;
     background-color: #ffffff;
     border-bottom: 1px solid #00000033;
+}
+
+.fitur-header{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    gap: 24px;
 }
 
 .search-container {
@@ -139,10 +148,10 @@
 .hamburger {
     position: fixed;
     top: 20px;
-    left: 20px;
-    z-index: 1100;
-    background: #00a1d1;
-    color: #fff;
+    left: 150px;
+    z-index: 3000;
+    /* background: #00a1d1; */
+    color: #00a1d1;
     border: none;
     padding: 10px;
 }
@@ -167,6 +176,7 @@
     .hamburger,
     .sidebar-overlay {
         display: none;
+        margin-left: 100px;
     }
 
     .sidebar {
@@ -174,25 +184,27 @@
         flex-direction: column;
         min-height: 100vh;
         width: 280px;
+        margin-top: 53px;
         position: fixed;
         z-index: 1000;
     }
 
-    .search-container {
-        margin-left: 310px;
+    .sidebar-logo {
+        width: 150px;
+        /* margin: 0 0 40px 24px; */
     }
+
 
     .menu-text {
         display: flex;
     }
 
-    .header {
-        width: 100%;
-        position: fixed;
+    .header{
+        display: flex;            
     }
 
     .user-info {
-        margin-right: 100px;
+        margin-right: 20px;
     }
 
     .user-info .user-name {
