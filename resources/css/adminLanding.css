@@ -1,0 +1,624 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.admin-landing-page {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #ffffff;
+    color: #0d202f;
+    line-height: 1.5;
+}
+
+/* Layout components */
+.admin-landing-page .main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+.admin-landing-page .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.admin-landing-page .sidebar {
+    display: none;
+    width: 100%;
+    background-color: #ffffff;
+    border-right: 1px solid #00000033;
+    padding: 20px 0;
+}
+
+.admin-landing-page .sidebar-logo {
+    width: 150px;
+    height: 34px;
+    margin: 4px 0 0 24px;
+    margin-bottom: 40px;
+}
+
+.admin-landing-page .sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.admin-landing-page .menu-item {
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+}
+
+.admin-landing-page .menu-item:hover {
+    background-color: #f8f9fa;
+}
+
+.admin-landing-page .menu-item.active {
+    background-color: #e6f7ff;
+}
+
+.admin-landing-page .menu-item.active .menu-text {
+    color: #00a1d1;
+}
+
+.admin-landing-page .menu-icon {
+    width: 14px;
+    height: 14px;
+    margin-left: 16px;
+}
+
+.admin-landing-page .menu-text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #66696bb2;
+    margin-left: 10px;
+}
+
+.admin-landing-page .menu-item.active .menu-text {
+    color: #00a1d1;
+}
+
+.admin-landing-page .sidebar-bottom {
+    margin-top: auto;
+}
+
+.admin-landing-page .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #00000033;
+}
+
+.admin-landing-page .search-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.admin-landing-page .search-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.admin-landing-page .search-text {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 25px;
+    color: #66696bb2;
+}
+
+.admin-landing-page .user-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-landing-page .divider-line {
+    width: 1px;
+    height: 60px;
+    background-color: #00000033;
+}
+
+.admin-landing-page .user-info {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    background-color: #ffffff;
+}
+
+.admin-landing-page .user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+}
+
+.admin-landing-page .user-name {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #66696b;
+    margin-left: 16px;
+}
+
+.admin-landing-page .main-content {
+    padding: 20px;
+    flex: 1;
+}
+
+.admin-landing-page .content-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+
+.admin-landing-page .page-title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 36px;
+    color: #0d202f;
+    margin-bottom: 40px;
+}
+
+.admin-landing-page .section {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.admin-landing-page .section-title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+    color: #66696b;
+}
+
+.admin-landing-page .upload-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.admin-landing-page .upload-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 34px;
+    border: 2px dashed #00000033;
+    border-radius: 14px;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+    min-height: 120px;
+}
+
+.admin-landing-page .upload-zone:hover {
+    border-color: #00a1d1;
+}
+
+.admin-landing-page .upload-icon {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 16px;
+}
+
+.admin-landing-page .upload-text {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: center;
+    color: #66696b;
+}
+
+.admin-landing-page .upload-text .link-text {
+    color: #00a1d1;
+}
+
+.admin-landing-page .section-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.admin-landing-page .info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.admin-landing-page .info-icon {
+    width: 14px;
+    height: 14px;
+    margin-top: 1px;
+}
+
+.admin-landing-page .info-text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    color: #66696bb2;
+    margin-bottom: 4px;
+}
+
+.admin-landing-page .action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    margin-top: 16px;
+}
+
+.admin-landing-page .cancel-btn {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    color: #ff3131;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.admin-landing-page .save-btn {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    color: #ffffff;
+    background-color: #66696bb2;
+    border: none;
+    border-radius: 14px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.admin-landing-page .save-btn:hover {
+    background-color: #5a5d61;
+}
+
+.admin-landing-page .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.admin-landing-page .add-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    color: #ffffff;
+    background-color: #00a1d1;
+    border: none;
+    border-radius: 16px;
+    padding: 8px 20px 8px 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.admin-landing-page .add-btn:hover {
+    background-color: #0091c1;
+}
+
+.admin-landing-page .add-icon {
+    width: 14px;
+    height: 14px;
+}
+
+.admin-landing-page .points-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background-color: #ffffff;
+    border-radius: 14px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.admin-landing-page .point-item {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0px 0px 5px #00000019;
+    transition: transform 0.2s ease;
+}
+
+.admin-landing-page .point-item:hover {
+    transform: translateY(-1px);
+}
+
+.admin-landing-page .point-content {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    padding: 14px;
+}
+
+.admin-landing-page .point-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 0px solid #00000033;
+    padding: 6px;
+}
+
+.admin-landing-page .point-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.admin-landing-page .point-title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    color: #66696bb2;
+}
+
+.admin-landing-page .point-description {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #66696bb2;
+}
+
+.admin-landing-page .point-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 20px;
+}
+
+.admin-landing-page .action-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.admin-landing-page .action-icon:hover {
+    opacity: 0.7;
+}
+
+.admin-landing-page .resources-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.admin-landing-page .resources-content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.admin-landing-page .file-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 66px 26px;
+    border: 2px dashed #00000033;
+    border-radius: 14px;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+    min-width: 200px;
+}
+
+.admin-landing-page .file-upload:hover {
+    border-color: #00a1d1;
+}
+
+.admin-landing-page .file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    width: 100%;
+}
+
+.admin-landing-page .file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0px 0px 5px #00000019;
+    padding: 10px;
+}
+
+.admin-landing-page .file-name {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    color: #66696bb2;
+    padding: 0 10px;
+}
+
+.admin-landing-page .delete-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.admin-landing-page .delete-icon:hover {
+    opacity: 0.7;
+}
+
+.admin-landing-page .hamburger {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: #00a1d1;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.admin-landing-page .sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.admin-landing-page .sidebar.mobile-open {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100%;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+/* Responsive media queries */
+@media (min-width: 640px) {
+    .admin-landing-page .upload-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .admin-landing-page .page-title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .admin-landing-page .section-title {
+        font-size: 22px;
+        line-height: 28px;
+    }
+
+    .admin-landing-page .main-content {
+        padding: 24px;
+    }
+}
+
+@media (min-width: 768px) {
+    .admin-landing-page .upload-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .admin-landing-page .resources-content {
+        flex-direction: row;
+    }
+
+    .admin-landing-page .section-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .admin-landing-page .info-row {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .admin-landing-page .file-list {
+        width: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .admin-landing-page .hamburger {
+        display: none;
+    }
+
+    .admin-landing-page .content-wrapper {
+        flex-direction: row;
+    }
+
+    .admin-landing-page .sidebar {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        min-height: 100vh;
+        position: relative;
+    }
+
+    .admin-landing-page .main-area {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .admin-landing-page .page-title {
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    .admin-landing-page .section-title {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .admin-landing-page .main-content {
+        padding: 32px;
+    }
+
+    .admin-landing-page .search-text {
+        display: block;
+    }
+}
+
+@media (min-width: 1280px) {
+    .admin-landing-page .content-inner {
+        gap: 64px;
+    }
+
+    .admin-landing-page .main-content {
+        padding: 40px;
+    }
+}
+
+/* Interactive states */
+.admin-landing-page .menu-item:focus {
+    outline: 2px solid #00a1d1;
+    outline-offset: 2px;
+}
+
+.admin-landing-page .upload-zone:focus {
+    outline: 2px solid #00a1d1;
+    outline-offset: 2px;
+}
+
+.admin-landing-page button:focus {
+    outline: 2px solid #00a1d1;
+    outline-offset: 2px;
+}
+
+.admin-landing-page .point-item:focus-within {
+    outline: 2px solid #00a1d1;
+    outline-offset: 2px;
+}
