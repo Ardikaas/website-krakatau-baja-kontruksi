@@ -10,6 +10,7 @@
     <div class="sidebar-overlay" onclick="closeSidebar()"></div>
     
     <div class="content-wrapper">
+      {{-- sidebar --}}
       <aside class="sidebar" id="sidebar">
         <img src="{{ asset('images/logo.png') }}" alt="Krakatau Logo" class="sidebar-logo">
         
@@ -42,8 +43,10 @@
           </div>
         </nav>
       </aside>
+      {{-- end sidebar --}}
       
       <div class="main-area">
+        {{-- header --}}
         <header class="header">
           <div class="search-container">
             <img src="{{ asset('images/icons/img_magnifying_glass.svg') }}" alt="Search" class="search-icon">
@@ -58,6 +61,7 @@
             </div>
           </div>
         </header>
+        {{-- end header --}}
         
         <main class="main-content">
           <div class="content-inner">
