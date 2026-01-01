@@ -10,10 +10,14 @@
 
 @section('content')
     {{-- Banner Top Section --}}
-    @include('components.landingPageSection1', [
-        'type' => 'hero',
-        'title' => 'Produsen|Baja |Berkualitas'
-    ])
+    <x-landingPageSection1
+        type="page"
+        title="Berita"
+        :breadcrumb="[
+            ['label' => 'Home', 'url' => url('/')],
+            ['label' => 'Berita'],
+        ]"
+    />
 
     {{-- News Section --}}
     <section class="news-section sec-pad-2">

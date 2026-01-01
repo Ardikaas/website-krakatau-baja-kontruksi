@@ -10,10 +10,15 @@
 
 @section('content')
     {{-- Banner Top Section --}}
-    @include('components.landingPageSection1', [
-        'type' => 'hero',
-        'title' => 'Produsen|Baja |Berkualitas'
-    ])
+    <x-landingPageSection1
+        type="page"
+        title="Detail Berita"
+        :breadcrumb="[
+            ['label' => 'Home', 'url' => url('/')],
+            ['label' => 'Berita', 'url' => route('news')],
+            ['label' => 'Metal finishing techniques: An in depth practical guide.'],
+        ]"
+    />
 
     {{-- Sidebar Page Container --}}
     <section class="sidebar-page-container pt_120 pb_120">

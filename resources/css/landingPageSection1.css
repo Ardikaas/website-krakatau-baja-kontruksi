@@ -283,6 +283,7 @@
 ============================ */
 
 @media only screen and (max-width: 1699px) {
+
     .banner-top-section .inner-box .video-box,
     .banner-top-section .inner-box p {
         display: none;
@@ -325,5 +326,101 @@
     .banner-top-section .inner-box .content-box h2 {
         font-size: 40px;
         line-height: 48px;
+    }
+}
+
+/* ============================
+   Breadcrumb Styles
+============================ */
+
+.banner-top-section .inner-box .content-box h1 {
+    position: relative;
+    display: block;
+    font-size: 60px;
+    line-height: 68px;
+    font-family: var(--title-font);
+    font-weight: 500;
+    margin-bottom: 11px;
+}
+
+.banner-top-section .inner-box .content-box .bread-crumb {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    font-size: 17px;
+    color: var(--text-color);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.banner-top-section .inner-box .content-box .bread-crumb li {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.banner-top-section .inner-box .content-box .bread-crumb li i,
+.banner-top-section .inner-box .content-box .bread-crumb li span {
+    color: var(--theme-color);
+}
+
+.banner-top-section .inner-box .content-box .bread-crumb li:last-child span {
+    text-decoration: underline;
+}
+
+.banner-top-section .inner-box .content-box .bread-crumb li a {
+    font-family: var(--text-font);
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.banner-top-section .inner-box .content-box .bread-crumb li a:hover {
+    color: var(--theme-color);
+}
+
+.banner-top-section .inner-box .content-box .bread-crumb li i {
+    position: relative;
+    display: inline-block;
+    top: 3px;
+    font-size: 12px;
+}
+
+/* ============================
+   Breadcrumb Responsive
+============================ */
+
+@media only screen and (max-width: 1200px) {
+    .banner-top-section .inner-box .content-box h1 {
+        font-size: 50px;
+        line-height: 58px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .banner-top-section .inner-box .content-box h1 {
+        font-size: 36px;
+        line-height: 44px;
+        text-align: center;
+    }
+
+    .banner-top-section .inner-box .content-box .bread-crumb {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .banner-top-section .inner-box .content-box h1 {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .banner-top-section .inner-box .content-box .bread-crumb {
+        font-size: 14px;
+        gap: 4px;
     }
 }
