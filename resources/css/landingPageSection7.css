@@ -384,9 +384,7 @@
 }
 
 .project-section .nav-style-one .owl-nav {
-    position: absolute;
-    left: -204px;
-    bottom: 24px;
+    display: none;
 }
 
 .nav-style-one button.owl-prev {
@@ -400,39 +398,15 @@
 }
 
 .nav-style-one button.owl-prev::before {
-    position: absolute;
-    content: "prev";
-    font-size: 15px;
-    line-height: 22px;
-    font-family: var(--title-font);
-    font-weight: 600;
-    text-transform: uppercase;
-    color: var(--title-color);
-    top: 3px;
-    right: 0px;
+    content: none;
 }
 
 .nav-style-one button.owl-next::before {
-    position: absolute;
-    content: "next";
-    font-size: 15px;
-    line-height: 22px;
-    font-family: var(--title-font);
-    font-weight: 600;
-    text-transform: uppercase;
-    color: var(--title-color);
-    top: 3px;
-    left: 0px;
+    content: none;
 }
 
 .nav-style-one button.owl-prev::after {
-    position: absolute;
-    content: "";
-    background-color: #e6e9ed;
-    width: 1px;
-    height: 30px;
-    top: 0px;
-    right: -15px;
+    content: none;
 }
 
 /* Owl Counter Styles */
@@ -508,12 +482,11 @@
 }
 
 .owl-nav-custom .owl-prev-custom::after {
-    content: "";
-    display: inline-block;
-    height: 20px;
-    width: 1px;
-    background-color: #e6e9ed;
-    margin-left: 15px;
+    content: none;
+}
+
+.owl-nav-custom .owl-prev-custom {
+    margin-right: 30px;
 }
 
 /* Responsive Styles */
@@ -550,6 +523,7 @@
 }
 
 @media only screen and (max-width: 767px) {
+
     /* Section padding for mobile */
     .project-section {
         padding: 62px 0px 40px 0px;
