@@ -10,59 +10,7 @@
     <div class="sidebar-overlay" onclick="closeSidebar()"></div>
     
     <div class="content-wrapper">
-      {{-- sidebar --}}
-      <aside class="sidebar" id="sidebar">
-        <img src="{{ asset('images/logo.png') }}" alt="Krakatau Logo" class="sidebar-logo">
-        
-        <nav class="sidebar-menu" role="navigation">
-          <a href="{{ route('admin.landingEdit') }}" class="menu-item active" role="menuitem" tabindex="0">
-            <img src="{{ asset('images/icons/img_home_3_streamline.svg') }}" alt="" class="menu-icon">
-            <span class="menu-text">Landing Content</span>
-          </a>
-          
-          <a href="#" class="menu-item" role="menuitem" tabindex="0">
-            <img src="{{ asset('images/icons/img_bullet_list_streamline.svg') }}" alt="" class="menu-icon">
-            <span class="menu-text">Specifications</span>
-          </a>
-          
-          <a href="#" class="menu-item" role="menuitem" tabindex="0">
-            <img src="{{ asset('images/icons/img_shipment_remove.svg') }}" alt="" class="menu-icon">
-            <span class="menu-text">Product Management</span>
-          </a>
-          
-          <a href="#" class="menu-item" role="menuitem" tabindex="0">
-            <img src="{{ asset('images/icons/img_news_paper_streamline.svg') }}" alt="" class="menu-icon">
-            <span class="menu-text">News Management</span>
-          </a>
-          
-          <div class="sidebar-bottom">
-            <a href="#" class="menu-item" role="menuitem" tabindex="0">
-              <img src="{{ asset('images/icons/img_logout_1_streamline.svg') }}" alt="" class="menu-icon">
-              <span class="menu-text" style="color: #00a1d1;">Sign Out</span>
-            </a>
-          </div>
-        </nav>
-      </aside>
-      {{-- end sidebar --}}
-      
       <div class="main-area">
-        {{-- header --}}
-        <header class="header">
-          <div class="search-container">
-            <img src="{{ asset('images/icons/img_magnifying_glass.svg') }}" alt="Search" class="search-icon">
-            <span class="search-text">Search for menu</span>
-          </div>
-          
-          <div class="user-section">
-            <div class="divider-line"></div>
-            <div class="user-info">
-              <img src="{{ asset('images/icons/icon-1.png') }}" alt="User Avatar" class="user-avatar">
-              <span class="user-name">Admin User</span>
-            </div>
-          </div>
-        </header>
-        {{-- end header --}}
-        
         <main class="main-content">
           <div class="content-inner">
             <h1 class="page-title">Landing Page Editor</h1>
