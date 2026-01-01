@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Landing Page Editor')
-@section('meta_description', 'Comprehensive landing page editor for managing hero banners, feature points, and downloadable resources.')
+@section('title', 'Admin')
+@section('meta_description', 'Official website of PT Krakatau Baja Konstruksi')
 
 @section('content')
 <div class="admin-landing-page">
