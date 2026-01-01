@@ -406,13 +406,7 @@
 }
 
 .nav-style-one button.owl-prev::after {
-    position: absolute;
-    content: "";
-    background-color: #e6e9ed;
-    width: 1px;
-    height: 30px;
-    top: 0px;
-    right: -15px;
+    content: none;
 }
 
 /* Owl Counter Styles */
