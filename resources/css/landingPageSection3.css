@@ -1,6 +1,6 @@
 .right-side-menu {
     position: absolute;
-    top: -70px;
+    top: -20px;
     right: 0px;
     width: 100px;
     height: 100%;
@@ -89,5 +89,11 @@
 @media only screen and (max-width: 1400px) {
     .right-side-menu {
         display: none !important;
+    }
+}
+
+@media only screen and (max-width: 1800px) {
+    .right-side-menu {
+        transform: translateY(180px);
     }
 }

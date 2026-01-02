@@ -25,13 +25,13 @@
 
         <div class="inner-box">
             <div class="content-box">
+                {{-- HERO (HOME) --}}
+                @if($type === 'hero')
                 <div class="video-box">
                     <div class="bg-color"></div>
                     <div class="video-bg"></div>
                     <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption="" target="_blank"><i class="flaticon-play-button"></i></a>
                 </div>
-                {{-- HERO (HOME) --}}
-                @if($type === 'hero')
                     @php
                         [$first, $second, $third] = explode('|', $title);
                     @endphp
@@ -42,7 +42,7 @@
 
                 {{-- PAGE TITLE (NEWS, ABOUT, CONTACT, DLL) --}}
                 @if($type === 'page')
-                    <h1>{{ $title }}</h1>
+                    <h2>{{ $title }}</h2>
                     @if(!empty($breadcrumb))
                     <ul class="bread-crumb">
                         @foreach($breadcrumb as $item)
