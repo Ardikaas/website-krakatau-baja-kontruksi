@@ -69,7 +69,7 @@
                                             </li> 
                                             <li class="dropdown"><a href="#">Blog</a>
                                                 <ul>
-                                                    <li><a href="blog.html">Grid View 01</a></li>
+                                                    <li><a href="{{ route('news') }}">Grid View 01</a></li>
                                                     <li><a href="blog-2.html">Grid View 02</a></li>
                                                     <li><a href="blog-3.html">List View 01</a></li>
                                                     <li><a href="blog-4.html">List View 02</a></li>
