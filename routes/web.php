@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/admin', function () {
+    return view('admin.testsidebarandtopbar');
+})->name('admin.dashboard');
 // route news aseli 
 Route::get('/news', function () {
     return view('front.news');
