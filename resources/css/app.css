@@ -24,6 +24,9 @@
 @import "./landingPageSection8.css";
 @import "./landingPageSection9.css";
 @import "./landingPageSection10.css";
+
+/* Admin styles */
+@import "./sidebarAdmin.css";
 @import "./adminLanding.css";
 @import "./adminLayout.css";
 @import "./adminNewsView.css";

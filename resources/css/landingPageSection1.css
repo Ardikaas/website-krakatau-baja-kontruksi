@@ -390,15 +390,35 @@
 }
 
 @media only screen and (max-width: 767px) {
+
+    /* Flip layout: Title+Breadcrumb first, then Banner Krakatau */
+    .banner-top-section .outer-container {
+        display: flex;
+        flex-direction: column-reverse;
+        padding-left: 0;
+    }
+
+    .banner-top-section .based-content {
+        position: relative;
+        width: 100%;
+        border-right: none;
+        padding-right: 0;
+    }
+
+    .banner-top-section .inner-box {
+        padding: 30px 15px;
+    }
+
     .banner-top-section .inner-box .content-box h1 {
         font-size: 36px;
         line-height: 44px;
         text-align: center;
+        margin-bottom: 11px;
     }
 
     .banner-top-section .inner-box .content-box .bread-crumb {
         justify-content: center;
-        margin-bottom: 30px;
+        margin-bottom: 0;
     }
 }
 
