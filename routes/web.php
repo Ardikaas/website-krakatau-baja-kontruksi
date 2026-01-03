@@ -25,3 +25,7 @@ Route::get('/admin/landingEdit', function () {
 Route::get('/admin/newsEdit', function () {
     return view('admin.adminNewsView');
 })->name('admin.adminNewsViews');
+
+Route::get('/admin/addNews', function () {
+    return view('admin.adminNewsAdd');
+})->name('admin.adminNewsAdd');
