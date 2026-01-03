@@ -29,3 +29,11 @@ Route::get('/admin/newsEdit', function () {
 Route::get('/admin/addNews', function () {
     return view('admin.adminNewsAdd');
 })->name('admin.adminNewsAdd');
+
+Route::get('/admin/specificationsEdit', function () {
+    return view('admin.adminSpecificationView');
+})->name('admin.adminSpecificationView');
+
+Route::get('/admin/addSpecifications', function () {
+    return view('admin.adminSpecificationAdd');
+})->name('admin.adminSpecificationAdd');

@@ -59,6 +59,10 @@
     margin-bottom: 20px;
 }
 
+.news-editor-upload:hover {
+    border-color: #00a1d1;
+}
+
 .news-editor-upload-inner {
     display: flex;
     flex-direction: column;
