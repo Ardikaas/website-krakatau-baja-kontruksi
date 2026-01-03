@@ -1,0 +1,226 @@
+/* ===============================
+   RESET & BASE
+================================ */
+.admin-page {
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, sans-serif;
+    background-color: #ffffff;
+    color: #0d202f;
+    min-height: 100vh;
+}
+
+/* ===============================
+   LAYOUT
+================================ */
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.admin-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.admin-content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* ===============================
+   ADMIN SIDEBAR
+================================ */
+.admin-sidebar {
+    width: 280px;
+    min-height: 100vh;
+    background-color: #ffffff;
+    border-right: 1px solid #00000033;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    flex-shrink: 0;
+}
+
+/* Logo */
+.admin-sidebar-menu-header {
+    padding: 0 24px 32px;
+}
+
+.admin-sidebar__logo {
+    width: 150px;
+    height: auto;
+}
+
+/* Menu */
+.admin-sidebar-nav-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-sidebar .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 24px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.admin-sidebar .menu-item:hover {
+    background-color: #f8f9fa;
+}
+
+.admin-sidebar .menu-item.active {
+    background-color: #e6f7ff;
+}
+
+.admin-sidebar .menu-item.active .menu-text {
+    color: #00a1d1;
+}
+
+/* Icon & text */
+.admin-sidebar .menu-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.admin-sidebar .menu-text {
+    font-size: 14px;
+    color: #66696bb2;
+}
+
+/* Sign out */
+.sidebar-menu-btn-signout {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+/* ===============================
+   RESPONSIVE SIDEBAR (MOBILE)
+================================ */
+@media (max-width: 1023px) {
+    .admin-sidebar {
+        position: fixed;
+        left: -280px;
+        top: 0;
+        z-index: 1000;
+        transition: left 0.3s ease;
+    }
+
+    .admin-sidebar.is-open {
+        left: 0;
+    }
+}
+
+/* ===============================
+   TOPBAR
+================================ */
+.admin-topbar {
+    height: 64px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #00000033;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+}
+
+.admin-topbar-left,
+.admin-topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Toggle */
+.admin-topbar-toggle {
+    background-color: #00a1d1;
+    color: #ffffff;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Search */
+.admin-topbar-search {
+    display: none;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #66696bb2;
+}
+
+.admin-topbar-search img {
+    width: 18px;
+    height: 18px;
+}
+
+/* Divider */
+.admin-topbar-divider {
+    width: 1px;
+    height: 32px;
+    background-color: #00000033;
+}
+
+/* User */
+.admin-topbar-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #66696b;
+}
+
+.admin-topbar-user img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (min-width: 768px) {
+    .admin-content {
+        padding: 24px;
+    }
+
+    .admin-topbar-search {
+        display: flex;
+    }
+}
+
+@media (min-width: 1024px) {
+    .admin-sidebar {
+        position: relative;
+    }
+
+    .admin-topbar-toggle {
+        display: none;
+    }
+
+    .admin-content {
+        padding: 32px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .admin-content {
+        padding: 40px;
+    }
+}
+
+/* ===============================
+   ACCESSIBILITY
+================================ */
+.admin-sidebar-nav-menu .menu-item:focus {
+    outline: 2px solid #00a1d1;
+    outline-offset: 2px;
+}

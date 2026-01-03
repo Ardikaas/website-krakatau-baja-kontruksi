@@ -18,3 +18,7 @@ Route::get('/news/{id}', function ($id) {
 Route::get('/admin/landingEdit', function () {
     return view('admin.adminLanding');
 })->name('admin.landingEdit');
+
+Route::get('/admin/newsManager', function () {
+    return view('admin.adminNewsView');
+})->name('admin.adminNewsView');

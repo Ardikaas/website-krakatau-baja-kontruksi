@@ -1,0 +1,174 @@
+/* ===============================
+   NEWS MANAGEMENT
+================================ */
+.admin-news-management {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Page header */
+.anm-header {
+    margin-bottom: 8px;
+}
+
+.anm-page-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0d202f;
+}
+
+/* Grid wrapper */
+.anm-grid {
+    background: #ffffff;
+    border: 1px solid #00000033;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Grid header */
+.anm-grid-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.anm-grid-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #0d202f;
+}
+
+/* Add button */
+.anm-add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #00a1d1;
+    color: #ffffff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.anm-add-btn:hover {
+    background-color: #008db8;
+}
+
+.anm-add-icon {
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* ===============================
+   CARD GRID
+================================ */
+.anm-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* Card */
+.anm-card {
+    background-color: #ffffff;
+    border: 1px solid #00000033;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: box-shadow 0.2s ease;
+}
+
+.anm-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Card texts */
+.anm-card-label,
+.anm-category-label {
+    font-size: 12px;
+    color: #66696bb2;
+}
+
+.anm-card-title {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #0d202f;
+}
+
+/* Image */
+.anm-card-image {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Content */
+.anm-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Category */
+.anm-card-category {
+    font-size: 14px;
+    font-weight: 500;
+    color: #0d202f;
+}
+
+/* Footer */
+.anm-card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+/* Author */
+.anm-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.anm-author-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.anm-author-name {
+    font-size: 13px;
+    color: #0d202f;
+}
+
+/* Date (now below) */
+.anm-date {
+    font-size: 12px;
+    color: #66696bb2;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (min-width: 768px) {
+    .anm-grid {
+        padding: 24px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .anm-card-grid {
+        gap: 24px;
+    }
+}
