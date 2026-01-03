@@ -6,10 +6,13 @@
 }
 
 .admin-landing-page {
-    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        sans-serif;
     background-color: #ffffff;
     color: #0d202f;
     line-height: 1.5;
+    margin-left: 280px;
+    margin-top: 74px;
 }
 
 /* Layout components */
