@@ -1,0 +1,197 @@
+/* ===============================
+   ADMIN ADD SPECIFICATIONS
+================================ */
+.admin-add-specifications {
+    margin-left: 280px;
+    margin-top: 74px;
+    padding: 40px;
+    font-family: "Inter", sans-serif;
+    background: #fff;
+    min-height: 100vh;
+}
+
+/* HEADER */
+.admin-add-specifications .page-header h1 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 80px;
+}
+
+/* SECTION */
+.admin-add-specifications .spec-section {
+    margin-bottom: 48px;
+}
+
+.admin-add-specifications .section-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1f2937;
+}
+
+/* BASIC INFO */
+.admin-add-specifications .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.admin-add-specifications .info-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-add-specifications .info-group label {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 6px;
+}
+
+.admin-add-specifications .info-group input {
+    height: 44px;
+    margin-bottom: 16px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    font-size: 14px;
+}
+
+.admin-add-specifications .info-group input:focus {
+    border-color: #00a1d1;
+    box-shadow: 0 0 0 2px rgba(0, 161, 209, 0.12);
+    outline: none;
+}
+
+.admin-add-specifications input::placeholder {
+    color: #9ca3af;
+}
+
+/* UPLOAD */
+.admin-add-specifications .upload-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.admin-add-specifications .upload-box {
+    height: 220px;
+    border: 4px dashed #d1d5db;
+    border-radius: 16px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.admin-add-specifications .upload-box.small {
+    min-width: 220px;
+    height: auto;
+    padding: 60px 20px;
+}
+
+.admin-add-specifications .upload-box:hover {
+    border-color: #00a1d1;
+}
+
+.admin-add-specifications .upload-box img {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 16px;
+}
+
+.admin-add-specifications .upload-box p {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.admin-add-specifications .upload-box span {
+    color: #00a1d1;
+}
+
+.admin-add-specifications .helper-text {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 10px;
+}
+
+/* TABLE */
+.admin-add-specifications .table-wrap {
+    display: flex;
+    gap: 20px;
+}
+
+.admin-add-specifications .file-list {
+    flex: 1;
+}
+
+.admin-add-specifications .file-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border-radius: 14px;
+    box-shadow: 0 0 5px #00000019;
+}
+
+.admin-add-specifications .file-item span {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.admin-add-specifications .file-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.admin-add-specifications .file-actions img {
+    width: 20px;
+    cursor: pointer;
+}
+
+/* ACTIONS */
+.admin-add-specifications .form-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.admin-add-specifications .btn-cancel {
+    background: none;
+    border: none;
+    color: #ff3131;
+    cursor: pointer;
+}
+
+.admin-add-specifications .btn-primary {
+    background: #66696b;
+    color: #fff;
+    border-radius: 14px;
+    padding: 10px 22px;
+    border: none;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .admin-add-specifications .info-grid,
+    .admin-add-specifications .upload-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .admin-add-specifications .upload-grid {
+        gap: 10px;
+    }
+
+    .table-wrap {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-add-specifications {
+        margin-left: 0;
+        padding: 32px;
+    }
+}

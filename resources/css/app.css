@@ -30,6 +30,8 @@
 @import "./adminLanding.css";
 @import "./adminNewsView.css";
 @import "./adminNewsAdd.css";
+@import "./adminSpecificationsView.css";
+@import "./adminSpecificationsAdd.css";
 
 /*Responsive in the last for gak nimpa*/
 @import "./responsive.css";
