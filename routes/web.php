@@ -21,3 +21,11 @@ Route::get('/news/{id}', function ($id) {
 Route::get('/admin/landingEdit', function () {
     return view('admin.adminLanding');
 })->name('admin.landingEdit');
+
+Route::get('/admin/newsEdit', function () {
+    return view('admin.adminNewsView');
+})->name('admin.adminNewsViews');
+
+Route::get('/admin/addNews', function () {
+    return view('admin.adminNewsAdd');
+})->name('admin.adminNewsAdd');
