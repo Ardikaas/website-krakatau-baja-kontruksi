@@ -28,6 +28,8 @@
 /* Admin styles */
 @import "./sidebarAdmin.css";
 @import "./adminLanding.css";
+@import "./adminNewsView.css";
+@import "./adminNewsAdd.css";
 
 /*Responsive in the last for gak nimpa*/
 @import "./responsive.css";
