@@ -6,10 +6,12 @@
 }
 
 .admin-landing-page {
-    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        sans-serif;
     background-color: #ffffff;
     color: #0d202f;
     line-height: 1.5;
+    margin-top: 74px;
 }
 
 /* Layout components */
@@ -525,6 +527,9 @@
 }
 
 @media (min-width: 768px) {
+    .admin-landing-page {
+        margin-left: 280px;
+    }
     .admin-landing-page .upload-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
@@ -599,6 +604,12 @@
 
     .admin-landing-page .main-content {
         padding: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-landing-page .page-title {
+        text-align: start;
     }
 }
 

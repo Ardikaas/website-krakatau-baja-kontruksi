@@ -91,3 +91,9 @@
         display: none !important;
     }
 }
+
+@media only screen and (max-width: 2000px) {
+    .right-side-menu {
+        transform: translateY(180px);
+    }
+}

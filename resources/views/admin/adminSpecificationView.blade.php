@@ -14,7 +14,7 @@
         </div>
 
         <div class="spec-list">
-          <!-- Card -->
+          {{-- Card 1 --}}
           <div class="spec-card">
             <div class="spec-field">
               <span class="label">Title</span>
@@ -43,6 +43,8 @@
               <div class="value">ASTM A 36, JIS G 3101</div>
             </div>
           </div>
+
+          {{-- Card 2 --}}
           <div class="spec-card">
             <div class="spec-field">
               <span class="label">Title</span>
@@ -71,6 +73,8 @@
               <div class="value">ASTM A 36, JIS G 3101</div>
             </div>
           </div>
+
+          {{-- Card 3 --}}
           <div class="spec-card">
             <div class="spec-field">
               <span class="label">Title</span>
@@ -99,6 +103,38 @@
               <div class="value">ASTM A 36, JIS G 3101</div>
             </div>
           </div>
+
+          {{-- Card 4 --}}
+          <div class="spec-card">
+            <div class="spec-field">
+              <span class="label">Title</span>
+              <div class="value title">Equal Angles</div>
+            </div>
+
+            <div class="image-group">
+              <img src="https://placehold.co/135x135" alt="" />
+              <div class="image-overlay">
+                <span>1+</span>
+              </div>
+            </div>
+
+            <div class="spec-field">
+              <span class="label">Sizing</span>
+              <div class="value">40 x 40 ~ 200 x 200</div>
+            </div>
+
+            <div class="spec-field">
+              <span class="label">Standardization</span>
+              <div class="value">SNI 07-0054-2006</div>
+            </div>
+
+            <div class="spec-field">
+              <span class="label">Standardization Equivalent</span>
+              <div class="value">ASTM A 36, JIS G 3101</div>
+            </div>
+          </div>
+
+
         </div>       
       </div>
     </div>
