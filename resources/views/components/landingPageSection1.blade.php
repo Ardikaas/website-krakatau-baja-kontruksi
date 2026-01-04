@@ -25,24 +25,26 @@
 
         <div class="inner-box">
             <div class="content-box">
+                
+                {{-- HERO (HOME) --}}
+                @if($type === 'hero')
                 <div class="video-box">
                     <div class="bg-color"></div>
                     <div class="video-bg"></div>
                     <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption="" target="_blank"><i class="flaticon-play-button"></i></a>
                 </div>
-                @php
-                    [$first, $second, $third] = explode('|', $title);
-                @endphp
-                {{-- HERO (HOME) --}}
-                @if($type === 'hero')
-                <h2>
-                    {{ $first }} <br> <span>{{ $second }}</span>{{ $third }}
-                </h2>
+                    @php
+                        [$first, $second, $third] = explode('|', $title);
+                    @endphp
+                    <h2>
+                        {{ $first }} <br> <span>{{ $second }}</span>{{ $third }}
+                    </h2>
                 @endif
 
-                <!-- {{-- PAGE TITLE (ABOUT, CONTACT, DLL) --}}
+                {{-- PAGE TITLE (NEWS, ABOUT, CONTACT, DLL) --}}
                 @if($type === 'page')
-                    <h1>{{ $title }}</h1>
+                    <h2>{{ $title }}</h2>
+                    @if(!empty($breadcrumb))
                     <ul class="bread-crumb">
                         @foreach($breadcrumb as $item)
                             <li>
@@ -58,7 +60,8 @@
                             @endif
                         @endforeach
                     </ul>
-                @endif -->
+                    @endif
+                @endif
 
             </div>
         </div>

@@ -10,13 +10,11 @@
         "Noto Color Emoji";
 } */
 
-/* Footer component styles */
+/* Import component styles */
 @import "./preloader.css";
 @import "./sidebarpopup.css";
 @import "./mobilemenu.css";
 @import "./header.css";
-@import "./responsive.css";
-/* Import component styles */
 @import "./footer.css";
 @import "./landingPageSection4,5.css";
 @import "./landingPageSection1.css";
@@ -26,6 +24,14 @@
 @import "./landingPageSection8.css";
 @import "./landingPageSection9.css";
 @import "./landingPageSection10.css";
-@import "./adminLanding.css";
 
+/* Admin styles */
+@import "./sidebarAdmin.css";
+@import "./adminLanding.css";
+@import "./adminNewsView.css";
+@import "./adminNewsAdd.css";
 @import "./adminSpecificationView.css";
+@import "./adminSpecificationsAdd.css";
+
+/*Responsive in the last for gak nimpa*/
+@import "./responsive.css";
