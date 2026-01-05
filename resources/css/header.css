@@ -722,17 +722,6 @@
   color: var(--theme-color) !important;
 }
 
-.main-menu .navigation > li.dropdown > a:before{
-  position: absolute;
-  content: "\f102";
-  font-family: flaticon_metallic;
-  top: 16px;
-  right: -4px;
-  font-size: 22px;
-  color: #a4a9ae;
-  transition: all 500ms ease;
-}
-
 .main-menu .navigation > li.current > a:before,
 .main-menu .navigation > li:hover > a:before{
   color: var(--theme-color);

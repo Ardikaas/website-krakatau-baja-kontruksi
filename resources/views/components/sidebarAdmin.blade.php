@@ -6,12 +6,12 @@
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
       <nav class="sidebar-menu">
-        <a href="#" class="menu-item active">
+        <a href="/admin" class="menu-item active">
           <img src="{{ asset('images/icons/img_home_3_streamline.svg') }}" class="menu-icon">
           <span class="menu-text">Landing Content</span>
         </a>
 
-        <a href="#" class="menu-item">
+        <a href="/admin/specificationsEdit" class="menu-item">
           <img src="{{ asset('images/icons/img_bullet_list_streamline.svg') }}" class="menu-icon">
           <span class="menu-text">Specifications</span>
         </a>
@@ -21,13 +21,13 @@
           <span class="menu-text">Product Management</span>
         </a>
 
-        <a href="#" class="menu-item">
+        <a href="/admin/newsEdit" class="menu-item">
           <img src="{{ asset('images/icons/img_news_paper_streamline.svg') }}" class="menu-icon">
           <span class="menu-text">News Management</span>
         </a>
 
         <div class="sidebar-bottom">
-          <a href="#" class="menu-item">
+          <a href="/" class="menu-item">
             <img src="{{ asset('images/icons/img_logout_1_streamline.svg') }}" class="menu-icon">
             <span class="menu-text logout">Sign Out</span>
           </a>
@@ -39,21 +39,21 @@
     <div class="main-area">
       <header class="header">
         <img src="{{ asset('images/logo-3.png') }}" alt="Krakatau Logo" class="sidebar-logo">
-        
+
         <div class="fitur-header">
 
-            <div class="search-container">
-                <img src="{{ asset('images/icons/img_magnifying_glass.svg') }}" class="search-icon">
-                <span class="search-text">Search for menu</span>   
-            </div>        
-            
-            <div class="user-section">
-                <span class="divider-line"></span>
-                <div class="user-info">
-                    <img src="{{ asset('images/icons/icon-1.png') }}" class="user-avatar">
-                    <span class="user-name">Admin User</span>
-                </div>
+          <div class="search-container">
+            <img src="{{ asset('images/icons/img_magnifying_glass.svg') }}" class="search-icon">
+            <span class="search-text">Search for menu</span>
+          </div>
+
+          <div class="user-section">
+            <span class="divider-line"></span>
+            <div class="user-info">
+              <img src="{{ asset('images/icons/icon-1.png') }}" class="user-avatar">
+              <span class="user-name">Admin User</span>
             </div>
+          </div>
         </div>
       </header>
     </div>
