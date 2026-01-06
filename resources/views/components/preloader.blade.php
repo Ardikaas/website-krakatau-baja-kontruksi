@@ -34,4 +34,27 @@
                 </div>
             </div>
         </div>
+        <script>
+            // Fallback preloader hide - runs immediately when DOM is ready
+            (function() {
+                function hidePreloader() {
+                    var loader = document.querySelector('.loader-wrap');
+                    if (loader) {
+                        setTimeout(function() {
+                            loader.style.transition = 'opacity 0.5s ease';
+                            loader.style.opacity = '0';
+                            setTimeout(function() {
+                                loader.style.display = 'none';
+                            }, 500);
+                        }, 1000);
+                    }
+                }
+                
+                if (document.readyState === 'complete') {
+                    hidePreloader();
+                } else {
+                    window.addEventListener('load', hidePreloader);
+                }
+            })();
+        </script>
         <!-- preloader end -->

@@ -17,7 +17,8 @@
                             <div class="navbar-collapse show clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
                                     <li class="dropdown"><a href="/">Home</a></li>
-                                    <li class="dropdown"><a href="#">About</a></li>
+                                    <li class="dropdown"><a href="{{ route('about') }}">About</a></li>
+
                                     <li class="dropdown"><a href="#">Services</a>
                                         <ul>
                                             <li><a href="service.html">Services Style 01</a></li>

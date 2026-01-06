@@ -34,6 +34,8 @@
 @import "./adminSpecificationsAdd.css";
 
 /*Responsive in the last for gak nimpa*/
+@import "./aboutUs.css";
+@import "./responsive.css";
 @import "./responsive.css";
 
 @import "./whistleBlowingSystem.css";
