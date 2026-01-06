@@ -17,6 +17,11 @@ Route::get('/news/{id}', function ($id) {
     return view('front.newsDetail');
 })->name('news.detail');
 
+Route::get('/about', function () {
+    return view('front.aboutus');
+})->name('about');
+
+
 Route::get('/admin/newsEdit', function () {
     return view('admin.adminNewsView');
 })->name('admin.adminNewsViews');

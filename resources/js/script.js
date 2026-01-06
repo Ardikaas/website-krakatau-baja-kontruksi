@@ -8,11 +8,17 @@
         }
     }
 
+    // Handle preloader for Vite modules 
+    if (document.readyState === 'complete') {
+        handlePreloader();
+    }
+
     if ($(".preloader-close").length) {
         $(".preloader-close").on("click", function () {
             $(".loader-wrap").delay(200).fadeOut(500);
         });
     }
+
 
     //Update Header Style and Scroll to Top
     function headerStyle() {
@@ -247,7 +253,7 @@
                             queue: false,
                         },
                     });
-                } catch (err) {}
+                } catch (err) { }
                 return false;
             });
 
@@ -385,8 +391,8 @@
     }
 
     /*	=========================================================================
-	When document is on ready, do
-	========================================================================== */
+    When document is on ready, do
+    ========================================================================== */
 
     jQuery(document).on("ready", function () {
         (function ($) {
