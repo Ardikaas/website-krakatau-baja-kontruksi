@@ -3,7 +3,7 @@
 .sidebar-popup {
   position: fixed;
   left: -100%;
-  top: 91px;
+  top: 88px;
   width: 425px;
   height: 100%;
   z-index: 99999;

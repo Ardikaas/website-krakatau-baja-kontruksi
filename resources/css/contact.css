@@ -1,0 +1,304 @@
+.contact-style-two{
+  position: relative;
+  padding: 120px 0px 90px 0px;
+}
+
+.contact-style-two .tab-btn-box{
+  position: relative;
+  display: block;
+  padding-right: 150px;
+  margin-bottom: 42px;
+}
+
+.contact-style-two .tab-btn-box .text{
+  position: absolute;
+  top: 16px;
+  right: 0px;
+  display: block;
+  font-size: 17px;
+  color: #a5aaaf;
+}
+
+.contact-style-two .tab-btn-box .owl-nav{
+  position: absolute;
+  top: 15px;
+  right: -35px;
+}
+
+.contact-style-two .tab-btn-box .tab-btn{
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.contact-style-two .tab-btn-box .tab-btn::before{
+  position: absolute;
+  content: '';
+  background-color: #e4e9ec;
+  width: 1px;
+  height: 50px;
+  top: 5px;
+  left: -30px;
+}
+
+.contact-style-two .tab-btn-box .tab-btn .image-box{
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  min-width: 50px;
+}
+
+.contact-style-two .tab-btn-box .tab-btn .image-box img{
+  width: 100%;
+  border-radius: 50%;
+}
+
+.contact-style-two .tab-btn-box .tab-btn.active-btn .image-box,
+.contact-style-two .tab-btn-box .tab-btn.active-btn .image-box img{
+  border-radius: 0%;
+}
+
+.contact-style-two .tab-btn-box .tab-btn h3{
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.contact-style-two .tab-btn-box .tab-btn.active-btn h3{
+  color: var(--theme-color);
+}
+
+.contact-style-two .tab-btn-box .tab-btn span{
+  position: relative;
+  display: block;
+}
+
+.contact-style-two .tab-btn-box .owl-nav button{
+  position: relative;
+  display: inline-block;
+  font-size: 30px;
+  color: #a5aaaf;
+  cursor: pointer;
+  margin: 0px 5px;
+  transition: all 500ms ease;
+}
+
+.contact-style-two .tab-btn-box .owl-nav button.owl-prev span{
+  position: relative;
+  display: inline-block;
+  transform: rotate(180deg);
+}
+
+.contact-style-two .tab-btn-box .owl-nav button:hover{
+  color: var(--theme-color);
+}
+
+.contact-style-two .tab-btn-box .owl-nav button.owl-next::before{
+  position: absolute;
+  content: '';
+  background-color: #ebe9ef;
+  width: 1px;
+  height: 25px;
+  left: -5px;
+  top: 2px;
+}
+
+.info-block-one .inner-box{
+  position: relative;
+  display: block;
+  padding: 23px 20px 30px 20px;
+  margin-bottom: 30px;
+}
+
+.info-block-one .inner-box .shape{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.info-block-one .inner-box .title-box{
+  position: relative;
+  display: block;
+  margin-bottom: 22px;
+  padding-left: 25px;
+}
+
+.info-block-one .inner-box .title-box::before{
+  position: absolute;
+  content: '';
+  background-color: var(--theme-color);
+  width: 3px;
+  height: calc(100% - 14px);
+  left: 0px;
+  top: 7px;
+}
+
+.info-block-one .inner-box .title-box::after{
+  position: absolute;
+  content: '';
+  background-color: var(--theme-color);
+  width: 1px;
+  height: 25px;
+  left: 6px;
+  top: 7px;
+}
+
+.info-block-one .inner-box .title-box h3{
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 6px;
+}
+
+.info-block-one .inner-box .title-box h6{
+  font-size: 15px;
+  line-height: 22px;
+  color: #66696b;
+  text-transform: uppercase;
+}
+
+.info-block-one .inner-box .text-box{
+  position: relative;
+  display: block;
+  background-color: #fff;
+  text-align: center;
+  padding: 12px 20px;
+}
+
+.info-block-one .inner-box  .text-box p a{
+  font-family: var(--text-font);
+  color: var(--text-color);
+}
+
+.info-block-one .inner-box  .text-box p a:hover{
+  color: var(--theme-color);
+}
+
+.info-block-one .inner-box  .text-box p span{
+  color: #a5aaaf;
+}
+
+
+/** contact-style-three **/
+
+.contact-style-three{
+  position: relative;
+  padding-bottom: 120px;
+}
+
+.contact-style-three .map-inner{
+  position: relative;
+  height: 712px;
+}
+
+.contact-style-three .map-inner iframe{
+  position: relative;
+  width: 100%;
+  height: 712px;
+}
+
+.contact-style-three .map-inner .map-content{
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  width: 270px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.12);
+  padding: 22px 20px;
+}
+
+.contact-style-three .map-inner .map-content h3{
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 6px;
+}
+
+.contact-style-three .map-inner .map-content::before{
+  position: absolute;
+  content: '';
+  background-color: #fff;
+  width: 25px;
+  height: 15px;
+  left: 50%;
+  margin-left: -12px;
+  bottom: -15px;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+.contact-style-three .content-box{
+  position: relative;
+  display: block;
+  border: 1px solid #e4e9ec;
+  padding: 42px 40px 49px 40px;
+}
+
+.contact-style-three .content-box .form-inner form{
+  position: relative;
+  margin: 0px 5px;
+}
+
+.contact-style-three .content-box .form-inner .single-column{
+  padding: 0px 10px;
+}
+
+.contact-style-three .content-box .form-inner .form-group{
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.contact-style-three .content-box .form-inner .form-group .icon-box{
+  position: absolute;
+  left: 19px;
+  top: 12px;
+  z-index: 1;
+}
+
+.contact-style-three .content-box .form-inner .form-group .select-box{
+  min-height: 60px;
+}
+
+.contact-style-three .content-box .form-inner .form-group input[type='text'],
+.contact-style-three .content-box .form-inner .form-group input[type='email'],
+.contact-style-three .content-box .form-inner .form-group textarea,
+.contact-style-three .content-box .form-inner .form-group .nice-select{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 60px;
+  border: 1px solid #ebe9ef;
+  font-size: 17px;
+  color: var(--text-color);
+  padding: 10px 20px 10px 50px;
+  transition: all 500ms ease;
+}
+
+.contact-style-three .content-box .form-inner .form-group input:focus,
+.contact-style-three .content-box .form-inner .form-group textarea:focus{
+  border-color: var(--theme-color);
+}
+
+.contact-style-three .content-box .form-inner .form-group textarea{
+  height: 107px;
+  resize: none;
+}
+
+.contact-style-three .content-box .form-inner .form-group .nice-select::before{
+  top: 15px;
+  right: 20px;
+}
+
+.pricing-section.alternat-3{
+  background-color: #fff;
+}
+
+.pricing-section.alternat-3 .tabs-box .tab-btns li{
+  background-color: #f0f4f8;
+}

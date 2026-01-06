@@ -1,6 +1,6 @@
 @extends('layouts.front')
 
-@section('title', 'Home')
+@section('title', 'Home - Krakatau Baja Konstruksi')
 @section('meta_description', 'Official website of PT Krakatau Baja Konstruksi')
 
 @section('content')
