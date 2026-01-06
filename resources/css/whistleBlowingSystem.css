@@ -1,0 +1,271 @@
+/* CSS Variables (inherit from app.css/footer.css) */
+:root {
+    --theme-color: #00a1d1;
+    --secondary-color: #00346a;
+    --text-color: #66696b;
+    --title-color: #0d202f;
+}
+
+.whistle-blowing-system {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+    font-family: Inter, system-ui, sans-serif;
+    padding: 20px 20px 50px 20px;
+    margin-top: 40px;
+}
+
+.whistle-blowing-system .main-container {
+    width: 100%;
+    max-width: 1400px;
+    gap: 50px;
+}
+
+.whistle-blowing-system .wbs-header {
+    text-align: center;
+    padding: 0 300px;
+}
+.wbs-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.wbs-header p {
+    font-size: 13px;
+    color: var(--text-color);
+    opacity: 0.7;
+    line-height: 1.6;
+}
+
+.whistle-blowing-system hr {
+    border: none;
+    border-top: 1px solid var(--text-color);
+    margin: 50px 300px;
+}
+
+.whistle-blowing-system .report-section {
+    margin: 0 300px 40px 300px;
+    gap: 20px;
+}
+
+.whistle-blowing-system .report-section h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.whistle-blowing-system .section-note {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-color);
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+.whistle-blowing-system .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.whistle-blowing-system .form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.whistle-blowing-system .form-row .form-group {
+    flex: 1;
+}
+
+.whistle-blowing-system label {
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.whistle-blowing-system input,
+.whistle-blowing-system textarea,
+.whistle-blowing-system select {
+    background: transparent;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 10px 14px;
+    color: #fff;
+}
+
+.whistle-blowing-system input:focus,
+.whistle-blowing-system textarea:focus,
+.whistle-blowing-system select:focus {
+    outline: none;
+    border-color: #777;
+}
+
+.whistle-blowing-system .upload-area {
+    height: 165px;
+    border: 2px dashed #444;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.whistle-blowing-system .upload-area:hover {
+    border-color: #00a1d1;
+}
+
+.whistle-blowing-system .upload-area p {
+    font-size: 13px;
+}
+
+.whistle-blowing-system .upload-area span {
+    color: #00a1d1;
+}
+
+.whistle-blowing-system .upload-area input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.whistle-blowing-system .text-danger {
+    color: #ff4d4d;
+    font-size: 12px;
+}
+
+.whistle-blowing-system .report-note {
+    font-size: 12px;
+    color: #aaa;
+    line-height: 1.6;
+    padding: 0 300px;
+}
+
+.whistle-blowing-system .submit-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding: 0 300px;
+}
+
+.whistle-blowing-system button {
+    background: var(--text-color);
+    color: #e0e0e0;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.whistle-blowing-system button:hover {
+    background: var(--title-color);
+}
+
+/* Responsive */
+@media (max-width: 1440px) {
+    .whistle-blowing-system .wbs-header {
+        padding: 0 200px;
+    }
+
+    .whistle-blowing-system hr {
+        margin: 40px 200px;
+    }
+
+    .whistle-blowing-system .report-section {
+        margin: 0 200px 40px;
+    }
+
+    .whistle-blowing-system .report-note,
+    .whistle-blowing-system .submit-wrapper {
+        padding: 0 200px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .whistle-blowing-system .wbs-header {
+        padding: 0 120px;
+    }
+
+    .whistle-blowing-system hr {
+        margin: 40px 120px;
+    }
+
+    .whistle-blowing-system .report-section {
+        margin: 0 120px 40px;
+    }
+
+    .whistle-blowing-system .report-note,
+    .whistle-blowing-system .submit-wrapper {
+        padding: 0 120px;
+    }
+}
+
+@media (max-width: 992px) {
+    .whistle-blowing-system .wbs-header {
+        padding: 0 40px;
+    }
+
+    .whistle-blowing-system hr {
+        margin: 30px 40px;
+    }
+
+    .whistle-blowing-system .report-section {
+        margin: 0 40px 32px;
+    }
+
+    .whistle-blowing-system .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .whistle-blowing-system .report-note,
+    .whistle-blowing-system .submit-wrapper {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .whistle-blowing-system {
+        padding: 20px 10px 40px;
+    }
+    .whistle-blowing-system hr {
+        display: none;
+    }
+
+    .whistle-blowing-system .wbs-header h1 {
+        font-size: 20px;
+    }
+
+    .whistle-blowing-system .wbs-header p {
+        font-size: 12px;
+    }
+
+    .whistle-blowing-system .wbs-header,
+    .whistle-blowing-system hr,
+    .whistle-blowing-system .report-section,
+    .whistle-blowing-system .report-note,
+    .whistle-blowing-system .submit-wrapper {
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .whistle-blowing-system .report-section {
+        margin-bottom: 28px;
+    }
+
+    .whistle-blowing-system button {
+        width: 100%;
+    }
+}

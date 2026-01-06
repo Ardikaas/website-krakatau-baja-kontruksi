@@ -2,8 +2,6 @@
 
 namespace App\View\Components;
 
-use Closure;
-use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class Title extends Component
@@ -11,15 +9,18 @@ class Title extends Component
     public string $type;
     public string $title;
     public array $breadcrumb;
+    public ?string $imagePath;
 
     public function __construct(
-        $type = 'hero',
-        $title = '',
-        $breadcrumb = []
+        string $type = 'hero',
+        string $title = '',
+        array $breadcrumb = [],
+        ?string $imagePath = null
     ) {
         $this->type = $type;
         $this->title = $title;
         $this->breadcrumb = $breadcrumb;
+        $this->imagePath = $imagePath;
     }
 
     public function render()

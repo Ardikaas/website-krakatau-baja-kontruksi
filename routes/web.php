@@ -8,6 +8,11 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/admin', function () {
     return view('admin.adminLanding');
 })->name('admin.landingEdit');
+
+Route::get('/whistleBlowingSystem', function () {
+    return view('front.whistleBlowingSystem');
+})->name('wbs');
+
 // route news aseli 
 Route::get('/news', function () {
     return view('front.news');
