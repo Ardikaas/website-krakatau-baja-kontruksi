@@ -1027,17 +1027,36 @@
     color: var(--theme-color);
 }
 
-.features-section .title-box .rotate-text .curved-circle {
+.features-section .title-box .rotate-text .curved-circle-svg {
     position: absolute;
-    left: 60px;
-    top: 5px;
-    font-size: 14px;
-    line-height: 20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    animation: rotateText 15s linear infinite;
+}
+
+.features-section .title-box .rotate-text .curved-circle-svg text {
+    font-size: 23px;
     font-family: var(--title-font);
-    color: #fff;
+    fill: #fff;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: -1px;
+    letter-spacing: 2px;
+}
+
+.features-section .title-box .rotate-text .curved-circle-svg textPath {
+    fill: #fff;
+}
+
+@keyframes rotateText {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .features-section .inner-container {
@@ -1624,19 +1643,41 @@
     }
 
     .features-section .tabs-box .tabs-content {
-        position: relative;
+        position: absolute;
         top: auto;
-        right: auto;
+        bottom: 120px;
+        right: 10px;
         transform: none;
-        margin-top: 30px;
+        margin-top: 0;
+        z-index: 10;
+    }
+
+    .features-section .tabs-box .tabs-content .image-box {
+        width: 130px;
+        height: 130px;
+    }
+
+    .features-section .content-box {
+        position: relative;
     }
 
     .features-section .tab-btns li.active-btn {
-        padding-left: 25px;
+        padding-left: 110px;
     }
 
     .features-section .tab-btns li .icon-box {
-        display: none;
+        width: 80px;
+        font-size: 40px;
+    }
+
+    .features-section .tab-btns li {
+        padding: 30px 0px 25px 20px;
+        padding-right: 140px;
+    }
+
+    .features-section .tab-btns li h4 {
+        font-size: 18px;
+        line-height: 26px;
     }
 }
 
@@ -1663,13 +1704,52 @@
     }
 
     .team-section,
-    .features-section,
     .history-section {
         padding: 62px 0px;
     }
 
+    .features-section {
+        padding-top: 62px;
+    }
+
     .features-section .bg-layer {
         background-position: left center;
+    }
+
+    .features-section .sec-title p {
+        margin-bottom: 20px;
+    }
+
+    .features-section .inner-container .left-content {
+        padding: 30px 20px;
+    }
+
+    .features-section .inner-container .left-content .title-box {
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+
+    .features-section .inner-container .left-content .title-box h3 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .features-section .inner-container .left-content p {
+        margin-bottom: 20px;
+    }
+
+    .features-section .content-box {
+        border-left: none;
+        border-top: 1px solid #e7eaef;
+    }
+
+    .features-section .tab-btns li {
+        padding: 25px 20px;
+    }
+
+    .features-section .tab-btns li h4 {
+        font-size: 18px;
+        line-height: 26px;
     }
 
     .history-section .tab-btn-box .tab-btns {
@@ -1686,6 +1766,16 @@
     }
 }
 
+@media only screen and (max-width: 599px) {
+    .features-section .tabs-box .tabs-content .image-box {
+        width: 200px;
+    }
+
+    .features-section .tabs-box .tabs-content .image-box img {
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 575px) {
     .history-section .tab-btn-box .tab-btns {
         gap: 20px;
@@ -1698,5 +1788,62 @@
 
     .download-section .single-item .text-box {
         gap: 20px;
+    }
+}
+
+@media only screen and (max-width: 499px) {
+    .team-block-one .inner-box .image-box {
+        display: block;
+    }
+
+    .team-block-one .inner-box .image-box .image {
+        margin-bottom: 15px;
+    }
+
+    .features-section .inner-container .left-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .features-section .tabs-box .tabs-content .image-box {
+        width: 100px;
+    }
+
+    .features-section .tab-btns li.active-btn {
+        padding-left: 120px;
+    }
+
+    .features-section .tab-btns li {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .features-section .tab-btns li h4 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .history-section .tab-btn-box .tab-btns {
+        gap: 10px;
+    }
+
+    .company-section .title-column .sec-title {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .about-style-three .image-box {
+        padding: 0px;
+    }
+
+    .about-style-three .image-box .image-1 {
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    .about-style-three .image-box .image-3 {
+        position: relative;
+        bottom: 0px;
+        margin-top: 30px;
     }
 }
