@@ -1,7 +1,7 @@
 
 :root {
-	--theme-color: #f0571a;
-	--secondary-color: #192f42;
+	--theme-color: #00a1d1;
+	--secondary-color: #00346a;
 	--text-color: #66696b;
 	--title-color: #0d202f;
 	--text-font: "Figtree", sans-serif;
@@ -80,6 +80,202 @@ img {
 	.col-sm-12 {
 		flex: 0 0 100%;
 		max-width: 100%;
+	}
+}
+
+/* Download Section */
+.download-section {
+	position: relative;
+	background-color: var(--theme-color) !important;
+	padding: 27px 0px !important;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.download-section .bg-layer {
+	position: absolute !important;
+	top: 0px;
+	right: 0px;
+	width: 50% !important;
+	height: 100% !important;
+	background-color: var(--secondary-color) !important;
+	z-index: 0;
+	display: block !important;
+}
+
+.download-section .auto-container {
+	position: relative;
+	z-index: 1;
+}
+
+.download-section .row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+.download-section .single-column {
+	position: relative;
+	padding-right: 15px;
+	padding-left: 15px;
+	box-sizing: border-box;
+}
+
+.download-section .row>.col-lg-6.single-column {
+	flex: 0 0 50%;
+	max-width: 50%;
+	width: 50%;
+}
+
+@media only screen and (max-width: 991px) {
+
+	.download-section .row>.col-lg-6.single-column,
+	.download-section .row>.col-md-12.single-column {
+		flex: 0 0 100%;
+		max-width: 100%;
+		width: 100%;
+	}
+}
+
+.download-section .single-item {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: transparent !important;
+	padding: 0 !important;
+}
+
+.download-section .single-item.pr_35 {
+	padding-right: 35px;
+}
+
+.download-section .single-item.pl_35 {
+	padding-left: 35px;
+}
+
+.download-section .single-item .text-box {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 40px;
+}
+
+.download-section .single-item .text-box .icon-box {
+	position: relative;
+	display: inline-block;
+	font-size: 40px;
+	color: rgba(255, 255, 255, 0.80);
+}
+
+.download-section .single-item .text-box .icon-box::before {
+	position: absolute;
+	content: '';
+	background-color: rgba(255, 255, 255, 0.30);
+	width: 1px;
+	height: 50px;
+	top: -5px;
+	right: -20px;
+}
+
+.download-section .single-item .text-box h4 {
+	display: block;
+	font-size: 20px;
+	line-height: 28px;
+	color: #fff;
+	margin-bottom: 6px;
+	font-family: var(--title-font);
+	font-weight: 600;
+}
+
+.download-section .single-item .text-box h6 {
+	display: block;
+	font-size: 15px;
+	line-height: 22px;
+	color: #fff;
+	font-weight: 400;
+	text-transform: uppercase;
+	font-family: var(--text-font);
+}
+
+.download-section .single-item button {
+	position: relative;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	line-height: 54px;
+	background-color: #fff;
+	text-align: center;
+	font-size: 20px;
+	color: var(--title-color);
+	transition: all 500ms ease;
+	border: none;
+	cursor: pointer;
+}
+
+.download-section .single-item button:hover {
+	color: var(--theme-color);
+}
+
+/* Responsive styles for download section */
+@media only screen and (max-width: 991px) {
+	.download-section .single-item {
+		padding: 0px !important;
+		margin-bottom: 15px;
+	}
+
+	.download-section .single-column:last-child .single-item {
+		margin-bottom: 0px;
+	}
+
+	.download-section .bg-layer {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.download-section .single-item .text-box {
+		gap: 25px;
+	}
+
+	.download-section .single-item .text-box h4 {
+		font-size: 18px;
+		line-height: 26px;
+	}
+
+	.download-section .single-item .text-box h6 {
+		font-size: 14px;
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.download-section .single-item .text-box {
+		gap: 20px;
+	}
+
+	.download-section .single-item .text-box h4 {
+		font-size: 16px;
+		line-height: 24px;
+	}
+
+	.download-section .single-item .text-box h6 {
+		font-size: 13px;
+	}
+
+	.download-section .single-item .text-box .icon-box {
+		font-size: 30px;
+	}
+
+	.download-section .single-item button {
+		width: 40px;
+		height: 40px;
+		line-height: 44px;
+		font-size: 16px;
+	}
+
+	.download-section .single-item .text-box .icon-box::before {
+		right: -12px;
 	}
 }
 
