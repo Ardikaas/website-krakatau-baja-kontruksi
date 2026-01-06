@@ -1,4 +1,12 @@
-/** banner-section **/
+/* CSS Variables (inherit from app.css/footer.css) */
+:root {
+    --theme-color: #00a1d1;
+    --secondary-color: #00346a;
+    --text-color: #66696b;
+    --title-color: #0d202f;
+    --text-font: "Figtree", sans-serif;
+    --title-font: "Red Rose", serif;
+}
 
 .banner-section {
     position: relative;
@@ -97,6 +105,8 @@
 }
 
 .banner-carousel .content-box h2 {
+    font-family: var(--title-font);
+    font-weight: 600;
     display: block;
     font-size: 36px;
     line-height: 44px;
@@ -131,7 +141,6 @@
 
 .banner-section .banner-carousel .content-box h2 {
     padding-bottom: 30px;
-    font-family: var(--title-font);
 }
 
 .banner-section .banner-carousel .content-box h2::before {
@@ -149,6 +158,8 @@
 }
 
 .banner-carousel .content-box p {
+    font-family: var(--text-font);
+    font-weight: 300;
     margin-bottom: 42px;
     opacity: 0;
     -webkit-transform: translateY(50px);
@@ -199,6 +210,10 @@
 
 .banner-section .banner-carousel .content-box .btn-box {
     padding-left: 100px;
+}
+
+.banner-section .banner-carousel .content-box .btn-box span {
+    font-family: var(--title-font);
 }
 
 .banner-carousel .active .content-box .btn-box {
