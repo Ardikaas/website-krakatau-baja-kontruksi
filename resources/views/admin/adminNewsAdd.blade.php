@@ -38,7 +38,7 @@
                     <button type="button" onclick="format('underline')"><u>U</u></button>
 
                     <button type="button" onclick="format('insertUnorderedList')">bullet list</button>
-                    <button type="button" onclick="format('insertOrderedList')">number lis</button>
+                    <button type="button" onclick="format('insertOrderedList')">number list</button>
                 </div>
 
                 {{-- EDITOR --}}

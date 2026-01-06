@@ -14,12 +14,12 @@
    PAGE HEADER
 ================================ */
 
-.anm-header {
+.admin-news-management .anm-header {
     display: flex;
     flex-direction: column;
 }
 
-.anm-page-title {
+.admin-news-management .anm-page-title {
     font-size: 36px;
     font-weight: 600;
     color: #1f2937;
@@ -30,7 +30,7 @@
    GRID WRAPPER
 ================================ */
 
-.anm-grid {
+.admin-news-management .anm-grid {
     background-color: #ffffff;
 }
 
@@ -38,7 +38,7 @@
    GRID HEADER
 ================================ */
 
-.anm-grid-header {
+.admin-news-management .anm-grid-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -46,7 +46,7 @@
     gap: 16px;
 }
 
-.anm-grid-title {
+.admin-news-management .anm-grid-title {
     font-size: 20px;
     font-weight: 600;
     line-height: 26px;
@@ -57,7 +57,7 @@
    ADD BUTTON
 ================================ */
 
-.anm-add-btn {
+.admin-news-management .anm-add-btn {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -74,11 +74,11 @@
     text-decoration: none;
 }
 
-.anm-add-btn:hover {
+.admin-news-management .anm-add-btn:hover {
     background-color: #0091c1;
 }
 
-.anm-add-icon {
+.admin-news-management .anm-add-icon {
     font-size: 18px;
     line-height: 1;
     margin-top: -4px;
@@ -88,7 +88,7 @@
    CARD GRID
 ================================ */
 
-.anm-card-grid {
+.admin-news-management .anm-card-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -98,7 +98,7 @@
    CARD
 ================================ */
 
-.anm-card {
+.admin-news-management .anm-card {
     border: 1px solid #e5e7eb;
     border-radius: 14px;
     overflow: hidden;
@@ -106,7 +106,7 @@
     transition: box-shadow 0.2s ease;
 }
 
-.anm-card:hover {
+.admin-news-management .anm-card:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
@@ -114,14 +114,14 @@
    CARD HEADER
 ================================ */
 
-.anm-card-label {
+.admin-news-management .anm-card-label {
     font-size: 16px;
     font-weight: 500;
     color: #9ca3af;
     padding: 12px 20px 0;
 }
 
-.anm-card-title {
+.admin-news-management .anm-card-title {
     font-size: 20px;
     font-weight: 600;
     color: #1f2937;
@@ -133,11 +133,11 @@
    IMAGE
 ================================ */
 
-.anm-card-image-wrapper {
+.admin-news-management .anm-card-image-wrapper {
     padding: 0 20px;
 }
 
-.anm-card-image {
+.admin-news-management .anm-card-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -149,17 +149,17 @@
    CARD CONTENT
 ================================ */
 
-.anm-card-content {
+.admin-news-management .anm-card-content {
     padding: 20px;
 }
 
-.anm-category-label {
+.admin-news-management .anm-category-label {
     font-size: 14px;
     color: #9ca3af;
     margin-bottom: 4px;
 }
 
-.anm-card-category {
+.admin-news-management .anm-card-category {
     font-size: 18px;
     font-weight: 500;
     color: #374151;
@@ -170,7 +170,7 @@
    FOOTER
 ================================ */
 
-.anm-card-footer {
+.admin-news-management .anm-card-footer {
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -178,25 +178,25 @@
     padding-top: 10px;
 }
 
-.anm-author {
+.admin-news-management .anm-author {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.anm-author-avatar {
+.admin-news-management .anm-author-avatar {
     width: 30px;
     height: 30px;
     border-radius: 50%;
 }
 
-.anm-author-name {
+.admin-news-management .anm-author-name {
     font-size: 16px;
     font-weight: 500;
     color: #374151;
 }
 
-.anm-date {
+.admin-news-management .anm-date {
     font-size: 12px;
     color: #9ca3af;
     padding-left: 38px;
@@ -212,16 +212,16 @@
         padding: 32px;
     }
 
-    .anm-page-title {
+    .admin-news-management .anm-page-title {
         font-size: 30px;
         margin-bottom: 32px;
     }
 
-    .anm-card-grid {
+    .admin-news-management .anm-card-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .anm-card-title {
+    .admin-news-management .anm-card-title {
         font-size: 18px;
     }
 }
@@ -235,48 +235,48 @@
         padding: 20px;
     }
 
-    .anm-page-title {
+    .admin-news-management .anm-page-title {
         font-size: 24px;
         margin-bottom: 24px;
     }
 
-    .anm-grid-header {
+    .admin-news-management .anm-grid-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
         margin-top: 36px;
     }
 
-    .anm-grid-header h5 {
+    .admin-news-management .anm-grid-header h5 {
         display: none;
     }
 
-    .anm-add-btn {
+    .admin-news-management .anm-add-btn {
         width: 100%;
         justify-content: center;
     }
 
-    .anm-card-grid {
+    .admin-news-management .anm-card-grid {
         grid-template-columns: 1fr;
     }
 
-    .anm-card-label {
+    .admin-news-management .anm-card-label {
         font-size: 14px;
     }
 
-    .anm-card-title {
+    .admin-news-management .anm-card-title {
         font-size: 16px;
     }
 
-    .anm-card-category {
+    .admin-news-management .anm-card-category {
         font-size: 15px;
     }
 
-    .anm-author-name {
+    .admin-news-management .anm-author-name {
         font-size: 14px;
     }
 
-    .sidebar {
+    .admin-news-management .sidebar {
         display: none;
     }
 }
