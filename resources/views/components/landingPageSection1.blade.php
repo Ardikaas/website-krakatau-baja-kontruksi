@@ -1,4 +1,10 @@
 <section class="banner-top-section p_relative">
+    @if(!empty($imagePath))
+        <div
+            class="bg-layer"
+            style="background-image: url('{{ asset($imagePath) }}');"
+        ></div>
+    @endif
     <div class="outer-container">
         <div class="based-content">
             <div class="inner">
