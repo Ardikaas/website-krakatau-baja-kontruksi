@@ -11,7 +11,7 @@
                 <div class="logo-box">
                     <figure class="logo">
                         <a href="{{ url('/') }}">
-                        <img src="{{ asset('images/logo.png') }}" alt="Logo" />
+                        <img src="{{ asset('images/logo-3.png') }}" alt="Logo" />
                         </a>
                     </figure>
                     <h5>Berbasis di <br />Indonesia.</h5>
@@ -37,7 +37,7 @@
                 <div class="video-box">
                     <div class="bg-color"></div>
                     <div class="video-bg"></div>
-                    <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption="" target="_blank"><i class="flaticon-play-button"></i></a>
+                    <a href="https://www.youtube.com/watch?v=zL2bo91eiWw" class="lightbox-image" data-caption="" target="_blank"><i class="flaticon-play-button"></i></a>
                 </div>
                     @php
                         [$first, $second, $third] = explode('|', $title);
