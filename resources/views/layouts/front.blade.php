@@ -13,6 +13,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@300..700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -20,15 +21,30 @@
   <!-- Flaticon -->
   <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
 
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+  <!-- jQuery -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+  
+  <!-- Owl Carousel JS -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
+
+  @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/owl.js', 'resources/css/landingPageSection7.css', 'resources/js/landingPageSection7.js'])
   @stack('styles')
 </head>
 
 <body>
+  @include('components.preloader')
+  @include('components.sidebarpopup')
   @include('components.header')
+  @include('components.mobilemenu')
 
   <main>
-    @yield('content')
+    <div class="boxed-wrapper">
+      @yield('content')
+    </div>
   </main>
 
   @include('components.footer')
