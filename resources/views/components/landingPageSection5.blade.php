@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-lg-8 col-md-12 col-sm-12 title-column">
                         <div class="sec-title">
-                            <h6>Services</h6>
+                            <h6>Specification</h6>
                             <h2>Excellence in<br>Every <span>[Service]</span> Offered</h2>
                             <p class="mt_12">Delivering quality, innovation, and precision.</p>
                         </div>

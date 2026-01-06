@@ -10,6 +10,7 @@ Route::get('/ping', function () {
   return response()->json(['status' => 'API OK']);
 });
 
+// Landing API
 Route::get('/hero-banner', [HeroBannerController::class, 'index']);
 Route::post('/hero-banner', [HeroBannerController::class, 'store']);
 Route::delete('/hero-banner/{id}', [HeroBannerController::class, 'destroy']);

@@ -19,9 +19,9 @@ class WhyChooseUsController extends Controller
 
     public function store(Request $request)
     {
-        if (WhyChooseUs::count() >= 9) {
+        if (WhyChooseUs::count() >= 6) {
             return ApiResponse::error(
-                'Why Choose Us maksimal 9 item',
+                'Why Choose Us maksimal 6 item',
                 422
             );
         }
