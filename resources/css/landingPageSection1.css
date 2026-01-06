@@ -23,6 +23,24 @@
     position: relative;
 }
 
+.banner-top-section .bg-layer {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: calc(100% - 375px);
+    height: 426.183px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.banner-top-section .bg-layer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
 .banner-top-section .outer-container {
     position: relative;
     padding-left: 375px;
@@ -279,9 +297,6 @@
 /* ============================
    Responsive
 ============================ */
-/* ============================
-   Responsive - Banner Top Section
-============================ */
 
 @media only screen and (max-width: 1699px) {
     .banner-top-section .inner-box .video-box,
@@ -363,7 +378,7 @@
 
 .banner-top-section .inner-box .content-box .bread-crumb li a {
     font-family: var(--text-font);
-    color: var(--text-color);
+    color: #ebe9ef;
     text-decoration: none;
     transition: color 0.3s ease;
 }
