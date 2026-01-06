@@ -19,7 +19,7 @@
                                     <li class="dropdown"><a href="/">Home</a></li>
                                     <li class="dropdown"><a href="{{ route('about') }}">About</a></li>
 
-                                    <li class="dropdown"><a href="#">Services</a>
+                                    <li class="dropdown"><a href="#">Specification</a>
                                         <ul>
                                             <li><a href="service.html">Services Style 01</a></li>
                                             <li><a href="service-2.html">Services Style 02</a></li>
@@ -32,16 +32,9 @@
                                             <li><a href="service-details-6.html">Rapir & Maintenance</a></li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown"><a href="#">Projects</a>
-                                        <ul>
-                                            <li><a href="project.html">Projects Style 01</a></li>
-                                            <li><a href="project-2.html">Projects Style 02</a></li>
-                                            <li><a href="project-3.html">Projects Style 03</a></li>
-                                            <li><a href="project-4.html">Projects Style 04</a></li>
-                                            <li><a href="project-details.html">Project Details</a></li>
-                                        </ul>
+                                    <li class="dropdown"><a href="#">Product</a>
                                     </li>
-                                    <li class="dropdown"><a href="{{ route('news') }}">Blog</a></li>
+                                    <li class="dropdown"><a href="{{ route('news') }}">News</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -97,10 +90,7 @@
                         <div class="select-box">
                             <select class="wide">
                                 <option data-display="Eng">Eng</option>
-                                <option value="1">Chi</option>
-                                <option value="2">Hin</option>
-                                <option value="3">Spa</option>
-                                <option value="4">Tur</option>
+                                <option value="1">Ind</option>
                             </select>
                         </div>
                     </li>

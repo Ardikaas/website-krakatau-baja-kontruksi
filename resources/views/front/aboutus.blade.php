@@ -10,10 +10,9 @@
         title="About Us"
         :breadcrumb="[
             ['label' => 'Home', 'url' => url('/')],
-            ['label' => 'About'],
             ['label' => 'About Us']
         ]"
-    />
+        imagePath="images/background/page-title.jpg"/>
 
     {{-- About Page Content --}}
     <x-aboutUs />

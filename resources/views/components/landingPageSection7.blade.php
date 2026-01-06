@@ -1,4 +1,3 @@
-
 {{-- Project Section --}}
 <section class="project-section">
     <div class="pattern-layer">
@@ -9,7 +8,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-12 col-md-12 col-sm-12 title-column">
                     <div class="sec-title" style="padding-left: 150px;">
-                        <h6>Our works</h6>
+                        <h6>Product</h6>
                         <h2>Innovative <span>[Projects]</span> <br />Delivered</h2>
                         <p class="mt_12">Delivering quality, innovation, and precision.</p>
                     </div>
@@ -23,17 +22,21 @@
                         <div class="tab-btn-box z_99">
                             <ul class="tab-btns product-tab-btns clearfix">
                                 <!-- Active tab button has 'active-btn' class -->
-                                <li class="p-tab-btn active-btn" data-tab="#tab-11"><h6>All</h6></li>
-                                <li class="p-tab-btn" data-tab="#tab-12"><h6>Infrastructure</h6></li>
-                                <li class="p-tab-btn" data-tab="#tab-13"><h6>Industrial</h6></li>
-                                <li class="p-tab-btn" data-tab="#tab-14"><h6>Energy</h6></li>
-                                <li class="p-tab-btn" data-tab="#tab-15"><h6>Transportation</h6></li>
-                                <li class="p-tab-btn" data-tab="#tab-16"><h6>Custom</h6></li>
+                                <li class="p-tab-btn active-btn" data-tab="#tab-11">
+                                    <h6>All</h6>
+                                </li>
+                                <li class="p-tab-btn" data-tab="#tab-12">
+                                    <h6>Steel Structure Component</h6>
+                                </li>
+                                <li class="p-tab-btn" data-tab="#tab-13">
+                                    <h6>Modular</h6>
+                                </li>
                             </ul>
                             <!-- Owl Counter -->
                             <div class="owl-counter" style="margin-top: 250px;">
                                 <div class="counter-text">
-                                    <span class="current">01</span><span class="separator"> /</span><span class="total">04</span>
+                                    <span class="current">01</span><span class="separator"> /</span><span
+                                        class="total">04</span>
                                 </div>
                                 <div class="owl-nav-custom">
                                     <button class="owl-prev-custom"><i class="flaticon-right"></i> PREV</button>
@@ -49,7 +52,9 @@
                                 <div class="single-item-carousel owl-carousel owl-theme nav-style-one">
                                     <div class="project-block-one">
                                         <div class="inner-box">
-                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-1.jpg') }});"></div>
+                                            <div class="bg-layer"
+                                                style="background-image: url({{ asset('images/project/project-1.jpg') }});">
+                                            </div>
                                             <span class="category">Infrastructure</span>
                                             <div class="content-box">
                                                 <h3>Titanium Arch Crossing</h3>
@@ -62,7 +67,9 @@
                                     </div>
                                     <div class="project-block-one">
                                         <div class="inner-box">
-                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-2.jpg') }});"></div>
+                                            <div class="bg-layer"
+                                                style="background-image: url({{ asset('images/project/project-2.jpg') }});">
+                                            </div>
                                             <span class="category">Energy</span>
                                             <div class="content-box">
                                                 <h3>Factory Expansion Project</h3>
@@ -75,7 +82,9 @@
                                     </div>
                                     <div class="project-block-one">
                                         <div class="inner-box">
-                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-3.jpg') }});"></div>
+                                            <div class="bg-layer"
+                                                style="background-image: url({{ asset('images/project/project-3.jpg') }});">
+                                            </div>
                                             <span class="category">Industrial</span>
                                             <div class="content-box">
                                                 <h3>Offshore Platform Build</h3>
@@ -88,13 +97,15 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                             <!-- Tab 12 - Infrastructure -->
+
+                            <!-- Tab 12 - Infrastructure -->
                             <div class="p-tab" id="tab-12">
                                 <div class="single-item-carousel owl-carousel owl-theme nav-style-one">
                                     <div class="project-block-one">
                                         <div class="inner-box">
-                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-1.jpg') }});"></div>
+                                            <div class="bg-layer"
+                                                style="background-image: url({{ asset('images/project/project-1.jpg') }});">
+                                            </div>
                                             <span class="category">Infrastructure</span>
                                             <div class="content-box">
                                                 <h3>Titanium Arch Crossing</h3>
@@ -107,7 +118,9 @@
                                     </div>
                                     <div class="project-block-one">
                                         <div class="inner-box">
-                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-2.jpg') }});"></div>
+                                            <div class="bg-layer"
+                                                style="background-image: url({{ asset('images/project/project-2.jpg') }});">
+                                            </div>
                                             <span class="category">Infrastructure</span>
                                             <div class="content-box">
                                                 <h3>Highway Bridge Project</h3>
@@ -120,7 +133,9 @@
                                     </div>
                                     <div class="project-block-one">
                                         <div class="inner-box">
-                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-3.jpg') }});"></div>
+                                            <div class="bg-layer"
+                                                style="background-image: url({{ asset('images/project/project-3.jpg') }});">
+                                            </div>
                                             <span class="category">Infrastructure</span>
                                             <div class="content-box">
                                                 <h3>Urban Development Center</h3>
@@ -133,13 +148,15 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <!-- Tab 13 - Industrial -->
                             <div class="p-tab" id="tab-13">
                                 <div class="single-item-carousel owl-carousel owl-theme nav-style-one">
                                     <div class="project-block-one">
                                         <div class="inner-box">
-                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-3.jpg') }});"></div>
+                                            <div class="bg-layer"
+                                                style="background-image: url({{ asset('images/project/project-3.jpg') }});">
+                                            </div>
                                             <span class="category">Industrial</span>
                                             <div class="content-box">
                                                 <h3>Offshore Platform Build</h3>
@@ -152,7 +169,9 @@
                                     </div>
                                     <div class="project-block-one">
                                         <div class="inner-box">
-                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-1.jpg') }});"></div>
+                                            <div class="bg-layer"
+                                                style="background-image: url({{ asset('images/project/project-1.jpg') }});">
+                                            </div>
                                             <span class="category">Industrial</span>
                                             <div class="content-box">
                                                 <h3>Factory Renovation Project</h3>
@@ -165,7 +184,9 @@
                                     </div>
                                     <div class="project-block-one">
                                         <div class="inner-box">
-                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-2.jpg') }});"></div>
+                                            <div class="bg-layer"
+                                                style="background-image: url({{ asset('images/project/project-2.jpg') }});">
+                                            </div>
                                             <span class="category">Industrial</span>
                                             <div class="content-box">
                                                 <h3>Manufacturing Plant Hub</h3>
@@ -180,11 +201,13 @@
                             </div>
 
                             <!-- Tab 14 - Energy -->
-                             <div class="p-tab" id="tab-14">
+                            <div class="p-tab" id="tab-14">
                                 <div class="single-item-carousel owl-carousel owl-theme nav-style-one">
                                     <div class="project-block-one">
                                         <div class="inner-box">
-                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-2.jpg') }});"></div>
+                                            <div class="bg-layer"
+                                                style="background-image: url({{ asset('images/project/project-2.jpg') }});">
+                                            </div>
                                             <span class="category">Energy</span>
                                             <div class="content-box">
                                                 <h3>Factory Expansion Project</h3>
@@ -197,7 +220,9 @@
                                     </div>
                                     <div class="project-block-one">
                                         <div class="inner-box">
-                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-1.jpg') }});"></div>
+                                            <div class="bg-layer"
+                                                style="background-image: url({{ asset('images/project/project-1.jpg') }});">
+                                            </div>
                                             <span class="category">Energy</span>
                                             <div class="content-box">
                                                 <h3>Solar Panel Installation</h3>
@@ -210,7 +235,9 @@
                                     </div>
                                     <div class="project-block-one">
                                         <div class="inner-box">
-                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-3.jpg') }});"></div>
+                                            <div class="bg-layer"
+                                                style="background-image: url({{ asset('images/project/project-3.jpg') }});">
+                                            </div>
                                             <span class="category">Energy</span>
                                             <div class="content-box">
                                                 <h3>Power Plant Upgrade</h3>
@@ -225,11 +252,13 @@
                             </div>
 
                             <!-- Tab 15 - Transportation -->
-                             <div class="p-tab" id="tab-15">
+                            <div class="p-tab" id="tab-15">
                                 <div class="single-item-carousel owl-carousel owl-theme nav-style-one">
                                     <div class="project-block-one">
                                         <div class="inner-box">
-                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-1.jpg') }});"></div>
+                                            <div class="bg-layer"
+                                                style="background-image: url({{ asset('images/project/project-1.jpg') }});">
+                                            </div>
                                             <span class="category">Transportation</span>
                                             <div class="content-box">
                                                 <h3>Transportation Hub Center</h3>
@@ -242,7 +271,9 @@
                                     </div>
                                     <div class="project-block-one">
                                         <div class="inner-box">
-                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-2.jpg') }});"></div>
+                                            <div class="bg-layer"
+                                                style="background-image: url({{ asset('images/project/project-2.jpg') }});">
+                                            </div>
                                             <span class="category">Transportation</span>
                                             <div class="content-box">
                                                 <h3>Railway Station Project</h3>
@@ -255,7 +286,9 @@
                                     </div>
                                     <div class="project-block-one">
                                         <div class="inner-box">
-                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-3.jpg') }});"></div>
+                                            <div class="bg-layer"
+                                                style="background-image: url({{ asset('images/project/project-3.jpg') }});">
+                                            </div>
                                             <span class="category">Transportation</span>
                                             <div class="content-box">
                                                 <h3>Airport Terminal Build</h3>
@@ -269,12 +302,14 @@
                                 </div>
                             </div>
 
-                             <!-- Tab 16 - Custom -->
-                             <div class="p-tab" id="tab-16">
+                            <!-- Tab 16 - Custom -->
+                            <div class="p-tab" id="tab-16">
                                 <div class="single-item-carousel owl-carousel owl-theme nav-style-one">
                                     <div class="project-block-one">
                                         <div class="inner-box">
-                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-2.jpg') }});"></div>
+                                            <div class="bg-layer"
+                                                style="background-image: url({{ asset('images/project/project-2.jpg') }});">
+                                            </div>
                                             <span class="category">Custom</span>
                                             <div class="content-box">
                                                 <h3>Custom Steel Works</h3>
@@ -287,7 +322,9 @@
                                     </div>
                                     <div class="project-block-one">
                                         <div class="inner-box">
-                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-1.jpg') }});"></div>
+                                            <div class="bg-layer"
+                                                style="background-image: url({{ asset('images/project/project-1.jpg') }});">
+                                            </div>
                                             <span class="category">Custom</span>
                                             <div class="content-box">
                                                 <h3>Custom Metal Fabrication</h3>
@@ -300,7 +337,9 @@
                                     </div>
                                     <div class="project-block-one">
                                         <div class="inner-box">
-                                            <div class="bg-layer" style="background-image: url({{ asset('images/project/project-3.jpg') }});"></div>
+                                            <div class="bg-layer"
+                                                style="background-image: url({{ asset('images/project/project-3.jpg') }});">
+                                            </div>
                                             <span class="category">Custom</span>
                                             <div class="content-box">
                                                 <h3>Bespoke Steel Solutions</h3>

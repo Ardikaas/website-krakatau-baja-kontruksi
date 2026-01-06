@@ -294,8 +294,8 @@
 }
 
 .about-style-three.alternat-2 .rotate-text {
-    background-color: transparent;
-    color: var(--theme-color);
+    background-color: var(--theme-color);
+    color: #f0f4f8;
 }
 
 .about-style-three.alternat-2 .rotate-text::before {

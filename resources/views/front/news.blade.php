@@ -10,9 +10,9 @@
 
 @section('content')
     {{-- Banner Top Section --}}
-    <x-landingPageSection1 type="page" title="Berita" :breadcrumb="[
+    <x-landingPageSection1 type="page" title="News" :breadcrumb="[
             ['label' => 'Home', 'url' => url('/')],
-            ['label' => 'Berita'],
+            ['label' => 'News'],
         ]"
         imagePath="images/background/page-title.jpg" />
 
@@ -31,21 +31,14 @@
                                         <p>December, 2025</p>
                                     </div>
                                     <div class="author-box">
-                                        <figure class="author-image"><img src="{{ asset('images/news/author-1.png') }}"
-                                                alt=""></figure>
                                         <div class="inner">
                                             <h5>D. Langer</h5>
-                                            <button>Follow</button>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="image-box">
                                     <figure class="image"><a href="{{ route('news.detail', 1) }}"><img
                                                 src="{{ asset('images/news/news-1.jpg') }}" alt=""></a></figure>
-                                    <span class="category">Technical Guides</span>
-                                    <div class="zoom-btn"><a href="{{ asset('images/news/news-1.jpg') }}"
-                                            class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom"></i></a>
-                                    </div>
                                 </div>
                             </div>
                             <div class="lower-content">
@@ -69,21 +62,14 @@
                                         <p>December, 2025</p>
                                     </div>
                                     <div class="author-box">
-                                        <figure class="author-image"><img src="{{ asset('images/news/author-2.png') }}"
-                                                alt=""></figure>
                                         <div class="inner">
                                             <h5>L. Stella</h5>
-                                            <button>Follow</button>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="image-box">
                                     <figure class="image"><a href="{{ route('news.detail', 2) }}"><img
                                                 src="{{ asset('images/news/news-2.jpg') }}" alt=""></a></figure>
-                                    <span class="category">Industry Trends</span>
-                                    <div class="zoom-btn"><a href="{{ asset('images/news/news-2.jpg') }}"
-                                            class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom"></i></a>
-                                    </div>
                                 </div>
                             </div>
                             <div class="lower-content">

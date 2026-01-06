@@ -9,7 +9,7 @@ Route::get('/admin', function () {
     return view('admin.adminLanding');
 })->name('admin.landingEdit');
 
-Route::get('/whistleBlowingSystem', function () {
+Route::get('/wbs', function () {
     return view('front.whistleBlowingSystem');
 })->name('wbs');
 

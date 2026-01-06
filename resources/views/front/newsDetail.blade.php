@@ -10,9 +10,9 @@
 
 @section('content')
     {{-- Banner Top Section --}}
-    <x-landingPageSection1 type="page" title="Detail Berita" :breadcrumb="[
+    <x-landingPageSection1 type="page" title="News" :breadcrumb="[
             ['label' => 'Home', 'url' => url('/')],
-            ['label' => 'Berita', 'url' => route('news')],
+            ['label' => 'News', 'url' => route('news')],
             ['label' => 'Metal finishing techniques: An in depth practical guide.'],
         ]" />
 
@@ -30,25 +30,7 @@
                                     <h2>25</h2><span>Dec'24</span>
                                 </div>
                             </div>
-                            <h2>Metal finishing techniques: An in depth practical guide.</h2>
-                            <ul class="info-list">
-                                <li class="author-box">
-                                    <figure class="author-image"><img src="{{ asset('images/news/author-2.png') }}" alt="">
-                                    </figure>
-                                    <div class="inner">
-                                        <h5>D.Langer</h5>
-                                        <span>Follow</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <h5>Category</h5>
-                                    <h6>Technical Guides</h6>
-                                </li>
-                                <li>
-                                    <h5>Reading Time</h5>
-                                    <h6>7 Mins</h6>
-                                </li>
-                            </ul>
+                            <h2>Metal finishing techniques: An in depth practical guide. - D. Langer</h2>
                             <div class="text-box mb_30">
                                 <p><span>M</span>etallic and dislike men who are so that beguiled and demoralize welcome
                                     every pain avoided frequently occur that pleasures indignations and dislike men who ar
@@ -66,12 +48,6 @@
                                     fail in their duty through weakness of will,which is the same as saying through
                                     shrinking.</p>
                             </div>
-                            <blockquote>
-                                <div class="icon-box"><i class="flaticon-quote"></i></div>
-                                <h3>Achieve durability and aesthetics with expert metal
-                                    finishing techniques and precision.</h3>
-                                <h6>by Silver Scott, <a href="#">@silver/facebook.com</a></h6>
-                            </blockquote>
                             <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because
                                 those who do know how to pursue pleasure rationally encounter consequences that are
                                 extremely painful or again is there anyone who loves or pursues or desires to obtain pain of
@@ -119,37 +95,9 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="post-tags">
-                                <h5><i class="flaticon-tags"></i><span>Post Tags:</span></h5>
-                                <ul class="tags-list">
-                                    <li><a href="#">Innovation</a></li>
-                                    <li><a href="#">Metal</a></li>
-                                    <li><a href="#">Quality</a></li>
-                                </ul>
-                            </div>
                         </div>
 
                         <div class="post-nav mb_50">
-                            <div class="post-nav-btn mb_35">
-                                <div class="single-btn">
-                                    <figure class="image-box"><img src="{{ asset('images/news/btn-1.jpg') }}" alt="">
-                                    </figure>
-                                    <div class="inner">
-                                        <h6><i class="flaticon-right"></i><a href="#">Prev</a></h6>
-                                        <h5><a href="#">The Benefits of Custom <br />
-                                                Metal Fabrication</a></h5>
-                                    </div>
-                                </div>
-                                <div class="single-btn align-3">
-                                    <div class="inner">
-                                        <h6><a href="#">Next</a><i class="flaticon-right"></i></h6>
-                                        <h5><a href="#">Common Challenges in <br />
-                                                Metal Fabrication</a></h5>
-                                    </div>
-                                    <figure class="image-box"><img src="{{ asset('images/news/btn-2.jpg') }}" alt="">
-                                    </figure>
-                                </div>
-                            </div>
                             <div class="btn-box">
                                 <a href="{{ route('news') }}"><i class="flaticon-more"></i><span>Back to Blog
                                         Post</span></a>
@@ -202,11 +150,6 @@
                                             <input type="email" name="email" placeholder="Email*" required>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                            <div class="check-box-two pt_6">
-                                                <input class="check" type="checkbox" id="checkbox2">
-                                                <label for="checkbox2">Save my name, email, and website in this browser for
-                                                    the next time I comment.</label>
-                                            </div>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
                                             <button type="submit" class="theme-btn btn-one"><i
@@ -222,37 +165,6 @@
                 {{-- Sidebar --}}
                 <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
                     <div class="blog-sidebar">
-                        <div class="search-widget sidebar-widget mb_40">
-                            <form action="#" method="get">
-                                <div class="form-group">
-                                    <input type="search" name="search-field" placeholder="Search..." required>
-                                    <button type="submit"><i class="flaticon-search"></i></button>
-                                </div>
-                            </form>
-                        </div>
-
-                        <div class="category-widget sidebar-widget mb_30">
-                            <div class="widget-title">
-                                <h3>Categories</h3>
-                            </div>
-                            <div class="widget-content">
-                                <ul class="category-list clearfix">
-                                    <li><a href="#"><span class="text">Company</span><span class="count">06</span><i
-                                                class="flaticon-right"></i></a></li>
-                                    <li><a href="#"><span class="text">Industry Trends</span><span class="count">02</span><i
-                                                class="flaticon-right"></i></a></li>
-                                    <li><a href="#"><span class="text">Maintenance</span><span class="count">12</span><i
-                                                class="flaticon-right"></i></a></li>
-                                    <li><a href="#"><span class="text">Supplier</span><span class="count">09</span><i
-                                                class="flaticon-right"></i></a></li>
-                                    <li><a href="#"><span class="text">Technical Guides</span><span
-                                                class="count">05</span><i class="flaticon-right"></i></a></li>
-                                    <li><a href="#"><span class="text">Quality Control</span><span class="count">14</span><i
-                                                class="flaticon-right"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-
                         <div class="post-widget sidebar-widget mb_40">
                             <div class="widget-title">
                                 <h3>Popular Post</h3>
@@ -285,43 +197,32 @@
                                                 Fabrication</a></h5>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="tags-widget sidebar-widget pb_45">
-                            <div class="widget-title">
-                                <h3>Popular Tags</h3>
-                            </div>
-                            <div class="widget-content">
-                                <ul class="tags-list clearfix">
-                                    <li><a href="#">CNC Machining</a></li>
-                                    <li><a href="#">Equipment</a></li>
-                                    <li><a href="#">Innovation</a></li>
-                                    <li><a href="#">Metal</a></li>
-                                    <li><a href="#">Quality</a></li>
-                                    <li><a href="#">Science</a></li>
-                                    <li><a href="#">Steel Solutions</a></li>
-                                    <li><a href="#">Techniques</a></li>
-                                    <li><a href="#">Trends</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="subscribe-widget">
-                            <div class="inner-box">
-                                <div class="light-icon"><img src="{{ asset('images/icons/icon-34.png') }}" alt=""></div>
-                                <h4>Updates</h4>
-                                <div class="icon-box align-3">
-                                    <div class="icon"><img src="{{ asset('images/icons/icon-33.png') }}" alt=""></div>
+                                <div class="post">
+                                    <figure class="post-image"><a href="#"><img src="{{ asset('images/news/post-1.jpg') }}"
+                                                alt=""></a></figure>
+                                    <div class="inner">
+                                        <h6>Dec 30, 2024</h6>
+                                        <h5><a href="#">The Benefits of Custom
+                                                Metal Fabrication</a></h5>
+                                    </div>
                                 </div>
-                                <h3>Stay Updated <br />with the <span>Latest Trends.</span></h3>
-                                <div class="form-inner">
-                                    <form action="#" method="post">
-                                        <div class="form-group">
-                                            <input type="email" name="email" placeholder="Email address" required>
-                                            <button type="submit"><i class="flaticon-right-arrow"></i></button>
-                                        </div>
-                                    </form>
+                                <div class="post">
+                                    <figure class="post-image"><a href="#"><img src="{{ asset('images/news/post-2.jpg') }}"
+                                                alt=""></a></figure>
+                                    <div class="inner">
+                                        <h6>May 14, 2024</h6>
+                                        <h5><a href="#">Common Challenges in
+                                                Metal Fabrication</a></h5>
+                                    </div>
+                                </div>
+                                <div class="post">
+                                    <figure class="post-image"><a href="#"><img src="{{ asset('images/news/post-3.jpg') }}"
+                                                alt=""></a></figure>
+                                    <div class="inner">
+                                        <h6>Apr 10, 2024</h6>
+                                        <h5><a href="#">Key Benefits of Custom
+                                                Fabrication</a></h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
