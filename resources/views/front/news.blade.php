@@ -13,7 +13,8 @@
     <x-landingPageSection1 type="page" title="Berita" :breadcrumb="[
             ['label' => 'Home', 'url' => url('/')],
             ['label' => 'Berita'],
-        ]" />
+        ]"
+        imagePath="images/background/page-title.jpg" />
 
     {{-- News Section --}}
     <section class="news-section sec-pad-2">
