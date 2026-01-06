@@ -377,7 +377,14 @@
                 <p class="mt_12">Discover our premium quality metal products.</p>
             </div>
             <div class="rotate-text">
-                <span class="curved-circle">Partner in Success: Here's Why .</span>
+                <svg class="curved-circle-svg" viewBox="0 0 200 200">
+                    <defs>
+                        <path id="circlePath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
+                    </defs>
+                    <text>
+                        <textPath href="#circlePath" startOffset="0%">Partner in Success: Here's Why .</textPath>
+                    </text>
+                </svg>
                 <div class="video-btn"><a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption=""><i class="flaticon-play-button"></i></a></div>
             </div>
         </div>
