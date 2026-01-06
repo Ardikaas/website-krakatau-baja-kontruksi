@@ -13,6 +13,10 @@ Route::get('/wbs', function () {
     return view('front.whistleBlowingSystem');
 })->name('wbs');
 
+Route::get('/contact', function () {
+    return view('front.contact');
+})->name('contact');
+
 // route news aseli 
 Route::get('/news', function () {
     return view('front.news');

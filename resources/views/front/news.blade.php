@@ -1,6 +1,6 @@
 @extends('layouts.front')
 
-@section('title', 'Berita - Krakatau Baja Konstruksi')
+@section('title', 'News - Krakatau Baja Konstruksi')
 
 @section('meta_description', 'Berita terbaru dari Krakatau Baja Konstruksi')
 

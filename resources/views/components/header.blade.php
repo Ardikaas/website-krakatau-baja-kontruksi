@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <ul class="menu-right-content">
-                    <li class="contact-link"><a href="contact.html"><i
+                    <li class="contact-link"><a href="contact"><i
                                 class="flaticon-headphones"></i><span>Contact</span></a></li>
                     <li class="language-box">
                         <div class="icon-box"><i class="flaticon-global"></i></div>
@@ -83,7 +83,7 @@
                     </div>
                 </div>
                 <ul class="menu-right-content">
-                    <li class="contact-link"><a href="contact.html"><i
+                    <li class="contact-link"><a href="contact"><i
                                 class="flaticon-headphones"></i><span>Contact</span></a></li>
                     <li class="language-box">
                         <div class="icon-box"><i class="flaticon-global"></i></div>
