@@ -5,6 +5,8 @@ use App\Http\Controllers\Api\HeroBannerController;
 use App\Http\Controllers\Api\WhyChooseUsController;
 use App\Http\Controllers\Api\DocumentController;
 use App\Http\Controllers\Api\HeroVideoController;
+use App\Http\Controllers\Api\NewsController;
+use App\Http\Controllers\Api\NewsCommentController;
 
 Route::get('/ping', function () {
   return response()->json(['status' => 'API OK']);
@@ -30,3 +32,13 @@ Route::delete('/documents/{id}', [DocumentController::class, 'destroy']);
 Route::get('/hero-video', [HeroVideoController::class, 'index']);
 Route::post('/hero-video', [HeroVideoController::class, 'store']);
 Route::delete('/hero-video', [HeroVideoController::class, 'destroy']);
+
+Route::get('/news', [NewsController::class, 'index']);
+Route::get('/news/{id}', [NewsController::class, 'show']);
+Route::post('/news', [NewsController::class, 'store']);
+Route::put('/news/{id}', [NewsController::class, 'update']);
+Route::delete('/news/{id}', [NewsController::class, 'destroy']);
+Route::get('/news/{id}/comments', [NewsCommentController::class, 'index']);
+Route::post('/news/{id}/comments', [NewsCommentController::class, 'store']);
+Route::delete('/comments/{id}', [NewsCommentController::class, 'destroy']);
+Route::get('/news/image/{filename}', [NewsController::class, 'imageByName'])->where('filename', '.*');
