@@ -122,14 +122,14 @@
                                             <div class="icon-box"><img src="images/icons/icon-31.png" alt="">
                                             </div>
                                             <div class="select-box">
-                                                <select class="wide" style="display: none;">
+                                                <select class="wide">
                                                     <option data-display="Inquiry Type">Inquiry Type</option>
                                                     <option value="1">Fabrication</option>
                                                     <option value="2">Metal Processing</option>
                                                     <option value="3">Metal Casting</option>
                                                     <option value="4">Metal Welding</option>
                                                 </select>
-                                                <div class="nice-select wide" tabindex="0"><span class="current">Inquiry
+                                                {{-- <div class="nice-select wide" tabindex="0"><span class="current">Inquiry
                                                         Type</span>
                                                     <ul class="list">
                                                         <li data-value="Inquiry Type" data-display="Inquiry Type"
@@ -139,13 +139,13 @@
                                                         <li data-value="3" class="option">Metal Casting</li>
                                                         <li data-value="4" class="option">Metal Welding</li>
                                                     </ul>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 single-column">
                                         <div class="form-group">
-                                            <div class="icon-box"><img src="images/icons/icon-32.png" alt="">
+                                            <div class="icon-box-question"><img src="images/icons/icon-32.png" alt="">
                                             </div>
                                             <textarea name="message" placeholder="Your Question"></textarea>
                                         </div>
