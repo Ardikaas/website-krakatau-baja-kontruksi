@@ -9,12 +9,12 @@
 .project-section>.pattern-layer {
     position: absolute;
     left: -100px;
-    top: -200px;
+    top: -400px;
     width: 573px;
     height: calc(100% + 600px);
     background-repeat: no-repeat;
     background-position: left top;
-    background-size: auto;
+    background-size: 120%;
     z-index: 1;
 }
 
@@ -29,22 +29,7 @@
 }
 
 /* Title Container - gray background like section 5 */
-.project-section .title-container {
-    position: relative;
-    background-color: #f0f4f8;
-    margin-bottom: 0px;
-    padding-bottom: 80px;
-}
 
-.project-section .title-container::before {
-    position: absolute;
-    content: "";
-    background-color: #f0f4f8;
-    width: 5000px;
-    height: 100%;
-    left: 0px;
-    top: 0px;
-}
 
 /* Upper Box */
 .project-section .upper-box {
