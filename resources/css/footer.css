@@ -569,9 +569,8 @@ button {
 
 /* Support Widget */
 .main-footer .support-widget .widget-title {
-	background-color: rgba(113, 132, 226, 0.1);
+	background-color: rgb(255, 255, 255);
 	padding: 15px;
-	border-radius: 8px;
 }
 
 .main-footer .support-widget .widget-title h3 {
