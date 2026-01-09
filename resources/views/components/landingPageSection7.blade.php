@@ -6,7 +6,7 @@
         <div class="title-container">
             <div class="upper-box">
                 <div class="row align-items-center">
-                    <div class="col-lg-8 col-md-12 col-sm-12 title-column">
+                    
                         <div class="sec-title">
                             <h6>Product</h6>
                             <h2>Innovative <span>[Projects]</span> <br />Delivered</h2>
