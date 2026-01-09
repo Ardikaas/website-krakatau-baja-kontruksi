@@ -1,6 +1,5 @@
 {{-- About Section --}}
 <section class="about-section pt_120 pb_120">
-    <div class="pattern-layer" style="background-image: url({{ asset('images/shape/shape-4.png') }});"></div>
     <div class="auto-container">
         <div class="row clearfix">
             {{-- Left Column - Content --}}

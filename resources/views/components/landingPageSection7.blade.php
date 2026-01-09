@@ -1,21 +1,21 @@
 {{-- Project Section --}}
 <section class="project-section">
-    <div class="pattern-layer">
-        <div class="pattern-1" style="background-image: url({{ asset('images/shape/shape-8.png') }});"></div>
-    </div>
+    <div class="pattern-layer" style="background-image: url({{ asset('images/shape/shape-4.png') }});"></div>
     <div class="auto-container">
-        <div class="upper-box p_relative" style="margin-bottom: 80px;">
-            <div class="row align-items-center">
-                <div class="col-lg-12 col-md-12 col-sm-12 title-column">
-                    <div class="sec-title" style="padding-left: 150px;">
-                        <h6>Product</h6>
-                        <h2>Innovative <span>[Projects]</span> <br />Delivered</h2>
-                        <p class="mt_12">Delivering quality, innovation, and precision.</p>
+        {{-- Title Container with gray background --}}
+        <div class="title-container">
+            <div class="upper-box">
+                <div class="row align-items-center">
+                    
+                        <div class="sec-title">
+                            <h6>Product</h6>
+                            <h2>Innovative <span>[Projects]</span> <br />Delivered</h2>
+                            <p class="mt_12">Delivering quality, innovation, and precision.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="inner-container">
+            <div class="inner-container">
             <div class="project-tab">
                 <div class="row clearfix">
                     <div class="col-lg-2 col-md-12 col-sm-12 btn-column">
@@ -356,6 +356,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>
