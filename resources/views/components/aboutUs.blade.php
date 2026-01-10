@@ -401,109 +401,28 @@
             <h2>Passionate <span>[Team]</span> at Work</h2>
             <p class="mt_12">Experts working together to achieve excellence.</p>
         </div>
-        <div class="row clearfix">
-            <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                <div class="team-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><img src="{{ asset('images/team/team-1.jpg') }}" alt=""></figure>
-                            <div class="experience-box">
-                                <h2>17<span>+</span></h2>
-                                <h6>Years of <br />experience</h6>
-                            </div>
-                        </div>
-                        <div class="lower-content">
-                            <h3><a>G.Davidson</a></h3>
-                            <span class="designation">Chief Executive Officer</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                <div class="team-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><img src="{{ asset('images/team/team-2.jpg') }}" alt=""></figure>
-                            <div class="experience-box">
-                                <h2>5<span>+</span></h2>
-                                <h6>Years of <br />experience</h6>
-                            </div>
-                        </div>
-                        <div class="lower-content">
-                            <h3><a>K.Michael</a></h3>
-                            <span class="designation">Chief Technology Officer</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                <div class="team-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><img src="{{ asset('images/team/team-3.jpg') }}" alt=""></figure>
-                            <div class="experience-box">
-                                <h2>12<span>+</span></h2>
-                                <h6>Years of <br />experience</h6>
-                            </div>
-                        </div>
-                        <div class="lower-content">
-                            <h3><a>M.Frederick</a></h3>
-                            <span class="designation">R&D Specialist</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                <div class="team-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><img src="{{ asset('images/team/team-1.jpg') }}" alt=""></figure>
-                            <div class="experience-box">
-                                <h2>17<span>+</span></h2>
-                                <h6>Years of <br />experience</h6>
-                            </div>
-                        </div>
-                        <div class="lower-content">
-                            <h3><a>G.Davidson</a></h3>
-                            <span class="designation">Chief Executive Officer</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                <div class="team-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><img src="{{ asset('images/team/team-2.jpg') }}" alt=""></figure>
-                            <div class="experience-box">
-                                <h2>5<span>+</span></h2>
-                                <h6>Years of <br />experience</h6>
-                            </div>
-                        </div>
-                        <div class="lower-content">
-                            <h3><a>K.Michael</a></h3>
-                            <span class="designation">Chief Technology Officer</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                <div class="team-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><img src="{{ asset('images/team/team-3.jpg') }}" alt=""></figure>
-                            <div class="experience-box">
-                                <h2>12<span>+</span></h2>
-                                <h6>Years of <br />experience</h6>
-                            </div>
-                        </div>
-                        <div class="lower-content">
-                            <h3><a>M.Frederick</a></h3>
-                            <span class="designation">R&D Specialist</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="container-team">
+        <!-- Tabs -->
+        <div class="tab-wrapper">
+            <button class="tab active" data-tab="komisaris">Dewan Komisaris</button>
+            <button class="tab" data-tab="direksi">Direksi</button>
+        </div>
+
+        <!-- Dewan Komisaris -->
+        <div class="image-wrapper active" id="komisaris">
+            <div class="image-card"><img src="input.jpg" alt="" /></div>
+            <div class="image-card"><img src="{{}}" alt="" /></div>
+            <div class="image-card"><img src="img/komisaris3.jpg" alt="" /></div>
+            <div class="image-card"><img src="img/komisaris4.jpg" alt="" /></div>
+            <div class="image-card"><img src="img/komisaris4.jpg" alt="" /></div>
+        </div>
+
+        <!-- Direksi -->
+        <div class="image-wrapper" id="direksi">
+            <div class="image-card"><img src="img/direksi1.jpg" alt="" /></div>
+            <div class="image-card"><img src="img/direksi2.jpg" alt="" /></div>
+            <div class="image-card"><img src="img/direksi3.jpg" alt="" /></div>
+        </div>
         </div>
     </div>
 </section>
