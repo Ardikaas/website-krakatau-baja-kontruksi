@@ -816,101 +816,32 @@
     color: #a9a5b8;
 }
 
-/* ===== Chooseus Style Two ===== */
-.chooseus-style-two {
+/* ===============================
+   ORGANIZATION STRUCTURE
+================================ */
+
+.organization-structure {
     position: relative;
-    padding: 112px 0px 75px 0px;
+    padding: 110px 0;
+    background-color: #fff;
 }
 
-.chooseus-block-two .inner-box {
+.organization-structure .structure-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.organization-structure .structure-image {
     position: relative;
-    display: block;
-    margin-bottom: 38px;
-}
-
-.chooseus-block-two .inner-box .icon-box {
-    position: relative;
-    display: inline-block;
-    width: 80px;
-    height: 90px;
-    line-height: 100px;
-    background-color: #f5f4f9;
-    text-align: center;
-    font-size: 40px;
-    color: var(--title-color);
-    margin-bottom: 22px;
-    clip-path: polygon(
-        50% 0%,
-        100% 20%,
-        100% 80%,
-        50% 100%,
-        50% 100%,
-        0 80%,
-        0 20%
-    );
-    transition: all 500ms ease;
-}
-
-.chooseus-block-two .inner-box:hover .icon-box {
-    color: #fff;
-    background-color: var(--theme-color);
-}
-
-.chooseus-block-two .inner-box h3 {
-    position: relative;
-    display: block;
-    font-size: 24px;
-    line-height: 32px;
-    margin-bottom: 9px;
-    padding-left: 22px;
-}
-
-.chooseus-block-two .inner-box h3 i {
-    position: absolute;
-    left: 0px;
-    top: 3px;
-    font-size: 16px;
-    color: var(--theme-color);
-}
-
-.right-content .chooseus-block-two .inner-box h3 {
-    padding-left: 0px;
-    padding-right: 22px;
-    text-align: right;
-}
-
-.right-content .chooseus-block-two .inner-box h3 i {
-    left: inherit;
-    right: 0px;
-}
-
-.right-content .chooseus-block-two .inner-box {
-    text-align: right;
-}
-
-.chooseus-style-two .image-box {
-    position: relative;
-    display: block;
-}
-
-.chooseus-style-two .image-box .image {
-    position: relative;
-    display: block;
-    border-radius: 50%;
-}
-
-.chooseus-style-two .image-box .image img {
+    max-width: 1600px;
     width: 100%;
-    border-radius: 50%;
 }
 
-.chooseus-style-two .image-box .image-shape {
-    position: absolute;
-    left: -70px;
-    top: -70px;
-    width: 510px;
-    height: 510px;
-    background-repeat: no-repeat;
+.organization-structure .structure-image img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* ===== Features Section ===== */
@@ -1579,24 +1510,8 @@
         padding: 0px 15px;
     }
 
-    .chooseus-style-two .left-content,
-    .chooseus-style-two .right-content {
-        margin-bottom: 30px;
-    }
-
-    .right-content .chooseus-block-two .inner-box {
-        text-align: left;
-    }
-
-    .right-content .chooseus-block-two .inner-box h3 {
-        padding-left: 22px;
-        padding-right: 0px;
-        text-align: left;
-    }
-
-    .right-content .chooseus-block-two .inner-box h3 i {
-        left: 0px;
-        right: inherit;
+    .organization-structure {
+        padding: 80px 0;
     }
 
     .features-section .tabs-box .tabs-content {
@@ -1668,14 +1583,6 @@
     .sec-title h2 {
         font-size: 36px;
         line-height: 44px;
-    }
-
-    .chooseus-style-two {
-        padding: 62px 0px 25px 0px;
-    }
-
-    .chooseus-style-two .image-box .image {
-        margin: 30px 0px;
     }
 
     .team-section,

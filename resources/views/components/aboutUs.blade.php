@@ -233,67 +233,29 @@ $histories = [
 
 
 {{-- chooseus-style-two --}}
-<section class="chooseus-style-two">
+<section class="organization-structure">
     <div class="auto-container">
-        <div class="sec-title mb_25 centred">
-            <h6>Why Choose Us</h6>
-            <h2>Top Reasons to <span>[Choose]</span> Us</h2>
-            <p class="mt_12">Reliable expertise for your unique requirements.</p>
+
+        <div class="sec-title centred mb_45">
+            <h6>Organization Structure</h6>
+            <h2>Our <span>[Organization]</span> Structure</h2>
+            <p class="mt_12">
+                Organizational structure designed to ensure efficiency and clear responsibility.
+            </p>
         </div>
-        <div class="row align-items-center">
-            <div class="col-lg-4 col-md-12 col-sm-12 left-column">
-                <div class="left-content">
-                    <div class="chooseus-block-two">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="flaticon-manufacturing"></i></div>
-                            <h3><i class="flaticon-thunder-bolt"></i>Industry Expertise</h3>
-                            <p>Leveraging years of expertise in metal
-                                manufacturing to deliver quality, tailored
-                                solutions across industries.</p>
-                        </div>
-                    </div>
-                    <div class="chooseus-block-two">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="flaticon-manufacturing-1"></i></div>
-                            <h3><i class="flaticon-thunder-bolt"></i>Timely Delivery</h3>
-                            <p>Leveraging years of expertise in metal
-                                manufacturing to deliver quality, tailored
-                                solutions across industries.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-12 col-sm-12 image-column">
-                <div class="image-box">
-                    <div class="image-shape" style="background-image: url({{ asset('images/shape/shape-15.png') }});">
-                    </div>
-                    <figure class="image"><img src="{{ asset('images/resource/chooseus-1.jpg') }}" alt=""></figure>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-12 col-sm-12 right-column">
-                <div class="right-content align-3">
-                    <div class="chooseus-block-two">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="flaticon-engineer"></i></div>
-                            <h3><i class="flaticon-thunder-bolt"></i>Skilled Workforce</h3>
-                            <p>Leveraging years of expertise in metal
-                                manufacturing to deliver quality, tailored
-                                solutions across industries.</p>
-                        </div>
-                    </div>
-                    <div class="chooseus-block-two">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="flaticon-test"></i></div>
-                            <h3><i class="flaticon-thunder-bolt"></i>Competitive Pricing</h3>
-                            <p>Cost-effective solutions allow you to
-                                receive quality metal products without exceeding your budget.</p>
-                        </div>
-                    </div>
-                </div>
+
+        <div class="structure-wrapper">
+            <div class="structure-image">
+                <img
+                    src="{{ asset('images/background/company-bg.jpg') }}"
+                    alt="Organization Structure"
+                />
             </div>
         </div>
+
     </div>
 </section>
+
 {{-- chooseus-style-two end --}}
 
 {{-- team-section --}}
