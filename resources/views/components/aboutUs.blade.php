@@ -59,164 +59,67 @@
 
 
 {{-- history-section --}}
+@php
+$histories = [
+    ['year' => 1985, 'image' => 'history-1.jpg', 'title' => 'Foundation Year 1985'],
+    ['year' => 1988, 'image' => 'history-1.jpg', 'title' => 'Foundation Year 1988'],
+    ['year' => 1990, 'image' => 'history-1.jpg', 'title' => 'Foundation Year 1990'],
+    ['year' => 1993, 'image' => 'history-1.jpg', 'title' => 'Foundation Year 1993'],
+    ['year' => 1999, 'image' => 'history-1.jpg', 'title' => 'Foundation Year 1999'],
+    ['year' => 2000, 'image' => 'history-1.jpg', 'title' => 'Foundation Year 2000'],
+    ['year' => 2002, 'image' => 'history-1.jpg', 'title' => 'Foundation Year 2000'],
+];
+@endphp
+
 <section class="history-section bg-color-1">
     <div class="outer-container">
-        <div class="sec-title centred mb_45 pl_15 pr_15">
+
+        <div class="sec-title centred mb_45">
             <h6>History</h6>
             <h2>A <span>[Timeline]</span> of Precision <br />& Innovation</h2>
         </div>
-        <div class="tabs-box">
-            <div class="tabs-content">
-                <div class="tab active-tab" id="tab-1">
-                    <div class="tabs-inner">
-                        <div class="row clearfix">
-                            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                                <figure class="image-box"><img src="{{ asset('images/resource/history-1.jpg') }}"
-                                        alt=""></figure>
+
+        <!-- CAROUSEL -->
+        <div class="history-carousel owl-carousel">
+            @foreach ($histories as $item)
+                <div class="history-item">
+                    <div class="history-inner">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <div class="history-image">
+                                    <img src="{{ asset('images/resource/'.$item['image']) }}" alt="">
+                                </div>
                             </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                                <div class="content-box">
+                            <div class="col-lg-6">
+                                <div class="history-content">
                                     <div class="title-text">
                                         <div class="title-shape"></div>
-                                        <h2>Foundation Year 1985</h2>
+                                        <h2>{{ $item['title'] }}</h2>
                                     </div>
                                     <p>Our journey began in 1980 with the establishment of a small yet ambitious metal
                                         workshop. Focused on precision craftsmanship, we laidthe foundation for a
                                         company built on quality, innovation, and a commitment to meeting client needs.
                                     </p>
-                                    <h5>From a workshop to a trusted name, built on precision and passion.</h5>
+                                    <h5>Built on precision and passion.</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="tab" id="tab-2">
-                    <div class="tabs-inner">
-                        <div class="row clearfix">
-                            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                                <figure class="image-box"><img src="{{ asset('images/resource/history-2.jpg') }}"
-                                        alt=""></figure>
-                            </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                                <div class="content-box">
-                                    <div class="title-text">
-                                        <div class="title-shape"></div>
-                                        <h2>Foundation Year 1988</h2>
-                                    </div>
-                                    <p>Our journey began in 1980 with the establishment of a small yet ambitious metal
-                                        workshop. Focused on precision craftsmanship, we laidthe foundation for a
-                                        company built on quality, innovation, and a commitment to meeting client needs.
-                                    </p>
-                                    <h5>From a workshop to a trusted name, built on precision and passion.</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab" id="tab-3">
-                    <div class="tabs-inner">
-                        <div class="row clearfix">
-                            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                                <figure class="image-box"><img src="{{ asset('images/resource/history-3.jpg') }}"
-                                        alt=""></figure>
-                            </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                                <div class="content-box">
-                                    <div class="title-text">
-                                        <div class="title-shape"></div>
-                                        <h2>Foundation Year 1990</h2>
-                                    </div>
-                                    <p>Our journey began in 1980 with the establishment of a small yet ambitious metal
-                                        workshop. Focused on precision craftsmanship, we laidthe foundation for a
-                                        company built on quality, innovation, and a commitment to meeting client needs.
-                                    </p>
-                                    <h5>From a workshop to a trusted name, built on precision and passion.</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab" id="tab-4">
-                    <div class="tabs-inner">
-                        <div class="row clearfix">
-                            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                                <figure class="image-box"><img src="{{ asset('images/resource/history-4.jpg') }}"
-                                        alt=""></figure>
-                            </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                                <div class="content-box">
-                                    <div class="title-text">
-                                        <div class="title-shape"></div>
-                                        <h2>Foundation Year 1993</h2>
-                                    </div>
-                                    <p>Our journey began in 1980 with the establishment of a small yet ambitious metal
-                                        workshop. Focused on precision craftsmanship, we laidthe foundation for a
-                                        company built on quality, innovation, and a commitment to meeting client needs.
-                                    </p>
-                                    <h5>From a workshop to a trusted name, built on precision and passion.</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab" id="tab-5">
-                    <div class="tabs-inner">
-                        <div class="row clearfix">
-                            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                                <figure class="image-box"><img src="{{ asset('images/resource/history-5.jpg') }}"
-                                        alt=""></figure>
-                            </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                                <div class="content-box">
-                                    <div class="title-text">
-                                        <div class="title-shape"></div>
-                                        <h2>Foundation Year 1999</h2>
-                                    </div>
-                                    <p>Our journey began in 1980 with the establishment of a small yet ambitious metal
-                                        workshop. Focused on precision craftsmanship, we laidthe foundation for a
-                                        company built on quality, innovation, and a commitment to meeting client needs.
-                                    </p>
-                                    <h5>From a workshop to a trusted name, built on precision and passion.</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab" id="tab-6">
-                    <div class="tabs-inner">
-                        <div class="row clearfix">
-                            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                                <figure class="image-box"><img src="{{ asset('images/resource/history-6.jpg') }}"
-                                        alt=""></figure>
-                            </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                                <div class="content-box">
-                                    <div class="title-text">
-                                        <div class="title-shape"></div>
-                                        <h2>Foundation Year 2000</h2>
-                                    </div>
-                                    <p>Our journey began in 1980 with the establishment of a small yet ambitious metal
-                                        workshop. Focused on precision craftsmanship, we laidthe foundation for a
-                                        company built on quality, innovation, and a commitment to meeting client needs.
-                                    </p>
-                                    <h5>From a workshop to a trusted name, built on precision and passion.</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-btn-box">
-                <ul class="tab-btns tab-buttons">
-                    <li class="tab-btn active-btn" data-tab="#tab-1">1985</li>
-                    <li class="tab-btn" data-tab="#tab-2">1988</li>
-                    <li class="tab-btn" data-tab="#tab-3">1990</li>
-                    <li class="tab-btn" data-tab="#tab-4">1993</li>
-                    <li class="tab-btn" data-tab="#tab-5">1999</li>
-                    <li class="tab-btn" data-tab="#tab-6">2000</li>
-                </ul>
-            </div>
+            @endforeach
         </div>
+        
+        <nav class="history-nav">
+            <ul class="history-years">
+                @foreach ($histories as $index => $item)
+                    <li data-index="{{ $index }}" class="{{ $loop->first ? 'active' : '' }}">
+                        {{ $item['year'] }}
+                    </li>
+                @endforeach
+            </ul>
+        </nav>
+        
+
     </div>
 </section>
 {{-- history-section end --}}

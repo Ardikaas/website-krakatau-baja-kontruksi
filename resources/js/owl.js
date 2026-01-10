@@ -267,3 +267,52 @@ if ($(".tab-carousel").length) {
         },
     });
 }
+
+// History
+if ($(".history-carousel").length) {
+    const $carousel = $(".history-carousel");
+    let autoplaySpeed = 4000;
+
+    $carousel.owlCarousel({
+        items: 1,
+        loop: false,
+        margin: 30,
+        nav: false,
+        dots: false,
+        smartSpeed: 600,
+        autoplay: true,
+        autoplayTimeout: autoplaySpeed,
+        autoplayHoverPause: true,
+        responsive: {
+            0: { items: 1 },
+            600: { items: 1 },
+            1200: { items: 1 },
+        },
+    });
+
+    /* ===============================
+       NAV TAHUN → CAROUSEL
+    ================================ */
+    $(".history-years li").on("click", function () {
+        let index = $(this).data("index");
+
+        $carousel.trigger("to.owl.carousel", [index, 600]);
+
+        $(".history-years li").removeClass("active");
+        $(this).addClass("active");
+
+        // reset autoplay supaya smooth
+        $carousel.trigger("stop.owl.autoplay");
+        $carousel.trigger("play.owl.autoplay", [autoplaySpeed]);
+    });
+
+    /* ===============================
+       CAROUSEL → NAV TAHUN
+    ================================ */
+    $carousel.on("changed.owl.carousel", function (e) {
+        let index = e.item.index;
+
+        $(".history-years li").removeClass("active");
+        $(".history-years li").eq(index).addClass("active");
+    });
+}
