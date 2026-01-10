@@ -67,8 +67,6 @@
                                 <li><a href="#"><i class="flaticon-right"></i><span>Products</span></a></li>
                                 <li><a href="news"><i class="flaticon-right"></i><span>News</span></a></li>
                                 <li><a href="contact"><i class="flaticon-right"></i><span>Contact Us</span></a></li>
-                                <li><a href="wbs"><i class="flaticon-right"></i><span>Whistle Blowing
-                                            System</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -98,14 +96,9 @@
                 <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                     <div class="footer-widget support-widget">
                         <div class="widget-title">
-                            <h3>Let's Build Something Great Together</h3>
+                            <img src="{{ asset('images/icons/Untitled design (1).png') }}" alt="WBS" style="max-width: 100%; height: auto;">
                         </div>
                         <div class="widget-content">
-                            <ul class="mb_25 clearfix list-item">
-                                <li><i class="flaticon-approved"></i><span>Quality Testing</span></li>
-                                <li><i class="flaticon-approved"></i><span>Eco-Friendly Practices</span></li>
-                                <li><i class="flaticon-approved"></i><span>On-Time Delivery</span></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
