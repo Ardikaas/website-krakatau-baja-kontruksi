@@ -46,3 +46,7 @@ Route::get('/admin/specificationsEdit', function () {
 Route::get('/admin/addSpecifications', function () {
     return view('admin.adminSpecificationAdd');
 })->name('admin.adminSpecificationAdd');
+
+Route::get('/admin/wbs', function () {
+    return view('admin.adminWBS');
+})->name('admin.wbs');

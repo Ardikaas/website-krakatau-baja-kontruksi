@@ -34,11 +34,11 @@
                 
                 {{-- HERO (HOME) --}}
                 @if($type === 'hero')
-                <div class="video-box">
+                {{-- <div class="video-box">
                     <div class="bg-color"></div>
                     <div class="video-bg"></div>
                     <a href="https://www.youtube.com/watch?v=zL2bo91eiWw" class="lightbox-image" data-caption="" target="_blank"><i class="flaticon-play-button"></i></a>
-                </div>
+                </div> --}}
                     @php
                         [$first, $second, $third] = explode('|', $title);
                     @endphp
