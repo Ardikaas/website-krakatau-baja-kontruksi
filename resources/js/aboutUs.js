@@ -88,3 +88,22 @@ function initCurvedText() {
 
 // Initialize curved text when page loads
 document.addEventListener('DOMContentLoaded', initCurvedText);
+
+
+
+// Team Section Tabs
+// Team Section Tabs
+const tabs = document.querySelectorAll(".tab");
+const contents = document.querySelectorAll(".image-wrapper");
+
+tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+        // reset tab
+        tabs.forEach((t) => t.classList.remove("active"));
+        contents.forEach((c) => c.classList.remove("active"));
+
+        // active tab
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.tab).classList.add("active");
+    });
+});
