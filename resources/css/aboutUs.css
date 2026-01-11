@@ -454,7 +454,6 @@
     clip-path: polygon(0% 100%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
 }
 
-/* ===== History Section ===== */
 .history-section {
     position: relative;
     padding: 112px 0px;
@@ -504,26 +503,9 @@
     position: absolute;
     width: 70px;
     height: 1px;
-    left: 0px;
-    bottom: 0px;
-}
-
-.history-section .tabs-inner .content-box .title-text .title-shape::before,
-.history-section .tabs-inner .content-box .title-text .title-shape::after {
-    position: absolute;
-    content: "";
-    background-color: var(--theme-color);
-    width: 1px;
-    height: 20px;
-    top: -10px;
-}
-
-.history-section .tabs-inner .content-box .title-text .title-shape::before {
-    left: 0px;
-}
-
-.history-section .tabs-inner .content-box .title-text .title-shape::after {
-    right: 0px;
+    background: var(--theme-color);
+    left: 0;
+    bottom: -12px;
 }
 
 .history-section .history-content p {
@@ -549,26 +531,7 @@
     border-top: 4px solid #cdd5dd;
 }
 
-.history-section .tab-btn-box::before,
-.history-section .tab-btn-box::after {
-    position: absolute;
-    content: "";
-    background-color: #cdd5dd;
-    width: 100%;
-    height: 1px;
-    left: 0px;
-}
-
-.history-section .tab-btn-box::before {
-    top: -10px;
-}
-
-.history-section .tab-btn-box::after {
-    top: 5px;
-}
-
-.history-section .tab-btn-box .tab-btns {
-    position: relative;
+.history-section .history-years {
     display: flex;
     justify-content: center;
     gap: 160px;
@@ -591,8 +554,6 @@
 .history-section .history-years li::before {
     content: "";
     position: absolute;
-    content: "";
-    background-color: var(--theme-color);
     width: 1px;
     height: 25px;
     background: var(--theme-color);
@@ -604,8 +565,6 @@
 .history-section .history-years li::after {
     content: "";
     position: absolute;
-    content: "";
-    border: 2px solid var(--theme-color);
     width: 11px;
     height: 11px;
     border-radius: 50%;
@@ -926,6 +885,11 @@
 
 .right-content .chooseus-block-two .inner-box {
     text-align: right;
+}
+
+.organization-structure {
+    position: relative;
+    padding: 112px 0px;
 }
 
 .organization-structure .structure-wrapper {
