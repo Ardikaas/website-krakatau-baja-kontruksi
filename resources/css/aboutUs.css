@@ -464,7 +464,7 @@
     background-color: #f0f4f8;
 }
 
-.history-section .tabs-content {
+.history-section .history-carousel {
     position: relative;
     max-width: 1200px;
     width: 100%;
@@ -472,67 +472,36 @@
     padding: 0px 15px;
 }
 
-.history-section .tabs-box {
-    position: relative;
-    display: block;
+.history-section .history-item {
+    background: #e2e7ed;
 }
 
-.history-section .tabs-box .tabs-content .tab {
-    position: absolute;
-    left: 0px;
-    top: 0px;
+.history-section .history-inner {
+    padding: 0;
+}
+
+.history-section .history-image img {
     width: 100%;
-    height: auto;
-    visibility: hidden;
-    opacity: 0;
-    transform: scale(0.9, 0.9) translateY(0px);
-    transition: all 500ms ease;
-}
-
-.history-section .tabs-box .tabs-content .tab.active-tab {
-    position: relative;
-    visibility: visible;
-    opacity: 1;
-    transform: scale(1) translateY(0px);
-}
-
-.history-section .tabs-inner {
-    position: relative;
     display: block;
-    background-color: #e2e7ed;
 }
 
-.history-section .tabs-inner .image-box {
-    position: relative;
-    display: block;
-    margin-right: -15px;
+.history-section .history-content {
+    padding: 45px 50px 44px 35px;
 }
 
-.history-section .tabs-inner .image-box img {
-    width: 100%;
-}
-
-.history-section .tabs-inner .content-box {
-    position: relative;
-    display: block;
-    padding: 45px 30px 44px 35px;
-}
-
-.history-section .tabs-inner .content-box .title-text {
-    position: relative;
-    display: block;
-    padding-bottom: 22px;
-    margin-bottom: 35px;
-}
-
-.history-section .tabs-inner .content-box .title-text h2 {
+.history-section .history-content h2 {
     font-size: 30px;
+    font-weight: 600;
+    color: var(--title-color);
+    font-family: var(--title-font);
     line-height: 38px;
+    margin-bottom: 22px;
+    position: relative;
 }
 
-.history-section .tabs-inner .content-box .title-text .title-shape {
+.history-section .history-content h2::after {
+    content: "";
     position: absolute;
-    background-color: var(--theme-color);
     width: 70px;
     height: 1px;
     left: 0px;
@@ -557,20 +526,26 @@
     right: 0px;
 }
 
-.history-section .tabs-inner .content-box p {
+.history-section .history-content p {
     margin-bottom: 17px;
+    font-weight: 400;
+    text-align: justify;
 }
 
-.history-section .tabs-inner .content-box h5 {
+.history-section .history-content h5 {
     font-size: 18px;
+    font-weight: 600;
+    color: var(--title-color);
+    font-family: var(--title-font);
     line-height: 26px;
 }
 
-.history-section .tab-btn-box {
-    position: relative;
-    display: block;
-    padding-top: 24px;
+/* ===============================
+   NAV TAHUN
+================================ */
+.history-section .history-nav {
     margin-top: 80px;
+    padding-top: 35px;
     border-top: 4px solid #cdd5dd;
 }
 
@@ -595,57 +570,54 @@
 .history-section .tab-btn-box .tab-btns {
     position: relative;
     display: flex;
-    align-items: center;
     justify-content: center;
     gap: 160px;
 }
 
-.history-section .tab-btn-box .tab-btns li {
-    position: relative;
-    display: inline-block;
+.history-section .history-years li {
     font-size: 18px;
-    line-height: 26px;
-    font-family: var(--title-font);
-    color: #66696b;
     cursor: pointer;
-    transition: all 500ms ease;
+    color: #66696b;
+    position: relative;
+    transition: 0.3s;
 }
 
-.history-section .tab-btn-box .tab-btns li.active-btn {
+.history-section .history-years li.active {
     color: #0d202f;
+    font-weight: 600;
 }
 
-.history-section .tab-btn-box .tab-btns li:before {
+/* garis + dot */
+.history-section .history-years li::before {
+    content: "";
     position: absolute;
     content: "";
     background-color: var(--theme-color);
     width: 1px;
-    height: 30px;
+    height: 25px;
+    background: var(--theme-color);
+    top: -30px;
     left: 50%;
-    transform: translateY(-50%);
-    top: -33px;
-    z-index: 1;
     opacity: 0;
-    transition: all 500ms ease;
 }
 
-.history-section .tab-btn-box .tab-btns li:after {
+.history-section .history-years li::after {
+    content: "";
     position: absolute;
     content: "";
     border: 2px solid var(--theme-color);
     width: 11px;
     height: 11px;
     border-radius: 50%;
+    border: 2px solid var(--theme-color);
+    top: -40px;
     left: 50%;
-    top: -59px;
-    margin-left: -5px;
-    z-index: 1;
+    transform: translateX(-50%);
     opacity: 0;
-    transition: all 500ms ease;
 }
 
-.history-section .tab-btn-box .tab-btns li.active-btn::before,
-.history-section .tab-btn-box .tab-btns li.active-btn::after {
+.history-section .history-years li.active::before,
+.history-section .history-years li.active::after {
     opacity: 1;
 }
 
@@ -956,29 +928,22 @@
     text-align: right;
 }
 
-.chooseus-style-two .image-box {
-    position: relative;
-    display: block;
+.organization-structure .structure-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.chooseus-style-two .image-box .image {
+.organization-structure .structure-image {
     position: relative;
-    display: block;
-    border-radius: 50%;
-}
-
-.chooseus-style-two .image-box .image img {
+    max-width: 1600px;
     width: 100%;
-    border-radius: 50%;
 }
 
-.chooseus-style-two .image-box .image-shape {
-    position: absolute;
-    left: -70px;
-    top: -70px;
-    width: 510px;
-    height: 510px;
-    background-repeat: no-repeat;
+.organization-structure .structure-image img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* ===== Features Section ===== */
@@ -1571,7 +1536,7 @@
         display: none;
     }
 
-    .history-section .tab-btn-box .tab-btns {
+    .history-section .history-years {
         gap: 100px;
     }
 }
@@ -1647,24 +1612,8 @@
         padding: 0px 15px;
     }
 
-    .chooseus-style-two .left-content,
-    .chooseus-style-two .right-content {
-        margin-bottom: 30px;
-    }
-
-    .right-content .chooseus-block-two .inner-box {
-        text-align: left;
-    }
-
-    .right-content .chooseus-block-two .inner-box h3 {
-        padding-left: 22px;
-        padding-right: 0px;
-        text-align: left;
-    }
-
-    .right-content .chooseus-block-two .inner-box h3 i {
-        left: 0px;
-        right: inherit;
+    .organization-structure {
+        padding: 80px 0;
     }
 
     .features-section .tabs-box .tabs-content {
@@ -1704,6 +1653,24 @@
         font-size: 18px;
         line-height: 26px;
     }
+
+    .history-section .history-item .row {
+        flex-direction: column;
+    }
+
+    .history-section .history-item img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    .history-section .history-item .history-content {
+        padding: 30px;
+    }
+
+    .history-section .history-years {
+        gap: 60px;
+    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -1718,14 +1685,6 @@
     .sec-title h2 {
         font-size: 36px;
         line-height: 44px;
-    }
-
-    .chooseus-style-two {
-        padding: 62px 0px 25px 0px;
-    }
-
-    .chooseus-style-two .image-box .image {
-        margin: 30px 0px;
     }
 
     .team-section,
@@ -1777,13 +1736,19 @@
         line-height: 26px;
     }
 
-    .history-section .tab-btn-box .tab-btns {
+    .history-section .history-years {
         flex-wrap: wrap;
         gap: 30px;
     }
 
-    .history-section .tab-btn-box .tab-btns li::before {
+    .history-section .history-years li::before,
+    .history-section .history-years li::after {
         display: none;
+    }
+
+    .history-section .history-item .content-box h2 {
+        font-size: 26px;
+        line-height: 34px;
     }
 
     .company-section {
@@ -1802,8 +1767,17 @@
 }
 
 @media only screen and (max-width: 575px) {
-    .history-section .tab-btn-box .tab-btns {
+    .history-section .history-years {
         gap: 20px;
+    }
+
+    .history-section .history-item .content-box {
+        padding: 25px 20px;
+    }
+
+    .history-section .history-item .content-box h2 {
+        font-size: 22px;
+        line-height: 30px;
     }
 
     .sec-title h2 {
@@ -1848,8 +1822,17 @@
         line-height: 24px;
     }
 
-    .history-section .tab-btn-box .tab-btns {
-        gap: 10px;
+    .history-section .history-years {
+        gap: 12px;
+    }
+
+    .history-section .history-years li {
+        font-size: 14px;
+    }
+
+    .history-section .history-item .history-content p {
+        font-size: 14px;
+        line-height: 22px;
     }
 
     .company-section .title-column .sec-title {
