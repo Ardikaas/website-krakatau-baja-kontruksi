@@ -9,7 +9,8 @@
     margin: 0 auto;
 }
 
-.outer-container {
+.history-section .outer-container,
+.company-section .outer-container {
     position: relative;
     max-width: 1920px;
     margin: 0 auto;
