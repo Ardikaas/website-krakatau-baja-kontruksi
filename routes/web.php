@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Front\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\WbsController as AdminWbsController;
+use App\Http\Controllers\Api\WbsController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -47,10 +49,17 @@ Route::get('/admin/addSpecifications', function () {
     return view('admin.adminSpecificationAdd');
 })->name('admin.adminSpecificationAdd');
 
-Route::get('/admin/wbs', function () {
-    return view('admin.adminWBS');
-})->name('admin.wbs');
+Route::prefix('admin')->group(function () {
+    Route::get('/wbs', [AdminWbsController::class, 'index'])
+        ->name('admin.wbs.index');
 
+    Route::get('/wbs/{id}', [AdminWbsController::class, 'show'])
+        ->name('admin.wbs.show');
+});
+
+Route::get('/wbs/{id}/download', [WbsController::class, 'downloadEvidence'])
+    ->name('api.wbs.download');
+    
 Route::get('/admin/aboutUsManagement', function () {
     return view('admin.adminAboutUs');
 })->name('admin.aboutUs');

@@ -21,20 +21,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @for ($i = 0; $i < 5; $i++)
+                            @foreach ($reports as $report)
                             <tr>
-                                <td>ID-LP1902859320</td>
-                                <td class="fw-semibold">
-                                    Penyalahgunaan Dana Operasional Departemen
-                                </td>
-                                <td>Pelanggaran Etika & Keuangan</td>
-                                <td>10 Jan 2026</td>
+                                <td>{{ $report->ticket_number }}</td>
+                                <td class="fw-semibold">{{ $report->judul_kasus }}</td>
+                                <td>{{ $report->tipe_insiden }}</td>
+                                <td>{{ $report->created_at->format('d M Y') }}</td>
                                 <td class="text-end">
-                                    <a href="#" class="btn-view">View Report</a>
+                                    <a href="{{ route('admin.wbs.show', $report->id) }}" class="btn-view">
+                                        View Report
+                                    </a>
                                 </td>
                             </tr>
-                            @endfor
-                        </tbody>
+                            @endforeach
+                        </tbody>                            
                     </table>
                 </div>
             </div>
