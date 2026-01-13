@@ -405,3 +405,134 @@
     background-color: #00a1d1;
     color: #fff;
 }
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+/* Laptop kecil (<=1440px) */
+@media (max-width: 1440px) {
+    .admin-aboutUs-management {
+        padding: 32px;
+    }
+
+    .admin-aboutUs-management .upload-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Laptop / Tablet Landscape (<=1280px) */
+@media (max-width: 1280px) {
+    .admin-aboutUs-management {
+        margin-left: 240px;
+        padding: 28px;
+    }
+
+    .admin-aboutUs-management .aboutUs-header h1 {
+        font-size: 32px;
+        margin-bottom: 60px;
+    }
+
+    .admin-aboutUs-management .history-card {
+        flex: 0 0 320px;
+    }
+
+    .admin-aboutUs-management .direction-card {
+        flex: 0 0 280px;
+    }
+}
+
+/* Tablet (<=1024px) */
+@media (max-width: 1024px) {
+    .admin-aboutUs-management {
+        margin-left: 0;
+        margin-top: 70px;
+        padding: 24px;
+    }
+
+    .admin-aboutUs-management .upload-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admin-aboutUs-management .default-section-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .admin-aboutUs-management .popup-card,
+    .admin-aboutUs-management .history-popup-card {
+        width: 95%;
+    }
+}
+
+/* Mobile (<=768px) */
+@media (max-width: 768px) {
+    .admin-aboutUs-management {
+        padding: 20px 16px;
+        margin-left: 0;
+    }
+
+    .admin-aboutUs-management .aboutUs-header h1 {
+        font-size: 26px;
+        margin-bottom: 40px;
+    }
+
+    .admin-aboutUs-management .upload-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-aboutUs-management .upload-box {
+        height: auto;
+        padding: 48px 16px;
+    }
+
+    .admin-aboutUs-management .default-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .admin-aboutUs-management .default-header .add-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .admin-aboutUs-management .history-card {
+        flex: 0 0 280px;
+    }
+
+    .admin-aboutUs-management .direction-card {
+        flex: 0 0 260px;
+    }
+
+    .admin-aboutUs-management .popup-overlay .popup-card .popup-actions {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+
+    .admin-aboutUs-management .popup-overlay .popup-card .right-actions {
+        justify-content: space-between;
+    }
+}
+
+/* Mobile kecil (<=480px) */
+@media (max-width: 480px) {
+    .admin-aboutUs-management .aboutUs-header h1 {
+        font-size: 22px;
+    }
+
+    .admin-aboutUs-management .history-card {
+        flex: 0 0 240px;
+    }
+
+    .admin-aboutUs-management .direction-card {
+        flex: 0 0 220px;
+    }
+
+    .admin-aboutUs-management .upload-box.small {
+        min-width: 100%;
+        padding: 40px 14px;
+    }
+}
