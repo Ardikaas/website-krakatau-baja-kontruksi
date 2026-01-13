@@ -330,6 +330,11 @@
     z-index: 9999;
 }
 
+.admin-aboutUs-management .history-popup-card {
+    width: 720px;
+    max-width: 95%;
+}
+
 /* Card */
 .admin-aboutUs-management .popup-card {
     width: 420px;
@@ -340,8 +345,10 @@
 
 /* Upload */
 .admin-aboutUs-management .popup-overlay .popup-card .upload-box {
-    display: block;
-    border: 2px dashed #d1d5db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px dashed #d1d5db;
     border-radius: 12px;
     padding: 32px;
     text-align: center;
@@ -392,4 +399,9 @@
     color: #ef4444;
     font-weight: 500;
     cursor: pointer;
+}
+
+.admin-aboutUs-management .popup-overlay .popup-actions .btn-primary {
+    background-color: #00a1d1;
+    color: #fff;
 }
