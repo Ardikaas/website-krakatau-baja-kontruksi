@@ -50,3 +50,7 @@ Route::get('/admin/addSpecifications', function () {
 Route::get('/admin/wbs', function () {
     return view('admin.adminWBS');
 })->name('admin.wbs');
+
+Route::get('/admin/aboutUsManagement', function () {
+    return view('admin.adminAboutUs');
+})->name('admin.aboutUs');
