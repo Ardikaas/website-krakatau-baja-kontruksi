@@ -90,6 +90,118 @@
     overflow-x: auto;
 }
 
+/* ===============================
+   WBS DETAIL PAGE
+================================ */
+
+.admin-wbs-detail {
+    margin-left: 280px;
+    margin-top: 74px;
+    padding: 40px;
+    font-family: "Inter", sans-serif;
+    background-color: #f4f6f8;
+    min-height: 100vh;
+}
+
+.detail-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 32px;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== HEADER ===== */
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 24px;
+}
+
+.report-id {
+    font-weight: 600;
+    font-size: 15px;
+    color: #0f172a;
+    background: #e0f2fe;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.report-date {
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* ===== SECTION ===== */
+.section-title {
+    margin: 28px 0 14px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+/* ===== ITEMS ===== */
+.detail-item {
+    margin-bottom: 16px;
+}
+
+.detail-item label,
+.detail-grid label {
+    display: block;
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 4px;
+}
+
+.detail-item p,
+.detail-grid p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #0f172a;
+    line-height: 1.6;
+}
+
+/* ===== GRID ===== */
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+/* ===== ATTACHMENT ===== */
+.attachment-file {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #0ea5e9;
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-top: 8px;
+    transition: background 0.2s ease;
+}
+
+.attachment-file:hover {
+    background: #0284c7;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .admin-wbs-detail {
+        margin-left: 0;
+        padding: 24px;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 991px) {
     .admin-whistleblower {
         padding: 70px 0;
