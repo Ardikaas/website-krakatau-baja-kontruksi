@@ -1,41 +1,11 @@
-/* Import Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Red+Rose:wght@300..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+@import 'tailwindcss';
 
-@import "tailwindcss";
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
 
-/* @theme {
-    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
-        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-        "Noto Color Emoji";
-} */
-
-/* Import component styles */
-@import "./preloader.css";
-@import "./sidebarpopup.css";
-@import "./mobilemenu.css";
-@import "./header.css";
-@import "./footer.css";
-@import "./landingPageSection4,5.css";
-@import "./landingPageSection1.css";
-@import "./landingPageSection2.css";
-@import "./landingPageSection3.css";
-@import "./landingPageSection7.css";
-@import "./landingPageSection8.css";
-@import "./landingPageSection9.css";
-@import "./landingPageSection10.css";
-
-/* Admin styles */
-@import "./sidebarAdmin.css";
-@import "./adminLanding.css";
-@import "./adminNewsView.css";
-@import "./adminNewsAdd.css";
-@import "./adminSpecificationView.css";
-@import "./adminSpecificationsAdd.css";
-
-/*Responsive in the last for gak nimpa*/
-@import "./aboutUs.css";
-@import "./responsive.css";
-@import "./responsive.css";
-
-@import "./whistleBlowingSystem.css";
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
