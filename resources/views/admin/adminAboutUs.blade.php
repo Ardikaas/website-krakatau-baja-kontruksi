@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Admin News Manager')
+@section('title', 'Admin About Us Page Manager')
 @section('meta_description', 'Official website of PT Krakatau Baja Konstruksi')
 
 @section('content')
