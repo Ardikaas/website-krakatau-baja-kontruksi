@@ -189,6 +189,7 @@
 .about-section {
     position: relative;
     background-color: #fff;
+    overflow: visible;
 }
 
 .about-section .pattern-layer {
@@ -196,8 +197,10 @@
     left: 0px;
     top: 0px;
     width: 573px;
-    height: 1217px;
+    height: 1600px;
     background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
 }
 
 .about-section .content-box {
