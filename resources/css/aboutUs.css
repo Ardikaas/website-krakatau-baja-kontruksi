@@ -860,6 +860,7 @@
     position: relative;
     display: block;
     font-size: 24px;
+    font-weight: 600;
     line-height: 32px;
     margin-bottom: 9px;
     padding-left: 22px;
@@ -871,6 +872,22 @@
     top: 3px;
     font-size: 16px;
     color: var(--theme-color);
+}
+
+.chooseus-style-two .image-box {
+    position: relative;
+    display: block;
+}
+
+.chooseus-style-two .image-box .image {
+    position: relative;
+    display: block;
+    border-radius: 50%;
+}
+
+.chooseus-style-two .image-box .image img {
+    width: 100%;
+    border-radius: 50%;
 }
 
 .right-content .chooseus-block-two .inner-box h3 {
@@ -1497,10 +1514,6 @@
         width: 33.333%;
     }
 
-    .chooseus-style-two .image-box .image-shape {
-        display: none;
-    }
-
     .history-section .history-years {
         gap: 100px;
     }
@@ -1636,6 +1649,15 @@
     .history-section .history-years {
         gap: 60px;
     }
+
+    .chooseus-style-two .image-box {
+        display: flex;
+        justify-content: center;
+    }
+
+    .chooseus-style-two .image-box .image img {
+        max-width: 300px;
+    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -1718,6 +1740,14 @@
 
     .company-section {
         padding-bottom: 200px;
+    }
+
+    .chooseus-style-two {
+        padding: 62px 0px 25px 0px;
+    }
+
+    .chooseus-style-two .image-box .image {
+        margin: 30px 0px;
     }
 }
 
