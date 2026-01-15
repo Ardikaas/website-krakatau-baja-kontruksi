@@ -42,11 +42,11 @@ Route::get('/admin/addNews', function () {
 Route::post('/admin/addNews', [AdminController::class, 'storeNews'])->name('admin.adminNewsStore');
 Route::delete('/admin/news/{id}', [AdminController::class, 'deleteNews'])->name('admin.news.delete');
 
-Route::get('/admin/specificationsEdit', function () {
+Route::get('/admin/productEdit', function () {
     return view('admin.adminSpecificationView');
 })->name('admin.adminSpecificationView');
 
-Route::get('/admin/addSpecifications', function () {
+Route::get('/admin/addProduct', function () {
     return view('admin.adminSpecificationAdd');
 })->name('admin.adminSpecificationAdd');
 
@@ -60,7 +60,7 @@ Route::prefix('admin')->group(function () {
 
 Route::get('/wbs/{id}/download', [WbsController::class, 'downloadEvidence'])
     ->name('api.wbs.download');
-    
-Route::get('/admin/aboutUs', function () {
+
+Route::get('/admin/aboutus', function () {
     return view('admin.adminAboutUs');
 })->name('admin.aboutUs');
