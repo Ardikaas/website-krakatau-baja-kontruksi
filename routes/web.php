@@ -60,6 +60,6 @@ Route::prefix('admin')->group(function () {
 Route::get('/wbs/{id}/download', [WbsController::class, 'downloadEvidence'])
     ->name('api.wbs.download');
     
-Route::get('/admin/aboutUsManagement', function () {
+Route::get('/admin/aboutUs', function () {
     return view('admin.adminAboutUs');
 })->name('admin.aboutUs');
