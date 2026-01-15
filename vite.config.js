@@ -14,6 +14,7 @@ export default defineConfig({
                 "resources/js/news.js",
                 "resources/js/newsDetail.js",
                 "resources/js/newsEditor.js",
+                "resources/js/admin-document.js",
             ],
             refresh: true,
         }),

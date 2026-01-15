@@ -1,35 +1,39 @@
 <!-- download-section -->
-<section class="download-section">
-    <div class="bg-layer"></div>
-    <div class="auto-container">
-        <div class="row clearfix">
-            <div class="col-lg-6 col-md-12 col-sm-12 single-column">
-                <div class="single-item pr_35">
-                    <div class="text-box">
-                        <div class="icon-box"><i class="flaticon-brochure"></i></div>
-                        <div class="inner">
-                            <h4>Our Company Brochure</h4>
-                            <h6>pdf(3.5mb)</h6>
+@inject('documentService', \App\Services\DocumentService::class)
+@php
+    $footerDocuments = $documentService->list()->take(2);
+@endphp
+
+@if (isset($footerDocuments) && $footerDocuments->count())
+    <section class="download-section">
+        <div class="bg-layer"></div>
+        <div class="auto-container">
+            <div class="row clearfix">
+
+                @foreach ($footerDocuments as $doc)
+                    <div class="col-lg-6 col-md-12 col-sm-12 single-column">
+                        <div class="single-item {{ $loop->first ? 'pr_35' : 'pl_35' }}">
+                            <div class="text-box">
+                                <div class="icon-box">
+                                    <i class="flaticon-brochure"></i>
+                                </div>
+                                <div class="inner">
+                                    <h4>{{ $doc->title }}</h4>
+                                    <h6>pdf ({{ $doc->size }})</h6>
+                                </div>
+                            </div>
+
+                            <a href="{{ url('/api/documents/download/' . $doc->id) }}">
+                                <i class="flaticon-download"></i>
+                            </a>
                         </div>
                     </div>
-                    <button type="button"><i class="flaticon-download"></i></button>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-12 col-sm-12 single-column">
-                <div class="single-item pl_35">
-                    <div class="text-box">
-                        <div class="icon-box"><i class="flaticon-brochure"></i></div>
-                        <div class="inner">
-                            <h4>User Manuals & Guidelines</h4>
-                            <h6>pdf(4.0mb)</h6>
-                        </div>
-                    </div>
-                    <button type="button"><i class="flaticon-download"></i></button>
-                </div>
+                @endforeach
+
             </div>
         </div>
-    </div>
-</section>
+    </section>
+@endif
 <!-- download-section end -->
 
 <footer class="main-footer">
@@ -96,7 +100,8 @@
                 <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                     <div class="footer-widget support-widget">
                         <div class="widget-title">
-                            <img src="{{ asset('images/icons/Untitled design (1).png') }}" alt="WBS" style="max-width: 100%; height: auto;">
+                            <img src="{{ asset('images/icons/Untitled design (1).png') }}" alt="WBS"
+                                style="max-width: 100%; height: auto;">
                         </div>
                         <div class="widget-content">
                         </div>
@@ -130,7 +135,8 @@
                     </figure>
                     <div class="copyright">
                         <p>Copyrights &copy; {{ date('Y') }} <a href="#">PT. Krakatau Baja Konstruksi,</a>
-                            <br />All Rights Reserved.</p>
+                            <br />All Rights Reserved.
+                        </p>
                     </div>
                 </div>
             </div>
