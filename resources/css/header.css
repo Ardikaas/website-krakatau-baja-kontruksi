@@ -653,12 +653,10 @@
 
 .main-header .bg-color{
   position: absolute;
-  background-color: #f0f4f8;
   width: 447px;
   height: 100%;
   top: 0px;
   right: 0px;
-  border-left: 1px solid #ebe9ef;
 }
 
 
@@ -714,7 +712,7 @@
 }
 
 .main-menu .navigation > li.dropdown > a{
-  padding-right: 17px;
+  padding: 0px 15px;
 }
 
 .main-menu .navigation > li.current > a,
@@ -937,11 +935,6 @@
   display: none;
   z-index:5;
   transition: all 500ms ease;
-}
-
-.main-menu .navigation li.current.dropdown .dropdown-btn,
-.main-menu .navigation li:hover .dropdown-btn{
-  
 }
 
 .main-menu .navigation li.dropdown ul li.dropdown .dropdown-btn{

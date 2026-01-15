@@ -13,6 +13,6 @@
         <x-landingPageSection7 />
         <x-landingPageSection8 />
         <x-landingPageSection9 />
-        <x-landingPageSection10 />
+        <x-landingPageSection10 :news="$news" />
     </div>
 @endsection
