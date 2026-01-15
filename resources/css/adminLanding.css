@@ -421,9 +421,39 @@
     border: 2px dashed #00000033;
     border-radius: 14px;
     background-color: #ffffff;
-    cursor: pointer;
+    cursor: default;
     transition: border-color 0.2s ease;
     min-width: 200px;
+}
+
+.file-input-hidden {
+    display: none;
+}
+
+.upload-browse {
+    color: #00a1d1;
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.upload-browse:hover {
+    text-decoration: underline;
+}
+
+.upload-text {
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.upload-text .file-name {
+    display: block;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .admin-landing-page .file-upload:hover {
