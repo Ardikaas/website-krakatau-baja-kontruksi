@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Helpers\ApiResponse;
+use App\Services\NewsService;
 use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Validator;
 
 class NewsController extends Controller
 {
-    public function index()
+    public function index(NewsService $service)
     {
         $news = News::latest()->get()->map(function ($item) {
             return [
@@ -26,7 +27,7 @@ class NewsController extends Controller
         return ApiResponse::success($news);
     }
 
-    public function show($id)
+    public function show($id, NewsService $service)
     {
         $news = News::with('comments')->find($id);
 
@@ -45,7 +46,7 @@ class NewsController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request, NewsService $service)
     {
         $validator = Validator::make($request->all(), [
             'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
@@ -71,7 +72,7 @@ class NewsController extends Controller
         return ApiResponse::success($news, 'News berhasil dibuat', 201);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, NewsService $service)
     {
         $news = News::find($id);
 
@@ -100,7 +101,7 @@ class NewsController extends Controller
         return ApiResponse::success($news, 'News berhasil diperbarui');
     }
 
-    public function destroy($id)
+    public function destroy($id, NewsService $service)
     {
         $news = News::find($id);
 
