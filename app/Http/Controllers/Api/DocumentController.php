@@ -5,20 +5,21 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Helpers\ApiResponse;
 use App\Models\Document;
+use App\Services\DocumentService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class DocumentController extends Controller
 {
-    public function index()
+    public function index(DocumentService $service)
     {
         return ApiResponse::success(
             Document::latest()->get()
         );
     }
 
-    public function store(Request $request)
+    public function store(Request $request, DocumentService $service)
     {
         if (Document::count() >= 2) {
             return ApiResponse::error(
@@ -62,7 +63,7 @@ class DocumentController extends Controller
         );
     }
 
-    public function download($id)
+    public function download($id, DocumentService $service)
     {
         $doc = Document::find($id);
 
@@ -89,7 +90,7 @@ class DocumentController extends Controller
         );
     }
 
-    public function destroy($id)
+    public function destroy($id, DocumentService $service)
     {
         $doc = Document::find($id);
 
