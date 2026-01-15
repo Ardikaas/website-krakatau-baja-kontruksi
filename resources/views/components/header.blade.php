@@ -46,7 +46,7 @@
                                             <li><a href="service-details-3.html">Metal Casting</a></li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown"><a href="{{ route('news') }}">News</a></li>
+                                    <li class="dropdown"><a href="https://krasmedia.id/" target="_blank">News</a></li>
                                 </ul>
                             </div>
                         </nav>

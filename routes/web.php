@@ -5,7 +5,9 @@ use App\Http\Controllers\Front\NewsController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\WbsController as AdminWbsController;
+use App\Http\Controllers\Admin\DocumentController as AdminDocumentController;
 use App\Http\Controllers\Api\WbsController;
+
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -64,3 +66,16 @@ Route::get('/wbs/{id}/download', [WbsController::class, 'downloadEvidence'])
 Route::get('/admin/aboutus', function () {
     return view('admin.adminAboutUs');
 })->name('admin.aboutUs');
+
+Route::get('/admin', [AdminDocumentController::class, 'adminLanding'])
+    ->name('admin.landingEdit');
+
+Route::post(
+    '/admin/documents',
+    [AdminDocumentController::class, 'store']
+)->name('admin.documents.store');
+
+Route::delete(
+    '/admin/documents/{id}',
+    [AdminDocumentController::class, 'destroy']
+)->name('admin.documents.delete');
