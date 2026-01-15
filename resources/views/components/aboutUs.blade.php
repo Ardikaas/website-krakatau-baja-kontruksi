@@ -271,18 +271,66 @@ $histories = [
 
         <!-- Dewan Komisaris -->
         <div class="image-wrapper active" id="komisaris">
-            <div class="image-card"><img src="input.jpg" alt="" /></div>
-            <div class="image-card"><img src="" alt="" /></div>
-            <div class="image-card"><img src="img/komisaris3.jpg" alt="" /></div>
-            <div class="image-card"><img src="img/komisaris4.jpg" alt="" /></div>
-            <div class="image-card"><img src="img/komisaris4.jpg" alt="" /></div>
+            <div class="image-card">
+                <img src="input.jpg" alt="" />
+                <div class="card-overlay">
+                    <h4>John Doe</h4>
+                    <span>Komisaris Utama</span>
+                </div>
+            </div>           
+            <div class="image-card">
+                <img src="input.jpg" alt="" />
+                <div class="card-overlay">
+                    <h4>John Doe</h4>
+                    <span>Komisaris Utama</span>
+                </div>
+            </div>           
+            <div class="image-card">
+                <img src="input.jpg" alt="" />
+                <div class="card-overlay">
+                    <h4>John Doe</h4>
+                    <span>Komisaris Utama</span>
+                </div>
+            </div>           
+            <div class="image-card">
+                <img src="input.jpg" alt="" />
+                <div class="card-overlay">
+                    <h4>John Doe</h4>
+                    <span>Komisaris Utama</span>
+                </div>
+            </div>           
         </div>
 
         <!-- Direksi -->
         <div class="image-wrapper" id="direksi">
-            <div class="image-card"><img src="img/direksi1.jpg" alt="" /></div>
-            <div class="image-card"><img src="img/direksi2.jpg" alt="" /></div>
-            <div class="image-card"><img src="img/direksi3.jpg" alt="" /></div>
+            <div class="image-card">
+                <img src="input.jpg" alt="" />
+                <div class="card-overlay">
+                    <h4>John Doe</h4>
+                    <span>Komisaris Utama</span>
+                </div>
+            </div>   
+            <div class="image-card">
+                <img src="input.jpg" alt="" />
+                <div class="card-overlay">
+                    <h4>John Doe</h4>
+                    <span>Komisaris Utama</span>
+                </div>
+            </div>   
+            <div class="image-card">
+                <img src="input.jpg" alt="" />
+                <div class="card-overlay">
+                    <h4>John Doe</h4>
+                    <span>Komisaris Utama</span>
+                </div>
+            </div>   
+            <div class="image-card">
+                <img src="input.jpg" alt="" />
+                <div class="card-overlay">
+                    <h4>John Doe</h4>
+                    <span>Komisaris Utama</span>
+                </div>
+            </div>              
         </div>
         </div>
     </div>
