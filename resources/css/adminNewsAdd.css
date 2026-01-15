@@ -77,6 +77,38 @@
 }
 
 /* ===============================
+   NEWS INPUT FIELDS (TITLE & AUTHOR)
+================================ */
+
+
+.admin-news-add .news-editor-field {
+    margin-bottom: 20px;
+}
+
+.admin-news-add .news-editor-input {
+    width: 100%;
+    max-width: 600px;
+    padding: 14px 16px;
+    font-size: 14px;
+    font-family: "Inter", sans-serif;
+    color: #374151;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.admin-news-add .news-editor-input::placeholder {
+    color: #9ca3af;
+}
+
+.admin-news-add .news-editor-input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ===============================
    TOOLBAR
 ================================ */
 
@@ -284,5 +316,11 @@
     .admin-news-add .news-editor-btn-cancel {
         width: 100%;
         text-align: center;
+    }
+
+    .admin-news-add .news-editor-input {
+        font-size: 13px;
+        padding: 12px 14px;
+        max-width: 100%;
     }
 }
