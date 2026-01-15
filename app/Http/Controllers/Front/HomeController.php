@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Services\NewsService;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(NewsService $service)
     {
-        return view('front.home');
+        $news = $service->latest(4);
+
+        return view('front.home', compact('news'));
     }
 }

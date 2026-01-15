@@ -32,11 +32,6 @@ class WbsReport extends Model
     ];
 
     protected $casts = [
-        'ada_saksi' => 'boolean',
-        'pernah_terjadi_sebelumnya' => 'boolean',
-        'pelanggaran_peraturan' => 'boolean',
-        'dampak_perusahaan' => 'boolean',
-        'pernah_dilaporkan' => 'boolean',
         'tanggal_kejadian' => 'date',
     ];
 }

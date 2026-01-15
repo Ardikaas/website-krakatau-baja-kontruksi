@@ -199,7 +199,26 @@
 .admin-news-management .anm-date {
     font-size: 12px;
     color: #9ca3af;
-    padding-left: 38px;
+}
+
+.admin-news-management .anm-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-news-management .anm-delete-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: #ef4444;
+    cursor: pointer;
+}
+
+.admin-news-management .anm-delete-btn:hover {
+    text-decoration: underline;
 }
 
 /* ===============================

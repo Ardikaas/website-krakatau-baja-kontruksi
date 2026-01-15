@@ -13,6 +13,7 @@ export default defineConfig({
                 "resources/js/owl.js",
                 "resources/js/news.js",
                 "resources/js/newsDetail.js",
+                "resources/js/newsEditor.js",
             ],
             refresh: true,
         }),
