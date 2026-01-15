@@ -14,13 +14,12 @@
                 <div class="content-box">
                     <div class="sec-title mb_35">
                         <h6>About Us</h6>
-                        <h2>Leaders in Precision <span>[Manufacturing]</span></h2>
+                        <h2>Precision <span>[Steel]</span> for Sustainable Growth</h2>
                     </div>
-                    <div class="text-box mb_30">
-                        <p>Power choice is untrammelled and when nothing prevents being able trivial example, which of
-                            us ever undertake laborious.</p>
+                    <div class="text-box mb_30 text-justify">
+                        <p>PT Krakatau Baja Konstruksi was established in 1992. Currently, it has become a leading steel producer in Indonesia. Our company produces high-quality products such as Deformed Bar, Plain Bar, Equal Angle, Channel, Wide Flange, H Beam and I Beam. As a subsidiary of PT Krakatau Steel, with 99.9997% share ownership by PT Krakatau Steel and 0.0003% by PT Krakatau Engineering, we are always committed to prioritizing product quality and customer satisfaction. We are ready to anticipate the global era and ready to compete in the third millennium.</p>
                     </div>
-                    <div class="inner-box">
+                    {{-- <div class="inner-box">
                         <div class="row clearfix">
                             <div class="col-lg-6 col-md-6 col-sm-12 left-column">
                                 <div class="left-content">
@@ -49,7 +48,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -141,44 +140,13 @@ $histories = [
                     <div class="static-content">
                         <h6>about</h6>
                         <h3>Our Company</h3>
-                        <p>We are a trusted leader in metal...</p>
+                        <p>We are a trusted leader in steel...</p>
                         <div class="icon-box"><i class="flaticon-factory-1"></i></div>
                     </div>
                     <div class="overlay-content">
                         <h6>about</h6>
                         <h3>Our Company</h3>
-                        <p>We are a trusted leader in metal manufacturing, specializing in precision-crafted solutions
-                            for diverse industries.</p>
-                        <h4>Journey of Excellence</h4>
-                        <ul class="list-item clearfix">
-                            <li>Growth & Innovation</li>
-                            <li>Industry Leadership</li>
-                            <li>Commitment to Quality</li>
-                        </ul>
-                        <div class="download-box">
-                            <button type="button"></button>
-                            <div class="icon-box"><i class="flaticon-brochure"></i></div>
-                            <div class="inner">
-                                <h4>Profile Brochure</h4>
-                                <span>pdf(3.5mb)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="single-column">
-                <div class="inner-box">
-                    <div class="static-content">
-                        <h6>about</h6>
-                        <h3>Our Mission</h3>
-                        <p>To deliver innovative and high-quality... </p>
-                        <div class="icon-box"><i class="flaticon-goal"></i></div>
-                    </div>
-                    <div class="overlay-content">
-                        <h6>about</h6>
-                        <h3>Our Mission</h3>
-                        <p>To deliver innovative and high-quality manufacturing, specializing in precision-crafted
-                            solutions for diverse industries.</p>
+                        <p>We are a trusted leader in steel manufacturing, providing high-quality and reliable solutions for national and industrial development.</p>
                         <h4>Journey of Excellence</h4>
                         <ul class="list-item clearfix">
                             <li>Growth & Innovation</li>
@@ -201,19 +169,47 @@ $histories = [
                     <div class="static-content">
                         <h6>about</h6>
                         <h3>Our Vision</h3>
-                        <p>To lead the industry with innovation...</p>
+                        <p>To become a competitive, profitable... </p>
                         <div class="icon-box"><i class="flaticon-business-vision"></i></div>
                     </div>
                     <div class="overlay-content">
                         <h6>about</h6>
                         <h3>Our Vision</h3>
-                        <p>To lead the industry with innovation manufacturing, specializing in precision-crafted
-                            solutions for diverse industries.</p>
+                        <p>To become a competitive, profitable, and trusted corporation.</p>
                         <h4>Journey of Excellence</h4>
                         <ul class="list-item clearfix">
                             <li>Growth & Innovation</li>
                             <li>Industry Leadership</li>
                             <li>Commitment to Quality</li>
+                        </ul>
+                        <div class="download-box">
+                            <button type="button"></button>
+                            <div class="icon-box"><i class="flaticon-brochure"></i></div>
+                            <div class="inner">
+                                <h4>Profile Brochure</h4>
+                                <span>pdf(3.5mb)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-column">
+                <div class="inner-box">
+                    <div class="static-content">
+                        <h6>about</h6>
+                        <h3>Our Mission</h3>
+                        <p>To achieve productive and efficient...</p>
+                        <div class="icon-box"><i class="flaticon-goal"></i></div>
+                    </div>
+                    <div class="overlay-content">
+                        <h6>about</h6>
+                        <h3>Our Mission</h3>
+                        <ul class="list-item clearfix">
+                            <li>To achieve productive and efficient operational performance in delivering high-quality and profitable products and services.</li>
+                            <li>Develop the steel business through mutually beneficial partnerships with strategic partners.</li>
+                            <li>Expand steel solution applications and downstream steel products to enhance added value and customer satisfaction.</li>
+                            <li>Increase group business value by making positive contributions and optimizing the supply chain.</li>
+                            <li>Develop top-tier talent capable of contributing optimally across all business processes.</li>
                         </ul>
                         <div class="download-box">
                             <button type="button"></button>
@@ -340,3 +336,127 @@ $histories = [
     </div>
 </section>
 {{-- team-section end --}}
+
+<section class="chooseus-style-two">
+    <div class="auto-container">
+        <div class="sec-title mb_25 centred">
+            <h6>Cultural Values</h6>
+            <h2>Core Values <span>(AKHLAK)</span></h2>
+            <p class="mt_12">The core values ​that form the basis of BUMN work culture.</p>
+        </div>
+
+        <div class="row align-items-center">
+            <!-- LEFT COLUMN -->
+            <div class="col-lg-4 col-md-12 col-sm-12 left-column">
+                <div class="left-content">
+
+                    <!-- Amanah -->
+                    <div class="chooseus-block-two">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h3>
+                                <i class="flaticon-thunder-bolt"></i>Amanah
+                            </h3>
+                            <p>
+                                We uphold the trust that has been placed in us.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kompeten -->
+                    <div class="chooseus-block-two">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                            <h3>
+                                <i class="flaticon-thunder-bolt"></i>Competent
+                            </h3>
+                            <p>
+                                We continuously learn and develop our capabilities.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Harmonis -->
+                    <div class="chooseus-block-two">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-people-group"></i>
+                            </div>
+                            <h3>
+                                <i class="flaticon-thunder-bolt"></i>Harmonious
+                            </h3>
+                            <p>
+                                We care for one another and respect differences.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CENTER IMAGE -->
+            <div class="col-lg-4 col-md-12 col-sm-12 image-column">
+                <div class="image-box">
+                    <figure class="image"><img src="{{ asset('images/resource/chooseus-1.jpg') }}"
+                        alt=""></figure>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="col-lg-4 col-md-12 col-sm-12 right-column">
+                <div class="right-content align-3">
+
+                    <!-- Loyal -->
+                    <div class="chooseus-block-two">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-flag"></i>
+                            </div>
+                            <h3>
+                                <i class="flaticon-thunder-bolt"></i>Loyal
+                            </h3>
+                            <p>
+                                We are dedicated and prioritize the interests of the nation and the state.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adaptif -->
+                    <div class="chooseus-block-two">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-arrows-rotate"></i>
+                            </div>
+                            <h3>
+                                <i class="flaticon-thunder-bolt"></i>Adaptive
+                            </h3>
+                            <p>
+                                We continuously innovate and remain enthusiastic in driving and responding to change.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kolaboratif -->
+                    <div class="chooseus-block-two">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <h3>
+                                <i class="flaticon-thunder-bolt"></i>Collaborative
+                            </h3>
+                            <p>
+                                We build synergistic and mutually beneficial partnerships.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
