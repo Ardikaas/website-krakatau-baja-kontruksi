@@ -6,7 +6,7 @@
     padding: 40px;
 }
 
-.whistleblower-title {
+.admin-whistleblower .whistleblower-title {
     font-size: 36px;
     font-weight: 600;
     color: #1f2937;
@@ -14,7 +14,7 @@
 }
 
 /* CARD */
-.whistleblower-card {
+.admin-whistleblower .whistleblower-card {
     background: #fff;
     border-radius: 16px;
     padding: 0;
@@ -23,12 +23,14 @@
 }
 
 /* TABLE */
-.whistleblower-table {
+.admin-whistleblower .whistleblower-table {
     width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
     border-collapse: collapse;
 }
 
-.whistleblower-table thead th {
+.admin-whistleblower .whistleblower-table thead th {
     background: #f8fafc;
     color: #8a8f98;
     font-weight: 500;
@@ -39,7 +41,7 @@
     border-right: 1px solid #e4e7ec;
 }
 
-.whistleblower-table tbody td {
+.admin-whistleblower .whistleblower-table tbody td {
     padding: 18px 22px;
     font-size: 15px;
     color: #1c2b36;
@@ -48,18 +50,18 @@
     vertical-align: middle;
 }
 
-.whistleblower-table tbody tr:last-child td {
+.admin-whistleblower .whistleblower-table tbody tr:last-child td {
     border-bottom: none;
 }
 
-.whistleblower-table td.text-end {
+.admin-whistleblower .whistleblower-table td.text-end {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 /* BUTTON */
-.btn-view {
+.admin-whistleblower .btn-view {
     display: inline-block;
     padding: 8px 18px;
     background: #00a3d9;
@@ -71,21 +73,21 @@
     transition: all 0.3s ease;
 }
 
-.btn-view:hover {
+.admin-whistleblower .btn-view:hover {
     background: #008fc0;
 }
 
 /* HELPERS */
-.fw-semibold {
+.admin-whistleblower .fw-semibold {
     font-weight: 600;
 }
 
-.text-end {
+.admin-whistleblower .text-end {
     text-align: right;
 }
 
 /* RESPONSIVE */
-.table-responsive {
+.admin-whistleblower .table-responsive {
     width: 100%;
     overflow-x: auto;
 }
@@ -193,8 +195,8 @@
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
     .admin-wbs-detail {
-        margin-left: 0;
         padding: 24px;
+        margin-left: 0;
     }
 
     .detail-grid {
@@ -204,6 +206,24 @@
 
 @media (max-width: 991px) {
     .admin-whistleblower {
-        padding: 70px 0;
+        padding: 70px 20px;
+        margin-left: 0;
+    }
+
+    .admin-whistleblower .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .admin-whistleblower .whistleblower-table th,
+    .admin-whistleblower .whistleblower-table td {
+        white-space: nowrap;
+        font-size: 14px;
+        padding: 14px 16px;
+    }
+
+    .admin-whistleblower .btn-view {
+        padding: 6px 14px;
+        font-size: 13px;
     }
 }
