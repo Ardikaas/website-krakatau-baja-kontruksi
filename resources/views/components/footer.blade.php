@@ -41,7 +41,7 @@
         <div class="auto-container">
             <div class="row clearfix">
                 <!-- Contact Widget -->
-                <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
                     <div class="footer-widget contact-widget">
                         <div class="widget-title">
                             <h3>Contact</h3>
@@ -59,7 +59,7 @@
                 </div>
 
                 <!-- Links Widget -->
-                <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
                     <div class="footer-widget links-widget">
                         <div class="widget-title">
                             <h3>Useful Links</h3>
@@ -77,7 +77,7 @@
                 </div>
 
                 <!-- Services Widget -->
-                <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
                     <div class="footer-widget links-widget">
                         <div class="widget-title">
                             <h3>Product</h3>
@@ -96,12 +96,35 @@
                     </div>
                 </div>
 
+                <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
+                    <div class="footer-widget links-widget">
+                        <div class="widget-title">
+                            <h3>Projects</h3>
+                        </div>
+                        <div class="widget-content">
+                            <ul class="links-list clearfix">
+                                <li><a href="#"><i class="flaticon-right"></i><span>Fabrication</span></a></li>
+                                <li><a href="#"><i class="flaticon-right"></i><span>Metal Processing</span></a>
+                                </li>
+                                <li><a href="#"><i class="flaticon-right"></i><span>CNC Machining</span></a></li>
+                                <li><a href="#"><i class="flaticon-right"></i><span>Metal Casting</span></a></li>
+                                <li><a href="#"><i class="flaticon-right"></i><span>Welding</span></a></li>
+                                <li><a href="#"><i class="flaticon-right"></i><span>Punching</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+
                 <!-- Support Widget -->
-                <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
                     <div class="footer-widget support-widget">
                         <div class="widget-title">
-                            <img src="{{ asset('images/icons/Untitled design (1).png') }}" alt="WBS"
-                                style="max-width: 100%; height: auto;">
+                            <a href="{{ url('/wbs') }}">
+                                <img src="{{ asset('images/icons/Untitled design (1).png') }}"
+                                     alt="WBS"
+                                     style="max-width: 100%; height: auto; cursor: pointer;">
+                            </a>
                         </div>
                         <div class="widget-content">
                         </div>
