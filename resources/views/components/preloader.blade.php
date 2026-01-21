@@ -4,6 +4,9 @@
                 <div id="handle-preloader" class="handle-preloader">
                     <div class="animation-preloader">
                         <div class="spinner"></div>
+                        <div class="spinner-logo-wrap">
+                            <img src="{{asset("images/icons/preloader-logo.png")}}" alt="LOGO WHiTE" class="spinner-logo">
+                        </div>
                         <div class="txt-loading">
                             <span data-text-preloader="P" class="letters-loading">P</span>
                             <span data-text-preloader="T" class="letters-loading">T</span>
