@@ -844,6 +844,12 @@
     padding: 112px 0px 75px 0px;
 }
 
+.chooseus-style-two .akhlak-logo img {
+    height: 45px; 
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
 .chooseus-block-two .inner-box {
     position: relative;
     display: block;
@@ -1703,13 +1709,9 @@
     .chooseus-style-two .image-box {
         display: flex;
         justify-content: center;
-    }
-
-    .chooseus-style-two .image-box .image img {
-        max-width: 300px;
+        align-items: center;
     }
 }
-
 @media only screen and (max-width: 767px) {
     .col-md-6 {
         width: 100%;
