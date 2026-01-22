@@ -16,14 +16,6 @@
                     </figure>
                     <h5>Berbasis di <br />Indonesia.</h5>
                 </div>
-
-                <div class="single-item">
-                    <div
-                        class="shape"
-                    ></div>
-                    <h2>28<span>+</span></h2>
-                    <h5>Negara <br />Dilayani.</h5>
-                </div>
             </div>
 
             <span class="rotate-text">Berdiri Sejak, 1992</span>
