@@ -6,9 +6,11 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\WbsController as AdminWbsController;
 use App\Http\Controllers\Admin\DocumentController as AdminDocumentController;
+use App\Http\Controllers\Front\ProductController as FrontProductController;
 use App\Http\Controllers\Api\WbsController;
 use App\Http\Controllers\Admin\HeroBannerController;
 use App\Http\Controllers\Admin\WhyChooseUsController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\ContactController;
 
 
@@ -89,13 +91,11 @@ Route::delete(
     [AdminDocumentController::class, 'destroy']
 )->name('admin.documents.delete');
 
-Route::get('/product', function () {
-    return view('front.product');
-})->name('product');
+Route::get('/product', [FrontProductController::class, 'index'])
+    ->name('product');
 
-Route::get('/product/{id}', function () {
-    return view('front.productDetail');
-})->name('product.detail');
+Route::get('/product/{slug}', [FrontProductController::class, 'show'])
+    ->name('product.detail');
 
 Route::post(
     '/admin/hero-banners',
@@ -126,3 +126,31 @@ Route::get(
     '/admin/why-choose-us/view/{filename}',
     [WhyChooseUsController::class, 'viewImage']
 )->name('admin.why-choose-us.view');
+
+Route::get('/admin/productEdit', [ProductController::class, 'index'])
+    ->name('admin.product.index');
+
+Route::get('/admin/addProduct', [ProductController::class, 'create'])
+    ->name('admin.product.create');
+
+Route::post('/admin/addProduct', [ProductController::class, 'store'])
+    ->name('admin.product.store');
+
+Route::get('/admin/product/{id}/edit', [ProductController::class, 'edit'])
+    ->name('admin.product.edit');
+
+Route::post('/admin/product/{id}', [ProductController::class, 'update'])
+    ->name('admin.product.update');
+
+Route::delete('/admin/product/{product}', [ProductController::class, 'destroy'])
+    ->name('admin.product.delete');
+
+Route::get(
+    '/admin/product-image/{path}',
+    [ProductController::class, 'viewImage']
+)->where('path', '.*')
+    ->name('admin.product.image');
+
+Route::get('/product-image/{filename}', [ProductController::class, 'viewImage'])
+    ->where('filename', '.*')
+    ->name('product.image');
