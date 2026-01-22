@@ -16,12 +16,20 @@
                     <span class="menu-text">About Us Content</span>
                 </a>
 
-                <a href="/admin/productEdit" class="menu-item {{ request()->is('admin/productEdit*') ? 'active' : '' }}">
+                <a href="/admin/productEdit"
+                    class="menu-item {{ request()->is('admin/productEdit*') ? 'active' : '' }}">
                     <img src="{{ asset('images/icons/img_shipment_remove.svg') }}" class="menu-icon">
                     <span class="menu-text">Product Management</span>
                 </a>
 
-                <a href="/admin/newsEdit" class="menu-item {{ request()->is('admin/newsEdit*') || request()->is('admin/addNews*') ? 'active' : '' }}">
+                <a href="/admin/projectEdit"
+                    class="menu-item {{ request()->is('admin/projectEdit*') ? 'active' : '' }}">
+                    <img src="{{ asset('images/icons/img_shipment_remove.svg') }}" class="menu-icon">
+                    <span class="menu-text">Project Management</span>
+                </a>
+
+                <a href="/admin/newsEdit"
+                    class="menu-item {{ request()->is('admin/newsEdit*') || request()->is('admin/addNews*') ? 'active' : '' }}">
                     <img src="{{ asset('images/icons/img_news_paper_streamline.svg') }}" class="menu-icon">
                     <span class="menu-text">News Management</span>
                 </a>

@@ -7,12 +7,12 @@
     <div class="banner-section">
         <div class="pattern-layer"></div>
         <x-landingPageSection1 type="hero" title="Produsen|Baja |Berkualitas" />
-        <x-landingPageSection2 />
+        <x-landingPageSection2 :heroBanners="$heroBanners" />
         <x-landingPageSection3 />
         <x-landingPageSection4 />
         <x-landingPageSection7 />
-        <x-landingPageSection8 />
-        <x-landingPageSection9 />
+        <x-landingPageSection8 :whyChooseUs="$whyChooseUs" />
+        {{-- <x-landingPageSection9 /> --}}
         <x-landingPageSection10 :news="$news" />
     </div>
 @endsection
