@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\DocumentController as AdminDocumentController;
 use App\Http\Controllers\Api\WbsController;
 use App\Http\Controllers\Admin\HeroBannerController;
 use App\Http\Controllers\Admin\WhyChooseUsController;
+use App\Http\Controllers\ContactController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -33,6 +34,10 @@ Route::post('/news/{id}/comment', [NewsController::class, 'storeComment'])->name
 Route::get('/about', function () {
     return view('front.aboutus');
 })->name('about');
+
+Route::post('/contact/send', [ContactController::class, 'send'])
+    ->name('contact.send');
+
 
 
 Route::get('/admin/newsEdit', [AdminController::class, 'adminNewsView'])->name('admin.adminNewsViews');
