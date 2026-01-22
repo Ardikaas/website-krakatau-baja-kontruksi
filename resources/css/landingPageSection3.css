@@ -1,15 +1,16 @@
 .right-side-menu {
     position: absolute;
-    top: -70px;
-    right: 0px;
+    top: 10%;
+    right: 0;
     width: 100px;
-    height: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 100px;
+    transform: translateY(-20%);
     z-index: 2;
 }
+
 
 .right-side-menu .mail-box {
     position: relative;
@@ -89,11 +90,5 @@
 @media only screen and (max-width: 1400px) {
     .right-side-menu {
         display: none !important;
-    }
-}
-
-@media only screen and (max-width: 2000px) {
-    .right-side-menu {
-        transform: translateY(180px);
     }
 }
