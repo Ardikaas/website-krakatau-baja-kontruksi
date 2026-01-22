@@ -74,6 +74,94 @@
 }
 
 /* UPLOAD */
+.admin-add-specifications .upload-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 520px;
+}
+
+/* ITEM */
+.admin-add-specifications .upload-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px;
+    border: 2px dashed #d1d5db;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.admin-add-specifications .upload-item:hover {
+    border-color: #00a1d1;
+}
+
+.upload-item[data-template] {
+    display: none !important;
+}
+
+/* THUMB */
+.admin-add-specifications .upload-thumb {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background: #f9fafb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.admin-add-specifications .upload-thumb img {
+    width: 22px;
+    height: 22px;
+}
+
+/* INFO */
+.admin-add-specifications .upload-info p {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+}
+
+.admin-add-specifications .upload-info span {
+    color: #00a1d1;
+    font-weight: 500;
+}
+
+.admin-add-specifications .upload-info small {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* DELETE BUTTON */
+.admin-add-specifications .btn-delete-img {
+    margin-left: auto;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #ef4444;
+    cursor: pointer;
+}
+
+/* ADD BUTTON */
+.admin-add-specifications .btn-add-image {
+    margin-top: 6px;
+    width: fit-content;
+    background: #00a1d1;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.admin-add-specifications .btn-add-image:hover {
+    background: #0284c7;
+}
+
 .admin-add-specifications .upload-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -152,6 +240,25 @@
 
 .admin-add-specifications .file-actions img {
     width: 20px;
+    cursor: pointer;
+}
+
+.admin-add-specifications .btn-add-table {
+    background: #0ea5e9;
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.admin-add-specifications .btn-add-table:hover {
+    background: #0284c7;
+}
+
+.admin-add-specifications .btn-delete {
+    display: none;
     cursor: pointer;
 }
 
