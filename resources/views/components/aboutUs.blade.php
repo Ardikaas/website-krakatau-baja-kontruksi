@@ -4,9 +4,9 @@
         <div class="row clearfix">
             <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                 <div class="image-box">
-                    <figure class="image image-1"><img src="{{ asset('images/resource/about-3.jpg') }}" alt=""></figure>
-                    <figure class="image image-2"><img src="{{ asset('images/resource/about-4.jpg') }}" alt=""></figure>
-                    <figure class="image image-3"><img src="{{ asset('images/resource/about-5.jpg') }}" alt=""></figure>
+                    <figure class="image image-1"><img src="{{ asset('images/resource/about-company-1.jpeg') }}" alt=""></figure>
+                    <figure class="image image-2"><img src="{{ asset('images/resource/about-company-2.jpeg') }}" alt=""></figure>
+                    <figure class="image image-3"><img src="{{ asset('images/resource/about-company-3.jpeg') }}" alt=""></figure>
                     <span class="rotate-text">Since, 1992</span>
                 </div>
             </div>
@@ -60,13 +60,10 @@
 {{-- history-section --}}
 @php
 $histories = [
-    ['year' => 1985, 'image' => 'history-1.jpg', 'title' => 'Foundation Year 1985'],
-    ['year' => 1988, 'image' => 'history-1.jpg', 'title' => 'Foundation Year 1988'],
-    ['year' => 1990, 'image' => 'history-1.jpg', 'title' => 'Foundation Year 1990'],
-    ['year' => 1993, 'image' => 'history-1.jpg', 'title' => 'Foundation Year 1993'],
-    ['year' => 1999, 'image' => 'history-1.jpg', 'title' => 'Foundation Year 1999'],
-    ['year' => 2000, 'image' => 'history-1.jpg', 'title' => 'Foundation Year 2000'],
-    ['year' => 2002, 'image' => 'history-1.jpg', 'title' => 'Foundation Year 2000'],
+    ['year' => 1962, 'image' => 'Trikora1.jpeg', 'title' => 'Trikora 1', 'desc' => 'President Soekarno launched Trikora Steel Factory project in Cilegon'],
+    ['year' => 1975, 'image' => 'Trikora2.jpeg', 'title' => 'Bar and Section Krakatau Steel', 'desc' => 'It was inaugurated by President Soeharto and accompanied by Minister of Industry M. Jusuf'],
+    ['year' => 1992, 'image' => 'Wajatama1.jpeg', 'title' => 'PT Krakatau Wajatama was Born', 'desc' => 'It was inaugurated by PT Krakatau Wajatama'],
+    ['year' => 2021, 'image' => 'present.jpeg', 'title' => 'Became PT Krakatau Baja Konstruksi', 'desc' => 'Inaugurated as a Subholding by PT Krakatau Steel (Persero) TBK as of September 1st, 2021'],
 ];
 @endphp
 
@@ -95,11 +92,7 @@ $histories = [
                                         <div class="title-shape"></div>
                                         <h2>{{ $item['title'] }}</h2>
                                     </div>
-                                    <p>Our journey began in 1980 with the establishment of a small yet ambitious metal
-                                        workshop. Focused on precision craftsmanship, we laidthe foundation for a
-                                        company built on quality, innovation, and a commitment to meeting client needs.
-                                    </p>
-                                    <h5>Built on precision and passion.</h5>
+                                    <p>{{ $item['desc'] }}</p>
                                 </div>
                             </div>
                         </div>
@@ -126,7 +119,7 @@ $histories = [
 
 {{-- company-section --}}
 <section class="company-section">
-    <div class="bg-layer" style="background-image: url({{ asset('images/background/company-bg.jpg') }});"></div>
+    <div class="bg-layer" style="background-image: url({{ asset('images/background/visi-misi-about-us.png') }});"></div>
     <div class="outer-container">
         <div class="outer-box clearfix">
             <div class="title-column">
@@ -147,20 +140,12 @@ $histories = [
                         <h6>about</h6>
                         <h3>Our Company</h3>
                         <p>We are a trusted leader in steel manufacturing, providing high-quality and reliable solutions for national and industrial development.</p>
-                        <h4>Journey of Excellence</h4>
+                        {{-- <h4>Journey of Excellence</h4>
                         <ul class="list-item clearfix">
                             <li>Growth & Innovation</li>
                             <li>Industry Leadership</li>
                             <li>Commitment to Quality</li>
-                        </ul>
-                        <div class="download-box">
-                            <button type="button"></button>
-                            <div class="icon-box"><i class="flaticon-brochure"></i></div>
-                            <div class="inner">
-                                <h4>Profile Brochure</h4>
-                                <span>pdf(3.5mb)</span>
-                            </div>
-                        </div>
+                        </ul> --}}
                     </div>
                 </div>
             </div>
@@ -176,20 +161,12 @@ $histories = [
                         <h6>about</h6>
                         <h3>Our Vision</h3>
                         <p>To become a competitive, profitable, and trusted corporation.</p>
-                        <h4>Journey of Excellence</h4>
+                        {{-- <h4>Journey of Excellence</h4>
                         <ul class="list-item clearfix">
                             <li>Growth & Innovation</li>
                             <li>Industry Leadership</li>
                             <li>Commitment to Quality</li>
-                        </ul>
-                        <div class="download-box">
-                            <button type="button"></button>
-                            <div class="icon-box"><i class="flaticon-brochure"></i></div>
-                            <div class="inner">
-                                <h4>Profile Brochure</h4>
-                                <span>pdf(3.5mb)</span>
-                            </div>
-                        </div>
+                        </ul> --}}
                     </div>
                 </div>
             </div>
@@ -211,14 +188,6 @@ $histories = [
                             <li>Increase group business value by making positive contributions and optimizing the supply chain.</li>
                             <li>Develop top-tier talent capable of contributing optimally across all business processes.</li>
                         </ul>
-                        <div class="download-box">
-                            <button type="button"></button>
-                            <div class="icon-box"><i class="flaticon-brochure"></i></div>
-                            <div class="inner">
-                                <h4>Profile Brochure</h4>
-                                <span>pdf(3.5mb)</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -233,18 +202,18 @@ $histories = [
     <div class="auto-container">
 
         <div class="sec-title centred mb_45">
-            <h6>Organization Structure</h6>
-            <h2>Our <span>[Organization]</span> Structure</h2>
+            <h6>Corporate Structure</h6>
+            <h2>Our <span>[Corporate]</span> Structure</h2>
             <p class="mt_12">
-                Organizational structure designed to ensure efficiency and clear responsibility.
+                Corporate structure designed to ensure efficiency and clear responsibility.
             </p>
         </div>
 
         <div class="structure-wrapper">
             <div class="structure-image">
                 <img
-                    src="{{ asset('images/background/company-bg.jpg') }}"
-                    alt="Organization Structure"
+                    src="{{ asset('images/background/struktur-company.png') }}"
+                    alt="Corporate Structure"
                 />
             </div>
         </div>
@@ -401,8 +370,8 @@ $histories = [
             <!-- CENTER IMAGE -->
             <div class="col-lg-4 col-md-12 col-sm-12 image-column">
                 <div class="image-box">
-                    <figure class="image"><img src="{{ asset('images/resource/chooseus-1.jpg') }}"
-                        alt=""></figure>
+                    <figure class="image"><img src="{{ asset('images/resource/about-company-1.jpeg') }}"
+                        alt="" style="width: 370px; height: 370px;"></figure>
                 </div>
             </div>
 
