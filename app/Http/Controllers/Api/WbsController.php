@@ -8,6 +8,8 @@ use App\Models\WbsReport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WbsReportMail;
 
 class WbsController extends Controller
 {
@@ -71,6 +73,35 @@ class WbsController extends Controller
                 'dokumen_pendukung' => $filePath,
             ]
         ));
+
+        Mail::to(env('WBS_ADMIN_EMAIL'))
+        ->send(new WbsReportMail([
+            'type' => 'admin',
+            'ticket' => $ticketNumber,
+            'judul' => $report->judul_kasus,
+            'tipe' => $report->tipe_insiden,
+            'kejadian' => $report->kejadian,
+            'nama_terlapor' => $report->nama_terlapor,
+            'jabatan_terlapor' => $report->jabatan_terlapor,
+            'lokasi' => $report->lokasi_kejadian,
+            'tanggal' => $report->tanggal_kejadian,
+            'kerugian' => $report->perkiraan_kerugian,
+            'nama_pelapor' => $report->nama_pelapor,
+            'email_pelapor' => $report->email_pelapor,
+            'kontak' => $report->kontak_pelapor,
+            'file' => $filePath,
+        ]));
+
+        if ($report->email_pelapor) {
+        Mail::to($report->email_pelapor)
+            ->send(new WbsReportMail([
+                'ticket' => $ticketNumber,
+                'judul' => $report->judul_kasus,
+                'tipe' => $report->tipe_insiden,
+                'kejadian' => $report->kejadian,
+                'isUser' => true
+            ]));
+    }
 
         return ApiResponse::success(
             $report,
