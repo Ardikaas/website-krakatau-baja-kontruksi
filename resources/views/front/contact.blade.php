@@ -37,7 +37,7 @@
                                         <div class="shape"
                                             style="background-image: url({{ asset('images/shape/shape-24.png') }});"></div>
                                         <div class="title-box">
-                                            <h3>Reach Us</h3>
+                                            <h3>Sales Contact</h3>
                                             <h6>Call or email for assistance.</h6>
                                         </div>
                                         <div class="text-box">
@@ -54,11 +54,64 @@
                                         <div class="shape"
                                             style="background-image: url({{ asset('images/shape/shape-24.png') }});"></div>
                                         <div class="title-box">
-                                            <h3>Business Hours</h3>
-                                            <h6>Connect during office hours.</h6>
+                                            <h3>Sales Contact</h3>
+                                            <h6>Call or email for assistance.</h6>
                                         </div>
                                         <div class="text-box">
-                                            <p>Mon - Sat: 9.00 am to 6.00 pm<br /> <span class="text">Sun: Closed</span>
+                                            <p><a href="tel:66120003456">[+66] 12 000 3456</a><br /><a
+                                                    href="mailto:marketing@bajakonstruksi.co.id">marketing@bajakonstruksi.co.id</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-lg-4 col-md-6 col-sm-12 info-block">
+                                <div class="info-block-one">
+                                    <div class="inner-box">
+                                        <div class="shape"
+                                            style="background-image: url({{ asset('images/shape/shape-24.png') }});"></div>
+                                        <div class="title-box">
+                                            <h3>Location</h3>
+                                            <h6>Conveniently located to meet.</h6>
+                                        </div>
+                                        <div class="text-box">
+                                            <p>Gedung Krakatau Steel Lantai 2, Jl. jend. Gatot Subroto Kav. 54, Jakarta
+                                                12950</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 info-block">
+                                <div class="info-block-one">
+                                    <div class="inner-box">
+                                        <div class="shape"
+                                            style="background-image: url({{ asset('images/shape/shape-24.png') }});"></div>
+                                        <div class="title-box">
+                                            <h3>Sales Contact</h3>
+                                            <h6>Call or email for assistance.</h6>
+                                        </div>
+                                        <div class="text-box">
+                                            <p><a href="tel:66120003456">[+66] 12 000 3456</a><br /><a
+                                                    href="mailto:marketing@bajakonstruksi.co.id">marketing@bajakonstruksi.co.id</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 info-block">
+                                <div class="info-block-one">
+                                    <div class="inner-box">
+                                        <div class="shape"
+                                            style="background-image: url({{ asset('images/shape/shape-24.png') }});"></div>
+                                        <div class="title-box">
+                                            <h3>Sales Contact</h3>
+                                            <h6>Call or email for assistance.</h6>
+                                        </div>
+                                        <div class="text-box">
+                                            <p><a href="tel:66120003456">[+66] 12 000 3456</a><br /><a
+                                                    href="mailto:marketing@bajakonstruksi.co.id">marketing@bajakonstruksi.co.id</a>
                                             </p>
                                         </div>
                                     </div>
@@ -76,15 +129,13 @@
                 <div class="col-lg-6 col-md-12 col-sm-12 map-column">
                     <div class="map-inner">
                         <div class="map">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55945.16225505631!2d-73.90847969206546!3d40.66490264739892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1601263396347!5m2!1sen!2sbd"
-                                width="100%" height="500" frameborder="0" style="border:0; width: 100%"
-                                allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.914641055292!2d106.03269567603526!3d-6.006458659003942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e418e3979cba7f5%3A0x8e2de3f16883d889!2sPT%20Krakatau%20Baja%20Konstruksi%20(Krakatau%20Steel%20Group)!5e0!3m2!1sid!2sid!4v1769059461544!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
-                        <div class="map-content">
-                            <h3>Illinois</h3>
-                            <p>PT Krakatau Baja Konstruksi, <br />Springfield, IL 62701,USA</p>
-                        </div>
+                        {{-- <div class="map-content">
+                            <h3>PT Krakatau Baja Konstruksi</h3>
+                            <p>Gedung Krakatau Steel <br />Lantai 2, Jl. jend. Gatot Subroto Kav. 54, Jakarta
+                                                12950</p>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 content-column">
@@ -94,7 +145,14 @@
                             <h2>Have Questions? <span>[Message]</span> Us</h2>
                         </div>
                         <div class="form-inner">
-                            <form method="post" action="sendemail.php" id="contact-form">
+                            @if(session('success'))
+                                <div class="alert alert-success">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
+
+                            <form method="POST" action="{{ route('contact.send') }}" id="contact-form">
+                                @csrf
                                 <div class="row clearfix">
                                     <div class="col-lg-6 col-md-6 col-sm-12 single-column">
                                         <div class="form-group">
@@ -122,13 +180,14 @@
                                             <div class="icon-box"><img src="images/icons/icon-31.png" alt="">
                                             </div>
                                             <div class="select-box">
-                                                <select class="wide">
-                                                    <option data-display="Inquiry Type">Inquiry Type</option>
-                                                    <option value="1">Fabrication</option>
-                                                    <option value="2">Metal Processing</option>
-                                                    <option value="3">Metal Casting</option>
-                                                    <option value="4">Metal Welding</option>
+                                                <select name="inquiry_type" class="wide" required>
+                                                    <option value="">Inquiry Type</option>
+                                                    <option value="Fabrication">Fabrication</option>
+                                                    <option value="Metal Processing">Metal Processing</option>
+                                                    <option value="Metal Casting">Metal Casting</option>
+                                                    <option value="Metal Welding">Metal Welding</option>
                                                 </select>
+
                                                 {{-- <div class="nice-select wide" tabindex="0"><span class="current">Inquiry
                                                         Type</span>
                                                     <ul class="list">
@@ -147,7 +206,7 @@
                                         <div class="form-group">
                                             <div class="icon-box-question"><img src="images/icons/icon-32.png" alt="">
                                             </div>
-                                            <textarea name="message" placeholder="Your Question"></textarea>
+                                            <textarea name="message" placeholder="Your Question" required></textarea>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 single-column">

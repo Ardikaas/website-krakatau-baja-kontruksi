@@ -40,6 +40,9 @@
                         <option value="Penyalahgunaan Wewenang">
                             Penyalahgunaan Wewenang
                         </option>
+                        <option value="Lainnya">
+                            Lainnya
+                        </option>
                     </select>
                 </div>
 
