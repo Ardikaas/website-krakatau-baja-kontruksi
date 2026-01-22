@@ -38,6 +38,12 @@ Route::get('/about', function () {
 Route::post('/contact/send', [ContactController::class, 'send'])
     ->name('contact.send');
 
+Route::get('/project', function () {
+    return view('front.project');
+})->name('project');
+Route::get('/projectDetail', function () {
+    return view('front.projectDetail');
+})->name('projectDetail');
 
 
 Route::get('/admin/newsEdit', [AdminController::class, 'adminNewsView'])->name('admin.adminNewsViews');

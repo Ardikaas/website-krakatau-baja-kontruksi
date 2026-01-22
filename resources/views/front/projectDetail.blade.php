@@ -107,62 +107,6 @@
                     </div>
                 </div>
             </div>
-            <div class="related-project">
-                <h2>Related Projects</h2>
-                <div class="row clearfix">
-                    <div class="col-lg-4 col-md-6 col-sm-12 project-block">
-                        <div class="project-block-two">
-                            <div class="inner-box">
-                                <div class="bg-layer" style="background-image: url(assets/images/project/project-3.jpg);">
-                                </div>
-                                <div class="upper-box">
-                                    <h3><a href="project-details.html">Titanium Arch
-                                            Crossing</a></h3>
-                                </div>
-                                <div class="lower-box">
-                                    <h6><i class="flaticon-nut"></i><span>Infrastructure</span></h6>
-                                    <div class="link"><a href="project-details.html"><i
-                                                class="flaticon-right-arrow"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 project-block">
-                        <div class="project-block-two">
-                            <div class="inner-box">
-                                <div class="bg-layer" style="background-image: url(assets/images/project/project-4.jpg);">
-                                </div>
-                                <div class="upper-box">
-                                    <h3><a href="project-details.html">Hornsdale Power
-                                            Reserve</a></h3>
-                                </div>
-                                <div class="lower-box">
-                                    <h6><i class="flaticon-nut"></i><span>Energy</span></h6>
-                                    <div class="link"><a href="project-details.html"><i
-                                                class="flaticon-right-arrow"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 project-block">
-                        <div class="project-block-two">
-                            <div class="inner-box">
-                                <div class="bg-layer" style="background-image: url(assets/images/project/project-5.jpg);">
-                                </div>
-                                <div class="upper-box">
-                                    <h3><a href="project-details.html">Ironspire Skyscraper
-                                            Framework</a></h3>
-                                </div>
-                                <div class="lower-box">
-                                    <h6><i class="flaticon-nut"></i><span>Manufacturing</span></h6>
-                                    <div class="link"><a href="project-details.html"><i
-                                                class="flaticon-right-arrow"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 @endsection
