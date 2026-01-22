@@ -16,134 +16,176 @@
                             <section class="section">
                                 <h2 class="section-title">Hero Banner</h2>
 
-                                <div class="upload-grid">
-                                    <div class="upload-zone" tabindex="0" role="button">
-                                        <img src="{{ asset('images/icons/img_upload_computer.svg') }}" alt="Upload"
-                                            class="upload-icon">
-                                        <p class="upload-text">Drop your image here, or <span class="link-text">Click to
-                                                browse</span></p>
-                                    </div>
+                                {{-- LIST HERO BANNER --}}
+                                <div class="hero-banner-list">
+                                    @forelse ($banners as $banner)
+                                        <div class="hero-banner-item">
+                                            <div class="hero-banner-info">
+                                                <a href="{{ route('admin.hero-banners.view', basename($banner->image)) }}"
+                                                    target="_blank" class="hero-banner-link">
+                                                    {{ basename($banner->image) }}
+                                                </a>
+                                            </div>
 
-                                    <div class="upload-zone" tabindex="0" role="button">
-                                        <img src="{{ asset('images/icons/img_upload_computer.svg') }}" alt="Upload"
-                                            class="upload-icon">
-                                        <p class="upload-text">Drop your image here, or <span class="link-text">Click to
-                                                browse</span></p>
-                                    </div>
+                                            <form method="POST"
+                                                action="{{ route('admin.hero-banners.destroy', $banner->id) }}"
+                                                onsubmit="return confirm('Hapus hero banner ini?')">
+                                                @csrf
+                                                @method('DELETE')
 
-                                    <div class="upload-zone" tabindex="0" role="button">
-                                        <img src="{{ asset('images/icons/img_upload_computer.svg') }}" alt="Upload"
-                                            class="upload-icon">
-                                        <p class="upload-text">Drop your image here, or <span class="link-text">Click to
-                                                browse</span></p>
-                                    </div>
+                                                <button type="submit" class="cancel-btn">
+                                                    Delete
+                                                </button>
+                                            </form>
+                                        </div>
+                                    @empty
+                                        <p class="info-text">Belum ada hero banner.</p>
+                                    @endforelse
                                 </div>
 
-                                <div class="section-footer">
-                                    <div class="info-section">
-                                        <div class="info-row">
-                                            <img src="{{ asset('images/icons/img_information_circle.svg') }}" alt="Info"
-                                                class="info-icon">
-                                            <div>
-                                                <p class="info-text">Upload a hero banner image (1920×730 px).</p>
-                                                <p class="info-text">Supported formats: JPG, PNG.</p>
+                                {{-- UPLOAD (HANYA JIKA < 3) --}}
+                                @if ($bannerCount < 3)
+                                    <form action="{{ route('admin.hero-banners.store') }}" method="POST"
+                                        enctype="multipart/form-data" id="heroBannerForm">
+                                        @csrf
+
+                                        <label class="upload-zone">
+                                            <img src="{{ asset('images/icons/img_upload_computer.svg') }}"
+                                                class="upload-icon">
+
+                                            <p class="upload-text" id="heroUploadText">
+                                                Drop your image here, or
+                                                <span class="link-text">Click to browse</span>
+                                            </p>
+
+                                            <input type="file" name="image" accept="image/png,image/jpeg" hidden
+                                                required onchange="handleHeroBannerChange(this)">
+                                        </label>
+
+                                        <div class="section-footer">
+                                            <div class="info-row">
+                                                <img src="{{ asset('images/icons/img_information_circle.svg') }}"
+                                                    class="info-icon">
+                                                <div>
+                                                    <p class="info-text">
+                                                        Upload a hero banner image (1920×730 px).
+                                                    </p>
+                                                    <p class="info-text">
+                                                        Supported formats: JPG, PNG.
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="action-buttons">
+                                                <button type="submit" class="save-btn" id="heroSaveBtn" disabled>
+                                                    Save Changes
+                                                </button>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div class="action-buttons">
-                                        <button class="cancel-btn" type="button">Cancel</button>
-                                        <button class="save-btn" type="button">Save Changes</button>
-                                    </div>
-                                </div>
+                                    </form>
+                                @else
+                                    <p class="info-text" style="color:#ff3131;">
+                                        Maksimal 3 hero banner. Hapus salah satu untuk menambah.
+                                    </p>
+                                @endif
                             </section>
+
+                            <div class="modal-overlay" id="whyChooseUsModal">
+                                <div class="modal-box">
+                                    <h3 class="modal-title">Add Why Choose Us Point</h3>
+
+                                    <form action="{{ route('admin.why-choose-us.store') }}" method="POST"
+                                        enctype="multipart/form-data" class="modal-form">
+                                        @csrf
+
+                                        <div class="form-group">
+                                            <label>Icon Image</label>
+
+                                            <label class="custom-file-input">
+                                                <span id="whyChooseUsFileText">Click to upload image</span>
+                                                <input type="file" name="image" accept="image/png,image/jpeg"
+                                                    onchange="handleWhyChooseUsFile(this)" hidden>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Title</label>
+                                            <input type="text" name="title" placeholder="e.g. Industry Expertise"
+                                                required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Description</label>
+                                            <textarea name="description" placeholder="Short description" required></textarea>
+                                        </div>
+
+                                        <div class="action-buttons">
+                                            <button type="button" class="cancel-btn" onclick="closeWhyChooseUsModal()">
+                                                Cancel
+                                            </button>
+
+                                            <button type="submit" class="save-btn">
+                                                Save
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
 
                             <!-- Why Choose Us Points Section -->
                             <section class="section">
                                 <div class="section-header">
                                     <h2 class="section-title">Why Choose Us Points</h2>
-                                    <button class="add-btn" type="button">
-                                        <img src="{{ asset('images/icons/img_add_1_streamline_core_line_free.svg') }}"
-                                            alt="Add" class="add-icon">
-                                        Add New Point
-                                    </button>
+
+                                    @if ($whyChooseUsCount < 6)
+                                        <button class="add-btn" type="button" onclick="openWhyChooseUsModal()">
+                                            <img src="{{ asset('images/icons/img_add_1_streamline_core_line_free.svg') }}"
+                                                alt="Add" class="add-icon">
+                                            Add New Point
+                                        </button>
+                                    @else
+                                        <p class="info-text" style="color:#ff3131;">
+                                            Maksimal 6 poin. Hapus salah satu untuk menambah.
+                                        </p>
+                                    @endif
                                 </div>
 
                                 <div class="points-list">
-                                    <article class="point-item">
-                                        <div class="point-content">
-                                            <img src="{{ asset('images/icons/icon-1.png') }}" alt="Industry Expertise Icon"
-                                                class="point-icon">
-                                            <div class="point-text">
-                                                <h3 class="point-title">Industry Expertise</h3>
-                                                <p class="point-description">Leveraging years of expertise in metal
-                                                    manufacturing to deliver quality, tailored solutions across industries.
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="point-actions">
-                                            <img src="{{ asset('images/icons/img_pencil_streamline.svg') }}" alt="Edit"
-                                                class="action-icon">
-                                            <img src="{{ asset('images/icons/img_recycle_bin_2_streamline.svg') }}"
-                                                alt="Delete" class="action-icon">
-                                        </div>
-                                    </article>
+                                    @forelse ($whyChooseUs as $item)
+                                        <article class="point-item">
+                                            <div class="point-content">
+                                                <a href="{{ route('admin.why-choose-us.view', basename($item->image)) }}"
+                                                    target="_blank">
+                                                    <img src="{{ route('admin.why-choose-us.view', basename($item->image)) }}"
+                                                        alt="{{ $item->title }}" class="point-icon">
+                                                </a>
 
-                                    <article class="point-item">
-                                        <div class="point-content">
-                                            <img src="{{ asset('images/icons/icon-2.png') }}" alt="Quality Icon"
-                                                class="point-icon">
-                                            <div class="point-text">
-                                                <h3 class="point-title">Industry Expertise</h3>
-                                                <p class="point-description">Leveraging years of expertise in metal
-                                                    manufacturing to deliver quality, tailored solutions across industries.
-                                                </p>
+                                                <div class="point-text">
+                                                    <h3 class="point-title">{{ $item->title }}</h3>
+                                                    <p class="point-description">{{ $item->description }}</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="point-actions">
-                                            <img src="{{ asset('images/icons/img_pencil_streamline.svg') }}" alt="Edit"
-                                                class="action-icon">
-                                            <img src="{{ asset('images/icons/img_recycle_bin_2_streamline.svg') }}"
-                                                alt="Delete" class="action-icon">
-                                        </div>
-                                    </article>
 
-                                    <article class="point-item">
-                                        <div class="point-content">
-                                            <img src="{{ asset('images/icons/icon-3.png') }}" alt="Support Icon"
-                                                class="point-icon">
-                                            <div class="point-text">
-                                                <h3 class="point-title">Industry Expertise</h3>
-                                                <p class="point-description">Leveraging years of expertise in metal
-                                                    manufacturing to deliver quality, tailored solutions across industries.
-                                                </p>
+                                            <div class="point-actions">
+                                                <form method="POST"
+                                                    action="{{ route('admin.why-choose-us.destroy', $item->id) }}"
+                                                    onsubmit="return confirm('Hapus point ini?')">
+                                                    @csrf
+                                                    @method('DELETE')
+
+                                                    <button type="submit" class="btn-icon">
+                                                        <img src="{{ asset('images/icons/img_recycle_bin_2_streamline.svg') }}"
+                                                            alt="Delete" class="action-icon">
+                                                    </button>
+                                                </form>
                                             </div>
-                                        </div>
-                                        <div class="point-actions">
-                                            <img src="{{ asset('images/icons/img_pencil_streamline.svg') }}" alt="Edit"
-                                                class="action-icon">
-                                            <img src="{{ asset('images/icons/img_recycle_bin_2_streamline.svg') }}"
-                                                alt="Delete" class="action-icon">
-                                        </div>
-                                    </article>
-                                </div>
-
-                                <div class="section-footer">
-                                    <div class="info-section">
-                                        <div class="info-row">
-                                            <div>
-                                                <p class="info-text">Upload a icon image (500×500 px).</p>
-                                                <p class="info-text">Supported formats: JPG, PNG.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="action-buttons">
-                                        <button class="cancel-btn" type="button">Cancel</button>
-                                        <button class="save-btn" type="button">Save Changes</button>
-                                    </div>
+                                        </article>
+                                    @empty
+                                        <p class="info-text">Belum ada data Why Choose Us.</p>
+                                    @endforelse
                                 </div>
                             </section>
+
 
                             <!-- Downloadable Resources Section -->
                             <section class="resources-section">
@@ -274,6 +316,49 @@
                 .catch(() => {
                     alert('Upload gagal');
                 });
+        }
+
+        function handleHeroBannerChange(input) {
+            if (!input.files || input.files.length === 0) return;
+
+            const file = input.files[0];
+
+            if (!file.type.startsWith('image/')) {
+                alert('Hanya file gambar yang diperbolehkan');
+                input.value = '';
+                return;
+            }
+
+            const text = document.getElementById('heroUploadText');
+            const saveBtn = document.getElementById('heroSaveBtn');
+
+            text.innerHTML = `
+            <span style="color:#16a34a; font-weight:500;">
+                ✓ ${file.name}
+            </span>
+        `;
+
+            saveBtn.disabled = false;
+            saveBtn.style.backgroundColor = '#00a1d1';
+        }
+
+        function openWhyChooseUsModal() {
+            document.getElementById('whyChooseUsModal').style.display = 'flex';
+        }
+
+        function closeWhyChooseUsModal() {
+            document.getElementById('whyChooseUsModal').style.display = 'none';
+        }
+
+        function handleWhyChooseUsFile(input) {
+            if (!input.files || input.files.length === 0) return;
+
+            const file = input.files[0];
+            const text = document.getElementById('whyChooseUsFileText');
+
+            text.textContent = file.name;
+            text.style.color = '#16a34a';
+            text.style.fontWeight = '500';
         }
     </script>
 @endpush

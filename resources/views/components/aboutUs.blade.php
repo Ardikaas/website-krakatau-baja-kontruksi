@@ -1,12 +1,15 @@
 {{-- About Style Three Section --}}
-<section class="about-style-three alternat-2">
+<section class="about-style-three alternat-2" id="company-info">
     <div class="auto-container">
         <div class="row clearfix">
             <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                 <div class="image-box">
-                    <figure class="image image-1"><img src="{{ asset('images/resource/about-company-1.jpeg') }}" alt=""></figure>
-                    <figure class="image image-2"><img src="{{ asset('images/resource/about-company-2.jpeg') }}" alt=""></figure>
-                    <figure class="image image-3"><img src="{{ asset('images/resource/about-company-3.jpeg') }}" alt=""></figure>
+                    <figure class="image image-1"><img src="{{ asset('images/resource/about-company-1.jpeg') }}"
+                            alt=""></figure>
+                    <figure class="image image-2"><img src="{{ asset('images/resource/about-company-2.jpeg') }}"
+                            alt=""></figure>
+                    <figure class="image image-3"><img src="{{ asset('images/resource/about-company-3.jpeg') }}"
+                            alt=""></figure>
                     <span class="rotate-text">Since, 1992</span>
                 </div>
             </div>
@@ -17,7 +20,13 @@
                         <h2>Precision <span>[Steel]</span> for Sustainable Growth</h2>
                     </div>
                     <div class="text-box mb_30 text-justify">
-                        <p>PT Krakatau Baja Konstruksi was established in 1992. Currently, it has become a leading steel producer in Indonesia. Our company produces high-quality products such as Deformed Bar, Plain Bar, Equal Angle, Channel, Wide Flange, H Beam and I Beam. As a subsidiary of PT Krakatau Steel, with 99.9997% share ownership by PT Krakatau Steel and 0.0003% by PT Krakatau Engineering, we are always committed to prioritizing product quality and customer satisfaction. We are ready to anticipate the global era and ready to compete in the third millennium.</p>
+                        <p>PT Krakatau Baja Konstruksi was established in 1992. Currently, it has become a leading steel
+                            producer in Indonesia. Our company produces high-quality products such as Deformed Bar,
+                            Plain Bar, Equal Angle, Channel, Wide Flange, H Beam and I Beam. As a subsidiary of PT
+                            Krakatau Steel, with 99.9997% share ownership by PT Krakatau Steel and 0.0003% by PT
+                            Krakatau Engineering, we are always committed to prioritizing product quality and customer
+                            satisfaction. We are ready to anticipate the global era and ready to compete in the third
+                            millennium.</p>
                     </div>
                     {{-- <div class="inner-box">
                         <div class="row clearfix">
@@ -59,15 +68,35 @@
 
 {{-- history-section --}}
 @php
-$histories = [
-    ['year' => 1962, 'image' => 'Trikora1.jpeg', 'title' => 'Trikora 1', 'desc' => 'President Soekarno launched Trikora Steel Factory project in Cilegon'],
-    ['year' => 1975, 'image' => 'Trikora2.jpeg', 'title' => 'Bar and Section Krakatau Steel', 'desc' => 'It was inaugurated by President Soeharto and accompanied by Minister of Industry M. Jusuf'],
-    ['year' => 1992, 'image' => 'Wajatama1.jpeg', 'title' => 'PT Krakatau Wajatama was Born', 'desc' => 'It was inaugurated by PT Krakatau Wajatama'],
-    ['year' => 2021, 'image' => 'present.jpeg', 'title' => 'Became PT Krakatau Baja Konstruksi', 'desc' => 'Inaugurated as a Subholding by PT Krakatau Steel (Persero) TBK as of September 1st, 2021'],
-];
+    $histories = [
+        [
+            'year' => 1962,
+            'image' => 'Trikora1.jpeg',
+            'title' => 'Trikora 1',
+            'desc' => 'President Soekarno launched Trikora Steel Factory project in Cilegon',
+        ],
+        [
+            'year' => 1975,
+            'image' => 'Trikora2.jpeg',
+            'title' => 'Bar and Section Krakatau Steel',
+            'desc' => 'It was inaugurated by President Soeharto and accompanied by Minister of Industry M. Jusuf',
+        ],
+        [
+            'year' => 1992,
+            'image' => 'Wajatama1.jpeg',
+            'title' => 'PT Krakatau Wajatama was Born',
+            'desc' => 'It was inaugurated by PT Krakatau Wajatama',
+        ],
+        [
+            'year' => 2021,
+            'image' => 'present.jpeg',
+            'title' => 'Became PT Krakatau Baja Konstruksi',
+            'desc' => 'Inaugurated as a Subholding by PT Krakatau Steel (Persero) TBK as of September 1st, 2021',
+        ],
+    ];
 @endphp
 
-<section class="history-section bg-color-1">
+<section class="history-section bg-color-1" id="history">
     <div class="outer-container">
 
         <div class="sec-title centred mb_45">
@@ -83,7 +112,7 @@ $histories = [
                         <div class="row align-items-center">
                             <div class="col-lg-6">
                                 <div class="history-image">
-                                    <img src="{{ asset('images/resource/'.$item['image']) }}" alt="">
+                                    <img src="{{ asset('images/resource/' . $item['image']) }}" alt="">
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -100,7 +129,7 @@ $histories = [
                 </div>
             @endforeach
         </div>
-        
+
         <nav class="history-nav">
             <ul class="history-years">
                 @foreach ($histories as $index => $item)
@@ -110,7 +139,7 @@ $histories = [
                 @endforeach
             </ul>
         </nav>
-        
+
 
     </div>
 </section>
@@ -118,7 +147,7 @@ $histories = [
 
 
 {{-- company-section --}}
-<section class="company-section">
+<section class="company-section" id="vision">
     <div class="bg-layer" style="background-image: url({{ asset('images/background/visi-misi-about-us.png') }});"></div>
     <div class="outer-container">
         <div class="outer-box clearfix">
@@ -139,7 +168,8 @@ $histories = [
                     <div class="overlay-content">
                         <h6>about</h6>
                         <h3>Our Company</h3>
-                        <p>We are a trusted leader in steel manufacturing, providing high-quality and reliable solutions for national and industrial development.</p>
+                        <p>We are a trusted leader in steel manufacturing, providing high-quality and reliable solutions
+                            for national and industrial development.</p>
                         {{-- <h4>Journey of Excellence</h4>
                         <ul class="list-item clearfix">
                             <li>Growth & Innovation</li>
@@ -181,12 +211,17 @@ $histories = [
                     <div class="overlay-content">
                         <h6>about</h6>
                         <h3>Our Mission</h3>
-                        <ul class="list-item clearfix">
-                            <li>To achieve productive and efficient operational performance in delivering high-quality and profitable products and services.</li>
-                            <li>Develop the steel business through mutually beneficial partnerships with strategic partners.</li>
-                            <li>Expand steel solution applications and downstream steel products to enhance added value and customer satisfaction.</li>
-                            <li>Increase group business value by making positive contributions and optimizing the supply chain.</li>
-                            <li>Develop top-tier talent capable of contributing optimally across all business processes.</li>
+                        <ul class="clearfix list-item">
+                            <li>To achieve productive and efficient operational performance in delivering high-quality
+                                and profitable products and services.</li>
+                            <li>Develop the steel business through mutually beneficial partnerships with strategic
+                                partners.</li>
+                            <li>Expand steel solution applications and downstream steel products to enhance added value
+                                and customer satisfaction.</li>
+                            <li>Increase group business value by making positive contributions and optimizing the supply
+                                chain.</li>
+                            <li>Develop top-tier talent capable of contributing optimally across all business processes.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -198,7 +233,7 @@ $histories = [
 
 
 {{-- chooseus-style-two --}}
-<section class="organization-structure">
+<section class="organization-structure" id="corp-structure">
     <div class="auto-container">
 
         <div class="sec-title centred mb_45">
@@ -211,10 +246,7 @@ $histories = [
 
         <div class="structure-wrapper">
             <div class="structure-image">
-                <img
-                    src="{{ asset('images/background/struktur-company.png') }}"
-                    alt="Corporate Structure"
-                />
+                <img src="{{ asset('images/background/struktur-company.png') }}" alt="Corporate Structure" />
             </div>
         </div>
 
@@ -224,7 +256,7 @@ $histories = [
 {{-- chooseus-style-two end --}}
 
 {{-- team-section --}}
-<section class="team-section">
+<section class="team-section" id="directors">
     <div class="auto-container">
         <div class="sec-title centred mb_45">
             <h6>Team Members</h6>
@@ -232,81 +264,81 @@ $histories = [
             <p class="mt_12">Experts working together to achieve excellence.</p>
         </div>
         <div class="container-team">
-        <!-- Tabs -->
-        <div class="tab-wrapper">
-            <button class="tab active" data-tab="komisaris">Dewan Komisaris</button>
-            <button class="tab" data-tab="direksi">Direksi</button>
-        </div>
+            <!-- Tabs -->
+            <div class="tab-wrapper">
+                <button class="tab active" data-tab="komisaris">Dewan Komisaris</button>
+                <button class="tab" data-tab="direksi">Direksi</button>
+            </div>
 
-        <!-- Dewan Komisaris -->
-        <div class="image-wrapper active" id="komisaris">
-            <div class="image-card">
-                <img src="input.jpg" alt="" />
-                <div class="card-overlay">
-                    <h4>John Doe</h4>
-                    <span>Komisaris Utama</span>
+            <!-- Dewan Komisaris -->
+            <div class="image-wrapper active" id="komisaris">
+                <div class="image-card">
+                    <img src="input.jpg" alt="" />
+                    <div class="card-overlay">
+                        <h4>John Doe</h4>
+                        <span>Komisaris Utama</span>
+                    </div>
                 </div>
-            </div>           
-            <div class="image-card">
-                <img src="input.jpg" alt="" />
-                <div class="card-overlay">
-                    <h4>John Doe</h4>
-                    <span>Komisaris Utama</span>
+                <div class="image-card">
+                    <img src="input.jpg" alt="" />
+                    <div class="card-overlay">
+                        <h4>John Doe</h4>
+                        <span>Komisaris Utama</span>
+                    </div>
                 </div>
-            </div>           
-            <div class="image-card">
-                <img src="input.jpg" alt="" />
-                <div class="card-overlay">
-                    <h4>John Doe</h4>
-                    <span>Komisaris Utama</span>
+                <div class="image-card">
+                    <img src="input.jpg" alt="" />
+                    <div class="card-overlay">
+                        <h4>John Doe</h4>
+                        <span>Komisaris Utama</span>
+                    </div>
                 </div>
-            </div>           
-            <div class="image-card">
-                <img src="input.jpg" alt="" />
-                <div class="card-overlay">
-                    <h4>John Doe</h4>
-                    <span>Komisaris Utama</span>
+                <div class="image-card">
+                    <img src="input.jpg" alt="" />
+                    <div class="card-overlay">
+                        <h4>John Doe</h4>
+                        <span>Komisaris Utama</span>
+                    </div>
                 </div>
-            </div>           
-        </div>
+            </div>
 
-        <!-- Direksi -->
-        <div class="image-wrapper" id="direksi">
-            <div class="image-card">
-                <img src="input.jpg" alt="" />
-                <div class="card-overlay">
-                    <h4>John Doe</h4>
-                    <span>Komisaris Utama</span>
+            <!-- Direksi -->
+            <div class="image-wrapper" id="direksi">
+                <div class="image-card">
+                    <img src="input.jpg" alt="" />
+                    <div class="card-overlay">
+                        <h4>John Doe</h4>
+                        <span>Komisaris Utama</span>
+                    </div>
                 </div>
-            </div>   
-            <div class="image-card">
-                <img src="input.jpg" alt="" />
-                <div class="card-overlay">
-                    <h4>John Doe</h4>
-                    <span>Komisaris Utama</span>
+                <div class="image-card">
+                    <img src="input.jpg" alt="" />
+                    <div class="card-overlay">
+                        <h4>John Doe</h4>
+                        <span>Komisaris Utama</span>
+                    </div>
                 </div>
-            </div>   
-            <div class="image-card">
-                <img src="input.jpg" alt="" />
-                <div class="card-overlay">
-                    <h4>John Doe</h4>
-                    <span>Komisaris Utama</span>
+                <div class="image-card">
+                    <img src="input.jpg" alt="" />
+                    <div class="card-overlay">
+                        <h4>John Doe</h4>
+                        <span>Komisaris Utama</span>
+                    </div>
                 </div>
-            </div>   
-            <div class="image-card">
-                <img src="input.jpg" alt="" />
-                <div class="card-overlay">
-                    <h4>John Doe</h4>
-                    <span>Komisaris Utama</span>
+                <div class="image-card">
+                    <img src="input.jpg" alt="" />
+                    <div class="card-overlay">
+                        <h4>John Doe</h4>
+                        <span>Komisaris Utama</span>
+                    </div>
                 </div>
-            </div>              
-        </div>
+            </div>
         </div>
     </div>
 </section>
 {{-- team-section end --}}
 
-<section class="chooseus-style-two">
+<section class="chooseus-style-two" id="akhlak">
     <div class="auto-container">
         <div class="sec-title mb_25 centred">
             <h6>Cultural Values</h6>
@@ -376,7 +408,7 @@ $histories = [
             <div class="col-lg-4 col-md-12 col-sm-12 image-column">
                 <div class="image-box">
                     <figure class="image"><img src="{{ asset('images/resource/about-company-1.jpeg') }}"
-                        alt="" style="width: 370px; height: 370px;"></figure>
+                            alt="" style="width: 370px; height: 370px;"></figure>
                 </div>
             </div>
 

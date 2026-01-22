@@ -18,33 +18,23 @@
                                     <li class="dropdown"><a href="/">Home</a></li>
                                     <li class="dropdown"><a href="{{ route('about') }}">About Us</a>
                                         <ul>
-                                            <li><a href="service.html">Company Info</a></li>
-                                            <li><a href="service-2.html">History</a></li>
-                                            <li><a href="service-3.html">Vision & Mision</a></li>
-                                            <li><a href="service-details.html">Fabrication</a></li>
-                                            <li><a href="service-details-2.html">KSG Structure</a></li>
-                                            <li><a href="service-details-3.html">Directors & Commissioners</a></li>
+                                            <li><a href="/about/#company-info">Company Info</a></li>
+                                            <li><a href="/about/#history">History</a></li>
+                                            <li><a href="/about/#vision">Vision & Mision</a></li>
+                                            <li><a href="/about/#corp-structure">KSG Structure</a></li>
+                                            <li><a href="/about/#directors">Directors & Commissioners</a></li>
+                                            <li><a href="/about/#akhlak">Akhlak</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown"><a href="#">Business</a>
                                         <ul>
-                                            <li><a href="service.html">Services Style 01</a></li>
-                                            <li><a href="service-2.html">Services Style 02</a></li>
-                                            <li><a href="service-3.html">Sales Contact</a></li>
-                                            <li><a href="service-details.html">Fabrication</a></li>
-                                            <li><a href="service-details-2.html">Metal Processing</a></li>
-                                            <li><a href="service-details-3.html">Metal Casting</a></li>
+                                            <li><a href="/product">Product</a></li>
+                                            <li><a href="/project">Project</a></li>
+                                            <li><a href="/news">Subholding</a></li>
+                                            <li><a href="#">Sales Contact</a></li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown"><a href="#">Gallery</a>
-                                        <ul>
-                                            <li><a href="service.html">Services Style 01</a></li>
-                                            <li><a href="service-2.html">Services Style 02</a></li>
-                                            <li><a href="service-3.html">Sales Contact</a></li>
-                                            <li><a href="service-details.html">Fabrication</a></li>
-                                            <li><a href="service-details-2.html">Metal Processing</a></li>
-                                            <li><a href="service-details-3.html">Metal Casting</a></li>
-                                        </ul>
+                                    <li class="dropdown"><a href="/news">Gallery</a>
                                     </li>
                                     <li class="dropdown"><a href="https://krasmedia.id/" target="_blank">News</a></li>
                                 </ul>
