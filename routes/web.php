@@ -7,13 +7,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\WbsController as AdminWbsController;
 use App\Http\Controllers\Admin\DocumentController as AdminDocumentController;
 use App\Http\Controllers\Api\WbsController;
+use App\Http\Controllers\Admin\HeroBannerController;
+use App\Http\Controllers\Admin\WhyChooseUsController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
-Route::get('/admin', function () {
-    return view('admin.adminLanding');
-})->name('admin.landingEdit');
 
 Route::get('/wbs', function () {
     return view('front.whistleBlowingSystem');
@@ -67,7 +65,7 @@ Route::get('/admin/aboutus', function () {
     return view('admin.adminAboutUs');
 })->name('admin.aboutUs');
 
-Route::get('/admin', [AdminDocumentController::class, 'adminLanding'])
+Route::get('/admin', [HeroBannerController::class, 'index'])
     ->name('admin.landingEdit');
 
 Route::post(
@@ -79,3 +77,41 @@ Route::delete(
     '/admin/documents/{id}',
     [AdminDocumentController::class, 'destroy']
 )->name('admin.documents.delete');
+
+Route::get('/product', function () {
+    return view('front.product');
+})->name('product');
+
+Route::get('/product/{id}', function () {
+    return view('front.productDetail');
+})->name('product.detail');
+
+Route::post(
+    '/admin/hero-banners',
+    [HeroBannerController::class, 'store']
+)->name('admin.hero-banners.store');
+
+Route::delete(
+    '/admin/hero-banners/{id}',
+    [HeroBannerController::class, 'destroy']
+)->name('admin.hero-banners.destroy');
+
+Route::get(
+    '/admin/hero-banners/view/{filename}',
+    [HeroBannerController::class, 'viewImage']
+)->name('admin.hero-banners.view');
+
+Route::post(
+    '/admin/why-choose-us',
+    [WhyChooseUsController::class, 'store']
+)->name('admin.why-choose-us.store');
+
+Route::delete(
+    '/admin/why-choose-us/{id}',
+    [WhyChooseUsController::class, 'destroy']
+)->name('admin.why-choose-us.destroy');
+
+Route::get(
+    '/admin/why-choose-us/view/{filename}',
+    [WhyChooseUsController::class, 'viewImage']
+)->name('admin.why-choose-us.view');
