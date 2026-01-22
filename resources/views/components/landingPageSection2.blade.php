@@ -2,7 +2,7 @@
     <!-- Slide 1 -->
     <div class="slide-item p_relative">
         <div class="pattern-layer-2"></div>
-        <div class="bg-layer"></div>
+        <div class="bg-layer" style="background-image: url('{{ asset("images/banner/hero-banner-1.jpeg") }}');"></div>
         <div class="outer-container clearfix">
             <div class="content-box">
                 <div class="inner-box">
@@ -20,7 +20,7 @@
     <!-- Slide 2 -->
     <div class="slide-item p_relative">
         <div class="pattern-layer-2"></div>
-        <div class="bg-layer"></div>
+        <div class="bg-layer" style="background-image: url('{{ asset("images/banner/hero-banner-2.png") }}');"></div>
 
         <div class="outer-container clearfix">
             <div class="content-box">
@@ -39,7 +39,7 @@
     <!-- Slide 3 -->
     <div class="slide-item p_relative">
         <div class="pattern-layer-2"></div>
-        <div class="bg-layer"></div>
+        <div class="bg-layer" style="background-image: url('{{ asset("images/banner/hero-banner-3.jpeg") }}');"></div>
         <div class="outer-container clearfix">
             <div class="content-box">
 
