@@ -310,7 +310,12 @@ $histories = [
     <div class="auto-container">
         <div class="sec-title mb_25 centred">
             <h6>Cultural Values</h6>
-            <h2>Core Values <span>(AKHLAK)</span></h2>
+            <h2>
+                Core Values
+                <span class="akhlak-logo">
+                    <img src="{{ asset('images/logo-akhlak.png') }}" alt="AKHLAK">
+                </span>
+            </h2>
             <p class="mt_12">The core values ​that form the basis of BUMN work culture.</p>
         </div>
 
