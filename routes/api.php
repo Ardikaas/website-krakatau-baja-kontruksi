@@ -8,7 +8,6 @@ use App\Http\Controllers\Api\HeroVideoController;
 use App\Http\Controllers\Api\NewsController;
 use App\Http\Controllers\Api\NewsCommentController;
 use App\Http\Controllers\Api\WbsController;
-use App\Http\Controllers\Api\ProjectController;
 
 Route::get('/ping', function () {
   return response()->json(['status' => 'API OK']);
@@ -50,5 +49,3 @@ Route::get('/wbs/{id}', [WbsController::class, 'show']);
 Route::post('/wbs', [WbsController::class, 'store']);
 Route::get('/wbs/{id}/download', [WbsController::class, 'downloadEvidence']);
 Route::delete('/wbs/{id}', [WbsController::class, 'destroy']);
-
-Route::apiResource('projects', ProjectController::class);
