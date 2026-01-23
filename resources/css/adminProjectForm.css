@@ -1,0 +1,117 @@
+/* ===============================
+   ADMIN PROJECT FORM
+================================ */
+
+.admin-project-details {
+    margin-left: 280px;
+    margin-top: 74px;
+    padding: 40px;
+    font-family: "Inter", sans-serif;
+}
+
+/* Header */
+.admin-project-header {
+    margin-bottom: 48px;
+}
+
+.admin-project-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* Labels */
+.admin-project-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 12px;
+}
+
+/* Image Upload */
+.project-image-upload {
+    width: 100%;
+    height: 420px;
+    border: 2px dashed #e5e7eb;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.project-image-upload:hover {
+    border-color: #00a1d1;
+}
+
+.project-image-input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.project-image-upload-inner {
+    text-align: center;
+}
+
+.project-image-upload-inner span {
+    color: #00a1d1;
+}
+
+/* Fields */
+.project-detail-field {
+    margin-bottom: 24px;
+}
+
+.project-detail-input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+
+.project-detail-input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Solutions */
+.project-solutions-section {
+    margin-top: 48px;
+}
+
+#solutionsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.solution-form {
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Buttons */
+.add-btn {
+    margin-top: 16px;
+    padding: 12px 18px;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background: #1d4ed8;
+}

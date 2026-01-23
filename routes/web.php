@@ -10,6 +10,9 @@ use App\Http\Controllers\Api\WbsController;
 use App\Http\Controllers\Admin\HeroBannerController;
 use App\Http\Controllers\Admin\WhyChooseUsController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Admin\ProjectPageController;
+
+
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -126,3 +129,9 @@ Route::get(
     '/admin/why-choose-us/view/{filename}',
     [WhyChooseUsController::class, 'viewImage']
 )->name('admin.why-choose-us.view');
+
+Route::prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+        Route::resource('projects', ProjectPageController::class);
+    });
