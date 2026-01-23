@@ -4,30 +4,51 @@
 
 @section('content')
 <div class="admin-project-list">
-    <div class="list-header">
-        <h1>Projects</h1>
-        <a href="{{ route('admin.projects.create') }}" class="add-btn">+ Add Project</a>
+
+    {{-- HEADER --}}
+    <header class="admin-project-header">
+        <h1 class="admin-project-title">
+            Project Manager
+        </h1>
+    </header>
+
+    <div class="default-header">
+        <h5 class="default-sec-title">Projects</h5>
+        <a href="{{ route('admin.projects.create') }}" class="add-btn">
+            <span class="add-icon">+</span>
+            Add Project
+        </a>
     </div>
 
-    <div class="project-card-grid">
+    {{-- EMPTY STATE --}}
+    @if($projects->isEmpty())
+        <p>No projects yet. Click "Add Project" to create one.</p>
+    @endif
+
+    {{-- PROJECT GRID --}}
+    <div class="project-card-grid gap-3">
         @foreach($projects as $project)
-        <div class="project-card">
-            <img src="{{ asset('storage/'.$project->image) }}" alt="">
-            <div class="project-card-body">
-                <h3>{{ $project->title }}</h3>
-                <p>{{ $project->category }}</p>
+        <div class="project-card border p-2 rounded" 
+             onclick="window.location='{{ route('admin.projects.edit', $project) }}'" 
+             style="cursor:pointer; transition:0.2s; overflow:hidden;">
+            
+            {{-- IMAGE --}}
+            <img src="{{ $project->image ? asset('storage/'.$project->image) : asset('images/default_project.png') }}" 
+                 alt="{{ $project->title }}" >
 
-                <div class="card-actions">
-                    <a href="{{ route('admin.projects.edit',$project) }}">Edit</a>
+            {{-- BODY --}}
+            <div class="project-card-body mt-2">
+                <h5>{{ $project->title }}</h5>
+                <p class="text-muted">{{ $project->category }}</p>
 
-                    <form method="POST" action="{{ route('admin.projects.destroy',$project) }}">
-                        @csrf @method('DELETE')
-                        <button type="submit">Delete</button>
-                    </form>
+                {{-- ACTIONS --}}
+                <div class="card-actions d-flex gap-1" onclick="event.stopPropagation();">
+                    <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-sm btn-outline-secondary">Edit</a>
                 </div>
             </div>
         </div>
         @endforeach
     </div>
+
 </div>
 @endsection
