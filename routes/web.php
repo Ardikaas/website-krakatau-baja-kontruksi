@@ -13,8 +13,7 @@ use App\Http\Controllers\Admin\WhyChooseUsController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\ProjectPageController;
-
-
+use App\Http\Controllers\Front\ProjectController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -43,12 +42,8 @@ Route::get('/about', function () {
 Route::post('/contact/send', [ContactController::class, 'send'])
     ->name('contact.send');
 
-Route::get('/project', function () {
-    return view('front.project');
-})->name('project');
-Route::get('/projectDetail', function () {
-    return view('front.projectDetail');
-})->name('projectDetail');
+Route::get('/projects', [ProjectController::class, 'index'])->name('front.projects.index');
+Route::get('/projects/{project}', [ProjectController::class, 'show'])->name('front.projects.show');
 
 
 Route::get('/admin/newsEdit', [AdminController::class, 'adminNewsView'])->name('admin.adminNewsViews');
@@ -130,11 +125,9 @@ Route::get(
     [WhyChooseUsController::class, 'viewImage']
 )->name('admin.why-choose-us.view');
 
-Route::prefix('admin')
-    ->name('admin.')
-    ->group(function () {
-        Route::resource('projects', ProjectPageController::class);
-    });
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('projects', ProjectPageController::class);
+});
 
 Route::get('/admin/productEdit', [ProductController::class, 'index'])
     ->name('admin.product.index');

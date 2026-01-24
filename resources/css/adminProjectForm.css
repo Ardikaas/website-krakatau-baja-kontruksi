@@ -1,5 +1,5 @@
 /* ===============================
-   ADMIN PROJECT FORM
+   ADMIN PROJECT FORM - MODERN
 ================================ */
 
 .admin-project-details {
@@ -11,53 +11,62 @@
 
 /* Header */
 .admin-project-header {
-    margin-bottom: 48px;
+    margin-bottom: 32px;
 }
 
 .admin-project-title {
     font-size: 36px;
-    font-weight: 600;
-    color: #1f2937;
+    font-weight: 700;
+    color: #111827;
+    border-left: 4px solid #2563eb;
+    padding-left: 12px;
 }
 
 /* Labels */
 .admin-project-label {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 12px;
+    color: #111827;
+    margin-bottom: 8px;
+    display: block;
 }
 
 /* Image Upload */
 .project-image-upload {
-    width: 100%;
-    height: 420px;
-    border: 2px dashed #e5e7eb;
-    border-radius: 12px;
+    width: 545px;
+    height: 712px;
+    border: 2px dashed #d1d5db;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     margin-bottom: 32px;
+    background: #ffffff;
+    transition: border-color 0.2s, background 0.2s;
 }
 
 .project-image-upload:hover {
-    border-color: #00a1d1;
-}
-
-.project-image-input {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    cursor: pointer;
+    border-color: #2563eb;
+    background: #f0f9ff;
 }
 
 .project-image-upload-inner {
     text-align: center;
+    color: #6b7280;
 }
 
 .project-image-upload-inner span {
-    color: #00a1d1;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.upload-preview {
+    max-height: 350px;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 8px;
 }
 
 /* Fields */
@@ -68,15 +77,23 @@
 .project-detail-input {
     width: 100%;
     padding: 14px 16px;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    background: #f9fafb;
+    transition: border 0.2s, box-shadow 0.2s;
 }
 
 .project-detail-input:focus {
     outline: none;
     border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Textareas */
+textarea.project-detail-input {
+    min-height: 120px;
+    resize: vertical;
 }
 
 /* Solutions */
@@ -84,34 +101,117 @@
     margin-top: 48px;
 }
 
-#solutionsWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.solution-form {
+.solution-card {
     padding: 20px;
     border: 1px solid #e5e7eb;
-    border-radius: 12px;
+    border-radius: 16px;
     background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     gap: 12px;
+    transition: box-shadow 0.2s, border 0.2s;
+    margin-bottom: 20px;
+}
+
+.solution-card:hover {
+    border-color: #2563eb;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+}
+
+.solution-label {
+    font-size: 20px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.solution-title,
+.solution-desc {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 18px;
+    background: #f9fafb;
+}
+
+.solution-title:focus,
+.solution-desc:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.solution-desc {
+    min-height: 100px;
+    resize: vertical;
 }
 
 /* Buttons */
-.add-btn {
-    margin-top: 16px;
+.add-btn,
+.btn-save,
+.btn-danger,
+.btn-secondary {
     padding: 12px 18px;
-    background: #2563eb;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-weight: 500;
+    border-radius: 12px;
+    font-weight: 600;
     cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+}
+
+.add-btn {
+    background: #2563eb;
+    color: #ffffff;
 }
 
 .add-btn:hover {
     background: #1d4ed8;
+}
+
+.btn-save {
+    background: #16a34a;
+    color: #ffffff;
+}
+
+.btn-save:hover {
+    background: #15803d;
+}
+
+.btn-danger {
+    background: #dc2626;
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background: #b91c1c;
+}
+
+.btn-secondary {
+    background: #6b7280;
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background: #4b5563;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.admin-project-details .mt-2 {
+    margin-top: 12px;
+}
+/* Responsive */
+@media (max-width: 1024px) {
+    .admin-project-details {
+        margin-left: 0;
+        padding: 20px;
+    }
 }

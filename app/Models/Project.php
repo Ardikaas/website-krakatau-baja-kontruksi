@@ -2,21 +2,24 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'title',
-        'image',
-        'description',
-        'scope',
-        'location',
         'client',
-        'date',
+        'location',
         'category',
+        'date',
+        'description',
+        'scope_of_work',
         'challenges',
-        'solutions'
+        'solutions',
+        'image'
     ];
 
     protected $casts = [
