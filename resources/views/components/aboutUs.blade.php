@@ -3,13 +3,19 @@
     <div class="auto-container">
         <div class="row clearfix">
             <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                @props([
+                    'mainImages' => collect(),
+                    'direksi' => collect(),
+                    'komisaris' => collect(),
+                ])
+
                 <div class="image-box">
-                    <figure class="image image-1"><img src="{{ asset('images/resource/about-company-1.jpeg') }}"
-                            alt=""></figure>
-                    <figure class="image image-2"><img src="{{ asset('images/resource/about-company-2.jpeg') }}"
-                            alt=""></figure>
-                    <figure class="image image-3"><img src="{{ asset('images/resource/about-company-3.jpeg') }}"
-                            alt=""></figure>
+                    @foreach ($mainImages as $index => $image)
+                        <figure class="image image-{{ $index + 1 }}">
+                            <img src="{{ $image }}" alt="About Company Image">
+                        </figure>
+                    @endforeach
+
                     <span class="rotate-text">Since, 1992</span>
                 </div>
             </div>
@@ -28,36 +34,6 @@
                             satisfaction. We are ready to anticipate the global era and ready to compete in the third
                             millennium.</p>
                     </div>
-                    {{-- <div class="inner-box">
-                        <div class="row clearfix">
-                            <div class="col-lg-6 col-md-6 col-sm-12 left-column">
-                                <div class="left-content">
-                                    <h3>Industry Expertise</h3>
-                                    <p>Perfectly simple and easy to freek
-                                        hours nothing prevent...</p>
-                                    <ul class="list-item clearfix">
-                                        <li><img src="{{ asset('images/icons/icon-27.png') }}" alt=""><span>Decades of
-                                                Manufacturing</span></li>
-                                        <li><img src="{{ asset('images/icons/icon-27.png') }}" alt=""><span>High-Quality
-                                                Steel</span></li>
-                                        <li><img src="{{ asset('images/icons/icon-27.png') }}" alt=""><span>Serving
-                                                Diverse Industries</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 award-column">
-                                <div class="award-box">
-                                    <h4>awards</h4>
-                                    <div class="award-image align-3"><img src="{{ asset('images/icons/award-2.png') }}"
-                                            alt=""></div>
-                                    <h6>2024</h6>
-                                    <h5>Global Industry
-                                        Leadership Award</h5>
-                                    <span class="text">by gma</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
                 </div>
             </div>
         </div>
@@ -272,66 +248,32 @@
 
             <!-- Dewan Komisaris -->
             <div class="image-wrapper active" id="komisaris">
-                <div class="image-card">
-                    <img src="input.jpg" alt="" />
-                    <div class="card-overlay">
-                        <h4>John Doe</h4>
-                        <span>Komisaris Utama</span>
+                @forelse ($komisaris as $person)
+                    <div class="image-card">
+                        <img src="{{ asset('storage/' . $person->image) }}" alt="{{ $person->name }}" />
+                        <div class="card-overlay">
+                            <h4>{{ $person->name }}</h4>
+                            <span>{{ $person->position }}</span>
+                        </div>
                     </div>
-                </div>
-                <div class="image-card">
-                    <img src="input.jpg" alt="" />
-                    <div class="card-overlay">
-                        <h4>John Doe</h4>
-                        <span>Komisaris Utama</span>
-                    </div>
-                </div>
-                <div class="image-card">
-                    <img src="input.jpg" alt="" />
-                    <div class="card-overlay">
-                        <h4>John Doe</h4>
-                        <span>Komisaris Utama</span>
-                    </div>
-                </div>
-                <div class="image-card">
-                    <img src="input.jpg" alt="" />
-                    <div class="card-overlay">
-                        <h4>John Doe</h4>
-                        <span>Komisaris Utama</span>
-                    </div>
-                </div>
+                @empty
+                    <p class="text-center">No data available</p>
+                @endforelse
             </div>
 
             <!-- Direksi -->
             <div class="image-wrapper" id="direksi">
-                <div class="image-card">
-                    <img src="input.jpg" alt="" />
-                    <div class="card-overlay">
-                        <h4>John Doe</h4>
-                        <span>Komisaris Utama</span>
+                @forelse ($direksi as $person)
+                    <div class="image-card">
+                        <img src="{{ asset('storage/' . $person->image) }}" alt="{{ $person->name }}" />
+                        <div class="card-overlay">
+                            <h4>{{ $person->name }}</h4>
+                            <span>{{ $person->position }}</span>
+                        </div>
                     </div>
-                </div>
-                <div class="image-card">
-                    <img src="input.jpg" alt="" />
-                    <div class="card-overlay">
-                        <h4>John Doe</h4>
-                        <span>Komisaris Utama</span>
-                    </div>
-                </div>
-                <div class="image-card">
-                    <img src="input.jpg" alt="" />
-                    <div class="card-overlay">
-                        <h4>John Doe</h4>
-                        <span>Komisaris Utama</span>
-                    </div>
-                </div>
-                <div class="image-card">
-                    <img src="input.jpg" alt="" />
-                    <div class="card-overlay">
-                        <h4>John Doe</h4>
-                        <span>Komisaris Utama</span>
-                    </div>
-                </div>
+                @empty
+                    <p class="text-center">No data available</p>
+                @endforelse
             </div>
         </div>
     </div>

@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutHistoryController;
+use App\Http\Controllers\Admin\AboutPeopleController;
+use App\Http\Controllers\Admin\AboutUsController;
+use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\NewsController;
 use App\Http\Controllers\AdminController;
@@ -35,9 +39,8 @@ Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
 Route::post('/news/{id}/comment', [NewsController::class, 'storeComment'])->name('news.commentStore');
 
 
-Route::get('/about', function () {
-    return view('front.aboutus');
-})->name('about');
+Route::get('/about-us', [AboutController::class, 'about'])
+    ->name('about');
 
 Route::post('/contact/send', [ContactController::class, 'send'])
     ->name('contact.send');
@@ -156,3 +159,31 @@ Route::get(
 Route::get('/product-image/{filename}', [ProductController::class, 'viewImage'])
     ->where('filename', '.*')
     ->name('product.image');
+
+Route::prefix('admin')->group(function () {
+
+    Route::get('/aboutus', [AboutUsController::class, 'index'])
+        ->name('admin.aboutus');
+
+    Route::post('/aboutus/main-images', [AboutUsController::class, 'storeMainImage'])
+        ->name('admin.aboutus.main-images.store');
+
+    Route::delete('/aboutus/main-images/{image}', [AboutUsController::class, 'deleteMainImage'])
+        ->name('admin.aboutus.main-images.delete');
+
+    Route::post('/aboutus/history', [AboutHistoryController::class, 'store'])
+        ->name('admin.aboutus.history.store');
+
+    Route::delete('/aboutus/history/{history}', [AboutHistoryController::class, 'destroy'])
+        ->name('admin.aboutus.history.delete');
+
+    Route::get('/aboutus/people', [AboutPeopleController::class, 'index'])
+        ->name('admin.aboutus.people.index');
+
+    Route::post('/aboutus/people', [AboutPeopleController::class, 'store'])
+        ->name('admin.aboutus.people.store');
+
+    Route::delete('/aboutus/people/{person}', [AboutPeopleController::class, 'destroy'])
+        ->name('admin.aboutus.people.delete');
+
+});

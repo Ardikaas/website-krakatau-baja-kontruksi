@@ -15,6 +15,74 @@
 }
 
 /* Main Section */
+
+.admin-aboutUs-management .main-image-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.admin-aboutUs-management .main-image-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    background: #ffffff;
+}
+
+.admin-aboutUs-management .main-image-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.admin-aboutUs-management .main-image-preview {
+    width: 120px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 1px solid #e5e7eb;
+}
+
+.admin-aboutUs-management .main-image-placeholder {
+    width: 120px;
+    height: 70px;
+    border-radius: 10px;
+    border: 2px dashed #d1d5db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.admin-aboutUs-management .main-image-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.admin-aboutUs-management .btn-upload {
+    background: #00a1d1;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 6px 14px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.admin-aboutUs-management .btn-delete {
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-size: 13px;
+    cursor: pointer;
+}
+
 .admin-aboutUs-management .admin-main-section {
     margin-bottom: 48px;
 }
@@ -87,7 +155,7 @@
 }
 
 .admin-aboutUs-management .btn-primary {
-    background: #66696b;
+    background: #00a1d1;
     color: #fff;
     border-radius: 14px;
     padding: 10px 22px;
@@ -194,6 +262,53 @@
     display: block;
 }
 
+.admin-aboutUs-management .history-image-upload {
+    margin-bottom: 20px;
+}
+
+.admin-aboutUs-management .history-image-empty {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border: 1px dashed #d1d5db;
+    border-radius: 12px;
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.admin-aboutUs-management .history-image-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.admin-aboutUs-management .history-image-item img {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid #e5e7eb;
+}
+
+.admin-aboutUs-management .history-image-item span {
+    flex: 1;
+    font-size: 13px;
+    color: #374151;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.admin-aboutUs-management .history-image-actions {
+    display: flex;
+    gap: 10px;
+}
+
+
 .admin-aboutUs-management .history-card .history-card-description {
     font-size: 14px;
     font-weight: 600;
@@ -206,7 +321,54 @@
     justify-content: space-between;
 }
 
-/* Company Section */
+
+.admin-aboutUs-management .company-image-upload {
+    max-width: 100%;
+    margin: 0 auto 20px;
+}
+
+.admin-aboutUs-management .company-image-empty {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    border: 1px dashed #d1d5db;
+    border-radius: 14px;
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.admin-aboutUs-management .company-image-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 18px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    background: #fff;
+}
+
+.admin-aboutUs-management .company-image-item img {
+    width: 72px;
+    height: 42px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid #e5e7eb;
+}
+
+.admin-aboutUs-management .company-image-item span {
+    flex: 1;
+    font-size: 13px;
+    color: #374151;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.admin-aboutUs-management .company-image-actions {
+    display: flex;
+    gap: 12px;
+}
 
 .admin-aboutUs-management .admin-company-section {
     margin-bottom: 48px;
@@ -270,7 +432,77 @@
     scrollbar-width: none;
 }
 
+/* People Popup Image Upload */
+.admin-aboutUs-management .people-image-upload {
+    margin-bottom: 20px;
+}
+
+.admin-aboutUs-management .people-image-empty {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border: 1px dashed #d1d5db;
+    border-radius: 12px;
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.admin-aboutUs-management .people-image-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.admin-aboutUs-management .people-image-item img {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid #e5e7eb;
+}
+
+.admin-aboutUs-management .people-image-item span {
+    flex: 1;
+    font-size: 13px;
+    color: #374151;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.admin-aboutUs-management .people-image-actions {
+    display: flex;
+    gap: 10px;
+}
+
+
+.admin-aboutUs-management .direction-delete-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(239, 68, 68, 0.9);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 2;
+}
+
+.admin-aboutUs-management .direction-card:hover .direction-delete-btn {
+    opacity: 1;
+}
+
 .admin-aboutUs-management .direction-card {
+    position: relative;
     border: 1px solid #e5e7eb;
     flex: 0 0 300px;
     background: #fff;
