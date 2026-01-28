@@ -48,7 +48,8 @@
                         </div>
                         <div class="widget-content">
                             <p>Gedung Krakatau Steel Lantai 2, Jl. jend. Gatot Subroto Kav. 54, Jakarta 12950</p>
-                            <div class="phone"><a href="#">[+66] 12 000 3456</a></div>
+                            <div class="phone"><a href="https://wa.me/6281234567890" target="_blank">[+66] 12 000
+                                    3456</a></div>
                             <div class="email"><a
                                     href="mailto:marketing@bajakonstruksi.co.id">marketing@bajakonstruksi.co.id</a>
                             </div>
@@ -114,16 +115,15 @@
                         </div>
                     </div>
                 </div>
-                
+
 
                 <!-- Support Widget -->
                 <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
                     <div class="footer-widget support-widget">
                         <div class="widget-title">
                             <a href="{{ url('/wbs') }}">
-                                <img src="{{ asset('images/icons/Untitled design (1).png') }}"
-                                     alt="WBS"
-                                     style="max-width: 100%; height: auto; cursor: pointer;">
+                                <img src="{{ asset('images/icons/Untitled design (1).png') }}" alt="WBS"
+                                    style="max-width: 100%; height: auto; cursor: pointer;">
                             </a>
                         </div>
                         <div class="widget-content">
@@ -154,7 +154,8 @@
                 </div>
                 <div class="right-column align-3">
                     <figure class="footer-logo">
-                        <a href="#"><img src="{{ asset('images/logo.png') }}" alt="Krakatau Baja Kontruksi"></a>
+                        <a href="#"><img src="{{ asset('images/logo.png') }}"
+                                alt="Krakatau Baja Kontruksi"></a>
                     </figure>
                     <div class="copyright">
                         <p>Copyrights &copy; {{ date('Y') }} <a href="#">PT. Krakatau Baja Konstruksi,</a>

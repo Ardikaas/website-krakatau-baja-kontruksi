@@ -22,8 +22,7 @@
                     <span class="menu-text">Product Management</span>
                 </a>
 
-                <a href="/admin/projectEdit"
-                    class="menu-item {{ request()->is('admin/projectEdit*') ? 'active' : '' }}">
+                <a href="/admin/projects" class="menu-item {{ request()->is('admin/projectEdit*') ? 'active' : '' }}">
                     <img src="{{ asset('images/icons/img_shipment_remove.svg') }}" class="menu-icon">
                     <span class="menu-text">Project Management</span>
                 </a>

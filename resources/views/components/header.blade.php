@@ -29,12 +29,13 @@
                                     <li class="dropdown"><a href="#">Business</a>
                                         <ul>
                                             <li><a href="/product">Product</a></li>
-                                            <li><a href="/project">Project</a></li>
+                                            <li><a href="/projects">Project</a></li>
                                             <li><a href="/news">Subholding</a></li>
-                                            <li><a href="#">Sales Contact</a></li>
+                                            <li><a href="https://wa.me/6281234567890" target="_blank">Sales Contact</a>
+                                            </li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown"><a href="/news">Gallery</a>
+                                    <li class="dropdown"><a href="/news">Company Governance</a>
                                     </li>
                                     <li class="dropdown"><a href="https://krasmedia.id/" target="_blank">News</a></li>
                                 </ul>
@@ -55,7 +56,8 @@
                         </div>
                     </li>
                     <li class="btn-box">
-                        <a href="index.html" class="theme-btn btn-one"><i class="flaticon-mail"></i><span>Get a
+                        <a href="https://wa.me/6281234567890" target="_blank" class="theme-btn btn-one"><i
+                                class="flaticon-mail"></i><span>Get a
                                 Quote</span></a>
                     </li>
                 </ul>
@@ -88,7 +90,8 @@
                         </div>
                     </li>
                     <li class="btn-box">
-                        <a href="index.html" class="theme-btn btn-one"><i class="flaticon-mail"></i><span>Get a
+                        <a href="https://wa.me/6281234567890" target="_blank" class="theme-btn btn-one"><i
+                                class="flaticon-mail"></i><span>Get a
                                 Quote</span></a>
                     </li>
                 </ul>

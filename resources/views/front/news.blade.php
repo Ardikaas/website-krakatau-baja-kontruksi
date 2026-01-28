@@ -1,8 +1,7 @@
 @extends('layouts.front')
 
-@section('title', 'News - Krakatau Baja Konstruksi')
+@section('title', 'Company Governance - Krakatau Baja Konstruksi')
 
-@section('meta_description', 'Berita terbaru dari Krakatau Baja Konstruksi')
 
 @push('styles')
     @vite(['resources/css/news.css'])
@@ -10,7 +9,7 @@
 
 @section('content')
     {{-- Banner Top Section --}}
-    <x-landingPageSection1 type="page" title="News" :breadcrumb="[['label' => 'Home', 'url' => url('/')], ['label' => 'News']]" imagePath="images/background/page-title.jpg" />
+    <x-landingPageSection1 type="page" title="News" :breadcrumb="[['label' => 'Home', 'url' => url('/')], ['label' => 'Company Governence']]" imagePath="images/background/page-title.jpg" />
 
     {{-- News Section --}}
     <section class="news-section sec-pad-2">
