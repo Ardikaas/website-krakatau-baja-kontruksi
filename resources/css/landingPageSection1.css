@@ -47,7 +47,7 @@
 
 .banner-top-section .inner-box {
     position: relative;
-    min-height: 426.183px; /* samakan dengan tinggi banner */
+    height: 426.183px;
     display: flex;
     align-items: center; /* CENTER VERTIKAL */
     padding: 0 60px;
@@ -304,56 +304,6 @@
 }
 
 /* ============================
-   Responsive
-============================ */
-
-@media only screen and (max-width: 1699px) {
-    .banner-top-section .inner-box .video-box,
-    .banner-top-section .inner-box p {
-        display: none;
-    }
-}
-
-@media only screen and (max-width: 1599px) {
-    .banner-top-section .inner-box .content-box h2 {
-        font-size: 80px;
-        line-height: 90px;
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    .banner-top-section .based-content {
-        position: relative;
-        width: 100%;
-    }
-}
-
-@media only screen and (max-width: 991px) {
-    .banner-top-section .inner-box {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-}
-
-@media only screen and (max-width: 767px) {
-    .banner-top-section .inner-box .content-box h2 {
-        font-size: 60px;
-        line-height: 70px;
-    }
-
-    .banner-top-section .inner-box {
-        padding: 70px 15px;
-    }
-}
-
-@media only screen and (max-width: 599px) {
-    .banner-top-section .inner-box .content-box h2 {
-        font-size: 40px;
-        line-height: 48px;
-    }
-}
-
-/* ============================
    Breadcrumb Styles
 ============================ */
 
@@ -404,21 +354,47 @@
 }
 
 /* ============================
-   Breadcrumb Responsive
+    Responsive
 ============================ */
 
+@media only screen and (max-width: 1599px) {
+    .banner-top-section .inner-box .content-box h2 {
+        font-size: 80px;
+        line-height: 90px;
+    }
+}
+
 @media only screen and (max-width: 1200px) {
+    .banner-top-section .based-content {
+        position: relative;
+        width: 100%;
+    }
+
     .banner-top-section .inner-box .content-box h1 {
         font-size: 50px;
         line-height: 58px;
     }
 }
 
+@media only screen and (max-width: 991px) {
+    .banner-top-section .inner-box {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
 @media only screen and (max-width: 767px) {
-    /* Flip layout: Title+Breadcrumb first, then Banner Krakatau */
+    /* Title (H2) */
+    .banner-top-section .inner-box .content-box h2 {
+        font-size: 60px;
+        line-height: 70px;
+    }
+
+    /* Layout flip */
     .banner-top-section {
         margin-bottom: 40px;
     }
+
     .banner-top-section .outer-container {
         display: flex;
         flex-direction: column;
@@ -429,20 +405,21 @@
         position: relative;
         width: 100%;
         border-right: none;
-        padding-right: 0;
     }
 
     .banner-top-section .inner-box {
         padding: 30px 15px;
+        height: 236px;
     }
 
+    /* Title (H1) */
     .banner-top-section .inner-box .content-box h1 {
         font-size: 36px;
         line-height: 44px;
-        text-align: center;
         margin-bottom: 11px;
     }
 
+    /* Breadcrumb */
     .banner-top-section .inner-box .content-box .bread-crumb {
         justify-content: center;
         margin-bottom: 0;
@@ -450,6 +427,11 @@
 }
 
 @media only screen and (max-width: 599px) {
+    .banner-top-section .inner-box .content-box h2 {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
     .banner-top-section .inner-box .content-box h1 {
         font-size: 30px;
         line-height: 38px;
