@@ -8,8 +8,8 @@
                 <div class="row align-items-center">
                     
                         <div class="sec-title">
-                            <h6>Product</h6>
-                            <h2>Innovative <span>[Projects]</span> <br />Delivered</h2>
+                            <h6>Product & Projects</h6>
+                            <h2>Innovative <span>[Products]</span> & <span>[Projects]</span> <br />Delivered</h2>
                             <p class="mt_12">Delivering quality, innovation, and precision.</p>
                         </div>
                     </div>
@@ -26,10 +26,10 @@
                                     <h6>All</h6>
                                 </li>
                                 <li class="p-tab-btn" data-tab="#tab-12">
-                                    <h6>Steel Structure Component</h6>
+                                    <h6>Products</h6>
                                 </li>
                                 <li class="p-tab-btn" data-tab="#tab-13">
-                                    <h6>Modular</h6>
+                                    <h6>Projects</h6>
                                 </li>
                             </ul>
                             <!-- Owl Counter -->
@@ -50,158 +50,124 @@
                             <!-- Tab 11 - All (Active Tab) -->
                             <div class="p-tab active-tab" id="tab-11">
                                 <div class="single-item-carousel owl-carousel owl-theme nav-style-one">
-                                    <div class="project-block-one">
-                                        <div class="inner-box">
-                                            <div class="bg-layer"
-                                                style="background-image: url({{ asset('images/project/project-1.jpg') }});">
+                            
+                                    {{-- PRODUCTS --}}
+                                    @if ($products->count())    
+                                        @foreach ($products as $product)
+                                            <div class="project-block-one">
+                                                <div class="inner-box">
+                                                    <div class="bg-layer"
+                                                        style="background-image: url({{ asset('storage/'.$product->image) }});">
+                                                    </div>
+                                
+                                                    <span class="category">{{ $product->category }}</span>
+                                
+                                                    <div class="content-box">
+                                                        <h3>{{ $product->title }}</h3>
+                                                        <p>{{ Str::limit($product->description, 80) }}</p>
+                                
+                                                        <h6>type</h6>
+                                                        <span class="text">Product</span>
+                                
+                                                        <a href="#"><i class="flaticon-right-arrow"></i></a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <span class="category">Infrastructure</span>
-                                            <div class="content-box">
-                                                <h3>Titanium Arch Crossing</h3>
-                                                <p>Durable and innovative metal bridge, designed with precision...</p>
-                                                <h6>client</h6>
-                                                <span class="text">Energy Producer Ltd</span>
-                                                <a href="#"><i class="flaticon-right-arrow"></i></a>
+                                        @endforeach
+                                    @endif
+                            
+                                    {{-- PROJECTS --}}
+                                    @if ($projects->count())    
+                                        @foreach ($projects as $project)
+                                            <div class="project-block-one">
+                                                <div class="inner-box">
+                                                    <div class="bg-layer"
+                                                        style="background-image: url({{ asset('storage/'.$project->image) }});">
+                                                    </div>
+                                
+                                                    <span class="category">{{ $project->category }}</span>
+                                
+                                                    <div class="content-box">
+                                                        <h3>{{ $project->title }}</h3>
+                                                        <p>{{ Str::limit($project->description, 80) }}</p>
+                                
+                                                        <h6>client</h6>
+                                                        <span class="text">{{ $project->client }}</span>
+                                
+                                                        <a href="#"><i class="flaticon-right-arrow"></i></a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="project-block-one">
-                                        <div class="inner-box">
-                                            <div class="bg-layer"
-                                                style="background-image: url({{ asset('images/project/project-2.jpg') }});">
-                                            </div>
-                                            <span class="category">Energy</span>
-                                            <div class="content-box">
-                                                <h3>Factory Expansion Project</h3>
-                                                <p>Durable and innovative metal bridge, designed with precision...</p>
-                                                <h6>client</h6>
-                                                <span class="text">Energy Producer Ltd</span>
-                                                <a href="#"><i class="flaticon-right-arrow"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="project-block-one">
-                                        <div class="inner-box">
-                                            <div class="bg-layer"
-                                                style="background-image: url({{ asset('images/project/project-3.jpg') }});">
-                                            </div>
-                                            <span class="category">Industrial</span>
-                                            <div class="content-box">
-                                                <h3>Offshore Platform Build</h3>
-                                                <p>Durable and innovative metal bridge, designed with precision...</p>
-                                                <h6>client</h6>
-                                                <span class="text">Energy Producer Ltd</span>
-                                                <a href="#"><i class="flaticon-right-arrow"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        @endforeach
+                                    @endif
+                            
                                 </div>
-                            </div>
+                            </div>                            
 
-                            <!-- Tab 12 - Infrastructure -->
+                            <!-- Tab 12 - Products -->
                             <div class="p-tab" id="tab-12">
                                 <div class="single-item-carousel owl-carousel owl-theme nav-style-one">
-                                    <div class="project-block-one">
-                                        <div class="inner-box">
-                                            <div class="bg-layer"
-                                                style="background-image: url({{ asset('images/project/project-1.jpg') }});">
+                                    @if ($products->count())    
+                                        @foreach ($products as $product)
+                                            <div class="project-block-one">
+                                                <div class="inner-box">
+                                                    <div class="bg-layer"
+                                                        style="background-image: url({{ asset('storage/'.$product->image) }});">
+                                                    </div>
+                                
+                                                    <span class="category">{{ $product->category }}</span>
+                                
+                                                    <div class="content-box">
+                                                        <h3>{{ $product->title }}</h3>
+                                                        <p>{{ Str::limit($product->description, 80) }}</p>
+                                
+                                                        <h6>type</h6>
+                                                        <span class="text">Product</span>
+                                
+                                                        <a href="#"><i class="flaticon-right-arrow"></i></a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <span class="category">Infrastructure</span>
-                                            <div class="content-box">
-                                                <h3>Titanium Arch Crossing</h3>
-                                                <p>Durable and innovative metal bridge, designed with precision...</p>
-                                                <h6>client</h6>
-                                                <span class="text">Energy Producer Ltd</span>
-                                                <a href="#"><i class="flaticon-right-arrow"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="project-block-one">
-                                        <div class="inner-box">
-                                            <div class="bg-layer"
-                                                style="background-image: url({{ asset('images/project/project-2.jpg') }});">
-                                            </div>
-                                            <span class="category">Infrastructure</span>
-                                            <div class="content-box">
-                                                <h3>Highway Bridge Project</h3>
-                                                <p>Durable and innovative metal bridge, designed with precision...</p>
-                                                <h6>client</h6>
-                                                <span class="text">Energy Producer Ltd</span>
-                                                <a href="#"><i class="flaticon-right-arrow"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="project-block-one">
-                                        <div class="inner-box">
-                                            <div class="bg-layer"
-                                                style="background-image: url({{ asset('images/project/project-3.jpg') }});">
-                                            </div>
-                                            <span class="category">Infrastructure</span>
-                                            <div class="content-box">
-                                                <h3>Urban Development Center</h3>
-                                                <p>Durable and innovative metal bridge, designed with precision...</p>
-                                                <h6>client</h6>
-                                                <span class="text">Energy Producer Ltd</span>
-                                                <a href="#"><i class="flaticon-right-arrow"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        @endforeach
+                                    @endif
+                            
                                 </div>
                             </div>
+                            
 
-                            <!-- Tab 13 - Industrial -->
+                            <!-- Tab 13 - Projects -->
                             <div class="p-tab" id="tab-13">
                                 <div class="single-item-carousel owl-carousel owl-theme nav-style-one">
-                                    <div class="project-block-one">
-                                        <div class="inner-box">
-                                            <div class="bg-layer"
-                                                style="background-image: url({{ asset('images/project/project-3.jpg') }});">
+                                    @if ($projects->count())    
+                                        @foreach ($projects as $project)
+                                            <div class="project-block-one">
+                                                <div class="inner-box">
+                                                    <div class="bg-layer"
+                                                        style="background-image: url({{ asset('storage/'.$project->image) }});">
+                                                    </div>
+                                
+                                                    <span class="category">{{ $project->category }}</span>
+                                
+                                                    <div class="content-box">
+                                                        <h3>{{ $project->title }}</h3>
+                                                        <p>{{ Str::limit($project->description, 80) }}</p>
+                                
+                                                        <h6>client</h6>
+                                                        <span class="text">{{ $project->client }}</span>
+                                
+                                                        <a href="#"><i class="flaticon-right-arrow"></i></a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <span class="category">Industrial</span>
-                                            <div class="content-box">
-                                                <h3>Offshore Platform Build</h3>
-                                                <p>Durable and innovative metal bridge, designed with precision...</p>
-                                                <h6>client</h6>
-                                                <span class="text">Energy Producer Ltd</span>
-                                                <a href="#"><i class="flaticon-right-arrow"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="project-block-one">
-                                        <div class="inner-box">
-                                            <div class="bg-layer"
-                                                style="background-image: url({{ asset('images/project/project-1.jpg') }});">
-                                            </div>
-                                            <span class="category">Industrial</span>
-                                            <div class="content-box">
-                                                <h3>Factory Renovation Project</h3>
-                                                <p>Durable and innovative metal bridge, designed with precision...</p>
-                                                <h6>client</h6>
-                                                <span class="text">Energy Producer Ltd</span>
-                                                <a href="#"><i class="flaticon-right-arrow"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="project-block-one">
-                                        <div class="inner-box">
-                                            <div class="bg-layer"
-                                                style="background-image: url({{ asset('images/project/project-2.jpg') }});">
-                                            </div>
-                                            <span class="category">Industrial</span>
-                                            <div class="content-box">
-                                                <h3>Manufacturing Plant Hub</h3>
-                                                <p>Durable and innovative metal bridge, designed with precision...</p>
-                                                <h6>client</h6>
-                                                <span class="text">Energy Producer Ltd</span>
-                                                <a href="#"><i class="flaticon-right-arrow"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        @endforeach
+                                    @endif
+                            
                                 </div>
                             </div>
+                            
 
                             <!-- Tab 14 - Energy -->
-                            <div class="p-tab" id="tab-14">
+                            {{-- <div class="p-tab" id="tab-14">
                                 <div class="single-item-carousel owl-carousel owl-theme nav-style-one">
                                     <div class="project-block-one">
                                         <div class="inner-box">
@@ -249,10 +215,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <!-- Tab 15 - Transportation -->
-                            <div class="p-tab" id="tab-15">
+                            {{-- <div class="p-tab" id="tab-15">
                                 <div class="single-item-carousel owl-carousel owl-theme nav-style-one">
                                     <div class="project-block-one">
                                         <div class="inner-box">
@@ -300,10 +266,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <!-- Tab 16 - Custom -->
-                            <div class="p-tab" id="tab-16">
+                            {{-- <div class="p-tab" id="tab-16">
                                 <div class="single-item-carousel owl-carousel owl-theme nav-style-one">
                                     <div class="project-block-one">
                                         <div class="inner-box">
@@ -351,7 +317,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                         </div>
                     </div>

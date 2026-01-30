@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Services\NewsService;
 use App\Models\HeroBanner;
 use App\Models\WhyChooseUs;
+use App\Models\Product;
+use App\Models\Project;
 
 class HomeController extends Controller
 {
@@ -15,11 +17,15 @@ class HomeController extends Controller
 
         $heroBanners = HeroBanner::latest()->take(3)->get();
         $whyChooseUs = WhyChooseUs::all();
+        $products = Product::latest()->get();
+        $projects = Project::latest()->get();
 
         return view('front.home', compact(
             'news',
             'heroBanners',
-            'whyChooseUs'
+            'whyChooseUs',
+            'products',
+            'projects'
         ));
     }
 }

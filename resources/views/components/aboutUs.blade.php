@@ -280,7 +280,7 @@
 </section>
 {{-- team-section end --}}
 
-<section class="chooseus-style-two" id="akhlak">
+{{-- <section class="chooseus-style-two" id="akhlak">
     <div class="auto-container">
         <div class="sec-title mb_25 centred">
             <h6>Cultural Values</h6>
@@ -403,6 +403,122 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </div>
+    </div>
+</section> --}}
+
+<section class="chooseus-section" id="akhlak">
+    <div class="auto-container">
+        <div class="sec-title mb_25 centred">
+            <h6>Cultural Values</h6>
+            <h2>
+                Core Values
+                <span class="akhlak-logo">
+                    <img src="{{ asset('images/logo-akhlak.png') }}" alt="AKHLAK">
+                </span>
+            </h2>
+            <p class="mt_12">The core values ​that form the basis of BUMN work culture.</p>
+        </div>
+
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-6 col-sm-12 chooseus-block">
+                <div class="chooseus-block-one">
+                    <div class="inner-box">
+                        <div class="light-icon"><i class="flaticon-gear"></i></div>
+                        <div class="block-shape"
+                            style="background-image: url({{ asset('images/shape/shape-11.png') }});"></div>
+                        <div class="icon-box">
+                            <div class="icon">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                        </div>
+                        <h3>Amanah</h3>
+                        <p>We uphold the trust that has been placed in us.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 chooseus-block">
+                <div class="chooseus-block-one">
+                    <div class="inner-box">
+                        <div class="light-icon"><i class="flaticon-gear"></i></div>
+                        <div class="block-shape"
+                            style="background-image: url({{ asset('images/shape/shape-11.png') }});"></div>
+                        <div class="icon-box">
+                            <div class="icon">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                        </div>
+                        <h3>Competent</h3>
+                        <p>We continuously learn and develop our capabilities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 chooseus-block">
+                <div class="chooseus-block-one">
+                    <div class="inner-box">
+                        <div class="light-icon"><i class="flaticon-gear"></i></div>
+                        <div class="block-shape"
+                            style="background-image: url({{ asset('images/shape/shape-11.png') }});"></div>
+                        <div class="icon-box">
+                            <div class="icon">
+                                <i class="fa-solid fa-people-group"></i>
+                            </div>
+                        </div>
+                        <h3>Harmonious</h3>
+                        <p>We care for one another and respect differences.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 chooseus-block">
+                <div class="chooseus-block-one">
+                    <div class="inner-box">
+                        <div class="light-icon"><i class="flaticon-gear"></i></div>
+                        <div class="block-shape"
+                            style="background-image: url({{ asset('images/shape/shape-11.png') }});"></div>
+                        <div class="icon-box">
+                            <div class="icon">
+                                <i class="fa-solid fa-flag"></i>
+                            </div>
+                        </div>
+                        <h3>Loyal</h3>
+                        <p>We are dedicated and prioritize the interests of the nation and the state.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 chooseus-block">
+                <div class="chooseus-block-one">
+                    <div class="inner-box">
+                        <div class="light-icon"><i class="flaticon-gear"></i></div>
+                        <div class="block-shape"
+                            style="background-image: url({{ asset('images/shape/shape-11.png') }});"></div>
+                        <div class="icon-box">
+                            <div class="icon">
+                                <i class="fa-solid fa-arrows-rotate"></i>
+                            </div>
+                        </div>
+                        <h3>Adaptive</h3>
+                        <p>We continuously innovate and remain enthusiastic in driving and responding to change.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 chooseus-block">
+                <div class="chooseus-block-one">
+                    <div class="inner-box">
+                        <div class="light-icon"><i class="flaticon-gear"></i></div>
+                        <div class="block-shape"
+                            style="background-image: url({{ asset('images/shape/shape-11.png') }});"></div>
+                        <div class="icon-box">
+                            <div class="icon">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                        </div>
+                        <h3>Collaborative</h3>
+                        <p>We build synergistic and mutually beneficial partnerships.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -18,12 +18,12 @@
                                     <li class="dropdown"><a href="/">Home</a></li>
                                     <li class="dropdown"><a href="{{ route('about') }}">About Us</a>
                                         <ul>
-                                            <li><a href="/about/#company-info">Company Info</a></li>
-                                            <li><a href="/about/#history">History</a></li>
-                                            <li><a href="/about/#vision">Vision & Mision</a></li>
-                                            <li><a href="/about/#corp-structure">KSG Structure</a></li>
-                                            <li><a href="/about/#directors">Directors & Commissioners</a></li>
-                                            <li><a href="/about/#akhlak">Akhlak</a></li>
+                                            <li><a href="/about-us/#company-info">Company Info</a></li>
+                                            <li><a href="/about-us/#history">History</a></li>
+                                            <li><a href="/about-us/#vision">Vision & Mision</a></li>
+                                            <li><a href="/about-us/#corp-structure">KSG Structure</a></li>
+                                            <li><a href="/about-us/#directors">Directors & Commissioners</a></li>
+                                            <li><a href="/about-us/#akhlak">Akhlak</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown"><a href="#">Business</a>
