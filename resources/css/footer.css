@@ -989,3 +989,47 @@ button {
         text-align: center;
     }
 }
+
+/* =========================
+   FOOTER COMPACT MOBILE
+   ========================= */
+@media (max-width: 575px) {
+    /* Grid jadi 2 kolom */
+    .main-footer .footer-column {
+        flex: 0 0 50%;
+        max-width: 50%;
+        margin-bottom: 20px;
+    }
+
+    /* Title kecil */
+    .main-footer .widget-title h3 {
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 10px;
+    }
+
+    /* Link & text kecil */
+    .main-footer .links-widget .links-list li a,
+    .main-footer .contact-widget p,
+    .main-footer .contact-widget .email a {
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    /* Phone jangan terlalu gede */
+    .main-footer .contact-widget .phone a {
+        font-size: 14px;
+    }
+
+    /* Icon panah kecil */
+    .main-footer .links-widget .links-list li a i {
+        font-size: 10px;
+    }
+
+    /* Support / WBS logo lebih kecil */
+    .main-footer .support-widget .widget-title img {
+        max-width: 90px;
+        margin: 0 auto;
+        display: block;
+    }
+}
