@@ -155,3 +155,35 @@
     line-height: 38px;
     margin-bottom: 28px;
 }
+
+@media (max-width: 1200px) {
+    .project-details .upper-box .image-box {
+        width: 480px;
+        height: 640px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .project-details .upper-box .image-box {
+        width: 100%;
+        height: 520px;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-details .upper-box .image-box {
+        width: 100%;
+        height: 420px;
+        margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 576px) {
+    .project-details .upper-box .image-box {
+        width: 100%;
+        height: 320px;
+    }
+}

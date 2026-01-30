@@ -53,14 +53,14 @@
 
     {{-- SPEC IMAGE --}}
     @if ($product->spec_image)
-        <section class="organization-structure">
+        <section class="product-table">
             <div class="auto-container">
                 <div class="sec-title centred mb_45">
                     <h6>Specification</h6>
                 </div>
 
-                <div class="structure-wrapper">
-                    <div class="structure-image">
+                <div class="table-wrapper">
+                    <div class="table-image">
                         <img src="{{ route('admin.product.image', $product->spec_image) }}"
                             alt="Specification {{ $product->name }}">
                     </div>

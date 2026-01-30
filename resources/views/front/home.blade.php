@@ -10,7 +10,7 @@
         <x-landingPageSection2 :heroBanners="$heroBanners" />
         <x-landingPageSection3 />
         <x-landingPageSection4 />
-        <x-landingPageSection7 />
+        <x-landingPageSection7 :products="$products" :projects="$projects"/>
         <x-landingPageSection8 :whyChooseUs="$whyChooseUs" />
         {{-- <x-landingPageSection9 /> --}}
         <x-landingPageSection10 :news="$news" />

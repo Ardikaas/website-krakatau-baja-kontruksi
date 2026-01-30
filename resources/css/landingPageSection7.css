@@ -6,7 +6,7 @@
 }
 
 /* Pattern layer - continues from section 4 */
-.project-section>.pattern-layer {
+.project-section > .pattern-layer {
     position: absolute;
     left: -100px;
     top: -400px;
@@ -18,7 +18,7 @@
     z-index: 1;
 }
 
-.project-section>.bg-layer {
+.project-section > .bg-layer {
     position: absolute;
     left: 0px;
     bottom: 0px;
@@ -30,11 +30,10 @@
 
 /* Title Container - gray background like section 5 */
 
-
 /* Upper Box */
 .project-section .upper-box {
     position: relative;
-    padding: 106px 0px 55px 50px;
+    padding: 106px 0 55px 20px;
 }
 
 .project-section .upper-box .row {
@@ -46,8 +45,6 @@
     overflow-x: hidden;
     overflow-y: hidden;
     margin-right: -345px;
-    padding-right: 345px;
-    margin-left: -100px;
 }
 
 /* Section Title (copied from section 5) */
@@ -354,6 +351,7 @@
     line-height: 38px;
     color: #fff;
     margin-bottom: 22px;
+    font-weight: 500;
     font-family: var(--title-font);
 }
 
@@ -607,7 +605,6 @@
 }
 
 @media only screen and (max-width: 767px) {
-
     /* Section padding for mobile */
     .project-section {
         padding: 62px 0px 40px 0px;
@@ -616,8 +613,12 @@
 
     /* Center the title/header section */
     .project-section .sec-title {
-        padding-left: 0 !important;
+        padding: 0;
         text-align: center;
+    }
+
+    .project-section .upper-box {
+        padding: 0 0 40px 0;
     }
 
     .project-section .upper-box .count-box h2 {
