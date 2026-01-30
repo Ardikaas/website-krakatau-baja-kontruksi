@@ -844,10 +844,14 @@
     padding: 112px 0px 75px 0px;
 }
 
-.chooseus-style-two .akhlak-logo img {
-    height: 45px; 
+.chooseus-section .akhlak-logo img {
+    height: 45px;
     vertical-align: middle;
     margin-bottom: 5px;
+}
+
+.chooseus-section .sec-title {
+    margin-bottom: 40px;
 }
 
 .chooseus-block-two .inner-box {
@@ -1718,7 +1722,7 @@
     }
 
     .about-style-three {
-        padding: 60px 0px;
+        padding: 0 0 60px 0;
     }
 
     .sec-title h2 {
@@ -1777,7 +1781,7 @@
 
     .history-section .history-years {
         flex-wrap: wrap;
-        gap: 30px;
+        gap: 90px;
     }
 
     .history-section .history-years li::before,
@@ -1825,7 +1829,7 @@
 
 @media only screen and (max-width: 575px) {
     .history-section .history-years {
-        gap: 20px;
+        gap: 70px;
     }
 
     .history-section .history-item {
@@ -1884,7 +1888,7 @@
     }
 
     .history-section .history-years {
-        gap: 12px;
+        gap: 50px;
     }
 
     .history-section .history-years li {
