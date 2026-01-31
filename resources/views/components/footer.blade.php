@@ -4,36 +4,43 @@
     $footerDocuments = $documentService->list()->take(2);
 @endphp
 
-@if (isset($footerDocuments) && $footerDocuments->count())
-    <section class="download-section">
-        <div class="bg-layer"></div>
-        <div class="auto-container">
-            <div class="row clearfix">
+@if ($footerDocuments->count())
+<section class="download-section">
+    <div class="bg-layer"></div>
+    <div class="auto-container">
+        <div class="row clearfix">
 
-                @foreach ($footerDocuments as $doc)
-                    <div class="col-lg-6 col-md-12 col-sm-12 single-column">
-                        <div class="single-item {{ $loop->first ? 'pr_35' : 'pl_35' }}">
-                            <div class="text-box">
-                                <div class="icon-box">
-                                    <i class="flaticon-brochure"></i>
-                                </div>
-                                <div class="inner">
-                                    <h4>{{ $doc->title }}</h4>
-                                    <h6>pdf ({{ $doc->size }})</h6>
-                                </div>
-                            </div>
-
-                            <a href="{{ url('/api/documents/download/' . $doc->id) }}">
-                                <i class="flaticon-download"></i>
-                            </a>
+            @foreach ($footerDocuments as $doc)
+            <div class="col-lg-6 col-md-12 col-sm-12 single-column">
+                <div class="single-item {{ $loop->first ? 'pr_35' : 'pl_35' }}">
+                    
+                    <div class="text-box">
+                        <div class="icon-box">
+                            <i class="flaticon-brochure"></i>
+                        </div>
+                        <div class="inner">
+                            <h4>{{ $doc->title }}</h4>
+                            <h6>pdf ({{ $doc->size }})</h6>
                         </div>
                     </div>
-                @endforeach
 
+                    {{-- DOWNLOAD BUTTON --}}
+                    <a href="{{ url('/api/documents/download/' . $doc->id) }}"
+                       class="download-btn"
+                       target="_blank"
+                       aria-label="Download {{ $doc->title }}">
+                        <i class="flaticon-download"></i>
+                    </a>
+
+                </div>
             </div>
+            @endforeach
+
         </div>
-    </section>
+    </div>
+</section>
 @endif
+
 <!-- download-section end -->
 
 <footer class="main-footer">
