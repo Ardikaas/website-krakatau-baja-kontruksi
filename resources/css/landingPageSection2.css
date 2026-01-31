@@ -306,4 +306,9 @@
         left: 15px;
         bottom: 15px;
     }
+
+    .banner-section .banner-carousel .slide-item .bg-layer {
+        width: 100vw;
+        height: 730px;
+    }
 }

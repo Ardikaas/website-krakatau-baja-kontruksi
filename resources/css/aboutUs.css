@@ -1754,6 +1754,11 @@
         font-size: 30px;
         line-height: 38px;
     }
+
+    .company-section .bg-layer {
+        width: 100vw;
+        height: 700px;
+    }
 }
 
 @media only screen and (max-width: 499px) {
