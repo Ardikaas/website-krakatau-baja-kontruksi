@@ -30,12 +30,12 @@
                                         <ul>
                                             <li><a href="/product">Product</a></li>
                                             <li><a href="/projects">Project</a></li>
-                                            <li><a href="/news">Subholding</a></li>
-                                            <li><a href="https://wa.me/6281234567890" target="_blank">Sales Contact</a>
+                                            <li><a href="{{ route('subholding') }}">Subholding</a></li>
+                                            <li><a href="/contact">Sales Contact</a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown"><a href="/news">Company Governance</a>
+                                    <li class="dropdown"><a href="{{ route('compgov') }}">Company Governance</a>
                                     </li>
                                     <li class="dropdown"><a href="https://krasmedia.id/" target="_blank">News</a></li>
                                 </ul>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <ul class="menu-right-content">
-                    <li class="contact-link"><a href="contact"><i
+                    <li class="contact-link"><a href="{{ route('contact') }}"><i
                                 class="flaticon-headphones"></i><span>Contact</span></a></li>
                     <li class="language-box">
                         <div class="icon-box"><i class="flaticon-global"></i></div>
@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <ul class="menu-right-content">
-                    <li class="contact-link"><a href="contact"><i
+                    <li class="contact-link"><a href="{{ route('contact') }}"><i
                                 class="flaticon-headphones"></i><span>Contact</span></a></li>
                     <li class="language-box">
                         <div class="icon-box"><i class="flaticon-global"></i></div>

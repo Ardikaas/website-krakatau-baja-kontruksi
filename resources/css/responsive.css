@@ -8,8 +8,7 @@
     .industries-style-three .image-layer,
     .banner-top-section .inner-box .video-box,
     .banner-top-section .inner-box p,
-    .banner-section .banner-right-content,
-    .banner-section::before {
+    .banner-section .banner-right-content {
         display: none;
     }
 
