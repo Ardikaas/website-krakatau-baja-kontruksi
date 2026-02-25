@@ -1,26 +1,63 @@
-.admin-project-list {
+/* ===============================
+   PROJECT MANAGEMENT
+================================ */
+
+.admin-project-management {
+    position: relative;
+    font-family: "Inter", sans-serif;
     margin-left: 280px;
     margin-top: 74px;
     padding: 40px;
-    font-family: "Inter", sans-serif;
-    background: #fff;
 }
 
-.admin-project-list .default-header {
+/* ===============================
+   PAGE HEADER
+================================ */
+
+.admin-project-management .apm-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-project-management .apm-page-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 86px;
+}
+
+/* ===============================
+   GRID WRAPPER
+================================ */
+
+.admin-project-management .apm-grid {
+    background-color: #ffffff;
+}
+
+/* ===============================
+   GRID HEADER
+================================ */
+
+.admin-project-management .apm-grid-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
     margin-bottom: 20px;
+    gap: 16px;
 }
 
-.admin-project-list .default-header .default-sec-title {
-    font-size: 22px;
+.admin-project-management .apm-grid-title {
+    font-size: 20px;
     font-weight: 600;
-    color: #1f2937;
+    line-height: 26px;
+    color: #66696b;
 }
 
-.admin-project-list .default-header .add-btn {
+/* ===============================
+   ADD BUTTON
+================================ */
+
+.admin-project-management .apm-add-btn {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -37,83 +74,148 @@
     text-decoration: none;
 }
 
-.admin-project-list .default-header .add-btn:hover {
+.admin-project-management .apm-add-btn:hover {
     background-color: #0091c1;
 }
 
-.admin-project-list .default-header .add-icon {
+.admin-project-management .apm-add-icon {
     font-size: 18px;
     line-height: 1;
     margin-top: -4px;
 }
 
-.project-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 16px;
+/* ===============================
+   EMPTY STATE
+================================ */
+
+.admin-project-management .apm-empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #66696b;
 }
 
-.project-card {
-    display: flex;
-    flex-direction: column;
-    background: #ffffff;
+/* ===============================
+   CARD GRID
+================================ */
+
+.admin-project-management .apm-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* ===============================
+   CARD
+================================ */
+
+.admin-project-management .apm-card {
+    background-color: #ffffff;
     border: 1px solid #e5e7eb;
     border-radius: 8px;
     overflow: hidden;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
     cursor: pointer;
-    transition: transform 0.2s;
 }
 
-.project-card:hover {
-    transform: translateY(-3px);
+.admin-project-management .apm-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 }
 
-.project-card-image img {
+/* ===============================
+   CARD IMAGE
+================================ */
+
+.admin-project-management .apm-card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.admin-project-management .apm-card-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    transition: transform 0.3s ease;
 }
 
-/* Body container fleksibel */
-.project-card-body {
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Biar body bisa expand */
-    justify-content: flex-end; /* Push content ke bawah */
+.admin-project-management .apm-card:hover .apm-card-image {
+    transform: scale(1.05);
 }
 
-/* Title dan meta di bawah */
-.project-card-body h5 {
+/* ===============================
+   CARD CONTENT
+================================ */
+
+.admin-project-management .apm-card-content {
+    padding: 16px;
+}
+
+.admin-project-management .apm-card-title {
     font-size: 18px;
     font-weight: 600;
-    color: #111827;
-    margin-bottom: 4px;
+    color: #1f2937;
+    margin-bottom: 8px;
+    line-height: 1.4;
 }
 
-.project-card-meta {
+.admin-project-management .apm-card-category {
     font-size: 14px;
-    color: #6b7280;
+    color: #00a1d1;
+    margin-bottom: 4px;
+    font-weight: 500;
 }
 
-.card-actions {
-    margin-top: 8px;
-    display: flex;
-    gap: 6px;
+.admin-project-management .apm-card-client {
+    font-size: 14px;
+    color: #66696b;
 }
 
-.card-actions .btn {
-    padding: 2px 8px;
-    font-size: 12px;
+/* ===============================
+   CARD ACTIONS
+================================ */
+
+.admin-project-management .apm-card-actions {
+    padding: 16px;
+    padding-top: 0;
 }
 
-@media screen and (max-width: 767px) {
-    .admin-project-list {
+.admin-project-management .apm-edit-btn {
+    display: inline-block;
+    font-size: 14px;
+    color: #00a1d1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.admin-project-management .apm-edit-btn:hover {
+    color: #0091c1;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media screen and (max-width: 1024px) {
+    .admin-project-management .apm-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .admin-project-management {
         margin-left: 0;
+        padding: 20px;
     }
 
-    .project-card-grid {
+    .admin-project-management .apm-card-grid {
         grid-template-columns: 1fr;
+    }
+
+    .admin-project-management .apm-page-title {
+        font-size: 28px;
+        margin-bottom: 40px;
     }
 }

@@ -269,16 +269,6 @@
     overflow: hidden;
 }
 
-.banner-section::before {
-    position: absolute;
-    content: "";
-    background-color: #ebe9ef;
-    width: 1px;
-    height: calc(100% - 200px);
-    top: 0px;
-    right: 100px;
-    z-index: 2;
-}
 
 .banner-section .pattern-layer {
     position: absolute;

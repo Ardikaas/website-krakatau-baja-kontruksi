@@ -5,6 +5,7 @@
             <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                 @props([
                     'mainImages' => collect(),
+                    'histories' => collect(),
                     'direksi' => collect(),
                     'komisaris' => collect(),
                 ])
@@ -44,32 +45,42 @@
 
 {{-- history-section --}}
 @php
-    $histories = [
+    $defaultHistories = [
         [
             'year' => 1962,
-            'image' => 'Trikora1.jpeg',
+            'image' => asset('images/resource/Trikora1.jpeg'),
             'title' => 'Trikora 1',
-            'desc' => 'President Soekarno launched Trikora Steel Factory project in Cilegon',
+            'description' => 'President Soekarno launched Trikora Steel Factory project in Cilegon',
         ],
         [
             'year' => 1975,
-            'image' => 'Trikora2.jpeg',
+            'image' => asset('images/resource/Trikora2.jpeg'),
             'title' => 'Bar and Section Krakatau Steel',
-            'desc' => 'It was inaugurated by President Soeharto and accompanied by Minister of Industry M. Jusuf',
+            'description' => 'It was inaugurated by President Soeharto and accompanied by Minister of Industry M. Jusuf',
         ],
         [
             'year' => 1992,
-            'image' => 'Wajatama1.jpeg',
+            'image' => asset('images/resource/Wajatama1.jpeg'),
             'title' => 'PT Krakatau Wajatama was Born',
-            'desc' => 'It was inaugurated by PT Krakatau Wajatama',
+            'description' => 'It was inaugurated by PT Krakatau Wajatama',
         ],
         [
             'year' => 2021,
-            'image' => 'present.jpeg',
+            'image' => asset('images/resource/present.jpeg'),
             'title' => 'Became PT Krakatau Baja Konstruksi',
-            'desc' => 'Inaugurated as a Subholding by PT Krakatau Steel (Persero) TBK as of September 1st, 2021',
+            'description' => 'Inaugurated as a Subholding by PT Krakatau Steel (Persero) TBK as of September 1st, 2021',
         ],
     ];
+
+    // Use DB data if available, otherwise use defaults
+    $historyItems = $histories->count() > 0
+        ? $histories->map(fn($h) => [
+            'year' => $h->year ?? '',
+            'image' => $h->image ? asset('storage/' . $h->image) : asset('images/resource/present.jpeg'),
+            'title' => $h->title,
+            'description' => $h->description,
+        ])->toArray()
+        : $defaultHistories;
 @endphp
 
 <section class="history-section bg-color-1" id="history">
@@ -82,13 +93,13 @@
 
         <!-- CAROUSEL -->
         <div class="history-carousel owl-carousel">
-            @foreach ($histories as $item)
+            @foreach ($historyItems as $item)
                 <div class="history-item">
                     <div class="history-inner">
                         <div class="row align-items-center">
                             <div class="col-lg-6">
                                 <div class="history-image">
-                                    <img src="{{ asset('images/resource/' . $item['image']) }}" alt="">
+                                    <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}">
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -97,7 +108,7 @@
                                         <div class="title-shape"></div>
                                         <h2>{{ $item['title'] }}</h2>
                                     </div>
-                                    <p>{{ $item['desc'] }}</p>
+                                    <p>{{ $item['description'] }}</p>
                                 </div>
                             </div>
                         </div>
@@ -108,7 +119,7 @@
 
         <nav class="history-nav">
             <ul class="history-years">
-                @foreach ($histories as $index => $item)
+                @foreach ($historyItems as $index => $item)
                     <li data-index="{{ $index }}" class="{{ $loop->first ? 'active' : '' }}">
                         {{ $item['year'] }}
                     </li>

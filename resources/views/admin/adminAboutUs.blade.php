@@ -74,36 +74,48 @@
                     </div>
                     <div class="history-card-grid">
                         @forelse ($histories as $history)
-                            <div class="history-card">
+                            <div class="history-card" data-id="{{ $history->id }}">
 
-                                {{-- DELETE --}}
-                                <form action="{{ route('admin.aboutus.history.delete', $history->id) }}" method="POST"
-                                    style="position:absolute; top:10px; right:10px;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn-delete" onclick="return confirm('Delete history?')">
-                                        Delete
-                                    </button>
-                                </form>
-
-                                <h3>{{ $history->title }}</h3>
-                                <small>{{ $history->year }}</small>
+                                {{-- DELETE (hover reveal) --}}
+                                <button class="history-delete-btn" type="button"
+                                    data-id="{{ $history->id }}">Delete</button>
 
                                 <div class="history-card-image-wrapper">
-                                    <img src="{{ asset('storage/' . $history->image) }}" class="history-card-image">
+                                    @if ($history->image)
+                                        <img src="{{ asset('storage/' . $history->image) }}" class="history-card-image"
+                                            alt="{{ $history->title }}">
+                                    @else
+                                        <div class="history-card-image-placeholder">
+                                            <span>No Image</span>
+                                        </div>
+                                    @endif
                                 </div>
 
-                                <p>{{ Str::limit($history->description, 120) }}</p>
+                                <div class="history-card-content">
+                                    <div class="history-title-group">
+                                        <p class="history-card-label">Title</p>
+                                        <h3 class="history-card-title">{{ $history->title }}</h3>
+                                    </div>
+
+                                    <div class="history-year-group">
+                                        <p class="history-card-label">Year</p>
+                                        <h5 class="history-card-year">{{ $history->year ?? '-' }}</h5>
+                                    </div>
+
+                                    <div class="history-desc-group">
+                                        <p class="history-card-label">Description</p>
+                                        <p class="history-card-description">{{ Str::limit($history->description, 120) }}</p>
+                                    </div>
+                                </div>
 
                             </div>
                         @empty
                             <p>Belum ada history.</p>
                         @endforelse
                     </div>
-
                 </section>
 
-                {{-- <section class="admin-company-section">
+                <section class="admin-company-section">
                     <div class="default-header">
                         <h5 class="default-sec-title">Company Section</h5>
                     </div>
@@ -174,7 +186,7 @@
                             Supported formats: JPG, PNG
                         </p>
                     </div>
-                </section> --}}
+                </section>
 
                 <section class="admin-direction-teams-section">
                     <div class="default-header">
@@ -220,8 +232,8 @@
                         style="display: none; margin-top: 40px; padding: 24px; border: 1px solid #e5e7eb; border-radius: 16px; background: #f9fafb;">
                         <div
                             style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
-                            <h3 id="peopleFormTitle" style="margin: 0; font-size: 18px; font-weight: 600; color: #1f2937;">
-                                Add New People</h3>
+                            <h3 id="peopleFormTitle"
+                                style="margin: 0; font-size: 18px; font-weight: 600; color: #1f2937;">Add New People</h3>
                             <button type="button" id="closePeopleForm" class="btn-cancel"
                                 style="cursor: pointer; background: none; border: none; color: #9ca3af; font-size: 24px;">×</button>
                         </div>
@@ -445,7 +457,7 @@
 
                             <div class="right-actions">
                                 <button class="btn-cancel" id="closeHistoryPopup">Cancel</button>
-                                <button class="btn-primary">Confirm</button>
+                                <button class="btn-primary" id="confirmHistoryBtn">Confirm</button>
                             </div>
                         </div>
                     </div>
@@ -917,6 +929,139 @@
                 peopleFormSection2.style.display = 'none';
             });
         }
+
+        // ===== HISTORY POPUP CONFIRM (SAVE) =====
+        const confirmHistoryBtn = document.getElementById('confirmHistoryBtn');
+        let editHistoryId = null;
+
+        // When clicking a history card, open popup in edit mode
+        document.querySelectorAll('.history-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Don't trigger if clicking the delete button
+                if (e.target.closest('.history-delete-btn')) return;
+
+                editHistoryMode = true;
+                editHistoryId = this.dataset.id || null;
+                historyPopupTitle.innerText = 'Edit History';
+                historyTitleInput.value = this.querySelector('.history-card-title')?.textContent || '';
+                historyYearInput.value = this.querySelector('.history-card-year')?.textContent || '';
+                historyDescriptionInput.value = this.querySelector('.history-card-description')?.textContent || '';
+                deleteHistoyBtn.style.display = 'inline-block';
+
+                // Reset image preview
+                imageInput.value = '';
+                const cardImg = this.querySelector('.history-card-image');
+                if (cardImg) {
+                    emptyState.style.display = 'none';
+                    itemState.style.display = 'flex';
+                    previewImg.src = cardImg.src;
+                    fileNameEl.textContent = 'Current image';
+                } else {
+                    emptyState.style.display = 'flex';
+                    itemState.style.display = 'none';
+                    previewImg.src = '';
+                    fileNameEl.textContent = '';
+                }
+
+                historyPopup.style.display = 'flex';
+            });
+        });
+
+        if (confirmHistoryBtn) {
+            confirmHistoryBtn.addEventListener('click', () => {
+                const title = historyTitleInput.value.trim();
+                const year = historyYearInput.value.trim();
+                const description = historyDescriptionInput.value.trim();
+
+                if (!title || !description) {
+                    alert('Please fill in Title and Description');
+                    return;
+                }
+
+                const formData = new FormData();
+                formData.append('title', title);
+                formData.append('year', year);
+                formData.append('description', description);
+
+                if (imageInput.files[0]) {
+                    formData.append('image', imageInput.files[0]);
+                }
+
+                fetch('{{ route('admin.aboutus.history.store') }}', {
+                        method: 'POST',
+                        headers: {
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content ||
+                                '{{ csrf_token() }}'
+                        },
+                        body: formData
+                    })
+                    .then(response => {
+                        if (!response.ok) throw new Error('Server error');
+                        alert('History saved successfully!');
+                        location.reload();
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Error saving history');
+                    });
+            });
+        }
+
+        // ===== HISTORY DELETE (popup delete button) =====
+        if (deleteHistoyBtn) {
+            deleteHistoyBtn.addEventListener('click', () => {
+                if (!editHistoryId) {
+                    alert('No history selected for deletion');
+                    return;
+                }
+
+                if (!confirm('Delete this history?')) return;
+
+                fetch('/admin/aboutus/history/' + editHistoryId, {
+                        method: 'DELETE',
+                        headers: {
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content ||
+                                '{{ csrf_token() }}'
+                        }
+                    })
+                    .then(response => {
+                        if (!response.ok) throw new Error('Server error');
+                        alert('History deleted successfully!');
+                        location.reload();
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Error deleting history');
+                    });
+            });
+        }
+
+        // ===== HISTORY DELETE (card hover button) =====
+        document.querySelectorAll('.history-delete-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const historyId = this.dataset.id;
+
+                if (!confirm('Delete this history?')) return;
+
+                fetch('/admin/aboutus/history/' + historyId, {
+                        method: 'DELETE',
+                        headers: {
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content ||
+                                '{{ csrf_token() }}'
+                        }
+                    })
+                    .then(response => {
+                        if (!response.ok) throw new Error('Server error');
+                        alert('History deleted successfully!');
+                        location.reload();
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Error deleting history');
+                    });
+            });
+        });
 
         // Delete event handlers for direction cards
         document.querySelectorAll('.direction-delete-btn').forEach(btn => {

@@ -1,217 +1,273 @@
 /* ===============================
-   ADMIN PROJECT FORM - MODERN
+   ADMIN PROJECT ADD
 ================================ */
 
-.admin-project-details {
+.admin-project-add {
     margin-left: 280px;
     margin-top: 74px;
-    padding: 40px;
-    font-family: "Inter", sans-serif;
-}
-
-/* Header */
-.admin-project-header {
-    margin-bottom: 32px;
-}
-
-.admin-project-title {
-    font-size: 36px;
-    font-weight: 700;
-    color: #111827;
-    border-left: 4px solid #2563eb;
-    padding-left: 12px;
-}
-
-/* Labels */
-.admin-project-label {
-    font-size: 22px;
-    font-weight: 600;
-    color: #111827;
-    margin-bottom: 8px;
-    display: block;
-}
-
-/* Image Upload */
-.project-image-upload {
-    width: 545px;
-    height: 712px;
-    border: 2px dashed #d1d5db;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
-    margin-bottom: 32px;
-    background: #ffffff;
-    transition: border-color 0.2s, background 0.2s;
+    font-family: "Inter", sans-serif;
+    padding: 40px;
 }
 
-.project-image-upload:hover {
-    border-color: #2563eb;
-    background: #f0f9ff;
+/* ===============================
+   HEADER
+================================ */
+
+.admin-project-add .add-project-header {
+    display: flex;
+    flex-direction: column;
 }
 
-.project-image-upload-inner {
-    text-align: center;
-    color: #6b7280;
-}
-
-.project-image-upload-inner span {
-    color: #2563eb;
+.admin-project-add .project-editor-title {
+    font-size: 36px;
     font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 86px;
 }
 
-.upload-preview {
-    max-height: 350px;
-    max-width: 100%;
-    object-fit: contain;
-    border-radius: 12px;
-    margin-bottom: 8px;
-}
+/* ===============================
+   PROJECT EDITOR WRAPPER
+================================ */
 
-/* Fields */
-.project-detail-field {
+.admin-project-add .project-editor-card {
+    background: #ffffff;
     margin-bottom: 24px;
 }
 
-.project-detail-input {
+.admin-project-add .project-editor-label {
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+/* ===============================
+   IMAGE UPLOAD
+================================ */
+
+.admin-project-add .project-editor-upload {
     width: 100%;
-    padding: 14px 16px;
-    font-size: 20px;
-    border: 1px solid #d1d5db;
-    border-radius: 12px;
-    background: #f9fafb;
-    transition: border 0.2s, box-shadow 0.2s;
-}
-
-.project-detail-input:focus {
-    outline: none;
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-}
-
-/* Textareas */
-textarea.project-detail-input {
-    min-height: 120px;
-    resize: vertical;
-}
-
-/* Solutions */
-.project-solutions-section {
-    margin-top: 48px;
-}
-
-.solution-card {
-    padding: 20px;
-    border: 1px solid #e5e7eb;
-    border-radius: 16px;
-    background: #ffffff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    height: 360px;
+    border: 2px dashed #e5e7eb;
+    border-radius: 10px;
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-    transition: box-shadow 0.2s, border 0.2s;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
-.solution-card:hover {
-    border-color: #2563eb;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+.admin-project-add .project-editor-upload:hover {
+    border-color: #00a1d1;
 }
 
-.solution-label {
-    font-size: 20px;
-    font-weight: 600;
-    color: #111827;
-    margin-bottom: 6px;
+.admin-project-add .project-editor-upload-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.admin-project-add .project-editor-upload-inner span {
+    color: #00a1d1;
+}
+
+.admin-project-add .upload-preview {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0 auto;
     display: block;
 }
 
-.solution-title,
-.solution-desc {
-    width: 100%;
-    border: 1px solid #d1d5db;
-    border-radius: 12px;
-    padding: 10px 14px;
-    font-size: 18px;
-    background: #f9fafb;
+.admin-project-add .upload-text {
+    font-size: 14px;
+    color: #6b7280;
+    text-align: center;
+    margin-top: 8px;
 }
 
-.solution-title:focus,
-.solution-desc:focus {
-    outline: none;
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+.admin-project-add .upload-icon {
+    width: 48px;
+    height: 48px;
+    opacity: 0.6;
 }
 
-.solution-desc {
-    min-height: 100px;
-    resize: vertical;
-}
-
-/* Buttons */
-.add-btn,
-.btn-save,
-.btn-danger,
-.btn-secondary {
-    padding: 12px 18px;
-    border-radius: 12px;
-    font-weight: 600;
+.admin-project-add .link-text {
+    color: #00a1d1;
     cursor: pointer;
-    border: none;
-    transition: all 0.2s;
+    text-decoration: underline;
 }
 
-.add-btn {
-    background: #2563eb;
-    color: #ffffff;
+/* ===============================
+   PROJECT INPUT FIELDS
+================================ */
+
+.admin-project-add .project-editor-field {
+    margin-bottom: 20px;
 }
 
-.add-btn:hover {
-    background: #1d4ed8;
+.admin-project-add .project-editor-input {
+    width: 100%;
+    max-width: 600px;
+    padding: 14px 16px;
+    font-size: 14px;
+    font-family: "Inter", sans-serif;
+    color: #374151;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.btn-save {
-    background: #16a34a;
-    color: #ffffff;
+.admin-project-add .project-editor-input:focus {
+    outline: none;
+    border-color: #00a1d1;
+    box-shadow: 0 0 0 3px rgba(0, 161, 209, 0.1);
 }
 
-.btn-save:hover {
-    background: #15803d;
+.admin-project-add .project-editor-input::placeholder {
+    color: #9ca3af;
 }
 
-.btn-danger {
-    background: #dc2626;
-    color: #ffffff;
+/* ===============================
+   TEXTAREA
+================================ */
+
+.admin-project-add .project-editor-input[type="textarea"],
+.admin-project-add textarea.project-editor-input {
+    resize: vertical;
+    min-height: 120px;
 }
 
-.btn-danger:hover {
-    background: #b91c1c;
+/* ===============================
+   HELPER TEXT
+================================ */
+
+.admin-project-add .project-editor-helper {
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 8px;
 }
 
-.btn-secondary {
-    background: #6b7280;
-    color: #ffffff;
+/* ===============================
+   SOLUTIONS
+================================ */
+
+.admin-project-add .solution-card {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
 }
 
-.btn-secondary:hover {
-    background: #4b5563;
+.admin-project-add .solution-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 8px;
+    display: block;
 }
 
-/* Form Actions */
-.form-actions {
+.admin-project-add .solution-title,
+.admin-project-add .solution-desc {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: "Inter", sans-serif;
+}
+
+.admin-project-add .solution-desc {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* ===============================
+   ACTIONS
+================================ */
+
+.admin-project-add .project-editor-actions {
     display: flex;
-    gap: 16px;
+    gap: 12px;
     margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #e5e7eb;
 }
 
-.admin-project-details .mt-2 {
-    margin-top: 12px;
+.admin-project-add .project-save-btn {
+    background-color: #00a1d1;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
-/* Responsive */
-@media (max-width: 1024px) {
-    .admin-project-details {
+
+.admin-project-add .project-save-btn:hover {
+    background-color: #0091c1;
+}
+
+.admin-project-add .btn-secondary {
+    background-color: #6b7280;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+}
+
+.admin-project-add .btn-secondary:hover {
+    background-color: #4b5563;
+}
+
+/* ===============================
+   DELETE BUTTON
+================================ */
+
+.admin-project-add .btn-danger {
+    background-color: #dc2626;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 16px;
+}
+
+.admin-project-add .btn-danger:hover {
+    background-color: #b91c1c;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media screen and (max-width: 1024px) {
+    .admin-project-add {
         margin-left: 0;
         padding: 20px;
+    }
+
+    .admin-project-add .project-editor-title {
+        font-size: 28px;
+        margin-bottom: 40px;
     }
 }
