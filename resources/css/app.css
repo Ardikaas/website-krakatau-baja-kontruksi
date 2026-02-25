@@ -38,6 +38,7 @@
 @import "./adminAboutUs.css";
 @import "./adminProjectView.css";
 @import "./adminProjectForm.css";
+@import "./adminSales.css";
 
 /*Responsive in the last for gak nimpa*/
 @import "./aboutUs.css";

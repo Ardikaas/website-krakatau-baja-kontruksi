@@ -43,6 +43,24 @@
                                     <span>{{ $product->category }}</span>
                                 </li>
                             </ul>
+
+                            @if ($sales->count() > 0)
+                                <h3>Sales Contact</h3>
+                                <div class="sales-contacts mt_25">
+                                    @foreach ($sales as $sale)
+                                        <div class="sales-contact mb_15">
+                                            <p><strong>{{ $sale->name }}</strong></p>
+                                            <p>Contact: <a href="https://wa.me/{{ '+62' . substr($sale->contact, 1) }}"
+                                                    target="_blank">{{ $sale->contact }}</a></p>
+                                            @if ($sale->photo)
+                                                <img src="{{ route('sales.image', $sale->photo) }}"
+                                                    alt="{{ $sale->name }}"
+                                                    style="width: 50px; height: 50px; border-radius: 50%;">
+                                            @endif
+                                        </div>
+                                    @endforeach
+                                </div>
+                            @endif
                         </div>
                     </div>
 

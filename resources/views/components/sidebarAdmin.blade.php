@@ -33,6 +33,12 @@
                     <span class="menu-text">News Management</span>
                 </a>
 
+                <a href="/admin/sales"
+                    class="menu-item {{ request()->is('admin/sales*') || request()->is('admin/sales*') ? 'active' : '' }}">
+                    <img src="{{ asset('images/icons/img_megaphone_streamline.svg') }}" class="menu-icon">
+                    <span class="menu-text">Sales Management</span>
+                </a>
+
                 <a href="/admin/wbs" class="menu-item {{ request()->is('admin/wbs*') ? 'active' : '' }}">
                     <img src="{{ asset('images/icons/img_megaphone_streamline.svg') }}" class="menu-icon">
                     <span class="menu-text">WBS Management</span>

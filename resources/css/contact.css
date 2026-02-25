@@ -1,3 +1,9 @@
+.contact-style-two .tabs-content .row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+}
+
 .contact-style-two {
     position: relative;
     padding: 120px 0px 90px 0px;
@@ -267,6 +273,7 @@
     top: 12px;
     z-index: 1;
 }
+
 /* Changes end */
 
 .contact-style-three .content-box .form-inner .form-group .select-box {
@@ -349,4 +356,37 @@
 .contact-style-three select:focus {
     border-color: var(--theme-color);
     outline: none;
+}
+
+
+.info-block-one .inner-box .title-box.with-image {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* image */
+.info-block-one .inner-box .title-box.with-image .title-image {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.info-block-one .inner-box .title-box.with-image .title-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+}
+
+/* text tetap normal */
+.info-block-one .inner-box .title-box.with-image .title-text h3 {
+    margin-bottom: 6px;
+}
+
+.info-block-one .inner-box .title-box.with-image .title-text h6 {
+    margin: 0;
 }

@@ -37,49 +37,68 @@
 
                 <div class="items-container row clearfix">
 
-                    @foreach ($products as $product)
+                    @foreach ($products as $index => $product)
                         @php
                             $thumbnail = $product->thumbnail[0] ?? null;
                             $catClass = 'cat-' . \Illuminate\Support\Str::slug($product->category);
+
+                            $sales = \App\Models\Sales::where('categories', 'like', '%' . $product->category . '%')
+                                ->take(2)
+                                ->get();
                         @endphp
 
                         <div class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all {{ $catClass }}">
 
-                            <div class="project-block-two">
-                                <div class="inner-box">
+                            <a href="{{ route('product.detail', $product->slug) }}" class="product-card-link">
+                                <div class="simple-product-card">
 
                                     {{-- IMAGE --}}
-                                    <div class="bg-layer"
-                                        style="background-image: url(
-                                            {{ $thumbnail ? route('admin.product.image', $thumbnail) : 'https://placehold.co/600x400' }}
-                                        );">
+                                    <div class="card-image"
+                                        style="background-image:url(
+                        {{ $thumbnail ? route('admin.product.image', $thumbnail) : 'https://placehold.co/600x400' }}
+                    );">
                                     </div>
 
-                                    {{-- TITLE --}}
-                                    <div class="upper-box">
-                                        <h3>
-                                            <a href="{{ route('product.detail', $product->slug) }}">
-                                                {{ $product->name }}
-                                            </a>
+                                    {{-- BODY --}}
+                                    <div class="card-body">
+
+                                        {{-- TITLE --}}
+                                        <h3 class="product-title">
+                                            {{ $product->name }}
                                         </h3>
+
+                                        {{-- CATEGORY --}}
+                                        <span class="product-category">
+                                            {{ $product->category }}
+                                        </span>
+
+                                        {{-- CONTACT SALES --}}
+                                        @if ($sales->count() > 0)
+                                            @foreach ($sales as $salesPerson)
+                                                <div class="sales-contact">
+                                                    <img src="{{ $salesPerson->photo ? route('sales.image', $salesPerson->photo) : 'https://placehold.co/100x100' }}"
+                                                        alt="Sales">
+                                                    <div class="sales-info">
+                                                        <h6>{{ $salesPerson->name }}</h6>
+                                                        <a href="https://wa.me/{{ '+62' . substr($salesPerson->contact, 1) }}"
+                                                            target="_blank">{{ $salesPerson->contact }}</a>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        @else
+                                            <div class="sales-contact">
+                                                <img src="https://placehold.co/100x100" alt="Sales">
+                                                <div class="sales-info">
+                                                    <h6>No Sales Contact</h6>
+                                                    <a href="#" target="_blank">N/A</a>
+                                                    <small>N/A</small>
+                                                </div>
+                                            </div>
+                                        @endif
+
                                     </div>
-
-                                    {{-- CATEGORY --}}
-                                    <div class="lower-box">
-                                        <h6>
-                                            <i class="flaticon-nut"></i>
-                                            <span>{{ $product->category }}</span>
-                                        </h6>
-
-                                        <div class="link">
-                                            <a href="{{ route('product.detail', $product->slug) }}">
-                                                <i class="flaticon-right-arrow"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-
                                 </div>
-                            </div>
+                            </a>
 
                         </div>
                     @endforeach

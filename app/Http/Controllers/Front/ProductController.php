@@ -25,7 +25,9 @@ class ProductController extends Controller
 
     $images = $product->thumbnail ?? [];
 
-    return view('front.productDetail', compact('product', 'images'));
+    $sales = \App\Models\Sales::where('categories', 'like', '%' . $product->category . '%')->take(2)->get();
+
+    return view('front.productDetail', compact('product', 'images', 'sales'));
   }
 
   public function viewImage($path)
