@@ -6,6 +6,8 @@
                 @props([
                     'mainImages' => collect(),
                     'histories' => collect(),
+                    'companyImage' => null,
+                    'structureImage' => null,
                     'direksi' => collect(),
                     'komisaris' => collect(),
                 ])
@@ -135,7 +137,7 @@
 
 {{-- company-section --}}
 <section class="company-section" id="vision">
-    <div class="bg-layer" style="background-image: url({{ asset('images/background/visi-misi-about-us.png') }});"></div>
+    <div class="bg-layer" style="background-image: url({{ $companyImage && $companyImage->value ? asset('storage/' . $companyImage->value) : asset('images/background/visi-misi-about-us.png') }});"></div>
     <div class="outer-container">
         <div class="outer-box clearfix">
             <div class="title-column">
@@ -233,7 +235,7 @@
 
         <div class="structure-wrapper">
             <div class="structure-image">
-                <img src="{{ asset('images/background/struktur-company.png') }}" alt="Corporate Structure" />
+                <img src="{{ $structureImage && $structureImage->value ? asset('storage/' . $structureImage->value) : asset('images/background/struktur-company.png') }}" alt="Corporate Structure" />
             </div>
         </div>
 

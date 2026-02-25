@@ -33,6 +33,14 @@ Route::get('/contact', function () {
     return view('front.contact', compact('sales'));
 })->name('contact');
 
+Route::get('/company-governance', function () {
+    return view('front.compgov');
+})->name('compgov');
+
+Route::get('/subholding', function () {
+    return view('front.subholding');
+})->name('subholding');
+
 // route news aseli 
 Route::get('/news', function () {
     return view('front.news');
@@ -82,6 +90,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/aboutus/people', [AboutPeopleController::class, 'index'])->name('aboutus.people.index');
     Route::post('/aboutus/people', [AboutPeopleController::class, 'store'])->name('aboutus.people.store');
     Route::delete('/aboutus/people/{person}', [AboutPeopleController::class, 'destroy'])->name('aboutus.people.delete');
+    Route::post('/aboutus/section-image', [AboutUsController::class, 'storeSectionImage'])->name('aboutus.section-image.store');
+    Route::delete('/aboutus/section-image/{key}', [AboutUsController::class, 'deleteSectionImage'])->name('aboutus.section-image.delete');
 
     // Sales routes
     Route::get('/sales', [SalesController::class, 'index'])->name('sales.index');

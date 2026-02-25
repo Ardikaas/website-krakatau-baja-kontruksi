@@ -57,4 +57,47 @@ class AboutUsController extends Controller
 
         return back();
     }
+
+    public function storeSectionImage(Request $request)
+    {
+        $request->validate([
+            'key' => 'required|in:company_image,structure_image',
+            'image' => 'required|image|mimes:jpg,jpeg,png',
+        ]);
+
+        $key = $request->input('key');
+
+        // Delete old image if exists
+        $existing = AboutSetting::where('key', $key)->first();
+        if ($existing && $existing->value && Storage::disk('public')->exists($existing->value)) {
+            Storage::disk('public')->delete($existing->value);
+        }
+
+        $path = $request->file('image')->store('about/sections', 'public');
+
+        AboutSetting::updateOrCreate(
+            ['key' => $key],
+            ['value' => $path]
+        );
+
+        return response()->json(['success' => true, 'path' => $path]);
+    }
+
+    public function deleteSectionImage($key)
+    {
+        if (!in_array($key, ['company_image', 'structure_image'])) {
+            return response()->json(['error' => 'Invalid key'], 422);
+        }
+
+        $setting = AboutSetting::where('key', $key)->first();
+
+        if ($setting) {
+            if ($setting->value && Storage::disk('public')->exists($setting->value)) {
+                Storage::disk('public')->delete($setting->value);
+            }
+            $setting->delete();
+        }
+
+        return response()->json(['success' => true]);
+    }
 }

@@ -122,16 +122,16 @@
                     <div class="company-image-upload">
                         <input type="file" id="companyImageInput" accept="image/*" hidden>
 
-                        <div class="company-image-empty" id="companyImageEmpty">
+                        <div class="company-image-empty" id="companyImageEmpty" @if($companyImage && $companyImage->value) style="display:none;" @endif>
                             <p>No image uploaded</p>
                             <button type="button" class="btn-upload" id="selectCompanyImage">
                                 Upload Image
                             </button>
                         </div>
 
-                        <div class="company-image-item" id="companyImageItem" style="display:none;">
-                            <img id="companyImagePreview" alt="preview">
-                            <span id="companyImageName"></span>
+                        <div class="company-image-item" id="companyImageItem" @if($companyImage && $companyImage->value) style="display:flex;" @else style="display:none;" @endif>
+                            <img id="companyImagePreview" alt="preview" @if($companyImage && $companyImage->value) src="{{ asset('storage/' . $companyImage->value) }}" @endif>
+                            <span id="companyImageName">@if($companyImage && $companyImage->value) Current image @endif</span>
 
                             <div class="company-image-actions">
                                 <button type="button" class="btn-upload" id="changeCompanyImage">
@@ -148,6 +148,8 @@
                             Upload a hero banner image (1920×720 px).<br>
                             Supported formats: JPG, PNG
                         </p>
+                        <button type="button" class="btn-primary" id="saveCompanyImage"
+                            style="background: #00a1d1; color: #fff; border: none; border-radius: 14px; padding: 10px 22px; cursor: pointer; margin-top: 12px;">Save</button>
                     </div>
                 </section>
 
@@ -158,16 +160,16 @@
                     <div class="company-image-upload">
                         <input type="file" id="structureImageInput" accept="image/*" hidden>
 
-                        <div class="company-image-empty" id="structureImageEmpty">
+                        <div class="company-image-empty" id="structureImageEmpty" @if($structureImage && $structureImage->value) style="display:none;" @endif>
                             <p>No image uploaded</p>
                             <button type="button" class="btn-upload" id="selectStructureImage">
                                 Upload Image
                             </button>
                         </div>
 
-                        <div class="company-image-item" id="structureImageItem" style="display:none;">
-                            <img id="structureImagePreview" alt="preview">
-                            <span id="structureImageName"></span>
+                        <div class="company-image-item" id="structureImageItem" @if($structureImage && $structureImage->value) style="display:flex;" @else style="display:none;" @endif>
+                            <img id="structureImagePreview" alt="preview" @if($structureImage && $structureImage->value) src="{{ asset('storage/' . $structureImage->value) }}" @endif>
+                            <span id="structureImageName">@if($structureImage && $structureImage->value) Current image @endif</span>
 
                             <div class="company-image-actions">
                                 <button type="button" class="btn-upload" id="changeStructureImage">
@@ -185,6 +187,8 @@
                             Upload a hero banner image (1920×720 px).<br>
                             Supported formats: JPG, PNG
                         </p>
+                        <button type="button" class="btn-primary" id="saveStructureImage"
+                            style="background: #00a1d1; color: #fff; border: none; border-radius: 14px; padding: 10px 22px; cursor: pointer; margin-top: 12px;">Save</button>
                     </div>
                 </section>
 
@@ -588,12 +592,27 @@
         });
 
         document.getElementById('removeCompanyImage').addEventListener('click', () => {
-            companyInput.value = '';
-            companyPreview.src = '';
-            companyFileName.textContent = '';
-
-            companyItem.style.display = 'none';
-            companyEmpty.style.display = 'flex';
+            if (confirm('Delete this company image?')) {
+                // Delete from server
+                fetch('/admin/aboutus/section-image/company_image', {
+                    method: 'DELETE',
+                    headers: {
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content || '{{ csrf_token() }}'
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) throw new Error('Server error');
+                    companyInput.value = '';
+                    companyPreview.src = '';
+                    companyFileName.textContent = '';
+                    companyItem.style.display = 'none';
+                    companyEmpty.style.display = 'flex';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error deleting company image');
+                });
+            }
         });
 
         const structureInput = document.getElementById('structureImageInput');
@@ -626,12 +645,91 @@
         });
 
         document.getElementById('removeStructureImage').addEventListener('click', () => {
-            structureInput.value = '';
-            structurePreview.src = '';
-            structureFileName.textContent = '';
+            if (confirm('Delete this structure image?')) {
+                // Delete from server
+                fetch('/admin/aboutus/section-image/structure_image', {
+                    method: 'DELETE',
+                    headers: {
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content || '{{ csrf_token() }}'
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) throw new Error('Server error');
+                    structureInput.value = '';
+                    structurePreview.src = '';
+                    structureFileName.textContent = '';
+                    structureItem.style.display = 'none';
+                    structureEmpty.style.display = 'flex';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error deleting structure image');
+                });
+            }
+        });
 
-            structureItem.style.display = 'none';
-            structureEmpty.style.display = 'flex';
+        // ===== SAVE COMPANY SECTION IMAGE =====
+        document.getElementById('saveCompanyImage').addEventListener('click', () => {
+            if (!companyInput.files[0]) {
+                alert('Please upload an image first');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('key', 'company_image');
+            formData.append('image', companyInput.files[0]);
+
+            fetch('{{ route('admin.aboutus.section-image.store') }}', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content || '{{ csrf_token() }}'
+                },
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Server error');
+                return response.json();
+            })
+            .then(data => {
+                alert('Company image saved successfully!');
+                location.reload();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error saving company image');
+            });
+        });
+
+        // ===== SAVE STRUCTURE IMAGE =====
+        document.getElementById('saveStructureImage').addEventListener('click', () => {
+            if (!structureInput.files[0]) {
+                alert('Please upload an image first');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('key', 'structure_image');
+            formData.append('image', structureInput.files[0]);
+
+            fetch('{{ route('admin.aboutus.section-image.store') }}', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content || '{{ csrf_token() }}'
+                },
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Server error');
+                return response.json();
+            })
+            .then(data => {
+                alert('Structure image saved successfully!');
+                location.reload();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error saving structure image');
+            });
         });
 
         // ===== PEOPLE FORM SECTION 1 (DIREKSI) =====
