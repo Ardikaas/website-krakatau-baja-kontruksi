@@ -8,9 +8,9 @@
                 <div class="row align-items-center">
 
                     <div class="sec-title">
-                        <h6>Product & Projects</h6>
-                        <h2>Innovative <span>[Products]</span> & <span>[Projects]</span> <br />Delivered</h2>
-                        <p class="mt_12">Delivering quality, innovation, and precision.</p>
+                        <h6>{{ __('messages.product_and_projects') }}</h6>
+                        <h2>{!! __('messages.innovative_products_projects') !!}</h2>
+                        <p class="mt_12">{{ __('messages.delivering_quality') }}</p>
                     </div>
                 </div>
             </div>
@@ -23,13 +23,13 @@
                             <ul class="tab-btns product-tab-btns clearfix">
                                 <!-- Active tab button has 'active-btn' class -->
                                 <li class="p-tab-btn active-btn" data-tab="#tab-11">
-                                    <h6>All</h6>
+                                    <h6>{{ __('messages.all_tab') }}</h6>
                                 </li>
                                 <li class="p-tab-btn" data-tab="#tab-12">
-                                    <h6>Products</h6>
+                                    <h6>{{ __('messages.products_tab') }}</h6>
                                 </li>
                                 <li class="p-tab-btn" data-tab="#tab-13">
-                                    <h6>Projects</h6>
+                                    <h6>{{ __('messages.projects_tab') }}</h6>
                                 </li>
                             </ul>
                             <!-- Owl Counter -->
@@ -63,11 +63,11 @@
                                                     <span class="category">{{ $product->category }}</span>
 
                                                     <div class="content-box">
-                                                        <h3>{{ $product->title }}</h3>
-                                                        <p>{{ Str::limit($product->description, 80) }}</p>
+                                                        <h3>{{ $product->translated_title }}</h3>
+                                                        <p>{{ Str::limit($product->translated_description, 80) }}</p>
 
-                                                        <h6>type</h6>
-                                                        <span class="text">Product</span>
+                                                        <h6>{{ __('messages.type') }}</h6>
+                                                        <span class="text">{{ __('messages.product') }}</span>
 
                                                         <a href="{{ route('product.detail', $product->slug) }}"><i
                                                                 class="flaticon-right-arrow"></i></a>
@@ -89,10 +89,10 @@
                                                     <span class="category">{{ $project->category }}</span>
 
                                                     <div class="content-box">
-                                                        <h3>{{ $project->title }}</h3>
-                                                        <p>{{ Str::limit($project->description, 80) }}</p>
+                                                        <h3>{{ $project->translated_title }}</h3>
+                                                        <p>{{ Str::limit($project->translated_description, 80) }}</p>
 
-                                                        <h6>client</h6>
+                                                        <h6>{{ __('messages.client') }}</h6>
                                                         <span class="text">{{ $project->client }}</span>
 
                                                         <a href="{{ route('front.projects.show', $project->id) }}"><i
@@ -120,11 +120,11 @@
                                                     <span class="category">{{ $product->category }}</span>
 
                                                     <div class="content-box">
-                                                        <h3>{{ $product->title }}</h3>
-                                                        <p>{{ Str::limit($product->description, 80) }}</p>
+                                                        <h3>{{ $product->translated_title }}</h3>
+                                                        <p>{{ Str::limit($product->translated_description, 80) }}</p>
 
-                                                        <h6>type</h6>
-                                                        <span class="text">Product</span>
+                                                        <h6>{{ __('messages.type') }}</h6>
+                                                        <span class="text">{{ __('messages.product') }}</span>
 
                                                         <a href="{{ route('product.detail', $product->slug) }}"><i
                                                                 class="flaticon-right-arrow"></i></a>
@@ -152,10 +152,10 @@
                                                     <span class="category">{{ $project->category }}</span>
 
                                                     <div class="content-box">
-                                                        <h3>{{ $project->title }}</h3>
-                                                        <p>{{ Str::limit($project->description, 80) }}</p>
+                                                        <h3>{{ $project->translated_title }}</h3>
+                                                        <p>{{ Str::limit($project->translated_description, 80) }}</p>
 
-                                                        <h6>client</h6>
+                                                        <h6>{{ __('messages.client') }}</h6>
                                                         <span class="text">{{ $project->client }}</span>
 
                                                         <a href="{{ route('front.projects.show', $project->id) }}"><i

@@ -22,6 +22,7 @@ class AboutPeopleController extends Controller
             'type' => 'required|in:direksi,komisaris',
             'name' => 'required|string',
             'position' => 'required|string',
+            'position_en' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpg,jpeg,png'
         ]);
 

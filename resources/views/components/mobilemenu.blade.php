@@ -7,11 +7,11 @@
                 <div class="nav-logo"><a href="index.html"><img src="{{ asset('images/logo.png') }}" alt="" title=""></a></div>
                 <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
                 <div class="contact-info">
-                    <h4>Contact Info</h4>
+                    <h4>{{ __('messages.contact_info') }}</h4>
                     <ul>
-                        <li>Chicago 12, Melborne City, USA</li>
-                        <li><a href="tel:+8801682648101">+88 01682648101</a></li>
-                        <li><a href="mailto:info@example.com">info@example.com</a></li>
+                        <li>Gedung Krakatau Steel Lantai 2, Jl. jend. Gatot Subroto Kav. 54, Jakarta 12950</li>
+                        <li><a href="tel:+6281234567890">[+62] 812 3456 7890</a></li>
+                        <li><a href="mailto:marketing@bajakonstruksi.co.id">marketing@bajakonstruksi.co.id</a></li>
                     </ul>
                 </div>
                 <div class="social-links">

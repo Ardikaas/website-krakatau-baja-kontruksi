@@ -44,7 +44,9 @@ class ProductController extends Controller
         $request->validate([
             'category' => 'required|string|max:255',
             'name' => 'required|string|max:255',
+            'name_en' => 'nullable|string|max:255',
             'description' => 'nullable|string',
+            'description_en' => 'nullable|string',
             'images' => 'required|array|min:1|max:3',
             'images.*' => 'image|mimes:jpg,jpeg,png|max:2048',
             'spec_image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
@@ -53,8 +55,10 @@ class ProductController extends Controller
         $product = Product::create([
             'category' => $request->category,
             'name' => $request->name,
+            'name_en' => $request->name_en,
             'slug' => $this->generateUniqueSlug($request->name),
             'description' => $request->description,
+            'description_en' => $request->description_en,
         ]);
 
         $imagePaths = [];
@@ -88,7 +92,9 @@ class ProductController extends Controller
         $request->validate([
             'category' => 'required|string|max:255',
             'name' => 'required|string|max:255',
+            'name_en' => 'nullable|string|max:255',
             'description' => 'nullable|string',
+            'description_en' => 'nullable|string',
 
             'images' => 'nullable|array|max:3',
             'images.*' => 'image|mimes:jpg,jpeg,png|max:2048',
@@ -99,7 +105,9 @@ class ProductController extends Controller
         // update basic fields
         $product->category = $request->category;
         $product->name = $request->name;
+        $product->name_en = $request->name_en;
         $product->description = $request->description;
+        $product->description_en = $request->description_en;
 
         if ($product->isDirty('name')) {
             $product->slug = $this->generateUniqueSlug(

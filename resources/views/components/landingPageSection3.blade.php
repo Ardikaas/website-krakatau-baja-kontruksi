@@ -8,7 +8,7 @@
         </div>
 
         <ul class="social-links">
-            <li><h5>On Socials</h5></li>
+            <li><h5>{{ __('messages.on_socials') }}</h5></li>
             <li>
                 <a href="https://www.facebook.com/ksbajakonstruksi" target="_blank" rel="noopener">
                     <i class="flaticon-facebook"></i>

@@ -51,7 +51,7 @@
                 <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
                     <div class="footer-widget contact-widget">
                         <div class="widget-title">
-                            <h3>Contact</h3>
+                            <h3>{{ __('messages.contact') }}</h3>
                         </div>
                         <div class="widget-content">
                             <p>Gedung Krakatau Steel Lantai 2, Jl. jend. Gatot Subroto Kav. 54, Jakarta 12950</p>
@@ -70,15 +70,15 @@
                 <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
                     <div class="footer-widget links-widget">
                         <div class="widget-title">
-                            <h3>Useful Links</h3>
+                            <h3>{{ __('messages.useful_links') }}</h3>
                         </div>
                         <div class="widget-content">
                             <ul class="links-list clearfix">
-                                <li><a href="/"><i class="flaticon-right"></i><span>Home</span></a></li>
-                                <li><a href="about"><i class="flaticon-right"></i><span>About Us</span></a></li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>Products</span></a></li>
-                                <li><a href="news"><i class="flaticon-right"></i><span>News</span></a></li>
-                                <li><a href="contact"><i class="flaticon-right"></i><span>Contact Us</span></a></li>
+                                <li><a href="/"><i class="flaticon-right"></i><span>{{ __('messages.home') }}</span></a></li>
+                                <li><a href="about"><i class="flaticon-right"></i><span>{{ __('messages.about_us') }}</span></a></li>
+                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.product') }}</span></a></li>
+                                <li><a href="news"><i class="flaticon-right"></i><span>{{ __('messages.news') }}</span></a></li>
+                                <li><a href="contact"><i class="flaticon-right"></i><span>{{ __('messages.contact') }}</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -88,17 +88,17 @@
                 <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
                     <div class="footer-widget links-widget">
                         <div class="widget-title">
-                            <h3>Product</h3>
+                            <h3>{{ __('messages.product') }}</h3>
                         </div>
                         <div class="widget-content">
                             <ul class="links-list clearfix">
-                                <li><a href="#"><i class="flaticon-right"></i><span>Fabrication</span></a></li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>Metal Processing</span></a>
+                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_fabrication') }}</span></a></li>
+                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_metal_processing') }}</span></a>
                                 </li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>CNC Machining</span></a></li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>Metal Casting</span></a></li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>Welding</span></a></li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>Punching</span></a></li>
+                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_cnc_machining') }}</span></a></li>
+                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_metal_casting') }}</span></a></li>
+                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_metal_welding') }}</span></a></li>
+                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_punching') }}</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -107,17 +107,17 @@
                 <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
                     <div class="footer-widget links-widget">
                         <div class="widget-title">
-                            <h3>Projects</h3>
+                            <h3>{{ __('messages.project') }}</h3>
                         </div>
                         <div class="widget-content">
                             <ul class="links-list clearfix">
-                                <li><a href="#"><i class="flaticon-right"></i><span>Fabrication</span></a></li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>Metal Processing</span></a>
+                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_fabrication') }}</span></a></li>
+                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_metal_processing') }}</span></a>
                                 </li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>CNC Machining</span></a></li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>Metal Casting</span></a></li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>Welding</span></a></li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>Punching</span></a></li>
+                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_cnc_machining') }}</span></a></li>
+                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_metal_casting') }}</span></a></li>
+                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_metal_welding') }}</span></a></li>
+                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_punching') }}</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -155,9 +155,7 @@
                         <li><a href="https://www.youtube.com/@ksbajakonstruksi" target="_blank"><i
                                     class="flaticon-youtube"></i></a></li>
                     </ul>
-                    <p><a href="#">Terms & Conditions</a>&nbsp;&nbsp;.&nbsp;&nbsp;<a href="#">Policies
-                            <br />Legal
-                            Notice.</a></p>
+                    <p><a href="#">{{ __('messages.terms_and_conditions') }}</a>&nbsp;&nbsp;.&nbsp;&nbsp;<a href="#">{!! __('messages.policies_legal_notice') !!}</a></p>
                 </div>
                 <div class="right-column align-3">
                     <figure class="footer-logo">
@@ -166,7 +164,7 @@
                     </figure>
                     <div class="copyright">
                         <p>Copyrights &copy; {{ date('Y') }} <a href="#">PT. Krakatau Baja Konstruksi,</a>
-                            <br />All Rights Reserved.
+                            <br />{{ __('messages.all_rights_reserved') }}
                         </p>
                     </div>
                 </div>

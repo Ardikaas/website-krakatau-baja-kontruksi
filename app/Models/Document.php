@@ -11,7 +11,13 @@ class Document extends Model
 
     protected $fillable = [
         'title',
+        'title_en',
         'file',
         'size',
     ];
+
+    public function getTranslatedTitleAttribute()
+    {
+        return app()->getLocale() == 'en' && $this->title_en ? $this->title_en : $this->title;
+    }
 }

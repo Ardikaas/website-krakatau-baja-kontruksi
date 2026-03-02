@@ -22,16 +22,24 @@ class ProjectPageController extends Controller
     public function store(Request $request) {
         $validated = $request->validate([
             'title' => 'required|string|max:255',
+            'title_en' => 'nullable|string|max:255',
             'client' => 'required|string|max:255',
             'location' => 'required|string|max:255',
             'category' => 'required|string|max:255',
+            'category_en' => 'nullable|string|max:255',
             'date' => 'required|date',
             'description' => 'required|string',
+            'description_en' => 'nullable|string',
             'scope_of_work' => 'required|string',
+            'scope_of_work_en' => 'nullable|string',
             'challenges' => 'required|string',
+            'challenges_en' => 'nullable|string',
             'solutions' => 'required|array|min:2',
             'solutions.*.title' => 'required|string',
             'solutions.*.description' => 'required|string',
+            'solutions_en' => 'nullable|array',
+            'solutions_en.*.title' => 'nullable|string',
+            'solutions_en.*.description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
         ]);
 
@@ -51,16 +59,24 @@ class ProjectPageController extends Controller
     public function update(Request $request, Project $project) {
         $validated = $request->validate([
             'title' => 'required|string|max:255',
+            'title_en' => 'nullable|string|max:255',
             'client' => 'required|string|max:255',
             'location' => 'required|string|max:255',
             'category' => 'required|string|max:255',
+            'category_en' => 'nullable|string|max:255',
             'date' => 'required|date',
             'description' => 'required|string',
+            'description_en' => 'nullable|string',
             'scope_of_work' => 'required|string',
+            'scope_of_work_en' => 'nullable|string',
             'challenges' => 'required|string',
+            'challenges_en' => 'nullable|string',
             'solutions' => 'required|array|min:2',
             'solutions.*.title' => 'required|string',
             'solutions.*.description' => 'required|string',
+            'solutions_en' => 'nullable|array',
+            'solutions_en.*.title' => 'nullable|string',
+            'solutions_en.*.description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
         ]);
 

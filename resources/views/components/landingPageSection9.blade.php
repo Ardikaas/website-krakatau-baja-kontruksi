@@ -15,7 +15,7 @@
                                         <li><i class="flaticon-star"></i></li>
                                         <li><i class="flaticon-star"></i></li>
                                     </ul>
-                                    <h6>From 6.5k clients</h6>
+                                    <h6>{{ __('messages.from_clients', ['count' => '6.5k']) }}</h6>
                                 </div>
                             </div>
                         </div>
@@ -27,56 +27,46 @@
                                     <div class="tab active-tab" id="tab-19">
                                         <div class="testimonial-content">
                                             <div class="icon-box"><img src="{{ asset('images/icons/icon-7.png') }}" alt=""></div>
-                                            <h2>Exceptional Service & Reliability</h2>
-                                            <p>Working with Metallic has been a game changer for us. Their 
-                                                innovative solutions and fast turnaround time have significantly 
-                                                improved our manufacturing process.</p>
+                                            <h2>{{ __('messages.testimonial_title') }}</h2>
+                                            <p>{{ __('messages.testimonial_desc') }}</p>
                                             <h3>P.Gallagher,</h3>
-                                            <span class="designation">Founder of Fast Goods Inc.</span>
+                                            <span class="designation">{{ __('messages.founder_fast_goods') }}</span>
                                         </div>
                                     </div>
                                     <div class="tab" id="tab-20">
                                         <div class="testimonial-content">
                                             <div class="icon-box"><img src="{{ asset('images/icons/icon-7.png') }}" alt=""></div>
-                                            <h2>Exceptional Service & Reliability</h2>
-                                            <p>Working with Metallic has been a game changer for us. Their 
-                                                innovative solutions and fast turnaround time have significantly 
-                                                improved our manufacturing process.</p>
+                                            <h2>{{ __('messages.testimonial_title') }}</h2>
+                                            <p>{{ __('messages.testimonial_desc') }}</p>
                                             <h3>D. Langer</h3>
-                                            <span class="designation">Founder of Fast Goods Inc.</span>
+                                            <span class="designation">{{ __('messages.founder_fast_goods') }}</span>
                                         </div>
                                     </div>
                                     <div class="tab" id="tab-21">
                                         <div class="testimonial-content">
                                             <div class="icon-box"><img src="{{ asset('images/icons/icon-7.png') }}" alt=""></div>
-                                            <h2>Exceptional Service & Reliability</h2>
-                                            <p>Working with Metallic has been a game changer for us. Their 
-                                                innovative solutions and fast turnaround time have significantly 
-                                                improved our manufacturing process.</p>
+                                            <h2>{{ __('messages.testimonial_title') }}</h2>
+                                            <p>{{ __('messages.testimonial_desc') }}</p>
                                             <h3>L. Stella</h3>
-                                            <span class="designation">Founder of Fast Goods Inc.</span>
+                                            <span class="designation">{{ __('messages.founder_fast_goods') }}</span>
                                         </div>
                                     </div>
                                     <div class="tab" id="tab-22">
                                         <div class="testimonial-content">
                                             <div class="icon-box"><img src="{{ asset('images/icons/icon-7.png') }}" alt=""></div>
-                                            <h2>Exceptional Service & Reliability</h2>
-                                            <p>Working with Metallic has been a game changer for us. Their 
-                                                innovative solutions and fast turnaround time have significantly 
-                                                improved our manufacturing process.</p>
+                                            <h2>{{ __('messages.testimonial_title') }}</h2>
+                                            <p>{{ __('messages.testimonial_desc') }}</p>
                                             <h3>Haris Gulati</h3>
-                                            <span class="designation">Founder of Fast Goods Inc.</span>
+                                            <span class="designation">{{ __('messages.founder_fast_goods') }}</span>
                                         </div>
                                     </div>
                                     <div class="tab" id="tab-23">
                                         <div class="testimonial-content">
                                             <div class="icon-box"><img src="{{ asset('images/icons/icon-7.png') }}" alt=""></div>
-                                            <h2>Exceptional Service & Reliability</h2>
-                                            <p>Working with Metallic has been a game changer for us. Their 
-                                                innovative solutions and fast turnaround time have significantly 
-                                                improved our manufacturing process.</p>
+                                            <h2>{{ __('messages.testimonial_title') }}</h2>
+                                            <p>{{ __('messages.testimonial_desc') }}</p>
                                             <h3>JK Mark</h3>
-                                            <span class="designation">Founder of Fast Goods Inc.</span>
+                                            <span class="designation">{{ __('messages.founder_fast_goods') }}</span>
                                         </div>
                                     </div>
                                 </div>

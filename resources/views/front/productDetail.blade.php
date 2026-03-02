@@ -1,6 +1,6 @@
 @extends('layouts.front')
 
-@section('title', $product->name . ' - Krakatau Baja Konstruksi')
+@section('title', $product->translated_name . ' - Krakatau Baja Konstruksi')
 
 @push('styles')
     @vite(['resources/css/productDetail.css'])
@@ -11,7 +11,7 @@
     <x-landingPageSection1 type="page" title="Product" :breadcrumb="[
         ['label' => 'Home', 'url' => url('/')],
         ['label' => 'Product', 'url' => route('product')],
-        ['label' => $product->name],
+        ['label' => $product->translated_name],
     ]" imagePath="images/background/page-title.jpg" />
 
     {{-- PRODUCT DETAIL --}}
@@ -23,17 +23,17 @@
                     {{-- IMAGE --}}
                     <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                         <figure class="image-box">
-                            <img src="{{ route('admin.product.image', $images[0]) }}" alt="{{ $product->name }}">
+                            <img src="{{ route('admin.product.image', $images[0]) }}" alt="{{ $product->translated_name }}">
                         </figure>
                     </div>
 
                     {{-- CONTENT --}}
                     <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                         <div class="content-box">
-                            <h2>{{ $product->name }}</h2>
+                            <h2>{{ $product->translated_name }}</h2>
 
                             <p>
-                                {{ $product->description }}
+                                {{ $product->translated_description }}
                             </p>
 
                             <h3>Category</h3>
@@ -80,7 +80,7 @@
                 <div class="table-wrapper">
                     <div class="table-image">
                         <img src="{{ route('admin.product.image', $product->spec_image) }}"
-                            alt="Specification {{ $product->name }}">
+                            alt="Specification {{ $product->translated_name }}">
                     </div>
                 </div>
             </div>

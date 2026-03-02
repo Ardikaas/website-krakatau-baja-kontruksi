@@ -74,7 +74,7 @@
                     </div>
                     <div class="history-card-grid">
                         @forelse ($histories as $history)
-                            <div class="history-card" data-id="{{ $history->id }}">
+                            <div class="history-card" data-id="{{ $history->id }}" data-title-en="{{ $history->title_en }}" data-description-en="{{ $history->description_en }}">
 
                                 {{-- DELETE (hover reveal) --}}
                                 <button class="history-delete-btn" type="button"
@@ -279,8 +279,13 @@
 
                         <!-- Position Input -->
                         <div class="form-group" style="margin-bottom: 24px;">
-                            <label>Position</label>
+                            <label>Position (ID)</label>
                             <input type="text" id="peoplePosition"
+                                style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <label>Position (EN)</label>
+                            <input type="text" id="peoplePositionEn"
                                 style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;">
                         </div>
 
@@ -386,8 +391,13 @@
 
                         <!-- Position Input -->
                         <div class="form-group" style="margin-bottom: 24px;">
-                            <label>Position</label>
+                            <label>Position (ID)</label>
                             <input type="text" id="peoplePosition2"
+                                style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <label>Position (EN)</label>
+                            <input type="text" id="peoplePositionEn2"
                                 style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;">
                         </div>
 
@@ -438,8 +448,12 @@
 
                         <!-- Title -->
                         <div class="form-group">
-                            <label>Title</label>
+                            <label>Title (ID)</label>
                             <input type="text" placeholder="e.g Foundation Year 1985" id="historyTitle">
+                        </div>
+                        <div class="form-group">
+                            <label>Title (EN)</label>
+                            <input type="text" placeholder="e.g Foundation Year 1985" id="historyTitleEn">
                         </div>
 
                         <!-- Year / Subtitle (optional) -->
@@ -450,9 +464,14 @@
 
                         <!-- Description (LEBAR & FOKUS) -->
                         <div class="form-group">
-                            <label>Description</label>
+                            <label>Description (ID)</label>
                             <textarea rows="6" placeholder="Write history description here..."
                                 style="width:100%; padding:12px; border-radius:10px; border:1px solid #d1d5db;" id="historyDescription"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Description (EN)</label>
+                            <textarea rows="6" placeholder="Write history description here..."
+                                style="width:100%; padding:12px; border-radius:10px; border:1px solid #d1d5db;" id="historyDescriptionEn"></textarea>
                         </div>
 
                         <!-- Actions -->
@@ -478,8 +497,10 @@
         const deleteHistoyBtn = document.getElementById("deleteHistoryBtn");
 
         const historyTitleInput = document.getElementById("historyTitle");
+        const historyTitleEnInput = document.getElementById("historyTitleEn");
         const historyYearInput = document.getElementById("historyYear");
         const historyDescriptionInput = document.getElementById("historyDescription");
+        const historyDescriptionEnInput = document.getElementById("historyDescriptionEn");
         const historyPopupTitle = document.getElementById("historyPopupTitle");
 
         let editHistoryMode = false;
@@ -497,16 +518,20 @@
                     editHistoryMode = true;
                     historyPopupTitle.innerText = "Edit History";
                     historyTitleInput.value = title;
+                    historyTitleEnInput.value = el.dataset.titleEn || "";
                     historyYearInput.value = year;
                     historyDescriptionInput.value = description;
+                    historyDescriptionEnInput.value = el.dataset.descriptionEn || "";
                     deleteHistoyBtn.style.display = "inline-block";
                 } else {
                     // ADD MODE
                     editHistoryMode = false;
                     historyPopupTitle.innerText = "Add New Point";
                     historyTitleInput.value = "";
+                    historyTitleEnInput.value = "";
                     historyYearInput.value = "";
                     historyDescriptionInput.value = "";
+                    historyDescriptionEnInput.value = "";
                     deleteHistoyBtn.style.display = "none";
                 }
 
@@ -762,6 +787,7 @@
                 peopleFormTitle1.textContent = 'Add New People';
                 peopleName1.value = '';
                 peoplePosition1.value = '';
+                document.getElementById('peoplePositionEn').value = '';
                 deletePeopleBtn1.style.display = 'none';
 
                 // Reset image
@@ -839,6 +865,7 @@
             savePeopleBtn1.addEventListener('click', () => {
                 const name = peopleName1.value.trim();
                 const position = peoplePosition1.value.trim();
+                const positionEn = document.getElementById('peoplePositionEn').value.trim();
 
                 if (!name || !position) {
                     alert('Please fill in all fields');
@@ -855,6 +882,7 @@
                 formData.append('type', 'direksi');
                 formData.append('name', name);
                 formData.append('position', position);
+                if (positionEn) formData.append('position_en', positionEn);
                 formData.append('image', peopleImageInput1.files[0]);
 
                 // POST to server
@@ -910,6 +938,7 @@
                 peopleFormTitle2.textContent = 'Add New People';
                 peopleName2.value = '';
                 peoplePosition2.value = '';
+                document.getElementById('peoplePositionEn2').value = '';
                 deletePeopleBtn2.style.display = 'none';
 
                 // Reset image
@@ -987,6 +1016,7 @@
             savePeopleBtn2.addEventListener('click', () => {
                 const name = peopleName2.value.trim();
                 const position = peoplePosition2.value.trim();
+                const positionEn = document.getElementById('peoplePositionEn2').value.trim();
 
                 if (!name || !position) {
                     alert('Please fill in all fields');
@@ -1003,6 +1033,7 @@
                 formData.append('type', 'komisaris');
                 formData.append('name', name);
                 formData.append('position', position);
+                if (positionEn) formData.append('position_en', positionEn);
                 formData.append('image', peopleImageInput2.files[0]);
 
                 // POST to server
@@ -1042,8 +1073,10 @@
                 editHistoryId = this.dataset.id || null;
                 historyPopupTitle.innerText = 'Edit History';
                 historyTitleInput.value = this.querySelector('.history-card-title')?.textContent || '';
+                historyTitleEnInput.value = this.dataset.titleEn || '';
                 historyYearInput.value = this.querySelector('.history-card-year')?.textContent || '';
                 historyDescriptionInput.value = this.querySelector('.history-card-description')?.textContent || '';
+                historyDescriptionEnInput.value = this.dataset.descriptionEn || '';
                 deleteHistoyBtn.style.display = 'inline-block';
 
                 // Reset image preview
@@ -1068,8 +1101,10 @@
         if (confirmHistoryBtn) {
             confirmHistoryBtn.addEventListener('click', () => {
                 const title = historyTitleInput.value.trim();
+                const titleEn = historyTitleEnInput.value.trim();
                 const year = historyYearInput.value.trim();
                 const description = historyDescriptionInput.value.trim();
+                const descriptionEn = historyDescriptionEnInput.value.trim();
 
                 if (!title || !description) {
                     alert('Please fill in Title and Description');
@@ -1078,8 +1113,10 @@
 
                 const formData = new FormData();
                 formData.append('title', title);
+                if (titleEn) formData.append('title_en', titleEn);
                 formData.append('year', year);
                 formData.append('description', description);
+                if (descriptionEn) formData.append('description_en', descriptionEn);
 
                 if (imageInput.files[0]) {
                     formData.append('image', imageInput.files[0]);

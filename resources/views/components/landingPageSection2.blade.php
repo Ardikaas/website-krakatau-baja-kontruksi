@@ -1,22 +1,16 @@
 @php
     $heroTexts = [
         [
-            'title' => 'Reliable <span>Metal <br />Services</span>',
-            'description' => 'Delivering high-quality, customized metal solutions
-                with precision, efficiency, and advanced technology
-                for diverse industrial applications.',
+            'title' => __('messages.hero_text_1_title'),
+            'description' => __('messages.hero_text_1_desc'),
         ],
         [
-            'title' => 'Innovators <span>of the <br />Future.</span>',
-            'description' => 'Innovators of the future represents our commitment
-                to pioneering cutting-edge solutions that drive
-                progress and shape tomorrow\'s industry standards.',
+            'title' => __('messages.hero_text_2_title'),
+            'description' => __('messages.hero_text_2_desc'),
         ],
         [
-            'title' => 'Top-Rated <br /><span>Solutions for You</span>',
-            'description' => 'Top-rated solutions designed to meet your unique
-                needs, delivering innovation, quality, reliability,
-                and performance for outstanding results every time.',
+            'title' => __('messages.hero_text_3_title'),
+            'description' => __('messages.hero_text_3_desc'),
         ],
     ];
 @endphp

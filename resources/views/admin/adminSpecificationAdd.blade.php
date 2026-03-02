@@ -51,14 +51,20 @@
 
                         <div class="info-grid">
                             <div class="info-group">
-                                <label>Title</label>
+                                <label>Title (Bahasa Indonesia)</label>
                                 <input type="text" name="name" required>
+
+                                <label>Title (English)</label>
+                                <input type="text" name="name_en">
 
                                 <label>Category</label>
                                 <input type="text" name="category" required>
 
-                                <label>Description</label>
+                                <label>Description (Bahasa Indonesia)</label>
                                 <textarea name="description" rows="4" required></textarea>
+
+                                <label>Description (English)</label>
+                                <textarea name="description_en" rows="4"></textarea>
                             </div>
                         </div>
                     </section>

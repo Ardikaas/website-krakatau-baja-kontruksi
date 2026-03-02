@@ -4,7 +4,7 @@
 
 @section('content')
     {{-- Banner --}}
-    <x-landingPageSection1 type="page" title="Project" :breadcrumb="[['label' => 'Home', 'url' => url('/')], ['label' => 'Project']]" imagePath="images/background/page-title.jpg" />
+    <x-landingPageSection1 type="page" title="{{ __('messages.page_project') }}" :breadcrumb="[['label' => 'Home', 'url' => url('/')], ['label' => __('messages.page_project')]]" imagePath="images/background/page-title.jpg" />
 
     <section class="service-page-three-section">
         <div class="auto-container">
@@ -29,19 +29,19 @@
                                             {{ sprintf('%02d', $index + 1) }}<span>/{{ $projects->count() }}</span>
                                         </div>
 
-                                        <h6>Service</h6>
+                                        <h6>{{ __('messages.service') }}</h6>
                                         <h3>{{ $project->category }}</h3>
 
                                         <div class="block-title">
                                             <div class="line-shape"></div>
                                             <h2>
                                                 <a href="{{ route('front.projects.show', $project) }}">
-                                                    [{{ $project->title }}]
+                                                    [{{ $project->translated_title }}]
                                                 </a>
                                             </h2>
                                         </div>
 
-                                        <p class="project-description">{{ $project->description }}</p>
+                                        <p class="project-description">{{ $project->translated_description }}</p>
 
                                         <div class="link">
                                             <a href="{{ route('front.projects.show', $project) }}">
@@ -61,18 +61,18 @@
                                                 <div class="line-shape"></div>
                                                 <h2>
                                                     <a href="{{ route('front.projects.show', $project) }}">
-                                                        [{{ $project->title }}]
+                                                        [{{ $project->translated_title }}]
                                                     </a>
                                                 </h2>
                                             </div>
 
-                                            <p class="project-description">{{ $project->description }}</p>
+                                            <p class="project-description">{{ $project->translated_description }}</p>
 
                                             <div class="btn-box">
                                                 <a href="{{ route('front.projects.show', $project) }}"
                                                     class="theme-btn btn-one">
                                                     <i class="flaticon-right-arrow"></i>
-                                                    <span>Read More</span>
+                                                    <span>{{ __('messages.read_more') }}</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -87,14 +87,14 @@
                 <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
                     <div class="sidebar-content">
                         <div class="inner-box centred">
-                            <h2>Didn't find the <span>right plan?</span> Reach out for <span>custom solution.</span></h2>
+                            <h2>{!! __('messages.custom_solution_text') !!}</h2>
                             <div class="icon-box">
                                 <div class="icon"><i class="flaticon-headphones"></i></div>
                             </div>
                             <h4><a href="tel:66120003456">+62812 1991 1619</a></h4>
                             <p><a href="mailto:marketing@bajakonstruksi.co.id">marketing@bajakonstruksi.co.id</a></p>
                             <a href="{{ url('/contact') }}" class="theme-btn"><i
-                                    class="flaticon-right-arrow"></i><span>Appointment</span></a>
+                                    class="flaticon-right-arrow"></i><span>{{ __('messages.appointment') }}</span></a>
                         </div>
                     </div>
                 </div>

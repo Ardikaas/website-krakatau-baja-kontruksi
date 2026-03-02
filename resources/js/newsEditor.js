@@ -1,15 +1,15 @@
 // resources/js/news-editor.js
 
-window.format = function (command) {
-    const editor = document.getElementById("newsEditor");
+window.format = function (command, editorId = 'newsEditor') {
+    const editor = document.getElementById(editorId);
     if (!editor) return;
 
     editor.focus();
     document.execCommand(command, false, null);
 };
 
-window.formatBlock = function (tag) {
-    const editor = document.getElementById("newsEditor");
+window.formatBlock = function (tag, editorId = 'newsEditor') {
+    const editor = document.getElementById(editorId);
     if (!editor || !tag) return;
 
     editor.focus();
@@ -35,20 +35,25 @@ window.previewImage = function (input) {
 
 window.submitNews = async function () {
     const title = document.getElementById("newsTitle").value.trim();
+    const titleEn = document.getElementById("newsTitleEn") ? document.getElementById("newsTitleEn").value.trim() : "";
     const author = document.getElementById("newsAuthor").value.trim();
     const content = document.getElementById("newsEditor").innerHTML.trim();
-    const image = document.querySelector('input[name="image"]').files[0];
+    const contentEn = document.getElementById("newsEditorEn") ? document.getElementById("newsEditorEn").innerHTML.trim() : "";
+    const imageContainer = document.querySelector('input[name="image"]');
+    const image = imageContainer ? imageContainer.files[0] : null;
 
     if (!title || !author || !content || !image) {
-        alert("Semua field wajib diisi");
+        alert("Semua field utama wajib diisi");
         return;
     }
 
     const formData = new FormData();
     formData.append("title", title);
+    formData.append("title_en", titleEn);
     formData.append("author", author);
     formData.append("content", content);
-    formData.append("image", image);
+    formData.append("content_en", contentEn);
+    if(image) formData.append("image", image);
 
     try {
         const response = await fetch("/admin/addNews", {

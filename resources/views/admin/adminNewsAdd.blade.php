@@ -45,8 +45,12 @@
                 <div class="news-editor-card">
                     {{-- TITLE --}}
                     <div class="news-editor-field">
-                        <label class="news-editor-label">Title</label>
-                        <input type="text" id="newsTitle" class="news-editor-input" placeholder="Enter news title">
+                        <label class="news-editor-label">Title (Bahasa Indonesia)</label>
+                        <input type="text" id="newsTitle" class="news-editor-input" placeholder="Enter news title id">
+                    </div>
+                    <div class="news-editor-field">
+                        <label class="news-editor-label">Title (English)</label>
+                        <input type="text" id="newsTitleEn" class="news-editor-input" placeholder="Enter news title en">
                     </div>
 
                     {{-- AUTHOR --}}
@@ -56,24 +60,45 @@
                     </div>
 
                     {{-- TOOLBAR --}}
-                    <label class="news-editor-label">Description</label>
+                    <label class="news-editor-label">Description (Bahasa Indonesia)</label>
                     <div class="news-editor-toolbar">
-                        <select onchange="formatBlock(this.value)">
+                        <select onchange="formatBlock(this.value, 'newsEditor')">
                             <option value="">Normal</option>
                             <option value="h1">Heading 1</option>
                             <option value="h2">Heading 2</option>
                             <option value="h3">Heading 3</option>
                         </select>
 
-                        <button type="button" onclick="format('bold')"><b>B</b></button>
-                        <button type="button" onclick="format('italic')"><i>I</i></button>
-                        <button type="button" onclick="format('underline')"><u>U</u></button>
+                        <button type="button" onclick="format('bold', 'newsEditor')"><b>B</b></button>
+                        <button type="button" onclick="format('italic', 'newsEditor')"><i>I</i></button>
+                        <button type="button" onclick="format('underline', 'newsEditor')"><u>U</u></button>
 
                     </div>
 
                     {{-- EDITOR --}}
                     <div id="newsEditor" class="news-editor-content" contenteditable="true"
                         placeholder="Write your news content here...">
+                    </div>
+
+                    {{-- TOOLBAR EN --}}
+                    <label class="news-editor-label mt-3">Description (English)</label>
+                    <div class="news-editor-toolbar">
+                        <select onchange="formatBlock(this.value, 'newsEditorEn')">
+                            <option value="">Normal</option>
+                            <option value="h1">Heading 1</option>
+                            <option value="h2">Heading 2</option>
+                            <option value="h3">Heading 3</option>
+                        </select>
+
+                        <button type="button" onclick="format('bold', 'newsEditorEn')"><b>B</b></button>
+                        <button type="button" onclick="format('italic', 'newsEditorEn')"><i>I</i></button>
+                        <button type="button" onclick="format('underline', 'newsEditorEn')"><u>U</u></button>
+
+                    </div>
+
+                    {{-- EDITOR EN --}}
+                    <div id="newsEditorEn" class="news-editor-content" contenteditable="true"
+                        placeholder="Write your news content here in english...">
                     </div>
                 </div>
                 {{-- ACTION --}}

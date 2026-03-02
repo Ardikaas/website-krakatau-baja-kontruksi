@@ -9,7 +9,7 @@
 
 @section('content')
     {{-- Banner Top Section --}}
-    <x-landingPageSection1 type="page" title="News" :breadcrumb="[['label' => 'Home', 'url' => url('/')], ['label' => 'Company Governence']]" imagePath="images/background/page-title.jpg" />
+    <x-landingPageSection1 type="page" title="{{ __('messages.page_news') }}" :breadcrumb="[['label' => 'Home', 'url' => url('/')], ['label' => __('messages.page_news')]]" imagePath="images/background/page-title.jpg" />
 
     {{-- News Section --}}
     <section class="news-section sec-pad-2">
@@ -37,10 +37,8 @@
                                 </div>
                             </div>
                             <div class="lower-content">
-                                <h3><a href="#">Metal Finishing Techniques: An In-Depth
-                                        Practical Guide.</a></h3>
-                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>Read the
-                                            Post</span></a></div>
+                                <h3><a href="#">{{ __('messages.news_fallback_1_title') }}</a></h3>
+                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>{{ __('messages.read_the_post') }}</span></a></div>
                             </div>
                         </div>
                     </div>
@@ -66,10 +64,8 @@
                                 </div>
                             </div>
                             <div class="lower-content">
-                                <h3><a href="#">Metal Finishing Techniques: An In-Depth
-                                        Practical Guide.</a></h3>
-                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>Read the
-                                            Post</span></a></div>
+                                <h3><a href="#">{{ __('messages.news_fallback_1_title') }}</a></h3>
+                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>{{ __('messages.read_the_post') }}</span></a></div>
                             </div>
                         </div>
                     </div>
@@ -95,10 +91,8 @@
                                 </div>
                             </div>
                             <div class="lower-content">
-                                <h3><a href="#">Metal Finishing Techniques: An In-Depth
-                                        Practical Guide.</a></h3>
-                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>Read the
-                                            Post</span></a></div>
+                                <h3><a href="#">{{ __('messages.news_fallback_1_title') }}</a></h3>
+                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>{{ __('messages.read_the_post') }}</span></a></div>
                             </div>
                         </div>
                     </div>
@@ -124,10 +118,8 @@
                                 </div>
                             </div>
                             <div class="lower-content">
-                                <h3><a href="#">Metal Finishing Techniques: An In-Depth
-                                        Practical Guide.</a></h3>
-                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>Read the
-                                            Post</span></a></div>
+                                <h3><a href="#">{{ __('messages.news_fallback_1_title') }}</a></h3>
+                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>{{ __('messages.read_the_post') }}</span></a></div>
                             </div>
                         </div>
                     </div>
@@ -153,10 +145,8 @@
                                 </div>
                             </div>
                             <div class="lower-content">
-                                <h3><a href="#">Metal Finishing Techniques: An In-Depth
-                                        Practical Guide.</a></h3>
-                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>Read the
-                                            Post</span></a></div>
+                                <h3><a href="#">{{ __('messages.news_fallback_1_title') }}</a></h3>
+                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>{{ __('messages.read_the_post') }}</span></a></div>
                             </div>
                         </div>
                     </div>
@@ -182,11 +172,8 @@
                                 </div>
                             </div>
                             <div class="lower-content">
-                                <h3><a href="#">Metal Finishing Techniques: An In-Depth
-                                        Practical Guide.</a></h3>
-                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>Read
-                                            the
-                                            Post</span></a></div>
+                                <h3><a href="#">{{ __('messages.news_fallback_1_title') }}</a></h3>
+                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>{{ __('messages.read_the_post') }}</span></a></div>
                             </div>
                         </div>
                     </div>
@@ -212,11 +199,8 @@
                                 </div>
                             </div>
                             <div class="lower-content">
-                                <h3><a href="#">Metal Finishing Techniques: An In-Depth
-                                        Practical Guide.</a></h3>
-                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>Read
-                                            the
-                                            Post</span></a></div>
+                                <h3><a href="#">{{ __('messages.news_fallback_1_title') }}</a></h3>
+                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>{{ __('messages.read_the_post') }}</span></a></div>
                             </div>
                         </div>
                     </div>
@@ -242,11 +226,8 @@
                                 </div>
                             </div>
                             <div class="lower-content">
-                                <h3><a href="#">Metal Finishing Techniques: An In-Depth
-                                        Practical Guide.</a></h3>
-                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>Read
-                                            the
-                                            Post</span></a></div>
+                                <h3><a href="#">{{ __('messages.news_fallback_1_title') }}</a></h3>
+                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>{{ __('messages.read_the_post') }}</span></a></div>
                             </div>
                         </div>
                     </div>

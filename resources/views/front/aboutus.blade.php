@@ -6,7 +6,7 @@
 
 @section('content')
     {{-- Page Title / Breadcrumb Banner --}}
-    <x-landingPageSection1 type="page" title="About Us" :breadcrumb="[['label' => 'Home', 'url' => url('/')], ['label' => 'About Us']]" imagePath="images/background/page-title.jpg" />
+    <x-landingPageSection1 type="page" title="{{ __('messages.about_us') }}" :breadcrumb="[['label' => 'Home', 'url' => url('/')], ['label' => __('messages.about_us')]]" imagePath="images/background/page-title.jpg" />
 
     {{-- About Page Content --}}
     <x-aboutUs :main-images="$mainImages" :histories="$histories" :company-image="$companyImage" :structure-image="$structureImage" :direksi="$direksi"

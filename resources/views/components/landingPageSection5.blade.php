@@ -8,9 +8,9 @@
                 <div class="row">
                     <div class="col-lg-8 col-md-12 col-sm-12 title-column">
                         <div class="sec-title">
-                            <h6>Specification</h6>
-                            <h2>Excellence in<br>Every <span>[Service]</span> Offered</h2>
-                            <p class="mt_12">Delivering quality, innovation, and precision.</p>
+                            <h6>{{ __('messages.specification') }}</h6>
+                            <h2>{!! __('messages.service_excellence_title') !!}</h2>
+                            <p class="mt_12">{{ __('messages.service_excellence_desc') }}</p>
                         </div>
                     </div>
                 </div>
@@ -24,9 +24,9 @@
                         <figure class="image"><img src="{{ asset('images/resource/service-1.png') }}" alt="Service">
                         </figure>
                         <div class="lower-content">
-                            <h3>Discover Our Complete Service Range.</h3>
-                            <p>Services tailored to your needs.</p>
-                            <a href="#"><i class="flaticon-right-arrow"></i><span>All Services</span></a>
+                            <h3>{{ __('messages.discover_services') }}</h3>
+                            <p>{{ __('messages.services_tailored') }}</p>
+                            <a href="#"><i class="flaticon-right-arrow"></i><span>{{ __('messages.all_services') }}</span></a>
                         </div>
                     </div>
                 </div>
@@ -49,11 +49,10 @@
                             <div class="lower-content">
                                 <div class="block-title">
                                     <div class="line-shape"></div>
-                                    <h3><a href="#">Fabrication</a></h3>
+                                    <h3><a href="#">{{ __('messages.service_fabrication') }}</a></h3>
                                 </div>
-                                <p>Precision crafting metal structures with innovative techniques & expertise.</p>
-                                <div class="btn-box"><a href="#"><i class="flaticon-right-arrow"></i><span>Read
-                                            More</span></a></div>
+                                <p>{{ __('messages.service_fabrication_desc') }}</p>
+                                <div class="btn-box"><a href="#"><i class="flaticon-right-arrow"></i><span>{{ __('messages.read_more') }}</span></a></div>
                             </div>
                         </div>
                     </div>
@@ -74,11 +73,10 @@
                             <div class="lower-content">
                                 <div class="block-title">
                                     <div class="line-shape"></div>
-                                    <h3><a href="#">Metal Processing</a></h3>
+                                    <h3><a href="#">{{ __('messages.service_metal_processing') }}</a></h3>
                                 </div>
-                                <p>Transforming raw materials into high quality metal products.</p>
-                                <div class="btn-box"><a href="#"><i class="flaticon-right-arrow"></i><span>Read
-                                            More</span></a></div>
+                                <p>{{ __('messages.service_metal_processing_desc') }}</p>
+                                <div class="btn-box"><a href="#"><i class="flaticon-right-arrow"></i><span>{{ __('messages.read_more') }}</span></a></div>
                             </div>
                         </div>
                     </div>
@@ -99,11 +97,10 @@
                             <div class="lower-content">
                                 <div class="block-title">
                                     <div class="line-shape"></div>
-                                    <h3><a href="#">Metal Casting</a></h3>
+                                    <h3><a href="#">{{ __('messages.service_metal_casting') }}</a></h3>
                                 </div>
-                                <p>Metal casting turns molten metal into solid shapes and products.</p>
-                                <div class="btn-box"><a href="#"><i class="flaticon-right-arrow"></i><span>Read
-                                            More</span></a></div>
+                                <p>{{ __('messages.service_metal_casting_desc') }}</p>
+                                <div class="btn-box"><a href="#"><i class="flaticon-right-arrow"></i><span>{{ __('messages.read_more') }}</span></a></div>
                             </div>
                         </div>
                     </div>

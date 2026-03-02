@@ -10,6 +10,12 @@ class AboutPerson extends Model
         'type',
         'name',
         'position',
+        'position_en',
         'image'
     ];
+
+    public function getTranslatedPositionAttribute()
+    {
+        return app()->getLocale() == 'en' && $this->position_en ? $this->position_en : $this->position;
+    }
 }

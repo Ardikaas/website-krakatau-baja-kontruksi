@@ -10,10 +10,9 @@
     <div class="main-container">
 
         <header class="wbs-header">
-            <h1>Form Pelaporan</h1>
+            <h1>{{ __('messages.wbs_title') }}</h1>
             <p>
-                Pelaporan dapat dilakukan secara anonim.
-                Identitas pelapor dijamin kerahasiaannya.
+                {{ __('messages.wbs_desc') }}
             </p>
         </header>
 
@@ -22,134 +21,134 @@
         <form id="wbsForm" enctype="multipart/form-data">
 
             <section class="report-section">
-                <h2>Detail Pelanggaran</h2>
+                <h2>{{ __('messages.wbs_detail_pelanggaran') }}</h2>
 
                 <div class="form-group">
-                    <label>Judul Kasus/Pelanggaran *</label>
+                    <label>{{ __('messages.wbs_judul_kasus') }}</label>
                     <input type="text" name="judul_kasus" required>
                 </div>
 
                 <div class="form-group">
-                    <label>Tipe Insiden *</label>
+                    <label>{{ __('messages.wbs_tipe_insiden') }}</label>
                     <select name="tipe_insiden" required>
-                        <option value="">Pilih tipe insiden</option>
+                        <option value="">{{ __('messages.wbs_pilih_tipe') }}</option>
                         <option value="Pelanggaran Etika & Keuangan">
-                            Pelanggaran Etika & Keuangan
+                            {{ __('messages.wbs_etika_keuangan') }}
                         </option>
-                        <option value="Pelanggaran HSSE">Pelanggaran HSSE</option>
+                        <option value="Pelanggaran HSSE">{{ __('messages.wbs_hsse') }}</option>
                         <option value="Penyalahgunaan Wewenang">
-                            Penyalahgunaan Wewenang
+                            {{ __('messages.wbs_wewenang') }}
                         </option>
                         <option value="Lainnya">
-                            Lainnya
+                            {{ __('messages.wbs_lainnya') }}
                         </option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label>Kejadian yang Dilaporkan *</label>
+                    <label>{{ __('messages.wbs_kejadian') }}</label>
                     <textarea name="kejadian" rows="4" required></textarea>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Nama Terlapor</label>
+                        <label>{{ __('messages.wbs_nama_terlapor') }}</label>
                         <input type="text" name="nama_terlapor">
                     </div>
                     <div class="form-group">
-                        <label>Jabatan Terlapor</label>
+                        <label>{{ __('messages.wbs_jabatan_terlapor') }}</label>
                         <input type="text" name="jabatan_terlapor">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label>Lokasi Kejadian</label>
+                    <label>{{ __('messages.wbs_lokasi') }}</label>
                     <input type="text" name="lokasi_kejadian">
                 </div>
 
                 <div class="form-group">
-                    <label>Tanggal & Waktu Kejadian</label>
+                    <label>{{ __('messages.wbs_tanggal') }}</label>
                     <input type="datetime-local" name="tanggal_kejadian">
                 </div>
 
                 <div class="form-group">
-                    <label>Apakah ada saksi mata?</label>
+                    <label>{{ __('messages.wbs_saksi') }}</label>
                     <input type="text" name="ada_saksi">
                 </div>
 
                 <div class="form-group">
-                    <label>Motif (jika diketahui)</label>
+                    <label>{{ __('messages.wbs_motif') }}</label>
                     <input type="text" name="motif">
                 </div>
 
                 <div class="form-group">
-                    <label>Pernah terjadi sebelumnya?</label>
+                    <label>{{ __('messages.wbs_pernah_terjadi') }}</label>
                     <input type="text" name="pernah_terjadi_sebelumnya">
                 </div>
 
                 <div class="form-group">
-                    <label>Pelanggaran Peraturan Perusahaan</label>
+                    <label>{{ __('messages.wbs_pelanggaran_peraturan') }}</label>
                     <textarea name="pelanggaran_peraturan" rows="3"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label>Dampak terhadap Perusahaan</label>
+                    <label>{{ __('messages.wbs_dampak') }}</label>
                     <textarea name="dampak_perusahaan" rows="3"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label>Perkiraan Kerugian Finansial</label>
+                    <label>{{ __('messages.wbs_kerugian') }}</label>
                     <input type="number" name="perkiraan_kerugian" value="0">
                 </div>
 
                 <div class="form-group">
-                    <label>Apakah telah dilaporkan sebelumnya?</label>
+                    <label>{{ __('messages.wbs_pernah_dilaporkan') }}</label>
                     <textarea name="pernah_dilaporkan" rows="2"></textarea>
                 </div>
             </section>
 
             <section class="report-section">
-                <h2>Pihak Pelapor</h2>
+                <h2>{{ __('messages.wbs_pihak_pelapor') }}</h2>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Nama Pelapor</label>
+                        <label>{{ __('messages.wbs_nama_pelapor') }}</label>
                         <input type="text" name="nama_pelapor">
                     </div>
                     <div class="form-group">
-                        <label>Email Pelapor</label>
+                        <label>{{ __('messages.wbs_email_pelapor') }}</label>
                         <input type="email" name="email_pelapor">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label>Nomor Kontak</label>
+                    <label>{{ __('messages.wbs_kontak_pelapor') }}</label>
                     <input type="text" name="kontak_pelapor">
                 </div>
             </section>
 
             <section class="report-section">
-                <h2>Lampiran</h2>
+                <h2>{{ __('messages.wbs_lampiran') }}</h2>
 
                 <div class="form-group">
-                    <label>Dokumen Pendukung</label>
+                    <label>{{ __('messages.wbs_dokumen') }}</label>
                     <input type="file" name="dokumen_pendukung">
                 </div>
 
                 <small class="text-danger">
-                    Jika lebih dari satu file, harap dikompres (.zip/.rar)
+                    {{ __('messages.wbs_kompres') }}
                 </small>
             </section>
 
             <hr>
 
             <p class="report-note">
-                Setelah laporan dikirim, sistem akan memberikan Nomor Tiket Pelaporan.
+                {{ __('messages.wbs_note') }}
             </p>
 
             <div class="submit-wrapper">
                 <button type="submit" id="submitBtn">
-                    Submit Report
+                    {{ __('messages.wbs_submit') }}
                 </button>
             </div>
 
@@ -170,7 +169,7 @@ document.getElementById('wbsForm').addEventListener('submit', async function (e)
     const responseBox = document.getElementById('formResponse');
 
     btn.disabled = true;
-    btn.innerText = 'Submitting...';
+    btn.innerText = '{{ __('messages.wbs_submitting') }}';
 
     const formData = new FormData(form);
 
@@ -186,8 +185,8 @@ document.getElementById('wbsForm').addEventListener('submit', async function (e)
             responseBox.style.display = 'block';
             responseBox.innerHTML = `
                 <div class="alert-success">
-                    <strong>Laporan berhasil dikirim!</strong><br>
-                    Nomor Tiket: <b>${result.data.ticket_number}</b>
+                    <strong>{{ __('messages.wbs_success') }}</strong><br>
+                    {{ __('messages.wbs_ticket') }} <b>${result.data.ticket_number}</b>
                 </div>
             `;
             form.reset();
@@ -199,14 +198,14 @@ document.getElementById('wbsForm').addEventListener('submit', async function (e)
         responseBox.style.display = 'block';
         responseBox.innerHTML = `
             <div class="alert-error">
-                <strong>Gagal mengirim laporan</strong><br>
-                ${error.message ?? 'Periksa kembali data yang dikirim'}
+                <strong>{{ __('messages.wbs_failed') }}</strong><br>
+                ${error.message ?? '{{ __('messages.wbs_check_data') }}'}
             </div>
         `;
     }
 
     btn.disabled = false;
-    btn.innerText = 'Submit Report';
+    btn.innerText = '{{ __('messages.wbs_submit') }}';
 });
 </script>
 @endsection

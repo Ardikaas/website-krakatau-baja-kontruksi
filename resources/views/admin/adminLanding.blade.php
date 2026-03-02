@@ -109,14 +109,22 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Title</label>
-                                            <input type="text" name="title" placeholder="e.g. Industry Expertise"
+                                            <label>Title (ID)</label>
+                                            <input type="text" name="title" placeholder="e.g. Industri"
                                                 required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Title (EN)</label>
+                                            <input type="text" name="title_en" placeholder="e.g. Industry Expertise">
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Description</label>
-                                            <textarea name="description" placeholder="Short description" required></textarea>
+                                            <label>Description (ID)</label>
+                                            <textarea name="description" placeholder="Deskripsi Singkat" required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Description (EN)</label>
+                                            <textarea name="description_en" placeholder="Short description"></textarea>
                                         </div>
 
                                         <div class="action-buttons">
@@ -192,6 +200,10 @@
                                 <h2 class="section-title">Downloadable Resources</h2>
 
                                 <div class="resources-content">
+                                    <div class="form-group" style="margin-bottom: 20px;">
+                                        <label style="display: block; margin-bottom: 8px; font-weight: 500;">Document Title (English/Optional)</label>
+                                        <input type="text" id="pdfTitleEn" class="form-control" placeholder="e.g. Company Profile 2024" style="width: 100%; border: 1px solid #d1d5db; border-radius: 6px; padding: 10px 14px;">
+                                    </div>
                                     <div class="file-upload" tabindex="0" role="button">
                                         <img src="{{ asset('images/icons/img_upload_computer.svg') }}" alt="Upload"
                                             class="upload-icon">
@@ -297,8 +309,13 @@
                 return;
             }
 
+            const titleEn = document.getElementById('pdfTitleEn').value;
+
             const formData = new FormData();
             formData.append('file', selectedPdfFile);
+            if (titleEn) {
+                formData.append('title_en', titleEn);
+            }
 
             fetch("{{ route('admin.documents.store') }}", {
                     method: 'POST',

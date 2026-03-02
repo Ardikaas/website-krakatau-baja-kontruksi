@@ -18,8 +18,10 @@ class AboutHistoryController extends Controller
 
         $data = $request->validate([
             'title' => 'required|string',
+            'title_en' => 'nullable|string',
             'year' => 'nullable|string',
             'description' => 'required|string',
+            'description_en' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpg,jpeg,png'
         ]);
 

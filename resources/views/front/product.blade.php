@@ -8,7 +8,7 @@
 
 @section('content')
     {{-- Banner Top Section --}}
-    <x-landingPageSection1 type="page" title="Product" :breadcrumb="[['label' => 'Home', 'url' => url('/')], ['label' => 'Product']]" imagePath="images/background/page-title.jpg" />
+    <x-landingPageSection1 type="page" title="{{ __('messages.page_product') }}" :breadcrumb="[['label' => 'Home', 'url' => url('/')], ['label' => __('messages.page_product')]]" imagePath="images/background/page-title.jpg" />
 
     {{-- News Section --}}
     <section class="project-style-three">
@@ -20,7 +20,7 @@
                     <ul class="filter-tabs filter-btns mb_55">
                         <li class="active filter" data-filter=".all">
                             <i class="flaticon-nut"></i>
-                            <span>All</span>
+                            <span>{{ __('messages.all') }}</span>
                         </li>
 
                         @foreach ($categories as $category)
@@ -62,9 +62,8 @@
                                     {{-- BODY --}}
                                     <div class="card-body">
 
-                                        {{-- TITLE --}}
                                         <h3 class="product-title">
-                                            {{ $product->name }}
+                                            {{ $product->translated_name }}
                                         </h3>
 
                                         {{-- CATEGORY --}}
@@ -89,9 +88,9 @@
                                             <div class="sales-contact">
                                                 <img src="https://placehold.co/100x100" alt="Sales">
                                                 <div class="sales-info">
-                                                    <h6>No Sales Contact</h6>
-                                                    <a href="#" target="_blank">N/A</a>
-                                                    <small>N/A</small>
+                                                    <h6>{{ __('messages.no_sales_contact') }}</h6>
+                                                    <a href="#" target="_blank">{{ __('messages.not_available') }}</a>
+                                                    <small>{{ __('messages.not_available') }}</small>
                                                 </div>
                                             </div>
                                         @endif

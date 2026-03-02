@@ -14,11 +14,11 @@
                         <img src="{{ asset('images/logo-3.png') }}" alt="Logo" />
                         </a>
                     </figure>
-                    <h5>Berbasis di <br />Indonesia.</h5>
+                    <h5>{!! __('messages.based_in_indonesia') !!}</h5>
                 </div>
             </div>
 
-            <span class="rotate-text">Berdiri Sejak, 1992</span>
+            <span class="rotate-text">{{ __('messages.established_since_1992') }}</span>
         </div>
 
         <div class="inner-box">

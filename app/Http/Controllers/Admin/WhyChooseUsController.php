@@ -19,7 +19,9 @@ class WhyChooseUsController extends Controller
 
     $request->validate([
       'title' => 'required|string|max:255',
+      'title_en' => 'nullable|string|max:255',
       'description' => 'required|string',
+      'description_en' => 'nullable|string',
       'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
     ]);
 
@@ -27,7 +29,9 @@ class WhyChooseUsController extends Controller
 
     WhyChooseUs::create([
       'title' => $request->title,
+      'title_en' => $request->title_en,
       'description' => $request->description,
+      'description_en' => $request->description_en,
       'image' => $path,
     ]);
 
@@ -39,7 +43,7 @@ class WhyChooseUsController extends Controller
   {
     $item = WhyChooseUs::findOrFail($id);
 
-    $data = $request->only(['title', 'description']);
+    $data = $request->only(['title', 'title_en', 'description', 'description_en']);
 
     if ($request->hasFile('image')) {
       Storage::disk('public')->delete($item->image);

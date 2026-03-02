@@ -13,7 +13,7 @@
     <x-landingPageSection1 type="page" title="News" :breadcrumb="[
         ['label' => 'Home', 'url' => url('/')],
         ['label' => 'News', 'url' => route('news')],
-        ['label' => $news->title],
+        ['label' => $news->translated_title],
     ]" imagePath="images/background/page-title.jpg" />
 
     {{-- Sidebar Page Container --}}
@@ -34,12 +34,12 @@
                                 </div>
                             </div>
                             <h2>
-                                {{ $news->title }}
+                                {{ $news->translated_title }}
                                 <span class="author"> - {{ $news->author }}</span>
                             </h2>
                             <div class="text-box mb_30">
                                 @php
-                                    $content = $news->content;
+                                    $content = $news->translated_content;
 
                                     $plainText = strip_tags($content);
                                     $firstChar = mb_substr($plainText, 0, 1);
@@ -126,14 +126,14 @@
                                     <div class="post">
                                         <figure class="post-image">
                                             <a href="{{ url('news/' . $item->id) }}">
-                                                <img src="{{ $item->image_url }}" alt="{{ $item->title }}">
+                                                <img src="{{ $item->image_url }}" alt="{{ $item->translated_title }}">
                                             </a>
                                         </figure>
                                         <div class="inner">
                                             <h6>{{ \Carbon\Carbon::parse($item->published_at)->format('M d, Y') }}</h6>
                                             <h5>
                                                 <a href="{{ url('news/' . $item->id) }}">
-                                                    {{ \Illuminate\Support\Str::limit($item->title, 50) }}
+                                                    {{ \Illuminate\Support\Str::limit($item->translated_title, 50) }}
                                                 </a>
                                             </h5>
                                         </div>

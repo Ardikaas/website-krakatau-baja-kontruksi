@@ -22,16 +22,20 @@ class AdminController extends Controller
   {
     $data = $request->validate([
       'title' => 'required|string|max:255',
+      'title_en' => 'nullable|string|max:255',
       'author' => 'required|string|max:100',
       'content' => 'required|string',
+      'content_en' => 'nullable|string',
       'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
     ]);
 
     $service->store(
       [
         'title' => $data['title'],
+        'title_en' => $data['title_en'] ?? null,
         'author' => $data['author'],
         'content' => $data['content'],
+        'content_en' => $data['content_en'] ?? null,
       ],
       $request->file('image')
     );

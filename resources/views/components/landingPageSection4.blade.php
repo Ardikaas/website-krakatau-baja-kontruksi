@@ -6,21 +6,21 @@
             <div class="col-lg-7 col-md-12 col-sm-12 content-column">
                 <div class="content-box">
                     <div class="sec-title mb_45">
-                        <h6>About Us</h6>
-                        <h2>Leaders in Industrial <span>[Manufacturing]</span> and Integrated Solution</h2>
+                        <h6>{{ __('messages.about_us') }}</h6>
+                        <h2>{!! __('messages.about_leaders_title') !!}</h2>
                     </div>
                     <div class="inner-box">
                         <div class="single-team">
-                            <h3>Team of Innovators</h3>
+                            <h3>{{ __('messages.team_of_innovators') }}</h3>
                             <div class="link"><a href="/about-us/#directors"><i class="flaticon-right-arrow"></i></a></div>
-                            <span class="rotate-text">Core Team</span>
+                            <span class="rotate-text">{{ __('messages.core_team') }}</span>
                             <figure class="image-box"><img src="{{ asset('images/resource/team-1.png') }}" alt="Team">
                             </figure>
                         </div>
                         <div class="text-box">
-                            <h3>Building Quality, Delivering Trust</h3>
-                            <p>We are committed to providing reliable industrial solutions, ensuring quality, safety, and efficiency across every stage of our operations.</p>
-                            <a href="/about-us/#company-info"><i class="flaticon-right-arrow"></i><span>Read More</span></a>
+                            <h3>{{ __('messages.building_quality_title') }}</h3>
+                            <p>{{ __('messages.building_quality_desc') }}</p>
+                            <a href="/about-us/#company-info"><i class="flaticon-right-arrow"></i><span>{{ __('messages.read_more') }}</span></a>
                         </div>
                     </div>
                 </div>
@@ -42,10 +42,10 @@
                         <div class="image-content">
                             <div class="text-box">
                                 <h2>10<span>k</span></h2>
-                                <h5>Tons Produced<br>Annually.</h5>
+                                <h5>{!! __('messages.tons_produced') !!}</h5>
                             </div>
                             <div class="video-box">
-                                <h5>Our&nbsp;Video</h5>
+                                <h5>{!! __('messages.our_video') !!}</h5>
                                 <a href="https://www.youtube.com/watch?v=zL2bo91eiWw" target='_blank' class="lightbox-image"><i
                                         class="flaticon-play-button"></i></a>
                             </div>

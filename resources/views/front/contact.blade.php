@@ -8,7 +8,7 @@
 @endpush
 
 @section('content')
-    <x-landingPageSection1 type="page" title="Contact Us" :breadcrumb="[['label' => 'Home', 'url' => url('/')], ['label' => 'Contact Us']]" imagePath="images/background/page-title.jpg" />
+    <x-landingPageSection1 type="page" title="{{ __('messages.page_contact') }}" :breadcrumb="[['label' => 'Home', 'url' => url('/')], ['label' => __('messages.page_contact')]]" imagePath="images/background/page-title.jpg" />
     <section class="contact-style-two">
         <div class="auto-container">
             <div class="tabs-box">
@@ -22,8 +22,8 @@
                                         <div class="shape"
                                             style="background-image: url({{ asset('images/shape/shape-24.png') }});"></div>
                                         <div class="title-box">
-                                            <h3>Marketing Location</h3>
-                                            <h6>Conveniently located to meet.</h6>
+                                            <h3>{{ __('messages.marketing_location') }}</h3>
+                                            <h6>{{ __('messages.conveniently_located') }}</h6>
                                         </div>
                                         <div class="text-box">
                                             <p>Jl. Jend. Gatot Subroto Kav. 54, Jakarta Selatan, DKI Jakarta.</p>
@@ -39,8 +39,8 @@
                                         <div class="shape"
                                             style="background-image: url({{ asset('images/shape/shape-24.png') }});"></div>
                                         <div class="title-box">
-                                            <h3>Factory Location</h3>
-                                            <h6>Conveniently located to meet.</h6>
+                                            <h3>{{ __('messages.factory_location') }}</h3>
+                                            <h6>{{ __('messages.conveniently_located') }}</h6>
                                         </div>
                                         <div class="text-box">
                                             <p>Gedung krakatau steel Lt.2 Jalan Industri no 5 PO Box 125, Cilegon, Banten.</p>
@@ -65,7 +65,7 @@
                                                     @endif
                                                 </div>
                                                 <div class="title-text">
-                                                    <h3>Sales Contact</h3>
+                                                    <h3>{{ __('messages.sales_contact') }}</h3>
                                                     <h6>{{ $sale->name }}</h6>
                                                 </div>
                                             </div>
@@ -106,8 +106,8 @@
                 <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                     <div class="content-box">
                         <div class="sec-title mb_35">
-                            <h6>Message Us</h6>
-                            <h2>Have Questions? <span>[Message]</span> Us</h2>
+                            <h6>{{ __('messages.message_us') }}</h6>
+                            <h2>{!! __('messages.have_questions') !!}</h2>
                         </div>
                         <div class="form-inner">
                             @if (session('success'))
@@ -123,21 +123,21 @@
                                         <div class="form-group">
                                             <div class="icon-box"><img src="images/icons/icon-28.png" alt="">
                                             </div>
-                                            <input type="text" name="username" placeholder="Name" required="">
+                                            <input type="text" name="username" placeholder="{{ __('messages.form_name') }}" required="">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 single-column">
                                         <div class="form-group">
                                             <div class="icon-box"><img src="images/icons/icon-29.png" alt="">
                                             </div>
-                                            <input type="text" name="phone" placeholder="Phone" required="">
+                                            <input type="text" name="phone" placeholder="{{ __('messages.form_phone') }}" required="">
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 single-column">
                                         <div class="form-group">
                                             <div class="icon-box"><img src="images/icons/icon-30.png" alt="">
                                             </div>
-                                            <input type="email" name="email" placeholder="Email" required="">
+                                            <input type="email" name="email" placeholder="{{ __('messages.form_email') }}" required="">
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 single-column">
@@ -146,11 +146,11 @@
                                             </div>
                                             <div class="select-box">
                                                 <select name="inquiry_type" class="wide" required>
-                                                    <option value="">Inquiry Type</option>
-                                                    <option value="Fabrication">Fabrication</option>
-                                                    <option value="Metal Processing">Metal Processing</option>
-                                                    <option value="Metal Casting">Metal Casting</option>
-                                                    <option value="Metal Welding">Metal Welding</option>
+                                                    <option value="">{{ __('messages.inquiry_type') }}</option>
+                                                    <option value="Fabrication">{{ __('messages.inquiry_fabrication') }}</option>
+                                                    <option value="Metal Processing">{{ __('messages.inquiry_metal_processing') }}</option>
+                                                    <option value="Metal Casting">{{ __('messages.inquiry_metal_casting') }}</option>
+                                                    <option value="Metal Welding">{{ __('messages.inquiry_metal_welding') }}</option>
                                                 </select>
 
                                                 {{-- <div class="nice-select wide" tabindex="0"><span class="current">Inquiry
@@ -172,13 +172,13 @@
                                             <div class="icon-box-question"><img src="images/icons/icon-32.png"
                                                     alt="">
                                             </div>
-                                            <textarea name="message" placeholder="Your Question" required></textarea>
+                                            <textarea name="message" placeholder="{{ __('messages.form_question') }}" required></textarea>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 single-column">
                                         <div class="message-btn">
                                             <button type="submit" class="theme-btn btn-one" name="submit-form"><i
-                                                    class="flaticon-right-arrow"></i><span>Submit Now</span></button>
+                                                    class="flaticon-right-arrow"></i><span>{{ __('messages.submit_now') }}</span></button>
                                         </div>
                                     </div>
                                 </div>

@@ -8,8 +8,8 @@
 <section class="news-section">
     <div class="auto-container">
         <div class="sec-title mb_45">
-            <h6>Blog Post</h6>
-            <h2>Explore Company <span>[News]</span></h2>
+            <h6>{{ __('messages.blog_post') }}</h6>
+            <h2>{!! __('messages.explore_company_news') !!}</h2>
         </div>
 
         <div class="two-item-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
@@ -50,7 +50,7 @@
                                 <div class="link-box">
                                     <a href="{{ url('news/' . $item->id) }}">
                                         <i class="flaticon-right-arrow"></i>
-                                        <span>Read the Post</span>
+                                        <span>{{ __('messages.read_the_post') }}</span>
                                     </a>
                                 </div>
                             </div>
@@ -86,14 +86,14 @@
                         <div class="lower-content">
                             <h3>
                                 <a href="{{ url('blog-details') }}">
-                                    Metal Finishing Techniques: An In-Depth Practical Guide.
+                                    {{ __('messages.news_fallback_1_title') }}
                                 </a>
                             </h3>
 
                             <div class="link-box">
                                 <a href="{{ url('blog-details') }}">
                                     <i class="flaticon-right-arrow"></i>
-                                    <span>Read the Post</span>
+                                    <span>{{ __('messages.read_the_post') }}</span>
                                 </a>
                             </div>
                         </div>
@@ -129,14 +129,14 @@
                         <div class="lower-content">
                             <h3>
                                 <a href="{{ url('blog-details') }}">
-                                    The Difference Between Forging & Casting in Metal Manufacturing.
+                                    {{ __('messages.news_fallback_2_title') }}
                                 </a>
                             </h3>
 
                             <div class="link-box">
                                 <a href="{{ url('blog-details') }}">
                                     <i class="flaticon-right-arrow"></i>
-                                    <span>Read the Post</span>
+                                    <span>{{ __('messages.read_the_post') }}</span>
                                 </a>
                             </div>
                         </div>
@@ -172,14 +172,14 @@
                         <div class="lower-content">
                             <h3>
                                 <a href="{{ url('blog-details') }}">
-                                    Metal Finishing Techniques: An In-Depth Practical Guide.
+                                    {{ __('messages.news_fallback_1_title') }}
                                 </a>
                             </h3>
 
                             <div class="link-box">
                                 <a href="{{ url('blog-details') }}">
                                     <i class="flaticon-right-arrow"></i>
-                                    <span>Read the Post</span>
+                                    <span>{{ __('messages.read_the_post') }}</span>
                                 </a>
                             </div>
                         </div>
@@ -215,14 +215,14 @@
                         <div class="lower-content">
                             <h3>
                                 <a href="{{ url('blog-details') }}">
-                                    The Difference Between Forging & Casting in Metal Manufacturing.
+                                    {{ __('messages.news_fallback_2_title') }}
                                 </a>
                             </h3>
 
                             <div class="link-box">
                                 <a href="{{ url('blog-details') }}">
                                     <i class="flaticon-right-arrow"></i>
-                                    <span>Read the Post</span>
+                                    <span>{{ __('messages.read_the_post') }}</span>
                                 </a>
                             </div>
                         </div>

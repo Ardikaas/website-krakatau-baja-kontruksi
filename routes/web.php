@@ -24,6 +24,13 @@ use App\Http\Controllers\Admin\AdminAuthController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/lang/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'id'])) {
+        session(['locale' => $locale]);
+    }
+    return redirect()->back();
+})->name('lang.switch');
+
 Route::get('/wbs', function () {
     return view('front.whistleBlowingSystem');
 })->name('wbs');

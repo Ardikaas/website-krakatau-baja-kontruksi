@@ -26,7 +26,9 @@ class NewsService
     return News::create([
       'image' => $path,
       'title' => $data['title'],
+      'title_en' => $data['title_en'] ?? null,
       'content' => $data['content'],
+      'content_en' => $data['content_en'] ?? null,
       'author' => $data['author'],
       'published_at' => now(),
     ]);

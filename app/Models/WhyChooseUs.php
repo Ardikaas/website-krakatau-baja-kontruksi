@@ -13,7 +13,19 @@ class WhyChooseUs extends Model
 
     protected $fillable = [
         'title',
+        'title_en',
         'image',
         'description',
+        'description_en',
     ];
+
+    public function getTranslatedTitleAttribute()
+    {
+        return app()->getLocale() == 'en' && $this->title_en ? $this->title_en : $this->title;
+    }
+
+    public function getTranslatedDescriptionAttribute()
+    {
+        return app()->getLocale() == 'en' && $this->description_en ? $this->description_en : $this->description;
+    }
 }

@@ -15,7 +15,7 @@ class DocumentService
     return Document::latest()->get();
   }
 
-  public function store(UploadedFile $file, string $title = null): Document
+  public function store(UploadedFile $file, string $title = null, string $title_en = null): Document
   {
     if (Document::count() >= self::MAX_DOCUMENT) {
       throw new \Exception('Dokumen maksimal 2 item');
@@ -33,6 +33,7 @@ class DocumentService
         $file->getClientOriginalName(),
         PATHINFO_FILENAME
       ),
+      'title_en' => $title_en,
       'file' => $path,
       'size' => $size,
     ]);

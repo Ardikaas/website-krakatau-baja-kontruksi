@@ -26,9 +26,10 @@ class DocumentController extends Controller
   {
     $request->validate([
       'file' => 'required|mimes:pdf',
+      'title_en' => 'nullable|string|max:255'
     ]);
 
-    $doc = $service->store($request->file('file'));
+    $doc = $service->store($request->file('file'), null, $request->title_en);
 
     return response()->json([
       'message' => 'Dokumen berhasil diupload',

@@ -54,17 +54,27 @@
 
             <div class="project-editor-card">
                 <div class="project-editor-field">
-                    <label class="project-editor-label">Project Title</label>
+                    <label class="project-editor-label">Project Title (ID)</label>
                     <input type="text" name="title" class="project-editor-input form-control"
                         value="{{ $value('title') }}" required>
+                </div>
+                <div class="project-editor-field mt-3">
+                    <label class="project-editor-label">Project Title (EN)</label>
+                    <input type="text" name="title_en" class="project-editor-input form-control"
+                        value="{{ $value('title_en') }}">
                 </div>
             </div>
 
             <div class="project-editor-card">
                 <div class="project-editor-field">
-                    <label class="project-editor-label">Category</label>
+                    <label class="project-editor-label">Category (ID)</label>
                     <input type="text" name="category" class="project-editor-input form-control"
                         value="{{ $value('category') }}" required>
+                </div>
+                <div class="project-editor-field mt-3">
+                    <label class="project-editor-label">Category (EN)</label>
+                    <input type="text" name="category_en" class="project-editor-input form-control"
+                        value="{{ $value('category_en') }}">
                 </div>
             </div>
 
@@ -94,22 +104,34 @@
 
             <div class="project-editor-card">
                 <div class="project-editor-field">
-                    <label class="project-editor-label">Description</label>
+                    <label class="project-editor-label">Description (ID)</label>
                     <textarea name="description" class="project-editor-input form-control" rows="4" required>{{ $value('description') }}</textarea>
                 </div>
-            </div>
-
-            <div class="project-editor-card">
-                <div class="project-editor-field">
-                    <label class="project-editor-label">Scope of Work</label>
-                    <textarea name="scope_of_work" class="project-editor-input form-control" rows="4" required>{{ $value('scope_of_work') }}</textarea>
+                <div class="project-editor-field mt-3">
+                    <label class="project-editor-label">Description (EN)</label>
+                    <textarea name="description_en" class="project-editor-input form-control" rows="4">{{ $value('description_en') }}</textarea>
                 </div>
             </div>
 
             <div class="project-editor-card">
                 <div class="project-editor-field">
-                    <label class="project-editor-label">Challenges</label>
+                    <label class="project-editor-label">Scope of Work (ID)</label>
+                    <textarea name="scope_of_work" class="project-editor-input form-control" rows="4" required>{{ $value('scope_of_work') }}</textarea>
+                </div>
+                <div class="project-editor-field mt-3">
+                    <label class="project-editor-label">Scope of Work (EN)</label>
+                    <textarea name="scope_of_work_en" class="project-editor-input form-control" rows="4">{{ $value('scope_of_work_en') }}</textarea>
+                </div>
+            </div>
+
+            <div class="project-editor-card">
+                <div class="project-editor-field">
+                    <label class="project-editor-label">Challenges (ID)</label>
                     <textarea name="challenges" class="project-editor-input form-control" rows="4" required>{{ $value('challenges') }}</textarea>
+                </div>
+                <div class="project-editor-field mt-3">
+                    <label class="project-editor-label">Challenges (EN)</label>
+                    <textarea name="challenges_en" class="project-editor-input form-control" rows="4">{{ $value('challenges_en') }}</textarea>
                 </div>
             </div>
 
@@ -125,19 +147,35 @@
                                 ['title' => '', 'description' => ''],
                             ],
                         );
+                        $solutions_en = old(
+                            'solutions_en',
+                            $project->solutions_en ?? [
+                                ['title' => '', 'description' => ''],
+                                ['title' => '', 'description' => ''],
+                            ],
+                        );
                     @endphp
                     @foreach ($solutions as $i => $solution)
                         <div class="solution-card">
                             <div class="solution-field">
-                                <label class="solution-label">Solution Title</label>
+                                <label class="solution-label">Solution Title (ID)</label>
                                 <input type="text" name="solutions[{{ $i }}][title]"
                                     class="form-control solution-title" value="{{ $solution['title'] }}" required>
                             </div>
-
                             <div class="solution-field mt-2">
-                                <label class="solution-label">Solution Description</label>
+                                <label class="solution-label">Solution Title (EN)</label>
+                                <input type="text" name="solutions_en[{{ $i }}][title]"
+                                    class="form-control solution-title" value="{{ $solutions_en[$i]['title'] ?? '' }}">
+                            </div>
+
+                            <div class="solution-field mt-3">
+                                <label class="solution-label">Solution Description (ID)</label>
                                 <textarea name="solutions[{{ $i }}][description]" class="form-control solution-desc" rows="3"
                                     required>{{ $solution['description'] }}</textarea>
+                            </div>
+                            <div class="solution-field mt-2">
+                                <label class="solution-label">Solution Description (EN)</label>
+                                <textarea name="solutions_en[{{ $i }}][description]" class="form-control solution-desc" rows="3">{{ $solutions_en[$i]['description'] ?? '' }}</textarea>
                             </div>
                         </div>
                     @endforeach
