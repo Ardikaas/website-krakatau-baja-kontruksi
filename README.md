@@ -7,14 +7,8 @@
   <h3 align="center">PT Krakatau Baja Konstruksi - Corporate Website</h3>
 
   <p align="center">
-    Sistem Informasi Profil Perusahaan Resmi PT Krakatau Baja Konstruksi
+    The Official Corporate Information System of PT Krakatau Baja Konstruksi
     <br />
-    <a href="https://krakataubajakonstruksi.com/"><strong>Kunjungi Website Kkami »</strong></a>
-    <br />
-    <br />
-    <a href="#">Laporkan Bug</a>
-    ·
-    <a href="#">Ajukan Fitur</a>
   </p>
 </div>
 
@@ -33,148 +27,150 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#tentang-proyek">Tentang Proyek</a></li>
-    <li><a href="#fitur-utama">Fitur Utama</a></li>
-    <li><a href="#teknologi-yang-digunakan">Teknologi yang Digunakan</a></li>
-    <li><a href="#panduan-instalasi">Panduan Instalasi</a></li>
-    <li><a href="#penggunaan-sistem">Penggunaan Sistem</a></li>
-    <li><a href="#struktur-database">Struktur Database</a></li>
-    <li><a href="#wbs-whistle-blowing-system">WBS (Whistle Blowing System)</a></li>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#key-features">Key Features</a></li>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#whistle-blowing-system-wbs">Whistle Blowing System (WBS)</a></li>
   </ol>
 </details>
 
-## Tentang Proyek
+## About The Project
 
-Proyek ini adalah sistem informasi berbasis *web/company profile* resmi untuk **PT Krakatau Baja Konstruksi (KBK)**, perusahaan subholding dari PT Krakatau Steel (Persero) Tbk. Website ini dirancang untuk menyajikan informasi korporat secara komprehensif, modern, dan multibahasa, baik untuk klien domestik maupun internasional.
+This project is the official web-based information system and corporate profile for **PT Krakatau Baja Konstruksi (KBK)**, a subholding company of PT Krakatau Steel (Persero) Tbk. The website is designed to present corporate information comprehensively, modernly, and multilingually, catering to both domestic and international clients.
 
-Sistem ini tidak hanya berfungsi sebagai antarmuka publik, tetapi juga dilengkapi dengan *Content Management System (CMS)* atau Panel Admin secara mandiri (dibangun dari nol) untuk mengelola data perusahaan seperti Banner, Produk, Berita, Histori, Susunan Direksi/Komisaris, hingga Laporan WBS.
+The system serves not only as a public interface but is also equipped with a robust, custom-built *Content Management System (CMS)* or Admin Panel. This panel independently manages corporate data such as Hero Banners, Products, News, History, Board of Directors/Commissioners structures, and WBS Reports.
 
-## Fitur Utama
+## Key Features
 
-- 🌍 **Multilingual System (Bilingual)**: Konten tersedia dalam dua bahasa, yaitu Bahasa Indonesia (ID) dan English (EN). Fitur ini dinamis hingga ke level *Database* (berita, deskripsi produk, sejarah perusahaan, dll dirancang memiliki translasi database langsung).
+- 🌍 **Multilingual System (Bilingual)**: Content is available in two languages: Indonesian (ID) and English (EN). This feature is dynamic down to the *Database* level (news, product descriptions, company history, etc., are designed with direct database translations).
 - 🛠️ **Custom Content Management System (Admin Panel)**:
-  - Manajemen Produk & Kategori Baja
-  - Manajemen Portfolio Proyek
-  - Publikasi Berita / Artikel Perusahaan
-  - Pengelolaan Halaman *About Us* (Sejarah, Direksi, Organogram)
-  - Pengelolaan Hero Banner & Video Profil
-- 📞 **Kontak & Tim Sales**: Halaman direktori Tim Sales perusahaan yang dinamis.
-- ⚖️ **Whistle Blowing System (WBS)**: Form pelaporan rahasia bagi publik dan karyawan mengenai pelanggaran *Good Corporate Governance*, terintegrasi aman di Panel Admin.
-- 📱 **Fully Responsive Design**: Tampilan website yang adaptif di berbagai ukuran perangkat, mulai dari Mobile, Tablet, hingga Desktop *Widescreen*.
+  - Steel Products & Categories Management
+  - Project Portfolio Management
+  - Corporate News & Articles Publication
+  - *About Us* Page Management (History, Board of Directors, Organizational Chart)
+  - Hero Banner & Corporate Video Management
+- 📞 **Contacts & Sales Data**: A dynamic directory of the company's Sales and Marketing team.
+- ⚖️ **Whistle Blowing System (WBS)**: A confidential reporting form for the public and employees regarding violations of *Good Corporate Governance*, securely integrated into the Admin Panel.
+- 📱 **Fully Responsive Design**: An adaptive website layout across various device sizes, seamlessly scaling from Mobile and Tablets to Widescreen Desktops.
 
-## Teknologi yang Digunakan
+## Built With
 
-- **Backend Framework**: [Laravel 11.x](https://laravel.com)
+- **Backend Framework**: [Laravel 12.x](https://laravel.com)
 - **Database**: MySQL
 - **Frontend Library/CSS**: [Tailwind CSS](https://tailwindcss.com/) & [Alpine.js](https://alpinejs.dev/)
 - **Asset Bundling**: [Vite](https://vitejs.dev/)
-- **Rich Text Editor**: Quill.js (Untuk Editor Berita & Spesifikasi di Panel Admin)
-- **Font**: [Google Fonts](https://fonts.google.com/) (Red Rose & Figtree)
+- **Rich Text Editor**: Quill.js (For News & Specification Editors in the Admin Panel)
+- **Fonts**: [Google Fonts](https://fonts.google.com/) (Red Rose & Figtree)
 
 ---
 
-## Panduan Instalasi
+## Getting Started
 
-Untuk menjalankan proyek ini di *local machine* (komputer lokal) Anda, ikuti langkah-langkah di bawah ini:
+To get a local copy up and running on your machine, follow these simple steps:
 
-### Persyaratan Sistem
+### Prerequisites
 
-Pastikan komputer Anda telah terinstal:
+Ensure your machine meets the following requirements:
+
 - PHP ^8.2
 - Composer
-- Node.js (versi terbaru direkomendasikan) & NPM
-- MySQL atau MariaDB
+- Node.js (latest LTS recommended) & NPM
+- MySQL or MariaDB
 
-### Langkah Instalasi
+### Installation Steps
 
-1. **Clone repositori ini**
+1. **Clone the repository**
 
    ```bash
    git clone https://github.com/Ardikaas/website-krakatau-baja-kontruksi.git
    cd website-krakatau-baja-kontruksi
    ```
 
-2. **Install dependensi PHP via Composer**
+2. **Install PHP dependencies via Composer**
 
    ```bash
    composer install
    ```
 
-3. **Install dependensi Node.js via NPM**
+3. **Install Node.js dependencies via NPM**
 
    ```bash
    npm install
    ```
 
-4. **Siapkan konfigurasi `.env`**
+4. **Set up the `.env` configuration**
 
    ```bash
    cp .env.example .env
    ```
 
-   *Buka file `.env` dan atur koneksi database Anda (DB_DATABASE, DB_USERNAME, DB_PASSWORD).*
+   *Open the `.env` file and configure your local database connection (DB_DATABASE, DB_USERNAME, DB_PASSWORD).*
 
-5. **Generate Application Key**
+5. **Generate the Application Key**
 
    ```bash
    php artisan key:generate
    ```
 
-6. **Migrasi dan jalankan Seeder Database**
-   *Aplikasi ini telah dilengkapi dengan Seeder khusus yang secara otomatis akan men-download gambar *dummy* berkualitas dari Unsplash dan menyimpannya di folder `storage` lokal Anda untuk preview UI yang realistis.*
+6. **Migrate and Seed the Database**
+   *This application includes custom Seeders that automatically download high-quality dummy images from Unsplash to your local `storage` folder, providing an authentic and realistic UI preview out-of-the-box.*
 
    ```bash
    php artisan migrate:fresh --seed
    ```
 
-7. **Tautkan Storage Laravel**
+7. **Create the Storage Link**
 
    ```bash
    php artisan storage:link
    ```
 
-8. **Compile Asset Frontend (Tailwind/CSS/JS)**
+8. **Compile Frontend Assets (Tailwind/CSS/JS)**
 
    ```bash
    npm run build
-   # atau untuk pengembangan (hot reload): npm run dev
+   # or for development with hot-reload: npm run dev
    ```
 
-9. **Jalankan Aplikasi**
+9. **Run the Application**
 
    ```bash
    php artisan serve
    ```
 
-   *Aplikasi Front-End bisa diakses di: `http://localhost:8000`*
-   *Aplikasi Panel Admin bisa diakses di: `http://localhost:8000/admin`*
+   *The Public Front-End is accessible at: `http://localhost:8000`*
+   *The Admin Dashboard is accessible at: `http://localhost:8000/admin`*
 
 ---
 
-## Penggunaan Sistem
+## Usage
 
-### 1. Panel Admin
+### 1. Admin Panel
 
-* Akses rute `/admin`
-- Gunakan data kredensial Admin (Dapat dicek pada `AdminSeeder` atau sesuai database lokal Anda).
-- Gunakan *Sidebar Menu* untuk mengatur seluruh komponen mulai dari Berita, Produk, Proyek, Halaman Utama, hingga WBS.
-- Penting: Setiap penginputan konten (seperti Produk/Berita/Sejarah) akan diminta *Input* untuk **Bahasa Indonesia** dan **Bahasa Inggris** untuk mendukung sistem Bilingual Front-End.
+- Access the `/admin` route.
 
-### 2. Front-End (Website Publik)
+- Login using the Admin credentials (Can be found in the `AdminSeeder` or your local database).
+- Use the *Sidebar Menu* to manage all components ranging from News, Products, Projects, Landing Page settings, to WBS.
+- **Important**: Every content input (such as Products/News/History) will require inputs in both **Bahasa Indonesia** and **English** simultaneously to fully support the Bilingual Front-End system.
 
-* **Tombol Switch Bahasa**: Pengunjung dapat mengubah bahasa melalui *dropdown* bergambar bola dunia di sudut kanan atas menu navigasi. Translasi website akan terganti sesuai preferensi.
-- **Halaman WBS**: Terletak di menu Footer ("Lapor/WBS"). Masyarakat dapat melapor anomali tata kelola secara *Anonymous*.
+### 2. Front-End (Public Website)
+
+- **Language Switcher Toggle**: Visitors can switch between languages using the globe icon dropdown located at the top right corner of the navigation menu. Website translations will adjust according to their preference immediately.
+
+- **WBS Page**: Located in the Footer menu ("Lapor/WBS"). The public and employees can report corporate governance anomalies entirely *Anonymously*.
 
 ---
 
-## WBS (Whistle Blowing System)
+## Whistle Blowing System (WBS)
 
-Proyek ini mengutamakan kepatuhan terhadap standar GCG (Good Corporate Governance) BUMN. Modul WBS memungkinkan pelapor untuk mencatat:
+This project prioritizes compliance with State-Owned Enterprises (BUMN) Good Corporate Governance (GCG) standards. The WBS module allows whistleblowers to log:
 
-- Tipe Insiden (Korupsi, Konflik Kepentingan, Pelanggaran Etika)
-- Upload Dokumen Bukti (Akan terenkripsi/terlindung dalam penyimpanan lokal server)
-- Identitas Pelapor atau secara Anonimous
-Laporan ini hanya dapat diulas oleh Admin level tertentu di Dashboard Administrator.
+- Incident Types (Corruption, Conflict of Interest, Ethical Violations)
+- Evidence Document Uploads (Safely stored and protected within the local server storage)
+- Identity declarations (Open identity or strictly Anonymous)
+These reports can only be reviewed by authorized high-level Administrators within the secure Dashboard.
 
 ---
 
