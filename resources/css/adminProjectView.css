@@ -1,0 +1,221 @@
+/* ===============================
+   PROJECT MANAGEMENT
+================================ */
+
+.admin-project-management {
+    position: relative;
+    font-family: "Inter", sans-serif;
+    margin-left: 280px;
+    margin-top: 74px;
+    padding: 40px;
+}
+
+/* ===============================
+   PAGE HEADER
+================================ */
+
+.admin-project-management .apm-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-project-management .apm-page-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 86px;
+}
+
+/* ===============================
+   GRID WRAPPER
+================================ */
+
+.admin-project-management .apm-grid {
+    background-color: #ffffff;
+}
+
+/* ===============================
+   GRID HEADER
+================================ */
+
+.admin-project-management .apm-grid-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 16px;
+}
+
+.admin-project-management .apm-grid-title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+    color: #66696b;
+}
+
+/* ===============================
+   ADD BUTTON
+================================ */
+
+.admin-project-management .apm-add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+    background-color: #00a1d1;
+    border: none;
+    border-radius: 16px;
+    padding: 8px 20px 8px 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.admin-project-management .apm-add-btn:hover {
+    background-color: #0091c1;
+}
+
+.admin-project-management .apm-add-icon {
+    font-size: 18px;
+    line-height: 1;
+    margin-top: -4px;
+}
+
+/* ===============================
+   EMPTY STATE
+================================ */
+
+.admin-project-management .apm-empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #66696b;
+}
+
+/* ===============================
+   CARD GRID
+================================ */
+
+.admin-project-management .apm-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* ===============================
+   CARD
+================================ */
+
+.admin-project-management .apm-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.admin-project-management .apm-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* ===============================
+   CARD IMAGE
+================================ */
+
+.admin-project-management .apm-card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.admin-project-management .apm-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.admin-project-management .apm-card:hover .apm-card-image {
+    transform: scale(1.05);
+}
+
+/* ===============================
+   CARD CONTENT
+================================ */
+
+.admin-project-management .apm-card-content {
+    padding: 16px;
+}
+
+.admin-project-management .apm-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.admin-project-management .apm-card-category {
+    font-size: 14px;
+    color: #00a1d1;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.admin-project-management .apm-card-client {
+    font-size: 14px;
+    color: #66696b;
+}
+
+/* ===============================
+   CARD ACTIONS
+================================ */
+
+.admin-project-management .apm-card-actions {
+    padding: 16px;
+    padding-top: 0;
+}
+
+.admin-project-management .apm-edit-btn {
+    display: inline-block;
+    font-size: 14px;
+    color: #00a1d1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.admin-project-management .apm-edit-btn:hover {
+    color: #0091c1;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media screen and (max-width: 1024px) {
+    .admin-project-management .apm-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .admin-project-management {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .admin-project-management .apm-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-project-management .apm-page-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+}

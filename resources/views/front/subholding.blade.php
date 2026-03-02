@@ -1,0 +1,251 @@
+@extends('layouts.front')
+
+@section('title', 'Subholding - Krakatau Baja Konstruksi')
+
+
+@push('styles')
+    @vite(['resources/css/news.css'])
+@endpush
+
+@section('content')
+    {{-- Banner Top Section --}}
+    <x-landingPageSection1 type="page" title="{{ __('messages.page_subholding') }}" :breadcrumb="[['label' => 'Home', 'url' => url('/')], ['label' => __('messages.page_subholding')]]" imagePath="images/background/page-title.jpg" />
+
+    {{-- Large Image Section --}}
+    <section class="image-section" style="padding: 50px 0 0 0;">
+        <div class="auto-container">
+            <div class="image-box" style="text-align: center;">
+                <img src="{{ asset('images/background/struktur-company.png') }}" alt="Subholding" style="width: 100%; max-width: 100%;">
+            </div>
+        </div>
+    </section>
+
+    {{-- News Section --}}
+    <section class="news-section sec-pad-2" style="padding-top: 30px; margin-top: 0;">
+        <div class="auto-container">
+            <div class="row clearfix">
+                {{-- News Item 1 --}}
+                <div class="col-lg-6 col-md-12 col-sm-12 news-block">
+                    <div class="news-block-one">
+                        <div class="inner-box">
+                            <div class="upper-content z_1">
+                                <div class="info-box">
+                                    <div class="post-date">
+                                        <h3>30</h3>
+                                        <p>December, 2025</p>
+                                    </div>
+                                    <div class="author-box">
+                                        <div class="inner">
+                                            <h5>D. Langer</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="image-box">
+                                    <figure class="image"><a href="#"><img
+                                                src="{{ asset('images/news/news-1.jpg') }}" alt=""></a></figure>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h3><a href="#">{{ __('messages.news_fallback_1_title') }}</a></h3>
+                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>{{ __('messages.read_the_post') }}</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 news-block">
+                    <div class="news-block-one">
+                        <div class="inner-box">
+                            <div class="upper-content z_1">
+                                <div class="info-box">
+                                    <div class="post-date">
+                                        <h3>30</h3>
+                                        <p>December, 2025</p>
+                                    </div>
+                                    <div class="author-box">
+                                        <div class="inner">
+                                            <h5>D. Langer</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="image-box">
+                                    <figure class="image"><a href="#"><img
+                                                src="{{ asset('images/news/news-1.jpg') }}" alt=""></a></figure>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h3><a href="#">{{ __('messages.news_fallback_1_title') }}</a></h3>
+                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>{{ __('messages.read_the_post') }}</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 news-block">
+                    <div class="news-block-one">
+                        <div class="inner-box">
+                            <div class="upper-content z_1">
+                                <div class="info-box">
+                                    <div class="post-date">
+                                        <h3>30</h3>
+                                        <p>December, 2025</p>
+                                    </div>
+                                    <div class="author-box">
+                                        <div class="inner">
+                                            <h5>D. Langer</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="image-box">
+                                    <figure class="image"><a href="#"><img
+                                                src="{{ asset('images/news/news-1.jpg') }}" alt=""></a></figure>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h3><a href="#">{{ __('messages.news_fallback_1_title') }}</a></h3>
+                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>{{ __('messages.read_the_post') }}</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 news-block">
+                    <div class="news-block-one">
+                        <div class="inner-box">
+                            <div class="upper-content z_1">
+                                <div class="info-box">
+                                    <div class="post-date">
+                                        <h3>30</h3>
+                                        <p>December, 2025</p>
+                                    </div>
+                                    <div class="author-box">
+                                        <div class="inner">
+                                            <h5>D. Langer</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="image-box">
+                                    <figure class="image"><a href="#"><img
+                                                src="{{ asset('images/news/news-1.jpg') }}" alt=""></a></figure>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h3><a href="#">{{ __('messages.news_fallback_1_title') }}</a></h3>
+                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>{{ __('messages.read_the_post') }}</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 news-block">
+                    <div class="news-block-one">
+                        <div class="inner-box">
+                            <div class="upper-content z_1">
+                                <div class="info-box">
+                                    <div class="post-date">
+                                        <h3>30</h3>
+                                        <p>December, 2025</p>
+                                    </div>
+                                    <div class="author-box">
+                                        <div class="inner">
+                                            <h5>D. Langer</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="image-box">
+                                    <figure class="image"><a href="#"><img
+                                                src="{{ asset('images/news/news-1.jpg') }}" alt=""></a></figure>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h3><a href="#">{{ __('messages.news_fallback_1_title') }}</a></h3>
+                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>{{ __('messages.read_the_post') }}</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 news-block">
+                    <div class="news-block-one">
+                        <div class="inner-box">
+                            <div class="upper-content z_1">
+                                <div class="info-box">
+                                    <div class="post-date">
+                                        <h3>30</h3>
+                                        <p>December, 2025</p>
+                                    </div>
+                                    <div class="author-box">
+                                        <div class="inner">
+                                            <h5>D. Langer</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="image-box">
+                                    <figure class="image"><a href="#"><img
+                                                src="{{ asset('images/news/news-1.jpg') }}" alt=""></a></figure>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h3><a href="#">{{ __('messages.news_fallback_1_title') }}</a></h3>
+                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>{{ __('messages.read_the_post') }}</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 news-block">
+                    <div class="news-block-one">
+                        <div class="inner-box">
+                            <div class="upper-content z_1">
+                                <div class="info-box">
+                                    <div class="post-date">
+                                        <h3>30</h3>
+                                        <p>December, 2025</p>
+                                    </div>
+                                    <div class="author-box">
+                                        <div class="inner">
+                                            <h5>D. Langer</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="image-box">
+                                    <figure class="image"><a href="#"><img
+                                                src="{{ asset('images/news/news-1.jpg') }}" alt=""></a></figure>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h3><a href="#">{{ __('messages.news_fallback_1_title') }}</a></h3>
+                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>{{ __('messages.read_the_post') }}</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 news-block">
+                    <div class="news-block-one">
+                        <div class="inner-box">
+                            <div class="upper-content z_1">
+                                <div class="info-box">
+                                    <div class="post-date">
+                                        <h3>30</h3>
+                                        <p>December, 2025</p>
+                                    </div>
+                                    <div class="author-box">
+                                        <div class="inner">
+                                            <h5>D. Langer</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="image-box">
+                                    <figure class="image"><a href="#"><img
+                                                src="{{ asset('images/news/news-1.jpg') }}" alt=""></a></figure>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h3><a href="#">{{ __('messages.news_fallback_1_title') }}</a></h3>
+                                <div class="link-box"><a href="#"><i class="flaticon-right-arrow"></i><span>{{ __('messages.read_the_post') }}</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection
+
+@push('scripts')
+    @vite(['resources/js/news.js'])
+@endpush

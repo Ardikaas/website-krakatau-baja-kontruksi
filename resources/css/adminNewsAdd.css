@@ -1,0 +1,326 @@
+/* ===============================
+   ADMIN NEWS ADD
+================================ */
+
+.admin-news-add {
+    margin-left: 280px;
+    margin-top: 74px;
+    position: relative;
+    font-family: "Inter", sans-serif;
+    padding: 40px;
+}
+
+/* ===============================
+   HEADER
+================================ */
+
+.admin-news-add .add-news-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-news-add .news-editor-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 86px;
+}
+
+/* ===============================
+   NEWS EDITOR WRAPPER
+================================ */
+
+.admin-news-add .news-editor-card {
+    background: #ffffff;
+    margin-bottom: 24px;
+}
+
+.admin-news-add .news-editor-label {
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+/* ===============================
+   IMAGE UPLOAD
+================================ */
+
+.admin-news-add .news-editor-upload {
+    width: 100%;
+    max-width: 600px;
+    height: 360px;
+    border: 2px dashed #e5e7eb;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.admin-news-add .news-editor-upload:hover {
+    border-color: #00a1d1;
+}
+
+.admin-news-add .news-editor-upload-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.admin-news-add .news-editor-upload-inner span {
+    color: #00a1d1;
+}
+
+/* ===============================
+   NEWS INPUT FIELDS (TITLE & AUTHOR)
+================================ */
+
+
+.admin-news-add .news-editor-field {
+    margin-bottom: 20px;
+}
+
+.admin-news-add .news-editor-input {
+    width: 100%;
+    max-width: 600px;
+    padding: 14px 16px;
+    font-size: 14px;
+    font-family: "Inter", sans-serif;
+    color: #374151;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.admin-news-add .news-editor-input::placeholder {
+    color: #9ca3af;
+}
+
+.admin-news-add .news-editor-input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ===============================
+   TOOLBAR
+================================ */
+
+.admin-news-add .news-editor-toolbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px 10px 0 0;
+    background-color: #f9fafb;
+}
+
+.admin-news-add .news-editor-toolbar select {
+    padding: 6px 10px;
+    font-size: 13px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.admin-news-add .news-editor-toolbar button {
+    padding: 6px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.admin-news-add .news-editor-toolbar button:hover {
+    background-color: #f3f4f6;
+}
+
+/* ===============================
+   EDITOR AREA
+================================ */
+
+.admin-news-add .news-editor-content {
+    border: 1px solid #e5e7eb;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    padding: 16px;
+    min-height: 200px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #374151;
+    background-color: #ffffff;
+}
+
+.admin-news-add .news-editor-content:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.admin-news-add .news-editor-content:empty::before {
+    content: "Write your news content here...";
+    color: #9ca3af;
+}
+
+/* ===============================
+   CONTENT STYLING
+================================ */
+
+.admin-news-add .news-editor-content h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 16px 0 10px;
+    color: #111827;
+}
+
+.admin-news-add .news-editor-content h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 14px 0 8px;
+    color: #111827;
+}
+
+.admin-news-add .news-editor-content h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 12px 0 6px;
+    color: #111827;
+}
+
+.admin-news-add .news-editor-content p {
+    margin-bottom: 10px;
+}
+
+.admin-news-add .news-editor-content ul,
+.admin-news-add .news-editor-content ol {
+    padding-left: 22px;
+    margin-bottom: 10px;
+}
+
+.admin-news-add .news-editor-content li {
+    margin-bottom: 6px;
+}
+
+/* ===============================
+   ACTION BUTTONS
+================================ */
+
+.admin-news-add .news-editor-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.admin-news-add .news-editor-btn-cancel {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ff3131;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.admin-news-add .news-editor-btn-add {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #66696bb2;
+    border: none;
+    border-radius: 14px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.admin-news-add .news-editor-btn-add:hover {
+    background-color: #4b5563;
+}
+
+/* ===============================
+   TABLET RESPONSIVE
+================================ */
+
+@media (max-width: 1024px) {
+    .admin-news-add {
+        margin-left: 0;
+        padding: 32px;
+    }
+
+    .admin-news-add .news-editor-title {
+        font-size: 30px;
+        margin-bottom: 36px;
+    }
+
+    .admin-news-add .news-editor-upload {
+        height: 320px;
+    }
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 640px) {
+    .admin-news-add {
+        padding: 20px;
+    }
+
+    .admin-news-add .news-editor-title {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+
+    .admin-news-add .news-editor-label {
+        font-size: 16px;
+    }
+
+    .admin-news-add .news-editor-upload {
+        height: 220px;
+    }
+
+    .admin-news-add .news-editor-toolbar {
+        padding: 8px;
+        gap: 6px;
+    }
+
+    .admin-news-add .news-editor-toolbar button,
+    .admin-news-add .news-editor-toolbar select {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+
+    .admin-news-add .news-editor-content {
+        font-size: 13px;
+        min-height: 160px;
+        padding: 14px;
+    }
+
+    .admin-news-add .news-editor-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .admin-news-add .news-editor-btn-add,
+    .admin-news-add .news-editor-btn-cancel {
+        width: 100%;
+        text-align: center;
+    }
+
+    .admin-news-add .news-editor-input {
+        font-size: 13px;
+        padding: 12px 14px;
+        max-width: 100%;
+    }
+}

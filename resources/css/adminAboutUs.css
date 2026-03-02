@@ -1,0 +1,825 @@
+.admin-aboutUs-management {
+    margin-left: 280px;
+    margin-top: 74px;
+    padding: 40px;
+    font-family: "Inter", sans-serif;
+    background: #fff;
+    min-height: 100vh;
+}
+
+.admin-aboutUs-management .aboutUs-header h1 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 80px;
+}
+
+/* Main Section */
+
+.admin-aboutUs-management .main-image-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.admin-aboutUs-management .main-image-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    background: #ffffff;
+}
+
+.admin-aboutUs-management .main-image-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.admin-aboutUs-management .main-image-preview {
+    width: 120px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 1px solid #e5e7eb;
+}
+
+.admin-aboutUs-management .main-image-placeholder {
+    width: 120px;
+    height: 70px;
+    border-radius: 10px;
+    border: 2px dashed #d1d5db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.admin-aboutUs-management .main-image-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.admin-aboutUs-management .btn-upload {
+    background: #00a1d1;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 6px 14px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.admin-aboutUs-management .btn-delete {
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.admin-aboutUs-management .admin-main-section {
+    margin-bottom: 48px;
+}
+
+.admin-aboutUs-management .upload-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.admin-aboutUs-management .upload-box {
+    height: 220px;
+    border: 3px dashed #d1d5db;
+    border-radius: 16px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.admin-aboutUs-management .upload-box.small {
+    min-width: 220px;
+    height: auto;
+    padding: 60px 20px;
+}
+
+.admin-aboutUs-management .upload-box:hover {
+    border-color: #00a1d1;
+}
+
+.admin-aboutUs-management .upload-box img {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 16px;
+}
+
+.admin-aboutUs-management .upload-box p {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.admin-aboutUs-management .upload-box span {
+    color: #00a1d1;
+}
+
+.admin-aboutUs-management .default-section-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.admin-aboutUs-management .default-section-footer .helper-text {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 10px;
+}
+
+.admin-aboutUs-management .default-section-footer .form-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.admin-aboutUs-management .btn-cancel {
+    background: none;
+    border: none;
+    color: #ff3131;
+    cursor: pointer;
+}
+
+.admin-aboutUs-management .btn-primary {
+    background: #00a1d1;
+    color: #fff;
+    border-radius: 14px;
+    padding: 10px 22px;
+    border: none;
+    cursor: pointer;
+}
+
+.admin-aboutUs-management .admin-history-section {
+    margin-bottom: 48px;
+}
+
+.admin-aboutUs-management .default-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.admin-aboutUs-management .default-header .default-sec-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.admin-aboutUs-management .default-header .add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+    background-color: #00a1d1;
+    border: none;
+    border-radius: 16px;
+    padding: 8px 20px 8px 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.admin-aboutUs-management .default-header .add-btn:hover {
+    background-color: #0091c1;
+}
+
+.admin-aboutUs-management .default-header .add-icon {
+    font-size: 18px;
+    line-height: 1;
+    margin-top: -4px;
+}
+
+.admin-aboutUs-management .history-card-grid {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+
+    /* biar scroll halus */
+    scroll-behavior: smooth;
+
+    /* sembunyikan scrollbar (optional) */
+    scrollbar-width: none;
+}
+
+.admin-aboutUs-management .history-card {
+    position: relative;
+    border: 1px solid #e5e7eb;
+    flex: 0 0 350px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #ffffff;
+    transition: box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.admin-aboutUs-management .history-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Delete button - hover reveal (same as direction cards) */
+.admin-aboutUs-management .history-delete-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(239, 68, 68, 0.9);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 2;
+}
+
+.admin-aboutUs-management .history-card:hover .history-delete-btn {
+    opacity: 1;
+}
+
+.admin-aboutUs-management .history-card .history-card-image-wrapper {
+    padding: 20px 20px 0 20px;
+}
+
+.admin-aboutUs-management .history-card .history-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.admin-aboutUs-management .history-card .history-card-image-placeholder {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.admin-aboutUs-management .history-card .history-card-content {
+    padding: 4px 0 16px;
+}
+
+.admin-aboutUs-management .history-card .history-card-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #9ca3af;
+    padding: 12px 20px 0;
+    margin: 0;
+}
+
+.admin-aboutUs-management .history-card .history-card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+    padding: 4px 20px 0;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.admin-aboutUs-management .history-card .history-card-year {
+    font-size: 16px;
+    font-weight: 600;
+    color: #374151;
+    padding: 4px 20px 0;
+    margin: 0;
+}
+
+.admin-aboutUs-management .history-card .history-card-description {
+    font-size: 14px;
+    font-weight: 400;
+    color: #6b7280;
+    padding: 4px 20px 0;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* History Popup Image Upload */
+.admin-aboutUs-management .history-image-upload {
+    margin-bottom: 20px;
+}
+
+.admin-aboutUs-management .history-image-empty {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border: 1px dashed #d1d5db;
+    border-radius: 12px;
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.admin-aboutUs-management .history-image-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.admin-aboutUs-management .history-image-item img {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid #e5e7eb;
+}
+
+.admin-aboutUs-management .history-image-item span {
+    flex: 1;
+    font-size: 13px;
+    color: #374151;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.admin-aboutUs-management .history-image-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.admin-aboutUs-management .default-section-footer {
+    justify-content: space-between;
+}
+
+
+.admin-aboutUs-management .company-image-upload {
+    max-width: 100%;
+    margin: 0 auto 20px;
+}
+
+.admin-aboutUs-management .company-image-empty {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    border: 1px dashed #d1d5db;
+    border-radius: 14px;
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.admin-aboutUs-management .company-image-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 18px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    background: #fff;
+}
+
+.admin-aboutUs-management .company-image-item img {
+    width: 72px;
+    height: 42px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid #e5e7eb;
+}
+
+.admin-aboutUs-management .company-image-item span {
+    flex: 1;
+    font-size: 13px;
+    color: #374151;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.admin-aboutUs-management .company-image-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.admin-aboutUs-management .admin-company-section {
+    margin-bottom: 48px;
+}
+
+.admin-aboutUs-management .upload-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.admin-aboutUs-management .default-editor-upload {
+    width: 100%;
+    max-width: 960px;
+    height: 350px;
+    border: 3px dashed #e5e7eb;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.admin-aboutUs-management .default-editor-upload:hover {
+    border-color: #00a1d1;
+}
+
+.admin-aboutUs-management .default-editor-upload-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.admin-aboutUs-management .default-editor-upload-inner:hover {
+    border-color: #00a1d1;
+}
+
+.admin-aboutUs-management .default-editor-upload-inner span {
+    color: #00a1d1;
+}
+
+/* Company Structure */
+.admin-aboutUs-management .admin-company-structure-section {
+    margin-bottom: 48px;
+}
+
+.admin-aboutUs-management .admin-direction-teams-section {
+    margin-bottom: 48px;
+}
+
+.admin-aboutUs-management .direction-card-grid {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+
+    /* biar scroll halus */
+    scroll-behavior: smooth;
+
+    /* sembunyikan scrollbar (optional) */
+    scrollbar-width: none;
+}
+
+/* People Popup Image Upload */
+.admin-aboutUs-management .people-image-upload {
+    margin-bottom: 20px;
+}
+
+.admin-aboutUs-management .people-image-empty {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border: 1px dashed #d1d5db;
+    border-radius: 12px;
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.admin-aboutUs-management .people-image-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.admin-aboutUs-management .people-image-item img {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: top;
+    border: 1px solid #e5e7eb;
+}
+
+.admin-aboutUs-management .people-image-item span {
+    flex: 1;
+    font-size: 13px;
+    color: #374151;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.admin-aboutUs-management .people-image-actions {
+    display: flex;
+    gap: 10px;
+}
+
+
+.admin-aboutUs-management .direction-delete-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(239, 68, 68, 0.9);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 2;
+}
+
+.admin-aboutUs-management .direction-card:hover .direction-delete-btn {
+    opacity: 1;
+}
+
+.admin-aboutUs-management .direction-card {
+    position: relative;
+    border: 1px solid #e5e7eb;
+    flex: 0 0 300px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #ffffff;
+    transition: box-shadow 0.2s ease;
+}
+
+.admin-aboutUs-management .direction-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.admin-aboutUs-management .direction-card .direction-card-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #9ca3af;
+    padding: 12px 20px 0;
+}
+
+.admin-aboutUs-management .direction-card .direction-team-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+    padding: 4px 20px 12px;
+    line-height: 1.4;
+}
+
+.admin-aboutUs-management .direction-card .direction-card-image-wrapper {
+    padding: 20px 20px 0 20px;
+}
+
+.admin-aboutUs-management .direction-card .direction-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+    display: block;
+}
+
+.admin-aboutUs-management .direction-card .direction-card-position {
+    font-size: 16px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 12px;
+    padding: 5px 20px;
+}
+
+/* Popup Overlay */
+.admin-aboutUs-management .popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.admin-aboutUs-management .history-popup-card {
+    width: 720px;
+    max-width: 95%;
+}
+
+/* Card */
+.admin-aboutUs-management .popup-card {
+    width: 420px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+}
+
+/* Upload */
+.admin-aboutUs-management .popup-overlay .popup-card .upload-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px dashed #d1d5db;
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.admin-aboutUs-management .popup-overlay .popup-card .upload-box span {
+    color: #00a1d1;
+    font-weight: 500;
+}
+
+/* Form */
+.admin-aboutUs-management .popup-overlay .popup-card .form-group {
+    margin-bottom: 16px;
+}
+
+.admin-aboutUs-management .popup-overlay .popup-card .form-group label {
+    font-size: 13px;
+    color: #6b7280;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.admin-aboutUs-management .popup-overlay .popup-card .form-group input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+}
+
+/* Actions */
+.admin-aboutUs-management .popup-overlay .popup-card .popup-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.admin-aboutUs-management .popup-overlay .popup-card .right-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.admin-aboutUs-management .popup-overlay .popup-card .btn-delete {
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.admin-aboutUs-management .popup-overlay .popup-actions .btn-primary {
+    background-color: #00a1d1;
+    color: #fff;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+/* Laptop kecil (<=1440px) */
+@media (max-width: 1440px) {
+    .admin-aboutUs-management {
+        padding: 32px;
+    }
+
+    .admin-aboutUs-management .upload-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Laptop / Tablet Landscape (<=1280px) */
+@media (max-width: 1280px) {
+    .admin-aboutUs-management {
+        margin-left: 240px;
+        padding: 28px;
+    }
+
+    .admin-aboutUs-management .aboutUs-header h1 {
+        font-size: 32px;
+        margin-bottom: 60px;
+    }
+
+    .admin-aboutUs-management .history-card {
+        flex: 0 0 320px;
+    }
+
+    .admin-aboutUs-management .direction-card {
+        flex: 0 0 280px;
+    }
+}
+
+/* Tablet (<=1024px) */
+@media (max-width: 1024px) {
+    .admin-aboutUs-management {
+        margin-left: 0;
+        margin-top: 70px;
+        padding: 24px;
+    }
+
+    .admin-aboutUs-management .upload-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admin-aboutUs-management .default-section-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .admin-aboutUs-management .popup-card,
+    .admin-aboutUs-management .history-popup-card {
+        width: 95%;
+    }
+}
+
+/* Mobile (<=768px) */
+@media (max-width: 768px) {
+    .admin-aboutUs-management {
+        padding: 20px 16px;
+        margin-left: 0;
+    }
+
+    .admin-aboutUs-management .aboutUs-header h1 {
+        font-size: 26px;
+        margin-bottom: 40px;
+    }
+
+    .admin-aboutUs-management .upload-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-aboutUs-management .upload-box {
+        height: auto;
+        padding: 48px 16px;
+    }
+
+    .admin-aboutUs-management .default-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .admin-aboutUs-management .default-header .add-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .admin-aboutUs-management .history-card {
+        flex: 0 0 280px;
+    }
+
+    .admin-aboutUs-management .direction-card {
+        flex: 0 0 260px;
+    }
+
+    .admin-aboutUs-management .popup-overlay .popup-card .popup-actions {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+
+    .admin-aboutUs-management .popup-overlay .popup-card .right-actions {
+        justify-content: space-between;
+    }
+}
+
+/* Mobile kecil (<=480px) */
+@media (max-width: 480px) {
+    .admin-aboutUs-management .aboutUs-header h1 {
+        font-size: 22px;
+    }
+
+    .admin-aboutUs-management .history-card {
+        flex: 0 0 240px;
+    }
+
+    .admin-aboutUs-management .direction-card {
+        flex: 0 0 220px;
+    }
+
+    .admin-aboutUs-management .upload-box.small {
+        min-width: 100%;
+        padding: 40px 14px;
+    }
+}

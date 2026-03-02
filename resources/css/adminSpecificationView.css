@@ -1,0 +1,206 @@
+:root {
+    --sidebar-width: 300px;
+    --topbar-height: 80px;
+}
+
+.spec-editor {
+    width: calc(100% - var(--sidebar-width));
+    padding: 20px;
+    margin-left: var(--sidebar-width);
+    margin-top: var(--topbar-height);
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+.page-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #0d202f;
+    margin-bottom: 60px;
+}
+
+.spec-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.spec-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.spec-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #66696b;
+}
+
+.btn-add {
+    padding: 10px 16px;
+    background-color: #00a1d1;
+    color: #fff;
+    border-radius: 30px;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.spec-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.spec-card {
+    width: 300px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.spec-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.label {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(102, 105, 107, 0.7);
+}
+
+.value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #66696b;
+}
+
+.value.title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.image-group {
+    display: flex;
+    gap: 10px;
+}
+
+.image-group img,
+.image-overlay {
+    width: 135px;
+    height: 135px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.image-overlay {
+    /* background-image: url("https://placehold.co/135x135"); */
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-overlay span {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.card-actions {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+}
+
+.btn-delete {
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.btn-delete:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1023px) {
+    :root {
+        --sidebar-width: 70px;
+        --topbar-height: 80px;
+    }
+
+    .spec-editor {
+        width: calc(100% - var(--sidebar-width));
+        margin-left: var(--sidebar-width);
+        padding: 16px;
+    }
+
+    .spec-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .spec-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --sidebar-width: 0px;
+        --topbar-height: 64px;
+    }
+
+    .spec-editor {
+        width: 100%;
+        margin-left: 0px;
+        padding: 16px;
+    }
+
+    .spec-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .btn-add {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 24px;
+        margin-bottom: 32px;
+    }
+
+    .spec-title {
+        font-size: 20px;
+    }
+
+    .image-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-group img,
+    .image-overlay {
+        width: 100%;
+        height: auto;
+        padding: 8px;
+    }
+}
