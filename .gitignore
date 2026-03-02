@@ -1,5 +1,7 @@
 *.log
 .DS_Store
+.used_keys.txt
+.defined_keys.txt
 .env
 .env.backup
 .env.production

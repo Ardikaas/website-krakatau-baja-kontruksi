@@ -46,15 +46,16 @@
                 <ul class="menu-right-content">
                     <li class="contact-link"><a href="{{ route('contact') }}"><i
                                 class="flaticon-headphones"></i><span>{{ __('messages.contact') }}</span></a></li>
-                    <li class="language-box">
-                        <div class="icon-box"><i class="flaticon-global"></i></div>
-                        <div class="select-box">
-                            <select class="wide" onchange="window.location.href=this.value;">
-                                <option data-display="{{ app()->getLocale() == 'id' ? 'ID' : 'EN' }}" value="">{{ app()->getLocale() == 'id' ? 'ID' : 'EN' }}</option>
-                                <option value="{{ route('lang.switch', 'en') }}" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>EN</option>
-                                <option value="{{ route('lang.switch', 'id') }}" {{ app()->getLocale() == 'id' ? 'selected' : '' }}>ID</option>
-                            </select>
+                    <li class="language-box custom-lang-switch">
+                        <div class="lang-toggle">
+                            <i class="flaticon-global"></i>
+                            <span class="current-lang">{{ app()->getLocale() == 'id' ? 'ID' : 'EN' }}</span>
+                            <i class="fa-solid fa-angle-down"></i>
                         </div>
+                        <ul class="lang-dropdown">
+                            <li><a href="{{ route('lang.switch', 'en') }}" class="{{ app()->getLocale() == 'en' ? 'active' : '' }}">EN (English)</a></li>
+                            <li><a href="{{ route('lang.switch', 'id') }}" class="{{ app()->getLocale() == 'id' ? 'active' : '' }}">ID (Indonesia)</a></li>
+                        </ul>
                     </li>
                     <li class="btn-box">
                         <a href="https://wa.me/6281234567890" target="_blank" class="theme-btn btn-one"><i
@@ -80,15 +81,16 @@
                 <ul class="menu-right-content">
                     <li class="contact-link"><a href="{{ route('contact') }}"><i
                                 class="flaticon-headphones"></i><span>{{ __('messages.contact') }}</span></a></li>
-                    <li class="language-box">
-                        <div class="icon-box"><i class="flaticon-global"></i></div>
-                        <div class="select-box">
-                            <select class="wide" onchange="window.location.href=this.value;">
-                                <option data-display="{{ app()->getLocale() == 'id' ? 'ID' : 'EN' }}" value="">{{ app()->getLocale() == 'id' ? 'ID' : 'EN' }}</option>
-                                <option value="{{ route('lang.switch', 'en') }}" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>EN</option>
-                                <option value="{{ route('lang.switch', 'id') }}" {{ app()->getLocale() == 'id' ? 'selected' : '' }}>ID</option>
-                            </select>
+                    <li class="language-box custom-lang-switch">
+                        <div class="lang-toggle">
+                            <i class="flaticon-global"></i>
+                            <span class="current-lang">{{ app()->getLocale() == 'id' ? 'ID' : 'EN' }}</span>
+                            <i class="fa-solid fa-angle-down"></i>
                         </div>
+                        <ul class="lang-dropdown">
+                            <li><a href="{{ route('lang.switch', 'en') }}" class="{{ app()->getLocale() == 'en' ? 'active' : '' }}">EN (English)</a></li>
+                            <li><a href="{{ route('lang.switch', 'id') }}" class="{{ app()->getLocale() == 'id' ? 'active' : '' }}">ID (Indonesia)</a></li>
+                        </ul>
                     </li>
                     <li class="btn-box">
                         <a href="https://wa.me/6281234567890" target="_blank" class="theme-btn btn-one"><i
