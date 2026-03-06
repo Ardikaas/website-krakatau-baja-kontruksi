@@ -22,7 +22,7 @@
 .admin-news-management .anm-page-title {
     font-size: 36px;
     font-weight: 600;
-    color: #1f2937;
+    color: var(--color-1f2937);
     margin-bottom: 86px;
 }
 
@@ -31,7 +31,7 @@
 ================================ */
 
 .admin-news-management .anm-grid {
-    background-color: #ffffff;
+    background-color: var(--color-ffffff);
 }
 
 /* ===============================
@@ -50,7 +50,7 @@
     font-size: 20px;
     font-weight: 600;
     line-height: 26px;
-    color: #66696b;
+    color: var(--color-66696b);
 }
 
 /* ===============================
@@ -63,8 +63,8 @@
     gap: 10px;
     font-size: 14px;
     font-weight: 400;
-    color: #ffffff;
-    background-color: #00a1d1;
+    color: var(--color-ffffff);
+    background-color: var(--color-00a1d1);
     border: none;
     border-radius: 16px;
     padding: 8px 20px 8px 14px;
@@ -75,7 +75,7 @@
 }
 
 .admin-news-management .anm-add-btn:hover {
-    background-color: #0091c1;
+    background-color: var(--color-0091c1);
 }
 
 .admin-news-management .anm-add-icon {
@@ -99,15 +99,15 @@
 ================================ */
 
 .admin-news-management .anm-card {
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--color-e5e7eb);
     border-radius: 14px;
     overflow: hidden;
-    background-color: #ffffff;
+    background-color: var(--color-ffffff);
     transition: box-shadow 0.2s ease;
 }
 
 .admin-news-management .anm-card:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 20px var(--color-rgba-0-0-0-0-08);
 }
 
 /* ===============================
@@ -117,14 +117,14 @@
 .admin-news-management .anm-card-label {
     font-size: 16px;
     font-weight: 500;
-    color: #9ca3af;
+    color: var(--color-9ca3af);
     padding: 12px 20px 0;
 }
 
 .admin-news-management .anm-card-title {
     font-size: 20px;
     font-weight: 600;
-    color: #1f2937;
+    color: var(--color-1f2937);
     padding: 4px 20px 12px;
     line-height: 1.4;
 }
@@ -155,14 +155,14 @@
 
 .admin-news-management .anm-category-label {
     font-size: 14px;
-    color: #9ca3af;
+    color: var(--color-9ca3af);
     margin-bottom: 4px;
 }
 
 .admin-news-management .anm-card-category {
     font-size: 18px;
     font-weight: 500;
-    color: #374151;
+    color: var(--color-374151);
     margin-bottom: 12px;
 }
 
@@ -174,7 +174,7 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid var(--color-e5e7eb);
     padding-top: 10px;
 }
 
@@ -193,12 +193,12 @@
 .admin-news-management .anm-author-name {
     font-size: 16px;
     font-weight: 500;
-    color: #374151;
+    color: var(--color-374151);
 }
 
 .admin-news-management .anm-date {
     font-size: 12px;
-    color: #9ca3af;
+    color: var(--color-9ca3af);
 }
 
 .admin-news-management .anm-card-meta {
@@ -213,7 +213,7 @@
     padding: 0;
     font-size: 13px;
     font-weight: 500;
-    color: #ef4444;
+    color: var(--color-ef4444);
     cursor: pointer;
 }
 

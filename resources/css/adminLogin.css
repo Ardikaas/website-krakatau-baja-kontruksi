@@ -4,7 +4,7 @@
 
 .admin-login-page {
     min-height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--color-f8f9fa);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,9 +23,9 @@
 ================================ */
 
 .login-card {
-    background: #ffffff;
+    background: var(--color-ffffff);
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px var(--color-rgba-0-0-0-0-1);
     padding: 40px;
     position: relative;
     z-index: 2;
@@ -43,13 +43,13 @@
 .login-title {
     font-size: 32px;
     font-weight: 700;
-    color: #1f2937;
+    color: var(--color-1f2937);
     margin-bottom: 8px;
 }
 
 .login-subtitle {
     font-size: 16px;
-    color: #6b7280;
+    color: var(--color-6b7280);
     margin: 0;
 }
 
@@ -65,9 +65,9 @@
 }
 
 .alert-error {
-    background-color: #fef2f2;
-    color: #dc2626;
-    border: 1px solid #fecaca;
+    background-color: var(--color-fef2f2);
+    color: var(--color-dc2626);
+    border: 1px solid var(--color-fecaca);
 }
 
 .alert ul {
@@ -91,7 +91,7 @@
     display: block;
     font-size: 14px;
     font-weight: 600;
-    color: #374151;
+    color: var(--color-374151);
     margin-bottom: 8px;
 }
 
@@ -100,9 +100,9 @@
     padding: 14px 16px;
     font-size: 16px;
     font-family: "Inter", sans-serif;
-    color: #374151;
-    background-color: #ffffff;
-    border: 2px solid #e5e7eb;
+    color: var(--color-374151);
+    background-color: var(--color-ffffff);
+    border: 2px solid var(--color-e5e7eb);
     border-radius: 12px;
     transition: all 0.2s ease;
     box-sizing: border-box;
@@ -110,12 +110,12 @@
 
 .form-input:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: var(--color-00a1d1);
+    box-shadow: 0 0 0 3px var(--color-rgba-0-161-209-0-1);
 }
 
 .form-input::placeholder {
-    color: #9ca3af;
+    color: var(--color-9ca3af);
 }
 
 /* ===============================
@@ -126,7 +126,7 @@
     display: flex;
     align-items: center;
     font-size: 14px;
-    color: #374151;
+    color: var(--color-374151);
     cursor: pointer;
     user-select: none;
 }
@@ -140,8 +140,8 @@
 .checkmark {
     height: 18px;
     width: 18px;
-    background-color: #fff;
-    border: 2px solid #d1d5db;
+    background-color: var(--color-ffffff);
+    border: 2px solid var(--color-d1d5db);
     border-radius: 4px;
     margin-right: 12px;
     position: relative;
@@ -149,12 +149,12 @@
 }
 
 .checkbox-label:hover .checkmark {
-    border-color: #667eea;
+    border-color: var(--color-00a1d1);
 }
 
-.checkbox-input:checked ~ .checkmark {
-    background-color: #667eea;
-    border-color: #667eea;
+.checkbox-input:checked~.checkmark {
+    background-color: var(--color-00a1d1);
+    border-color: var(--color-00a1d1);
 }
 
 .checkmark:after {
@@ -170,7 +170,7 @@
     transform: rotate(45deg);
 }
 
-.checkbox-input:checked ~ .checkmark:after {
+.checkbox-input:checked~.checkmark:after {
     display: block;
 }
 
@@ -181,8 +181,8 @@
 .login-btn {
     width: 100%;
     padding: 16px 24px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #ffffff;
+    background: var(--color-00a1d1);
+    color: var(--color-ffffff);
     border: none;
     border-radius: 12px;
     font-size: 16px;
@@ -199,7 +199,7 @@
 
 .login-btn:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 10px 25px var(--color-rgba-0-161-209-0-3);
 }
 
 .login-btn:disabled {
@@ -221,14 +221,16 @@
 .spinner {
     width: 20px;
     height: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid var(--color-rgba-255-255-255-0-3);
     border-radius: 50%;
-    border-top-color: #ffffff;
+    border-top-color: var(--color-ffffff);
     animation: spin 1s ease-in-out infinite;
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* ===============================
@@ -242,7 +244,7 @@
 
 .footer-text {
     font-size: 14px;
-    color: #6b7280;
+    color: var(--color-6b7280);
     margin: 0;
     display: flex;
     align-items: center;
@@ -274,7 +276,7 @@
 .pattern-shape {
     position: absolute;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--color-rgba-0-161-209-0-05);
     backdrop-filter: blur(10px);
 }
 
@@ -303,8 +305,15 @@
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 /* ===============================

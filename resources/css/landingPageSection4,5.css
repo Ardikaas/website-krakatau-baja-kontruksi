@@ -188,7 +188,7 @@
 
 .about-section {
     position: relative;
-    background-color: #fff;
+    background-color: var(--color-ffffff);
     overflow: visible;
 }
 
@@ -234,7 +234,7 @@
 .about-section .content-box .inner-box .single-team h3 {
     font-size: 24px;
     line-height: 32px;
-    color: #fff;
+    color: var(--color-ffffff);
     font-family: var(--title-font);
     font-weight: 600;
     margin-bottom: 161px;
@@ -259,10 +259,10 @@
     width: 50px;
     height: 50px;
     line-height: 58px;
-    background-color: #fff;
+    background-color: var(--color-ffffff);
     text-align: center;
     font-size: 22px;
-    color: #332d4f;
+    color: var(--color-332d4f);
 }
 
 .about-section .content-box .inner-box .single-team .link a:hover {
@@ -282,7 +282,7 @@
     text-align: center;
     color: transparent;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgba(255, 255, 255, 0.1);
+    -webkit-text-stroke-color: var(--color-rgba-255-255-255-0-1);
     text-transform: uppercase;
     transform: rotate(180deg);
 }
@@ -365,11 +365,11 @@
     width: 50px;
     height: 50px;
     line-height: 58px;
-    background-color: #fff;
+    background-color: var(--color-ffffff);
     text-align: center;
     border-radius: 50%;
     font-size: 26px;
-    color: #332d4f;
+    color: var(--color-332d4f);
     margin: 0px -5px;
 }
 
@@ -378,14 +378,14 @@
 }
 
 .about-section .inner-content .award-box .icon-list li:last-child {
-    color: #fff;
+    color: var(--color-ffffff);
     background-color: var(--theme-color);
 }
 
 .about-section .inner-content .award-box h5 {
     font-size: 18px;
     line-height: 26px;
-    color: #fff;
+    color: var(--color-ffffff);
     font-family: var(--title-font);
     font-weight: 600;
 }
@@ -418,7 +418,7 @@
     left: 0px;
     bottom: 75px;
     width: 320px;
-    background-color: #f0f4f8;
+    background-color: var(--color-f0f4f8);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -437,7 +437,7 @@
 .about-section .inner-content .image-box .image-content .text-box::before {
     position: absolute;
     content: "";
-    background-color: #dbdfe3;
+    background-color: var(--color-dbdfe3);
     width: 1px;
     height: 97px;
     right: 0px;
@@ -462,7 +462,7 @@
     display: block;
     font-size: 18px;
     line-height: 26px;
-    color: #66696b;
+    color: var(--color-66696b);
     font-family: var(--title-font);
     font-weight: 600;
 }
@@ -496,7 +496,7 @@
     width: 50px;
     height: 50px;
     line-height: 60px;
-    background-color: #e2e7ed;
+    background-color: var(--color-e2e7ed);
     text-align: center;
     border-radius: 50%;
     font-size: 24px;
@@ -506,7 +506,7 @@
 }
 
 .about-section .inner-content .image-box .image-content .video-box a:hover {
-    color: #fff;
+    color: var(--color-ffffff);
     background-color: var(--theme-color);
 }
 
@@ -528,13 +528,13 @@
 
 .service-section .inner-container {
     position: relative;
-    background-color: #f0f4f8;
+    background-color: var(--color-f0f4f8);
 }
 
 .service-section .inner-container::before {
     position: absolute;
     content: "";
-    background-color: #f0f4f8;
+    background-color: var(--color-f0f4f8);
     width: 5000px;
     height: 100%;
     left: 0px;
@@ -582,7 +582,7 @@
 .service-section .upper-box .count-box h5 {
     font-size: 18px;
     line-height: 26px;
-    color: #66696b;
+    color: var(--color-66696b);
     font-family: var(--title-font);
     font-weight: 600;
 }
@@ -596,7 +596,7 @@
     position: relative;
     margin-right: -375px;
     padding-right: 375px;
-    border-top: 1px solid #dbdfe3;
+    border-top: 1px solid var(--color-dbdfe3);
 }
 
 /* Single Service Box */
@@ -685,7 +685,7 @@
     position: relative;
     display: block;
     padding: 50px 20px 50px 50px;
-    border-right: 1px solid #dbdfe3;
+    border-right: 1px solid var(--color-dbdfe3);
 }
 
 .owl-item:last-child .service-block-one .inner-box {
@@ -705,7 +705,7 @@
     font-size: 100px;
     line-height: 100px;
     font-family: var(--title-font);
-    color: #e2e7ed;
+    color: var(--color-e2e7ed);
 }
 
 .service-block-one .inner-box .image-inner .image-box {
@@ -747,16 +747,16 @@
     width: 70px;
     height: 70px;
     line-height: 80px;
-    background-color: #fff;
+    background-color: var(--color-ffffff);
     text-align: center;
     font-size: 50px;
     color: var(--theme-color);
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 20px 0px var(--color-rgba-0-0-0-0-1);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .service-block-one .inner-box:hover .image-inner .image-box .icon-box {
-    color: #fff;
+    color: var(--color-ffffff);
     background-color: var(--theme-color);
     box-shadow: none;
 }
@@ -837,16 +837,16 @@
     line-height: 24px;
     font-weight: 600;
     font-family: var(--title-font);
-    color: #fff;
+    color: var(--color-ffffff);
     text-transform: uppercase;
-    background-color: #e2e7ed;
+    background-color: var(--color-e2e7ed);
     padding: 14px 30px;
     text-decoration: none;
     transition: all 500ms ease;
 }
 
 .service-block-one .inner-box .lower-content .btn-box a:hover {
-    color: #fff;
+    color: var(--color-ffffff);
     background-color: var(--secondary-color);
 }
 
@@ -892,17 +892,17 @@
     width: 56px;
     height: 56px;
     line-height: 56px;
-    background-color: #fff;
+    background-color: var(--color-ffffff);
     text-align: center;
     font-size: 30px;
-    color: #a5aaaf;
+    color: var(--color-a5aaaf);
     border: none;
     cursor: pointer;
     transition: all 500ms ease;
 }
 
 .service-section .lower-box .owl-nav button.owl-prev {
-    border-bottom: 1px solid #ebe9ef;
+    border-bottom: 1px solid var(--color-ebe9ef);
 }
 
 .service-section .lower-box .owl-nav button.owl-prev span {
@@ -911,7 +911,7 @@
 }
 
 .service-section .lower-box .owl-nav button:hover {
-    color: #fff;
+    color: var(--color-ffffff);
     background-color: var(--theme-color);
 }
 
@@ -958,7 +958,7 @@
 
     .service-block-one .inner-box {
         border-right: none;
-        border-bottom: 1px solid #dbdfe3;
+        border-bottom: 1px solid var(--color-dbdfe3);
     }
 }
 

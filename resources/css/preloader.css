@@ -68,7 +68,7 @@
     text-transform: uppercase;
     color: transparent;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgba(255, 255, 255, 0.3);
+    -webkit-text-stroke-color: var(--color-rgba-255-255-255-0-3);
 }
 
 .handle-preloader .animation-preloader .txt-loading .letters-loading.space {
@@ -259,7 +259,7 @@
 }
 
 .handle-preloader .loader-section {
-    background-color: #ffffff;
+    background-color: var(--color-ffffff);
     height: 100%;
     position: fixed;
     top: 0;
@@ -272,12 +272,12 @@
 }
 
 .handle-preloader .animation-preloader .txt-loading .letters-loading:before {
-    color: #ffffff;
+    color: var(--color-ffffff);
 }
 
 .handle-preloader .animation-preloader .spinner {
-    border: 3px solid #ffffff;
-    border-top-color: rgba(255, 255, 255, 0.3);
+    border: 3px solid var(--color-ffffff);
+    border-top-color: var(--color-rgba-255-255-255-0-3);
 }
 
 /* AnimaciÃ³n del preloader */

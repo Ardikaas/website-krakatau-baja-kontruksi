@@ -1,12 +1,22 @@
-@extends('layouts.admin')
-
-@section('title', 'Admin Login')
-
-@push('styles')
-    @vite(['resources/css/adminLogin.css'])
-@endpush
-
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    @vite(['resources/css/app.css', 'resources/css/adminLogin.css'])
+</head>
+<body>
     <div class="admin-login-page">
         <div class="login-container">
             <div class="login-card">
@@ -84,12 +94,15 @@
             const btnText = btn.querySelector('.btn-text');
             const loader = btn.querySelector('.btn-loader');
 
-            btn.disabled = true;
-            btnText.style.display = 'none';
-            loader.style.display = 'block';
+            setTimeout(() => {
+                btn.disabled = true;
+                btnText.style.display = 'none';
+                loader.style.display = 'block';
+            }, 10);
         });
 
         // Auto-focus email field
         document.getElementById('email').focus();
     </script>
-@endsection
+</body>
+</html>

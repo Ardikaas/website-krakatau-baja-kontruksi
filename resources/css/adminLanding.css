@@ -8,8 +8,8 @@
 .admin-landing-page {
     font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         sans-serif;
-    background-color: #ffffff;
-    color: #0d202f;
+    background-color: var(--color-ffffff);
+    color: var(--color-0d202f);
     line-height: 1.5;
     margin-top: 74px;
 }
@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #ffffff;
+    background-color: var(--color-ffffff);
 }
 
 .admin-landing-page .content-wrapper {
@@ -31,8 +31,8 @@
 .admin-landing-page .sidebar {
     display: none;
     width: 100%;
-    background-color: #ffffff;
-    border-right: 1px solid #00000033;
+    background-color: var(--color-ffffff);
+    border-right: 1px solid var(--color-00000033);
     padding: 20px 0;
 }
 
@@ -59,15 +59,15 @@
 }
 
 .admin-landing-page .menu-item:hover {
-    background-color: #f8f9fa;
+    background-color: var(--color-f8f9fa);
 }
 
 .admin-landing-page .menu-item.active {
-    background-color: #e6f7ff;
+    background-color: var(--color-e6f7ff);
 }
 
 .admin-landing-page .menu-item.active .menu-text {
-    color: #00a1d1;
+    color: var(--color-00a1d1);
 }
 
 .admin-landing-page .menu-icon {
@@ -80,12 +80,12 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
-    color: #66696bb2;
+    color: var(--color-66696bb2);
     margin-left: 10px;
 }
 
 .admin-landing-page .menu-item.active .menu-text {
-    color: #00a1d1;
+    color: var(--color-00a1d1);
 }
 
 .admin-landing-page .sidebar-bottom {
@@ -97,8 +97,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 16px 20px;
-    background-color: #ffffff;
-    border-bottom: 1px solid #00000033;
+    background-color: var(--color-ffffff);
+    border-bottom: 1px solid var(--color-00000033);
 }
 
 .admin-landing-page .search-container {
@@ -116,7 +116,7 @@
     font-size: 20px;
     font-weight: 400;
     line-height: 25px;
-    color: #66696bb2;
+    color: var(--color-66696bb2);
 }
 
 .admin-landing-page .user-section {
@@ -128,14 +128,14 @@
 .admin-landing-page .divider-line {
     width: 1px;
     height: 60px;
-    background-color: #00000033;
+    background-color: var(--color-00000033);
 }
 
 .admin-landing-page .user-info {
     display: flex;
     align-items: center;
     padding: 14px 20px;
-    background-color: #ffffff;
+    background-color: var(--color-ffffff);
 }
 
 .admin-landing-page .user-avatar {
@@ -148,7 +148,7 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
-    color: #66696b;
+    color: var(--color-66696b);
     margin-left: 16px;
 }
 
@@ -167,7 +167,7 @@
     font-size: 28px;
     font-weight: 600;
     line-height: 36px;
-    color: #0d202f;
+    color: var(--color-0d202f);
     margin: 0px;
 }
 
@@ -181,7 +181,7 @@
     font-size: 20px;
     font-weight: 600;
     line-height: 26px;
-    color: #66696b;
+    color: var(--color-66696b);
 }
 
 
@@ -196,15 +196,15 @@
     align-items: center;
     justify-content: space-between;
     padding: 14px 18px;
-    background-color: #ffffff;
+    background-color: var(--color-ffffff);
     border-radius: 14px;
-    box-shadow: 0px 0px 5px #00000019;
+    box-shadow: 0px 0px 5px var(--color-00000019);
 }
 
 .admin-landing-page .hero-banner-link {
     font-size: 14px;
     font-weight: 500;
-    color: #00a1d1;
+    color: var(--color-00a1d1);
     text-decoration: none;
     max-width: 480px;
     overflow: hidden;
@@ -229,16 +229,16 @@
     align-items: center;
     justify-content: center;
     padding: 34px;
-    border: 2px dashed #00000033;
+    border: 2px dashed var(--color-00000033);
     border-radius: 14px;
-    background-color: #ffffff;
+    background-color: var(--color-ffffff);
     cursor: pointer;
     transition: border-color 0.2s ease;
     min-height: 120px;
 }
 
 .admin-landing-page .upload-zone:hover {
-    border-color: #00a1d1;
+    border-color: var(--color-00a1d1);
 }
 
 .admin-landing-page .upload-icon {
@@ -252,11 +252,11 @@
     font-weight: 500;
     line-height: 16px;
     text-align: center;
-    color: #66696b;
+    color: var(--color-66696b);
 }
 
 .admin-landing-page .upload-text .link-text {
-    color: #00a1d1;
+    color: var(--color-00a1d1);
 }
 
 .admin-landing-page .section-footer {
@@ -281,7 +281,7 @@
     font-size: 12px;
     font-weight: 400;
     line-height: 15px;
-    color: #66696bb2;
+    color: var(--color-66696bb2);
     margin-bottom: 4px;
 }
 
@@ -297,7 +297,7 @@
     font-size: 14px;
     font-weight: 500;
     line-height: 17px;
-    color: #ff3131;
+    color: var(--color-ff3131);
     background: none;
     border: none;
     cursor: pointer;
@@ -307,8 +307,8 @@
     font-size: 14px;
     font-weight: 500;
     line-height: 17px;
-    color: #ffffff;
-    background-color: #66696bb2;
+    color: var(--color-ffffff);
+    background-color: var(--color-66696bb2);
     border: none;
     border-radius: 14px;
     padding: 10px 20px;
@@ -317,7 +317,7 @@
 }
 
 .admin-landing-page .save-btn:hover {
-    background-color: #5a5d61;
+    background-color: var(--color-5a5d61);
 }
 
 .admin-landing-page .section-header {
@@ -335,8 +335,8 @@
     font-size: 12px;
     font-weight: 400;
     line-height: 15px;
-    color: #ffffff;
-    background-color: #00a1d1;
+    color: var(--color-ffffff);
+    background-color: var(--color-00a1d1);
     border: none;
     border-radius: 16px;
     padding: 8px 20px 8px 14px;
@@ -345,7 +345,7 @@
 }
 
 .admin-landing-page .add-btn:hover {
-    background-color: #0091c1;
+    background-color: var(--color-0091c1);
 }
 
 .admin-landing-page .add-icon {
@@ -357,7 +357,7 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
-    background-color: #ffffff;
+    background-color: var(--color-ffffff);
     border-radius: 14px;
     max-height: 300px;
     overflow-y: auto;
@@ -366,9 +366,9 @@
 .admin-landing-page .point-item {
     display: flex;
     align-items: center;
-    background-color: #ffffff;
+    background-color: var(--color-ffffff);
     border-radius: 14px;
-    box-shadow: 0px 0px 5px #00000019;
+    box-shadow: 0px 0px 5px var(--color-00000019);
     transition: transform 0.2s ease;
 }
 
@@ -389,8 +389,8 @@
     height: 50px;
     border-radius: 10px;
     object-position: top;
-    background-color: #ffffff;
-    border: 0px solid #00000033;
+    background-color: var(--color-ffffff);
+    border: 0px solid var(--color-00000033);
     padding: 6px;
 }
 
@@ -405,14 +405,14 @@
     font-size: 14px;
     font-weight: 500;
     line-height: 17px;
-    color: #66696bb2;
+    color: var(--color-66696bb2);
 }
 
 .admin-landing-page .point-description {
     font-size: 12px;
     font-weight: 400;
     line-height: 14px;
-    color: #66696bb2;
+    color: var(--color-66696bb2);
 }
 
 .admin-landing-page .point-actions {
@@ -452,9 +452,9 @@
     align-items: center;
     justify-content: center;
     padding: 66px 26px;
-    border: 2px dashed #00000033;
+    border: 2px dashed var(--color-00000033);
     border-radius: 14px;
-    background-color: #ffffff;
+    background-color: var(--color-ffffff);
     cursor: default;
     transition: border-color 0.2s ease;
     min-width: 200px;
@@ -465,7 +465,7 @@
 }
 
 .upload-browse {
-    color: #00a1d1;
+    color: var(--color-00a1d1);
     cursor: pointer;
     font-weight: 500;
     display: inline-block;
@@ -491,7 +491,7 @@
 }
 
 .admin-landing-page .file-upload:hover {
-    border-color: #00a1d1;
+    border-color: var(--color-00a1d1);
 }
 
 .admin-landing-page .file-list {
@@ -506,9 +506,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #ffffff;
+    background-color: var(--color-ffffff);
     border-radius: 14px;
-    box-shadow: 0px 0px 5px #00000019;
+    box-shadow: 0px 0px 5px var(--color-00000019);
     padding: 10px;
 }
 
@@ -516,7 +516,7 @@
     font-size: 14px;
     font-weight: 500;
     line-height: 17px;
-    color: #66696bb2;
+    color: var(--color-66696bb2);
     padding: 0 10px;
 }
 
@@ -538,7 +538,7 @@
     top: 20px;
     left: 20px;
     z-index: 1000;
-    background: #00a1d1;
+    background: var(--color-00a1d1);
     color: white;
     border: none;
     padding: 10px;
@@ -553,7 +553,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--color-rgba-0-0-0-0-5);
     z-index: 999;
 }
 
@@ -573,19 +573,19 @@
     display: none;
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.45);
+    background-color: var(--color-rgba-0-0-0-0-45);
     z-index: 1200;
     align-items: center;
     justify-content: center;
 }
 
 .admin-landing-page .modal-box {
-    background-color: #ffffff;
+    background-color: var(--color-ffffff);
     border-radius: 14px;
     padding: 24px;
     width: 100%;
     max-width: 420px;
-    box-shadow: 0px 10px 30px #00000033;
+    box-shadow: 0px 10px 30px var(--color-00000033);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -594,7 +594,7 @@
 .admin-landing-page .modal-title {
     font-size: 18px;
     font-weight: 600;
-    color: #0d202f;
+    color: var(--color-0d202f);
 }
 
 .admin-landing-page .modal-form {
@@ -611,12 +611,12 @@
 
 .admin-landing-page .form-group label {
     font-size: 12px;
-    color: #66696bb2;
+    color: var(--color-66696bb2);
 }
 
 .admin-landing-page .form-group input,
 .admin-landing-page .form-group textarea {
-    border: 1px solid #00000033;
+    border: 1px solid var(--color-00000033);
     border-radius: 10px;
     padding: 10px;
     font-size: 14px;
@@ -630,23 +630,23 @@
 
 .admin-landing-page .form-group input:focus,
 .admin-landing-page .form-group textarea:focus {
-    border-color: #00a1d1;
+    border-color: var(--color-00a1d1);
 }
 
 .admin-landing-page .custom-file-input {
-    border: 1px dashed #00000033;
+    border: 1px dashed var(--color-00000033);
     border-radius: 10px;
     padding: 12px;
     font-size: 14px;
     cursor: pointer;
     text-align: center;
-    color: #66696b;
+    color: var(--color-66696b);
     transition: border-color 0.2s ease;
 }
 
 .admin-landing-page .custom-file-input:hover {
-    border-color: #00a1d1;
-    color: #00a1d1;
+    border-color: var(--color-00a1d1);
+    color: var(--color-00a1d1);
 }
 
 /* Responsive media queries */
@@ -760,22 +760,22 @@
 
 /* Interactive states */
 .admin-landing-page .menu-item:focus {
-    outline: 2px solid #00a1d1;
+    outline: 2px solid var(--color-00a1d1);
     outline-offset: 2px;
 }
 
 .admin-landing-page .upload-zone:focus {
-    outline: 2px solid #00a1d1;
+    outline: 2px solid var(--color-00a1d1);
     outline-offset: 2px;
 }
 
 .admin-landing-page button:focus {
-    outline: 2px solid #00a1d1;
+    outline: 2px solid var(--color-00a1d1);
     outline-offset: 2px;
 }
 
 .admin-landing-page .point-item:focus-within {
-    outline: 2px solid #00a1d1;
+    outline: 2px solid var(--color-00a1d1);
     outline-offset: 2px;
 }
 

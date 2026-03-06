@@ -22,7 +22,7 @@
 .admin-project-management .apm-page-title {
     font-size: 36px;
     font-weight: 600;
-    color: #1f2937;
+    color: var(--color-1f2937);
     margin-bottom: 86px;
 }
 
@@ -31,7 +31,7 @@
 ================================ */
 
 .admin-project-management .apm-grid {
-    background-color: #ffffff;
+    background-color: var(--color-ffffff);
 }
 
 /* ===============================
@@ -50,7 +50,7 @@
     font-size: 20px;
     font-weight: 600;
     line-height: 26px;
-    color: #66696b;
+    color: var(--color-66696b);
 }
 
 /* ===============================
@@ -63,8 +63,8 @@
     gap: 10px;
     font-size: 14px;
     font-weight: 400;
-    color: #ffffff;
-    background-color: #00a1d1;
+    color: var(--color-ffffff);
+    background-color: var(--color-00a1d1);
     border: none;
     border-radius: 16px;
     padding: 8px 20px 8px 14px;
@@ -75,7 +75,7 @@
 }
 
 .admin-project-management .apm-add-btn:hover {
-    background-color: #0091c1;
+    background-color: var(--color-0091c1);
 }
 
 .admin-project-management .apm-add-icon {
@@ -91,7 +91,7 @@
 .admin-project-management .apm-empty-state {
     text-align: center;
     padding: 40px;
-    color: #66696b;
+    color: var(--color-66696b);
 }
 
 /* ===============================
@@ -109,8 +109,8 @@
 ================================ */
 
 .admin-project-management .apm-card {
-    background-color: #ffffff;
-    border: 1px solid #e5e7eb;
+    background-color: var(--color-ffffff);
+    border: 1px solid var(--color-e5e7eb);
     border-radius: 8px;
     overflow: hidden;
     transition: box-shadow 0.2s ease, transform 0.2s ease;
@@ -118,7 +118,7 @@
 }
 
 .admin-project-management .apm-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px var(--color-rgba-0-0-0-0-1);
     transform: translateY(-2px);
 }
 
@@ -155,21 +155,21 @@
 .admin-project-management .apm-card-title {
     font-size: 18px;
     font-weight: 600;
-    color: #1f2937;
+    color: var(--color-1f2937);
     margin-bottom: 8px;
     line-height: 1.4;
 }
 
 .admin-project-management .apm-card-category {
     font-size: 14px;
-    color: #00a1d1;
+    color: var(--color-00a1d1);
     margin-bottom: 4px;
     font-weight: 500;
 }
 
 .admin-project-management .apm-card-client {
     font-size: 14px;
-    color: #66696b;
+    color: var(--color-66696b);
 }
 
 /* ===============================
@@ -184,14 +184,14 @@
 .admin-project-management .apm-edit-btn {
     display: inline-block;
     font-size: 14px;
-    color: #00a1d1;
+    color: var(--color-00a1d1);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease;
 }
 
 .admin-project-management .apm-edit-btn:hover {
-    color: #0091c1;
+    color: var(--color-0091c1);
 }
 
 /* ===============================

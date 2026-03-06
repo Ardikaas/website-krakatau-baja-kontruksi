@@ -14,11 +14,14 @@
                 <div class="dashboard-header">
                     <h1 class="dashboard-title">Dashboard</h1>
                     <div class="dashboard-actions">
-                        <a href="{{ route('admin.logout') }}" class="btn-logout"
-                            onclick="return confirm('Are you sure you want to logout?')">
-                            <i class="icon-logout"></i>
-                            Logout
-                        </a>
+                        <form action="{{ route('admin.logout') }}" method="POST" class="d-inline">
+                            @csrf
+                            <button type="submit" class="btn-logout" style="background:none; border:none; cursor:pointer;"
+                                onclick="return confirm('Are you sure you want to logout?')">
+                                <i class="icon-logout"></i>
+                                Logout
+                            </button>
+                        </form>
                     </div>
                 </div>
 
@@ -77,7 +80,7 @@
                             </div>
                         </a>
 
-                        <a href="{{ route('admin.news.index') }}" class="action-card">
+                        <a href="{{ route('admin.adminNewsViews') }}" class="action-card">
                             <div class="action-icon">
                                 <i class="icon-news"></i>
                             </div>
@@ -87,7 +90,7 @@
                             </div>
                         </a>
 
-                        <a href="{{ route('admin.documents.index') }}" class="action-card">
+                        <a href="#" class="action-card">
                             <div class="action-icon">
                                 <i class="icon-document"></i>
                             </div>
@@ -97,7 +100,7 @@
                             </div>
                         </a>
 
-                        <a href="{{ route('admin.products.index') }}" class="action-card">
+                        <a href="{{ route('admin.product.index') }}" class="action-card">
                             <div class="action-icon">
                                 <i class="icon-product"></i>
                             </div>

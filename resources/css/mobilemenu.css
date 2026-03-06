@@ -6,7 +6,7 @@
   font-size: 40px;
   line-height: 50px;
   cursor: pointer;
-  color:#3786ff;
+  color:var(--color-3786ff);
   display: none;
 }
 
@@ -52,7 +52,7 @@
   height: 100%;
   z-index: 1;
   transition: all 900ms ease;
-  background-color: #000;
+  background-color: var(--color-000000);
 }
 
 .mobile-menu-visible .mobile-menu .menu-backdrop{
@@ -102,7 +102,7 @@
   width: 24px;
   text-align: center;
   font-size: 18px;
-  color: #ffffff;
+  color: var(--color-ffffff);
   cursor: pointer;
   z-index: 10;
   -webkit-transition:all 0.9s ease;
@@ -134,15 +134,15 @@
 .mobile-menu .navigation li{
   position: relative;
   display: block;
-  border-top: 1px solid rgba(255,255,255,0.10);
+  border-top: 1px solid var(--color-rgba-255-255-255-0-10);
 }
 
 .mobile-menu .navigation:last-child{
-  border-bottom: 1px solid rgba(255,255,255,0.10);
+  border-bottom: 1px solid var(--color-rgba-255-255-255-0-10);
 }
 
 .mobile-menu .navigation li > ul > li:first-child{
-  border-top: 1px solid rgba(255,255,255,0.10);
+  border-top: 1px solid var(--color-rgba-255-255-255-0-10);
 }
 
 .mobile-menu .navigation li > a{
@@ -152,7 +152,7 @@
   padding: 10px 25px;
   font-size: 15px;
   font-weight: 500;
-  color: #ffffff;
+  color: var(--color-ffffff);
   text-transform: uppercase;
   -webkit-transition: all 500ms ease;
   -moz-transition: all 500ms ease;
@@ -173,7 +173,7 @@
   left:0;
   top:0;
   height:0;
-  border-left:5px solid #fff;
+  border-left:5px solid var(--color-ffffff);
   -webkit-transition: all 500ms ease;
   -moz-transition: all 500ms ease;
   -ms-transition: all 500ms ease;
@@ -194,8 +194,8 @@
   text-align:center;
   font-size:16px;
   line-height:32px;
-  color:#ffffff;
-  background:rgba(255,255,255,0.10);
+  color:var(--color-ffffff);
+  background:var(--color-rgba-255-255-255-0-10);
   cursor:pointer;
   border-radius:2px;
   -webkit-transition: all 500ms ease;
@@ -207,7 +207,7 @@
 }
 
 .mobile-menu .navigation li.dropdown .dropdown-btn.open{
-  color: #ffffff;
+  color: var(--color-ffffff);
   -webkit-transform:rotate(90deg);
   -ms-transform:rotate(90deg);
   transform:rotate(90deg);  
@@ -234,7 +234,7 @@
   position:relative;
   line-height:32px;
   font-size:16px;
-  color:#ffffff;
+  color:var(--color-ffffff);
   -webkit-transition: all 500ms ease;
   -moz-transition: all 500ms ease;
   -ms-transition: all 500ms ease;
@@ -258,7 +258,7 @@ div#mCSB_1_container{
 .mobile-menu .contact-info h4 {
   position: relative;
   font-size: 20px;
-  color: #ffffff;
+  color: var(--color-ffffff);
   font-weight: 700;
   margin-bottom: 20px;
 }
@@ -267,12 +267,12 @@ div#mCSB_1_container{
   position: relative;
   display: block;
   font-size: 15px;
-  color: rgba(255,255,255,0.80);
+  color: var(--color-rgba-255-255-255-0-80);
   margin-bottom: 3px;
 }
 
 .mobile-menu .contact-info ul li a{
-  color: rgba(255,255,255,0.80);
+  color: var(--color-rgba-255-255-255-0-80);
 }
 
 .mobile-menu .contact-info ul li a:hover{
