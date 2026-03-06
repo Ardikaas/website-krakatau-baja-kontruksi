@@ -45,10 +45,13 @@
                 </a>
 
                 <div class="sidebar-bottom">
-                    <a href="/" class="menu-item">
-                        <img src="{{ asset('images/icons/img_logout_1_streamline.svg') }}" class="menu-icon">
-                        <span class="menu-text logout">Sign Out</span>
-                    </a>
+                    <form action="{{ route('admin.logout') }}" method="POST" style="width: 100%;">
+                        @csrf
+                        <button type="submit" class="menu-item" style="width: 100%; border: none; background: transparent; cursor: pointer; text-align: left;" onclick="return confirm('Are you sure you want to sign out?')">
+                            <img src="{{ asset('images/icons/img_logout_1_streamline.svg') }}" class="menu-icon">
+                            <span class="menu-text logout">Sign Out</span>
+                        </button>
+                    </form>
                 </div>
             </nav>
         </aside>

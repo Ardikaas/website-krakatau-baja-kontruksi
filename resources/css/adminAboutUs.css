@@ -3,14 +3,14 @@
     margin-top: 74px;
     padding: 40px;
     font-family: "Inter", sans-serif;
-    background: #fff;
+    background: var(--color-ffffff);
     min-height: 100vh;
 }
 
 .admin-aboutUs-management .aboutUs-header h1 {
     font-size: 36px;
     font-weight: 600;
-    color: #1f2937;
+    color: var(--color-1f2937);
     margin-bottom: 80px;
 }
 
@@ -28,9 +28,9 @@
     justify-content: space-between;
     gap: 16px;
     padding: 16px 20px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--color-e5e7eb);
     border-radius: 14px;
-    background: #ffffff;
+    background: var(--color-ffffff);
 }
 
 .admin-aboutUs-management .main-image-left {
@@ -44,19 +44,19 @@
     height: 70px;
     border-radius: 10px;
     object-fit: cover;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--color-e5e7eb);
 }
 
 .admin-aboutUs-management .main-image-placeholder {
     width: 120px;
     height: 70px;
     border-radius: 10px;
-    border: 2px dashed #d1d5db;
+    border: 2px dashed var(--color-d1d5db);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 12px;
-    color: #9ca3af;
+    color: var(--color-9ca3af);
 }
 
 .admin-aboutUs-management .main-image-actions {
@@ -66,8 +66,8 @@
 }
 
 .admin-aboutUs-management .btn-upload {
-    background: #00a1d1;
-    color: #fff;
+    background: var(--color-00a1d1);
+    color: var(--color-ffffff);
     border: none;
     border-radius: 12px;
     padding: 6px 14px;
@@ -78,7 +78,7 @@
 .admin-aboutUs-management .btn-delete {
     background: none;
     border: none;
-    color: #ef4444;
+    color: var(--color-ef4444);
     font-size: 13px;
     cursor: pointer;
 }
@@ -95,7 +95,7 @@
 
 .admin-aboutUs-management .upload-box {
     height: 220px;
-    border: 3px dashed #d1d5db;
+    border: 3px dashed var(--color-d1d5db);
     border-radius: 16px;
     align-items: center;
     display: flex;
@@ -111,7 +111,7 @@
 }
 
 .admin-aboutUs-management .upload-box:hover {
-    border-color: #00a1d1;
+    border-color: var(--color-00a1d1);
 }
 
 .admin-aboutUs-management .upload-box img {
@@ -122,11 +122,11 @@
 
 .admin-aboutUs-management .upload-box p {
     font-size: 13px;
-    color: #6b7280;
+    color: var(--color-6b7280);
 }
 
 .admin-aboutUs-management .upload-box span {
-    color: #00a1d1;
+    color: var(--color-00a1d1);
 }
 
 .admin-aboutUs-management .default-section-footer {
@@ -138,7 +138,7 @@
 
 .admin-aboutUs-management .default-section-footer .helper-text {
     font-size: 12px;
-    color: #9ca3af;
+    color: var(--color-9ca3af);
     margin-top: 10px;
 }
 
@@ -151,13 +151,13 @@
 .admin-aboutUs-management .btn-cancel {
     background: none;
     border: none;
-    color: #ff3131;
+    color: var(--color-ff3131);
     cursor: pointer;
 }
 
 .admin-aboutUs-management .btn-primary {
-    background: #00a1d1;
-    color: #fff;
+    background: var(--color-00a1d1);
+    color: var(--color-ffffff);
     border-radius: 14px;
     padding: 10px 22px;
     border: none;
@@ -179,7 +179,7 @@
 .admin-aboutUs-management .default-header .default-sec-title {
     font-size: 22px;
     font-weight: 600;
-    color: #1f2937;
+    color: var(--color-1f2937);
 }
 
 .admin-aboutUs-management .default-header .add-btn {
@@ -188,8 +188,8 @@
     gap: 10px;
     font-size: 14px;
     font-weight: 400;
-    color: #ffffff;
-    background-color: #00a1d1;
+    color: var(--color-ffffff);
+    background-color: var(--color-00a1d1);
     border: none;
     border-radius: 16px;
     padding: 8px 20px 8px 14px;
@@ -200,7 +200,7 @@
 }
 
 .admin-aboutUs-management .default-header .add-btn:hover {
-    background-color: #0091c1;
+    background-color: var(--color-0091c1);
 }
 
 .admin-aboutUs-management .default-header .add-icon {
@@ -224,18 +224,18 @@
 
 .admin-aboutUs-management .history-card {
     position: relative;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--color-e5e7eb);
     flex: 0 0 350px;
-    background: #fff;
+    background: var(--color-ffffff);
     border-radius: 12px;
     overflow: hidden;
-    background-color: #ffffff;
+    background-color: var(--color-ffffff);
     transition: box-shadow 0.2s ease;
     cursor: pointer;
 }
 
 .admin-aboutUs-management .history-card:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 20px var(--color-rgba-0-0-0-0-08);
 }
 
 /* Delete button - hover reveal (same as direction cards) */
@@ -243,8 +243,8 @@
     position: absolute;
     top: 12px;
     right: 12px;
-    background: rgba(239, 68, 68, 0.9);
-    color: #fff;
+    background: var(--color-rgba-239-68-68-0-9);
+    color: var(--color-ffffff);
     border: none;
     border-radius: 10px;
     padding: 6px 12px;
@@ -275,12 +275,12 @@
     width: 100%;
     height: 200px;
     border-radius: 10px;
-    background: #f3f4f6;
+    background: var(--color-f3f4f6);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 13px;
-    color: #9ca3af;
+    color: var(--color-9ca3af);
 }
 
 .admin-aboutUs-management .history-card .history-card-content {
@@ -290,7 +290,7 @@
 .admin-aboutUs-management .history-card .history-card-label {
     font-size: 12px;
     font-weight: 500;
-    color: #9ca3af;
+    color: var(--color-9ca3af);
     padding: 12px 20px 0;
     margin: 0;
 }
@@ -298,7 +298,7 @@
 .admin-aboutUs-management .history-card .history-card-title {
     font-size: 20px;
     font-weight: 600;
-    color: #1f2937;
+    color: var(--color-1f2937);
     padding: 4px 20px 0;
     margin: 0;
     line-height: 1.4;
@@ -307,7 +307,7 @@
 .admin-aboutUs-management .history-card .history-card-year {
     font-size: 16px;
     font-weight: 600;
-    color: #374151;
+    color: var(--color-374151);
     padding: 4px 20px 0;
     margin: 0;
 }
@@ -315,7 +315,7 @@
 .admin-aboutUs-management .history-card .history-card-description {
     font-size: 14px;
     font-weight: 400;
-    color: #6b7280;
+    color: var(--color-6b7280);
     padding: 4px 20px 0;
     margin: 0;
     line-height: 1.5;
@@ -331,10 +331,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 14px 16px;
-    border: 1px dashed #d1d5db;
+    border: 1px dashed var(--color-d1d5db);
     border-radius: 12px;
     font-size: 13px;
-    color: #9ca3af;
+    color: var(--color-9ca3af);
 }
 
 .admin-aboutUs-management .history-image-item {
@@ -342,7 +342,7 @@
     align-items: center;
     gap: 14px;
     padding: 12px 16px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--color-e5e7eb);
     border-radius: 12px;
 }
 
@@ -351,13 +351,13 @@
     height: 56px;
     border-radius: 8px;
     object-fit: cover;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--color-e5e7eb);
 }
 
 .admin-aboutUs-management .history-image-item span {
     flex: 1;
     font-size: 13px;
-    color: #374151;
+    color: var(--color-374151);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -383,10 +383,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 16px 18px;
-    border: 1px dashed #d1d5db;
+    border: 1px dashed var(--color-d1d5db);
     border-radius: 14px;
     font-size: 13px;
-    color: #9ca3af;
+    color: var(--color-9ca3af);
 }
 
 .admin-aboutUs-management .company-image-item {
@@ -394,9 +394,9 @@
     align-items: center;
     gap: 16px;
     padding: 14px 18px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--color-e5e7eb);
     border-radius: 14px;
-    background: #fff;
+    background: var(--color-ffffff);
 }
 
 .admin-aboutUs-management .company-image-item img {
@@ -404,13 +404,13 @@
     height: 42px;
     border-radius: 8px;
     object-fit: cover;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--color-e5e7eb);
 }
 
 .admin-aboutUs-management .company-image-item span {
     flex: 1;
     font-size: 13px;
-    color: #374151;
+    color: var(--color-374151);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -434,7 +434,7 @@
     width: 100%;
     max-width: 960px;
     height: 350px;
-    border: 3px dashed #e5e7eb;
+    border: 3px dashed var(--color-e5e7eb);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -443,7 +443,7 @@
 }
 
 .admin-aboutUs-management .default-editor-upload:hover {
-    border-color: #00a1d1;
+    border-color: var(--color-00a1d1);
 }
 
 .admin-aboutUs-management .default-editor-upload-inner {
@@ -456,11 +456,11 @@
 }
 
 .admin-aboutUs-management .default-editor-upload-inner:hover {
-    border-color: #00a1d1;
+    border-color: var(--color-00a1d1);
 }
 
 .admin-aboutUs-management .default-editor-upload-inner span {
-    color: #00a1d1;
+    color: var(--color-00a1d1);
 }
 
 /* Company Structure */
@@ -495,10 +495,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 14px 16px;
-    border: 1px dashed #d1d5db;
+    border: 1px dashed var(--color-d1d5db);
     border-radius: 12px;
     font-size: 13px;
-    color: #9ca3af;
+    color: var(--color-9ca3af);
 }
 
 .admin-aboutUs-management .people-image-item {
@@ -506,9 +506,9 @@
     align-items: center;
     gap: 14px;
     padding: 12px 16px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--color-e5e7eb);
     border-radius: 12px;
-    background: #fff;
+    background: var(--color-ffffff);
 }
 
 .admin-aboutUs-management .people-image-item img {
@@ -517,13 +517,13 @@
     border-radius: 8px;
     object-fit: cover;
     object-position: top;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--color-e5e7eb);
 }
 
 .admin-aboutUs-management .people-image-item span {
     flex: 1;
     font-size: 13px;
-    color: #374151;
+    color: var(--color-374151);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -539,8 +539,8 @@
     position: absolute;
     top: 12px;
     right: 12px;
-    background: rgba(239, 68, 68, 0.9);
-    color: #fff;
+    background: var(--color-rgba-239-68-68-0-9);
+    color: var(--color-ffffff);
     border: none;
     border-radius: 10px;
     padding: 6px 12px;
@@ -557,30 +557,30 @@
 
 .admin-aboutUs-management .direction-card {
     position: relative;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--color-e5e7eb);
     flex: 0 0 300px;
-    background: #fff;
+    background: var(--color-ffffff);
     border-radius: 12px;
     overflow: hidden;
-    background-color: #ffffff;
+    background-color: var(--color-ffffff);
     transition: box-shadow 0.2s ease;
 }
 
 .admin-aboutUs-management .direction-card:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 20px var(--color-rgba-0-0-0-0-08);
 }
 
 .admin-aboutUs-management .direction-card .direction-card-label {
     font-size: 12px;
     font-weight: 500;
-    color: #9ca3af;
+    color: var(--color-9ca3af);
     padding: 12px 20px 0;
 }
 
 .admin-aboutUs-management .direction-card .direction-team-name {
     font-size: 20px;
     font-weight: 600;
-    color: #1f2937;
+    color: var(--color-1f2937);
     padding: 4px 20px 12px;
     line-height: 1.4;
 }
@@ -601,7 +601,7 @@
 .admin-aboutUs-management .direction-card .direction-card-position {
     font-size: 16px;
     font-weight: 600;
-    color: #374151;
+    color: var(--color-374151);
     margin-bottom: 12px;
     padding: 5px 20px;
 }
@@ -610,7 +610,7 @@
 .admin-aboutUs-management .popup-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+    background: var(--color-rgba-0-0-0-0-45);
     display: none;
     align-items: center;
     justify-content: center;
@@ -625,7 +625,7 @@
 /* Card */
 .admin-aboutUs-management .popup-card {
     width: 420px;
-    background: #fff;
+    background: var(--color-ffffff);
     border-radius: 16px;
     padding: 24px;
 }
@@ -635,7 +635,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px dashed #d1d5db;
+    border: 3px dashed var(--color-d1d5db);
     border-radius: 12px;
     padding: 32px;
     text-align: center;
@@ -644,7 +644,7 @@
 }
 
 .admin-aboutUs-management .popup-overlay .popup-card .upload-box span {
-    color: #00a1d1;
+    color: var(--color-00a1d1);
     font-weight: 500;
 }
 
@@ -655,7 +655,7 @@
 
 .admin-aboutUs-management .popup-overlay .popup-card .form-group label {
     font-size: 13px;
-    color: #6b7280;
+    color: var(--color-6b7280);
     display: block;
     margin-bottom: 6px;
 }
@@ -663,7 +663,7 @@
 .admin-aboutUs-management .popup-overlay .popup-card .form-group input {
     width: 100%;
     padding: 10px 14px;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--color-d1d5db);
     border-radius: 10px;
 }
 
@@ -683,14 +683,14 @@
 .admin-aboutUs-management .popup-overlay .popup-card .btn-delete {
     background: none;
     border: none;
-    color: #ef4444;
+    color: var(--color-ef4444);
     font-weight: 500;
     cursor: pointer;
 }
 
 .admin-aboutUs-management .popup-overlay .popup-actions .btn-primary {
-    background-color: #00a1d1;
-    color: #fff;
+    background-color: var(--color-00a1d1);
+    color: var(--color-ffffff);
 }
 
 /* ===============================

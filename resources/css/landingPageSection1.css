@@ -1,9 +1,9 @@
 /* CSS Variables (inherit from app.css/footer.css) */
 :root {
-    --theme-color: #00a1d1;
-    --secondary-color: #00346a;
-    --text-color: #66696b;
-    --title-color: #0d202f;
+    --theme-color: var(--color-00a1d1);
+    --secondary-color: var(--color-00346a);
+    --text-color: var(--color-66696b);
+    --title-color: var(--color-0d202f);
     --text-font: "Figtree", sans-serif;
     --title-font: "Zalando Sans", sans-serif;
 }
@@ -72,7 +72,7 @@
     top: 0px;
     width: 375px;
     padding-right: 40px;
-    border-right: 1px solid #ebe9ef;
+    border-right: 1px solid var(--color-ebe9ef);
 }
 
 .banner-top-section .based-content .inner {
@@ -173,7 +173,7 @@
     font-size: 18px;
     line-height: 24px;
     font-family: var(--title-font);
-    color: #a5aaaf;
+    color: var(--color-a5aaaf);
     font-weight: 600;
     transform: rotate(180deg);
 }
@@ -205,7 +205,7 @@
 
 .banner-top-section .inner-box .video-box .bg-color {
     position: absolute;
-    background-color: #f7d8cb;
+    background-color: var(--color-f7d8cb);
     width: 100%;
     height: 100%;
     left: 12px;
@@ -219,7 +219,7 @@
     width: 50px;
     height: 50px;
     line-height: 64px;
-    background-color: #fff;
+    background-color: var(--color-ffffff);
     text-align: center;
     border-radius: 50%;
     font-size: 30px;
@@ -228,7 +228,7 @@
 }
 
 .banner-top-section .inner-box .video-box a:hover {
-    color: #fff;
+    color: var(--color-ffffff);
     background-color: var(--theme-color);
 }
 
@@ -327,7 +327,7 @@
 
 .banner-top-section .inner-box .content-box .bread-crumb li a {
     font-family: var(--text-font);
-    color: #ebe9ef;
+    color: var(--color-ebe9ef);
     text-decoration: none;
     transition: color 0.3s ease;
 }

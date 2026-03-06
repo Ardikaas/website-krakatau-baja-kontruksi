@@ -1,9 +1,9 @@
 /* CSS Variables (inherit from app.css/footer.css) */
 :root {
-    --theme-color: #00a1d1;
-    --secondary-color: #00346a;
-    --text-color: #66696b;
-    --title-color: #0d202f;
+    --theme-color: var(--color-00a1d1);
+    --secondary-color: var(--color-00346a);
+    --text-color: var(--color-66696b);
+    --title-color: var(--color-0d202f);
 }
 
 .whistle-blowing-system {
@@ -92,22 +92,22 @@
 .whistle-blowing-system textarea,
 .whistle-blowing-system select {
     background: transparent;
-    border: 1px solid #444;
+    border: 1px solid var(--color-444444);
     border-radius: 10px;
     padding: 10px 14px;
-    color: #444;
+    color: var(--color-444444);
 }
 
 .whistle-blowing-system input:focus,
 .whistle-blowing-system textarea:focus,
 .whistle-blowing-system select:focus {
     outline: none;
-    border-color: #777;
+    border-color: var(--color-777777);
 }
 
 .whistle-blowing-system .upload-area {
     height: 165px;
-    border: 2px dashed #444;
+    border: 2px dashed var(--color-444444);
     border-radius: 10px;
     padding: 30px;
     text-align: center;
@@ -121,7 +121,7 @@
 }
 
 .whistle-blowing-system .upload-area:hover {
-    border-color: #00a1d1;
+    border-color: var(--color-00a1d1);
 }
 
 .whistle-blowing-system .upload-area p {
@@ -129,7 +129,7 @@
 }
 
 .whistle-blowing-system .upload-area span {
-    color: #00a1d1;
+    color: var(--color-00a1d1);
 }
 
 .whistle-blowing-system .upload-area input[type="file"] {
@@ -140,13 +140,13 @@
 }
 
 .whistle-blowing-system .text-danger {
-    color: #ff4d4d;
+    color: var(--color-ff4d4d);
     font-size: 12px;
 }
 
 .whistle-blowing-system .report-note {
     font-size: 12px;
-    color: #aaa;
+    color: var(--color-aaaaaa);
     line-height: 1.6;
     padding: 0 300px;
 }
@@ -160,7 +160,7 @@
 
 .whistle-blowing-system button {
     background: var(--text-color);
-    color: #e0e0e0;
+    color: var(--color-e0e0e0);
     border: none;
     padding: 12px 28px;
     border-radius: 20px;

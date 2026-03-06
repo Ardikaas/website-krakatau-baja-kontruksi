@@ -120,7 +120,7 @@
 }
 
 .chooseus-block-one .inner-box:hover h3 a{
-  color: #fff;
+  color: var(--color-ffffff);
 }
 
 .chooseus-block-one .inner-box p{
@@ -129,7 +129,7 @@
 }
 
 .chooseus-block-one .inner-box:hover p{
-  color: #a5aaaf;
+  color: var(--color-a5aaaf);
 }
 
 .chooseus-block-one .inner-box .link a{
@@ -139,7 +139,7 @@
   gap: 10px;
   font-size: 15px;
   line-height: 22px;
-  color: #fff;
+  color: var(--color-ffffff);
   font-weight: 600;
   text-transform: uppercase;
   opacity: 0;
@@ -166,10 +166,10 @@
   top: -25px;
   right: -25px;
   font-size: 200px;
-  color: #e8edf3;
+  color: var(--color-e8edf3);
   transition: all 500ms ease;
 }
 
 .chooseus-block-one .inner-box:hover .light-icon{
-  color: rgba(255, 255, 255, 0.05);
+  color: var(--color-rgba-255-255-255-0-05);
 }

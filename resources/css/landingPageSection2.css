@@ -1,9 +1,9 @@
 /* CSS Variables (inherit from app.css/footer.css) */
 :root {
-    --theme-color: #00a1d1;
-    --secondary-color: #00346a;
-    --text-color: #66696b;
-    --title-color: #0d202f;
+    --theme-color: var(--color-00a1d1);
+    --secondary-color: var(--color-00346a);
+    --text-color: var(--color-66696b);
+    --title-color: var(--color-0d202f);
     --text-font: "Figtree", sans-serif;
     --title-font: "Zalando Sans", sans-serif;
 }
@@ -50,7 +50,7 @@
 .banner-section .banner-carousel .content-box {
     position: relative;
     float: right;
-    background-color: #fff;
+    background-color: var(--color-ffffff);
     max-width: 750px;
     padding: 24px 30px 100px 100px;
     width: 100%;
@@ -232,7 +232,7 @@
     line-height: 56px;
     text-align: center;
     font-size: 30px;
-    color: #fff;
+    color: var(--color-ffffff);
     background-color: var(--theme-color);
     margin: 0;
 }
@@ -248,7 +248,7 @@
 
 .theme-btn.btn-one span,
 .theme-btn.btn-one i {
-    color: #fff;
+    color: var(--color-ffffff);
 }
 
 /* ============================

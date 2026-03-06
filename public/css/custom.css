@@ -70,14 +70,6 @@ ul.menu-right-content li.custom-lang-switch .lang-toggle .current-lang {
     color: rgba(51, 51, 51, 0.6);
 }
 
-/* Also add active item check-mark indication in dropdown */
-ul.menu-right-content li.custom-lang-switch .lang-dropdown li a.active::before {
-    content: '✓';
-    margin-right: 4px;
-    font-size: 11px;
-    color: var(--theme-color, #00a1d1);
-}
-
 /* Dropdown panel */
 ul.menu-right-content li.custom-lang-switch .lang-dropdown {
     position: absolute;

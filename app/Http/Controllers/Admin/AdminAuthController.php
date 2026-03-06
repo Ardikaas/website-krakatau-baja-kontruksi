@@ -29,8 +29,8 @@ class AdminAuthController extends Controller
     $email = trim(strtolower($request->email));
     $password = trim($request->password);
 
-    // Cek apakah user ada dan password benar
-    $user = User::whereRaw('LOWER(email) = ?', [$email])->first();
+    // Gunakan standard Eloquent parameterized query yang 100% kebal SQL Injection
+    $user = User::where('email', $email)->first();
 
     if (!$user || !Hash::check($password, $user->password)) {
       \Log::info('Login failed', [
@@ -50,11 +50,15 @@ class AdminAuthController extends Controller
     // Login user dengan remember token (cookies)
     Auth::login($user, $request->has('remember'));
 
+    // Regenerate session immediately after login to ensure session IDs and custom vars persist cleanly
+    $request->session()->regenerate();
+
     // Set session dengan durasi terbatas (2 jam)
     $request->session()->put('admin_logged_in', true);
     $request->session()->put('admin_login_time', now());
 
-    return redirect()->route('admin.dashboard')->with('success', 'Login berhasil!');
+    // Redirect langsung ke Landing Content (bukan dashboard)
+    return redirect()->route('admin.landingEdit')->with('success', 'Login berhasil!');
   }
 
   public function logout(Request $request)
@@ -72,21 +76,7 @@ class AdminAuthController extends Controller
 
   public function dashboard()
   {
-    // No authentication check for now
-
-    // Get dashboard data
-    $projectsCount = \App\Models\Project::count();
-    $newsCount = \App\Models\News::count();
-    $documentsCount = \App\Models\Document::count();
-    $usersCount = \App\Models\User::count();
-    $recentProjects = \App\Models\Project::latest()->take(5)->get();
-
-    return view('admin.dashboard', compact(
-      'projectsCount',
-      'newsCount',
-      'documentsCount',
-      'usersCount',
-      'recentProjects'
-    ));
+    // Dashboard page is deprecated per user request. Redirecting directly to Landing Content.
+    return redirect()->route('admin.landingEdit');
   }
 }

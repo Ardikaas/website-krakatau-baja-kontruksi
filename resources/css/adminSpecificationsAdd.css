@@ -6,7 +6,7 @@
     margin-top: 74px;
     padding: 40px;
     font-family: "Inter", sans-serif;
-    background: #fff;
+    background: var(--color-ffffff);
     min-height: 100vh;
 }
 
@@ -14,7 +14,7 @@
 .admin-add-specifications .page-header h1 {
     font-size: 36px;
     font-weight: 600;
-    color: #1f2937;
+    color: var(--color-1f2937);
     margin-bottom: 80px;
 }
 
@@ -27,7 +27,7 @@
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 12px;
-    color: #1f2937;
+    color: var(--color-1f2937);
 }
 
 /* BASIC INFO */
@@ -42,7 +42,7 @@
 
 .admin-add-specifications .info-group label {
     font-size: 13px;
-    color: #6b7280;
+    color: var(--color-6b7280);
     margin-bottom: 6px;
 }
 
@@ -51,7 +51,7 @@
     margin-bottom: 16px;
     padding: 10px 14px;
     border-radius: 10px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--color-e5e7eb);
     font-size: 14px;
 }
 
@@ -59,18 +59,18 @@
     margin-bottom: 16px;
     padding: 10px 14px;
     border-radius: 10px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--color-e5e7eb);
     font-size: 14px;
 }
 
 .admin-add-specifications .info-group input:focus {
-    border-color: #00a1d1;
-    box-shadow: 0 0 0 2px rgba(0, 161, 209, 0.12);
+    border-color: var(--color-00a1d1);
+    box-shadow: 0 0 0 2px var(--color-rgba-0-161-209-0-12);
     outline: none;
 }
 
 .admin-add-specifications input::placeholder {
-    color: #9ca3af;
+    color: var(--color-9ca3af);
 }
 
 /* UPLOAD */
@@ -87,14 +87,14 @@
     align-items: center;
     gap: 16px;
     padding: 14px;
-    border: 2px dashed #d1d5db;
+    border: 2px dashed var(--color-d1d5db);
     border-radius: 14px;
     cursor: pointer;
     transition: border-color 0.2s;
 }
 
 .admin-add-specifications .upload-item:hover {
-    border-color: #00a1d1;
+    border-color: var(--color-00a1d1);
 }
 
 .upload-item[data-template] {
@@ -106,7 +106,7 @@
     width: 56px;
     height: 56px;
     border-radius: 12px;
-    background: #f9fafb;
+    background: var(--color-f9fafb);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -121,18 +121,18 @@
 /* INFO */
 .admin-add-specifications .upload-info p {
     font-size: 14px;
-    color: #6b7280;
+    color: var(--color-6b7280);
     margin: 0;
 }
 
 .admin-add-specifications .upload-info span {
-    color: #00a1d1;
+    color: var(--color-00a1d1);
     font-weight: 500;
 }
 
 .admin-add-specifications .upload-info small {
     font-size: 12px;
-    color: #9ca3af;
+    color: var(--color-9ca3af);
 }
 
 /* DELETE BUTTON */
@@ -141,7 +141,7 @@
     background: none;
     border: none;
     font-size: 18px;
-    color: #ef4444;
+    color: var(--color-ef4444);
     cursor: pointer;
 }
 
@@ -149,8 +149,8 @@
 .admin-add-specifications .btn-add-image {
     margin-top: 6px;
     width: fit-content;
-    background: #00a1d1;
-    color: #fff;
+    background: var(--color-00a1d1);
+    color: var(--color-ffffff);
     border: none;
     padding: 10px 18px;
     border-radius: 999px;
@@ -159,7 +159,7 @@
 }
 
 .admin-add-specifications .btn-add-image:hover {
-    background: #0284c7;
+    background: var(--color-0284c7);
 }
 
 .admin-add-specifications .upload-grid {
@@ -170,7 +170,7 @@
 
 .admin-add-specifications .upload-box {
     height: 220px;
-    border: 2px dashed #d1d5db;
+    border: 2px dashed var(--color-d1d5db);
     border-radius: 16px;
     align-items: center;
     display: flex;
@@ -186,7 +186,7 @@
 }
 
 .admin-add-specifications .upload-box:hover {
-    border-color: #00a1d1;
+    border-color: var(--color-00a1d1);
 }
 
 .admin-add-specifications .upload-box img {
@@ -197,16 +197,16 @@
 
 .admin-add-specifications .upload-box p {
     font-size: 13px;
-    color: #6b7280;
+    color: var(--color-6b7280);
 }
 
 .admin-add-specifications .upload-box span {
-    color: #00a1d1;
+    color: var(--color-00a1d1);
 }
 
 .admin-add-specifications .helper-text {
     font-size: 12px;
-    color: #9ca3af;
+    color: var(--color-9ca3af);
     margin-top: 10px;
 }
 
@@ -225,12 +225,12 @@
     justify-content: space-between;
     padding: 12px;
     border-radius: 14px;
-    box-shadow: 0 0 5px #00000019;
+    box-shadow: 0 0 5px var(--color-00000019);
 }
 
 .admin-add-specifications .file-item span {
     font-size: 14px;
-    color: #6b7280;
+    color: var(--color-6b7280);
 }
 
 .admin-add-specifications .file-actions {
@@ -244,8 +244,8 @@
 }
 
 .admin-add-specifications .btn-add-table {
-    background: #0ea5e9;
-    color: #fff;
+    background: var(--color-0ea5e9);
+    color: var(--color-ffffff);
     border: none;
     padding: 6px 14px;
     border-radius: 999px;
@@ -254,7 +254,7 @@
 }
 
 .admin-add-specifications .btn-add-table:hover {
-    background: #0284c7;
+    background: var(--color-0284c7);
 }
 
 .admin-add-specifications .btn-delete {
@@ -273,7 +273,7 @@
 .admin-add-specifications .tableSpec-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+    background: var(--color-rgba-0-0-0-0-45);
     display: none;
     align-items: center;
     justify-content: center;
@@ -282,17 +282,17 @@
 
 .admin-add-specifications .tableSpec-box {
     width: 420px;
-    background: #ffffff;
+    background: var(--color-ffffff);
     border-radius: 16px;
     padding: 24px;
     font-family: "Inter", sans-serif;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 40px var(--color-rgba-0-0-0-0-15);
 }
 
 .admin-add-specifications .tableSpec-title {
     font-size: 16px;
     font-weight: 600;
-    color: #0f172a;
+    color: var(--color-0f172a);
     margin-bottom: 20px;
 }
 
@@ -303,25 +303,25 @@
 .admin-add-specifications .tableSpec-field label {
     display: block;
     font-size: 13px;
-    color: #64748b;
+    color: var(--color-64748b);
     margin-bottom: 6px;
 }
 
 .admin-add-specifications .tableSpec-field label span {
-    color: #94a3b8;
+    color: var(--color-94a3b8);
 }
 
 .admin-add-specifications .tableSpec-field input {
     width: 100%;
     padding: 12px 14px;
     border-radius: 10px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--color-e5e7eb);
     font-size: 14px;
     outline: none;
 }
 
 .admin-add-specifications .tableSpec-field input:focus {
-    border-color: #0ea5e9;
+    border-color: var(--color-0ea5e9);
 }
 
 .admin-add-specifications .tableSpec-actions {
@@ -334,14 +334,14 @@
 .admin-add-specifications .tableSpec-actions .btn-cancel {
     background: none;
     border: none;
-    color: #ef4444;
+    color: var(--color-ef4444);
     font-size: 14px;
     cursor: pointer;
 }
 
 .admin-add-specifications .btn-confirm {
-    background: #0ea5e9;
-    color: #ffffff;
+    background: var(--color-0ea5e9);
+    color: var(--color-ffffff);
     border: none;
     padding: 10px 18px;
     border-radius: 999px;
@@ -351,19 +351,19 @@
 }
 
 .admin-add-specifications .btn-confirm:hover {
-    background: #0284c7;
+    background: var(--color-0284c7);
 }
 
 .admin-add-specifications .btn-cancel {
     background: none;
     border: none;
-    color: #ff3131;
+    color: var(--color-ff3131);
     cursor: pointer;
 }
 
 .admin-add-specifications .btn-primary {
-    background: #66696b;
-    color: #fff;
+    background: var(--color-66696b);
+    color: var(--color-ffffff);
     border-radius: 14px;
     padding: 10px 22px;
     border: none;

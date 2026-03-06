@@ -9,8 +9,8 @@
     flex-direction: column;
     width: 72px;
     margin-top: 53px;
-    background: #ffffff;
-    border-right: 1px solid #00000033;
+    background: var(--color-ffffff);
+    border-right: 1px solid var(--color-00000033);
     padding: 20px 0;
     position: fixed;
     height: 100vh;
@@ -46,11 +46,11 @@
 }
 
 .menu-item:hover {
-    background: #f8f9fa;
+    background: var(--color-f8f9fa);
 }
 
 .menu-item.active {
-    background: #e6f7ff;
+    background: var(--color-e6f7ff);
 }
 
 /* Sembunyikan text di mobile */
@@ -59,7 +59,7 @@
 }
 
 .menu-item.active .menu-text {
-    color: #00a1d1;
+    color: var(--color-00a1d1);
 }
 
 .menu-icon {
@@ -72,7 +72,7 @@
 }
 
 .logout {
-    color: #d10000;
+    color: var(--color-d10000);
 }
 
 /* Header */
@@ -89,8 +89,8 @@
     align-items: center;
 
     padding: 16px 20px;
-    background-color: #ffffff;
-    border-bottom: 1px solid #00000033;
+    background-color: var(--color-ffffff);
+    border-bottom: 1px solid var(--color-00000033);
 }
 
 .fitur-header{
@@ -109,7 +109,7 @@
 }
 
 .search-text {
-    color: #66696b;
+    color: var(--color-66696b);
 }
 
 .user-section {
@@ -121,7 +121,7 @@
 .divider-line {
     width: 1px;
     height: 40px;
-    background: #00000033;
+    background: var(--color-00000033);
 }
 
 .user-info {
@@ -150,8 +150,8 @@
     top: 20px;
     left: 150px;
     z-index: 3000;
-    /* background: #00a1d1; */
-    color: #00a1d1;
+    /* background: var(--color-00a1d1); */
+    color: var(--color-00a1d1);
     border: none;
     padding: 10px;
 }
@@ -160,7 +160,7 @@
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--color-rgba-0-0-0-0-5);
     z-index: 1000;
 }
 

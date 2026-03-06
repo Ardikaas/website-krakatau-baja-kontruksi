@@ -67,7 +67,7 @@
     }
 
     .industries-section .inner-container .tabs-box {
-        border-top: 1px solid #e4e9ec;
+        border-top: 1px solid var(--color-e4e9ec);
     }
 
     .funfact-block-one .inner-box {
@@ -379,7 +379,7 @@
     }
 
     .footer-style-two .footer-bottom .copyright p {
-        color: #fff;
+        color: var(--color-ffffff);
     }
 
     .footer-style-two .footer-bottom {
@@ -416,16 +416,16 @@
     }
 
     .about-style-two .inner-content .fact-box h6 {
-        color: #fff;
+        color: var(--color-ffffff);
     }
 
     .about-style-two .inner-content .inner-box .single-item h3,
     .about-style-two .inner-content .inner-box .single-item .inner a {
-        color: #fff;
+        color: var(--color-ffffff);
     }
 
     .about-style-two .inner-content .inner-box .single-item p {
-        color: #fff;
+        color: var(--color-ffffff);
         opacity: 0.7;
     }
 
@@ -596,7 +596,7 @@
 
     .industries-section .tab-btns .tab-btn {
         border-left: none;
-        border-bottom: 1px solid #e4e9ec !important;
+        border-bottom: 1px solid var(--color-e4e9ec) !important;
     }
 
     .project-section {

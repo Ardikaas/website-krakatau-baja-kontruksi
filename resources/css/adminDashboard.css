@@ -7,7 +7,7 @@
     margin-top: 74px;
     position: relative;
     font-family: "Inter", sans-serif;
-    background-color: #f8fafc;
+    background-color: var(--color-f8fafc);
     min-height: calc(100vh - 74px);
 }
 
@@ -29,7 +29,7 @@
 .dashboard-title {
     font-size: 36px;
     font-weight: 700;
-    color: #1f2937;
+    color: var(--color-1f2937);
     margin: 0;
 }
 
@@ -43,8 +43,8 @@
     align-items: center;
     gap: 8px;
     padding: 12px 20px;
-    background-color: #dc2626;
-    color: #ffffff;
+    background-color: var(--color-dc2626);
+    color: var(--color-ffffff);
     text-decoration: none;
     border-radius: 8px;
     font-size: 14px;
@@ -53,7 +53,7 @@
 }
 
 .btn-logout:hover {
-    background-color: #b91c1c;
+    background-color: var(--color-b91c1c);
 }
 
 .icon-logout {
@@ -73,11 +73,11 @@
 }
 
 .stat-card {
-    background: #ffffff;
+    background: var(--color-ffffff);
     border-radius: 16px;
     padding: 24px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 6px var(--color-rgba-0-0-0-0-05);
+    border: 1px solid var(--color-e5e7eb);
     display: flex;
     align-items: center;
     gap: 20px;
@@ -86,7 +86,7 @@
 
 .stat-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px var(--color-rgba-0-0-0-0-1);
 }
 
 .stat-icon {
@@ -96,20 +96,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--color-667eea) 0%, var(--color-764ba2) 100%);
     color: white;
 }
 
 .stat-content h3 {
     font-size: 32px;
     font-weight: 700;
-    color: #1f2937;
+    color: var(--color-1f2937);
     margin: 0 0 4px 0;
 }
 
 .stat-content p {
     font-size: 14px;
-    color: #6b7280;
+    color: var(--color-6b7280);
     margin: 0;
 }
 
@@ -124,7 +124,7 @@
 .section-title {
     font-size: 24px;
     font-weight: 600;
-    color: #1f2937;
+    color: var(--color-1f2937);
     margin-bottom: 24px;
 }
 
@@ -135,7 +135,7 @@
 }
 
 .action-card {
-    background: #ffffff;
+    background: var(--color-ffffff);
     border-radius: 12px;
     padding: 24px;
     text-decoration: none;
@@ -144,20 +144,20 @@
     align-items: center;
     gap: 16px;
     transition: all 0.2s ease;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--color-e5e7eb);
 }
 
 .action-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    border-color: #667eea;
+    box-shadow: 0 8px 25px var(--color-rgba-0-0-0-0-1);
+    border-color: var(--color-667eea);
 }
 
 .action-icon {
     width: 48px;
     height: 48px;
     border-radius: 8px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--color-667eea) 0%, var(--color-764ba2) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -168,13 +168,13 @@
 .action-content h3 {
     font-size: 18px;
     font-weight: 600;
-    color: #1f2937;
+    color: var(--color-1f2937);
     margin: 0 0 4px 0;
 }
 
 .action-content p {
     font-size: 14px;
-    color: #6b7280;
+    color: var(--color-6b7280);
     margin: 0;
 }
 
@@ -183,10 +183,10 @@
 ================================ */
 
 .dashboard-recent-activity {
-    background: #ffffff;
+    background: var(--color-ffffff);
     border-radius: 12px;
     padding: 24px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--color-e5e7eb);
 }
 
 .activity-list {
@@ -200,16 +200,16 @@
     align-items: center;
     gap: 16px;
     padding: 16px;
-    background: #f8fafc;
+    background: var(--color-f8fafc);
     border-radius: 8px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--color-e5e7eb);
 }
 
 .activity-icon {
     width: 40px;
     height: 40px;
     border-radius: 8px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--color-667eea) 0%, var(--color-764ba2) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -220,18 +220,18 @@
 .activity-content p {
     margin: 0 0 4px 0;
     font-size: 14px;
-    color: #374151;
+    color: var(--color-374151);
 }
 
 .activity-time {
     font-size: 12px;
-    color: #6b7280;
+    color: var(--color-6b7280);
 }
 
 .activity-empty {
     text-align: center;
     padding: 40px;
-    color: #6b7280;
+    color: var(--color-6b7280);
 }
 
 /* ===============================

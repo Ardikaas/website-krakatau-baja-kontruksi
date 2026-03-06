@@ -60,6 +60,13 @@ class WbsController extends Controller
             . now()->format('dmy')
             . rand(10000, 99999);
 
+        // SQL Injection & XSS sanitization (memastikan semua parameter aman dari eksekusi db asing/skrip)
+        $cleanData = [];
+        $wbsInput = $request->except('dokumen_pendukung');
+        foreach ($wbsInput as $key => $value) {
+            $cleanData[$key] = is_string($value) ? htmlspecialchars(strip_tags($value), ENT_QUOTES, 'UTF-8') : $value;
+        }
+
         $filePath = null;
         if ($request->hasFile('dokumen_pendukung')) {
             $filePath = $request->file('dokumen_pendukung')
@@ -67,7 +74,7 @@ class WbsController extends Controller
         }
 
         $report = WbsReport::create(array_merge(
-            $request->except('dokumen_pendukung'),
+            $cleanData,
             [
                 'ticket_number' => $ticketNumber,
                 'dokumen_pendukung' => $filePath,
