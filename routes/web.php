@@ -54,6 +54,14 @@ Route::get('/artisan-storage-link', function() {
     return 'Storage Linked! Output: <br><pre>' . Artisan::output() . '</pre><br> <a href="/">Back to Home</a>';
 });
 
+Route::get('/artisan-db-seed-admin', function() {
+    Artisan::call('db:seed', [
+        '--class' => 'AdminUserSeeder',
+        '--force' => true
+    ]);
+    return 'Admin Seeding Done! <br> <a href="/admin/login">Go to Login</a>';
+});
+
 Route::get('/artisan-down', function() {
     // Secret bypass is set to 'admin-bypass'
     Artisan::call('down', [
@@ -71,6 +79,18 @@ Route::get('/artisan-up', function() {
 // Route khusus untuk admin jika ingin bypass mode maintenance secara manual tanpa ke link secret
 Route::get('/maintenance-bypass', function() {
     return redirect('/admin-bypass');
+});
+
+Route::get('/debug-url', function() {
+    return [
+        'APP_URL' => config('app.url'),
+        'asset_image' => asset('images/logo.png'),
+        'url_root' => url('/'),
+        'current_host' => request()->getHost(),
+        'is_https' => request()->secure(),
+        'public_path' => public_path(),
+        'base_path' => base_path(),
+    ];
 });
 
 Route::get('/lang/{locale}', function ($locale) {

@@ -3,7 +3,7 @@
 @section('title', 'Sedang Pemeliharaan - Maintenance Mode')
 
 @push('styles')
-    @vite(['resources/css/errors.css'])
+    <link rel="stylesheet" href="{{ asset('css/errors.css') }}">
     <style>
         .error-code {
             font-size: 100px;

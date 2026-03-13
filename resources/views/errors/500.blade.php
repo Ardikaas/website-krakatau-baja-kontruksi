@@ -3,7 +3,7 @@
 @section('title', '500 - Server Error')
 
 @push('styles')
-    @vite(['resources/css/errors.css'])
+    <link rel="stylesheet" href="{{ asset('css/errors.css') }}">
 @endpush
 
 @section('content')
