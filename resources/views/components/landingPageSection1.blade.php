@@ -8,13 +8,8 @@
     <div class="outer-container">
         <div class="based-content">
             <div class="inner">
-                <div class="logo-box">
-                    <figure class="logo">
-                        <a href="{{ url('/') }}">
-                        <img src="{{ asset('images/logo-3.png') }}" alt="Logo" />
-                        </a>
-                    </figure>
-                    <h5>{!! __('messages.based_in_indonesia') !!}</h5>
+                <div class="landing-box-image-container">
+                    <img src="{{ asset('images/landing-box-image.jpeg') }}" alt="Krakatau Steel Construction Industries" class="landing-box-image">
                 </div>
             </div>
 

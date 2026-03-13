@@ -179,6 +179,9 @@
 .admin-project-management .apm-card-actions {
     padding: 16px;
     padding-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .admin-project-management .apm-edit-btn {
@@ -192,6 +195,26 @@
 
 .admin-project-management .apm-edit-btn:hover {
     color: var(--color-0091c1);
+}
+
+.admin-project-management .apm-delete-form {
+    display: inline-block;
+}
+
+.admin-project-management .apm-delete-btn {
+    background: none;
+    border: none;
+    color: var(--color-d10000);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    transition: color 0.2s ease;
+}
+
+.admin-project-management .apm-delete-btn:hover {
+    color: var(--color-ff3131);
 }
 
 /* ===============================

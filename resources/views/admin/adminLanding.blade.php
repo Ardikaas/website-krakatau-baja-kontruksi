@@ -29,7 +29,7 @@
 
                                             <form method="POST"
                                                 action="{{ route('admin.hero-banners.destroy', $banner->id) }}"
-                                                onsubmit="return confirm('Hapus hero banner ini?')">
+                                                >
                                                 @csrf
                                                 @method('DELETE')
 
@@ -61,6 +61,15 @@
                                             <input type="file" name="image" accept="image/png,image/jpeg" hidden
                                                 required onchange="handleHeroBannerChange(this)">
                                         </label>
+
+                                        <div class="form-group" style="margin-top: 15px;">
+                                            <label style="display: block; margin-bottom: 5px; font-weight: 500;">Banner Title (Optional)</label>
+                                            <input type="text" name="title" placeholder="e.g. Produsen|Baja |Berkualitas" style="width: 100%; border: 1px solid #d1d5db; border-radius: 6px; padding: 10px 14px; margin-bottom: 10px;">
+                                            <small style="color: #6b7280; display: block; margin-bottom: 15px;">Gunakan karakter | untuk memberikan line break. Kosongkan untuk pakai teks default.</small>
+
+                                            <label style="display: block; margin-bottom: 5px; font-weight: 500;">Banner Description (Optional)</label>
+                                            <textarea name="description" placeholder="Default text..." style="width: 100%; border: 1px solid #d1d5db; border-radius: 6px; padding: 10px 14px; min-height: 80px;"></textarea>
+                                        </div>
 
                                         <div class="section-footer">
                                             <div class="info-row">

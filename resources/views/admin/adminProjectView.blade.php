@@ -50,6 +50,15 @@
                                     <div class="apm-card-actions">
                                         <a href="{{ route('admin.projects.edit', $project) }}" class="apm-edit-btn"
                                             onclick="event.stopPropagation();">Edit</a>
+
+                                        <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST"
+                                            class="apm-delete-form"
+                                            onsubmit="return confirm('Yakin ingin menghapus project ini?')"
+                                            onclick="event.stopPropagation();">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="apm-delete-btn">Delete</button>
+                                        </form>
                                     </div>
                                 </div>
                             @endforeach

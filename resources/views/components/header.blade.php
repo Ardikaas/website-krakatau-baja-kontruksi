@@ -15,23 +15,23 @@
                         <nav class="main-menu navbar-expand-md navbar-light clearfix">
                             <div class="navbar-collapse show clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
-                                    <li class="dropdown"><a href="/">{{ __('messages.home') }}</a></li>
+                                    <li class="dropdown"><a href="{{ url('/') }}">{{ __('messages.home') }}</a></li>
                                     <li class="dropdown"><a href="{{ route('about') }}">{{ __('messages.about_us') }}</a>
                                         <ul>
-                                            <li><a href="/about-us/#company-info">{{ __('messages.company_info') }}</a></li>
-                                            <li><a href="/about-us/#history">{{ __('messages.history') }}</a></li>
-                                            <li><a href="/about-us/#vision">{{ __('messages.vision_mission') }}</a></li>
-                                            <li><a href="/about-us/#corp-structure">{{ __('messages.ksg_structure') }}</a></li>
-                                            <li><a href="/about-us/#directors">{{ __('messages.directors') }}</a></li>
-                                            <li><a href="/about-us/#akhlak">{{ __('messages.akhlak') }}</a></li>
+                                            <li><a href="{{ url('/about-us/#company-info') }}">{{ __('messages.company_info') }}</a></li>
+                                            <li><a href="{{ url('/about-us/#history') }}">{{ __('messages.history') }}</a></li>
+                                            <li><a href="{{ url('/about-us/#vision') }}">{{ __('messages.vision_mission') }}</a></li>
+                                            <li><a href="{{ url('/about-us/#corp-structure') }}">{{ __('messages.ksg_structure') }}</a></li>
+                                            <li><a href="{{ url('/about-us/#directors') }}">{{ __('messages.directors') }}</a></li>
+                                            <li><a href="{{ url('/about-us/#akhlak') }}">{{ __('messages.akhlak') }}</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown"><a href="#">{{ __('messages.business') }}</a>
                                         <ul>
-                                            <li><a href="/product">{{ __('messages.product') }}</a></li>
-                                            <li><a href="/projects">{{ __('messages.project') }}</a></li>
+                                            <li><a href="{{ url('/product') }}">{{ __('messages.product') }}</a></li>
+                                            <li><a href="{{ url('/projects') }}">{{ __('messages.project') }}</a></li>
                                             <li><a href="{{ route('subholding') }}">{{ __('messages.subholding') }}</a></li>
-                                            <li><a href="/contact">{{ __('messages.sales_contact') }}</a>
+                                            <li><a href="{{ url('/contact') }}">{{ __('messages.sales_contact') }}</a></li>
                                             </li>
                                         </ul>
                                     </li>

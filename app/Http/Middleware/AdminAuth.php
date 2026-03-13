@@ -16,21 +16,21 @@ class AdminAuth
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Cek apakah user sudah login
-        if (!Auth::check()) {
+        // Cek apakah user sudah login menggunakan guard web
+        if (!Auth::guard('web')->check()) {
             return redirect()->route('admin.login');
         }
 
         // Cek session admin
         if (!session('admin_logged_in')) {
-            Auth::logout();
+            Auth::guard('web')->logout();
             return redirect()->route('admin.login');
         }
 
         // Cek timeout session (2 jam)
         $loginTime = session('admin_login_time');
         if ($loginTime && now()->diffInHours($loginTime) > 2) {
-            Auth::logout();
+            Auth::guard('web')->logout();
             session()->forget(['admin_logged_in', 'admin_login_time']);
             return redirect()->route('admin.login')->with('error', 'Session expired. Please login again.');
         }

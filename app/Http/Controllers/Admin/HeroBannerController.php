@@ -56,12 +56,16 @@ class HeroBannerController extends Controller
 
     $request->validate([
       'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+      'title' => 'nullable|string|max:255',
+      'description' => 'nullable|string',
     ]);
 
     $path = $request->file('image')->store('hero-banners', 'public');
 
     HeroBanner::create([
       'image' => $path,
+      'title' => $request->title,
+      'description' => $request->description,
     ]);
 
     return back()->with('success', 'Hero banner berhasil ditambahkan');

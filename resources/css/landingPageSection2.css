@@ -87,9 +87,9 @@
 }
 
 .banner-carousel .active .slide-item .bg-layer {
-    -webkit-transform: scale(1.25);
-    -ms-transform: scale(1.25);
-    transform: scale(1.25);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
 }
 
 .banner-carousel .content-box h2 {
@@ -256,6 +256,7 @@
 ============================ */
 
 @media only screen and (max-width: 1699px) {
+
     .banner-section .pattern-layer,
     .banner-section .pattern-layer-2,
     .banner-section::before {

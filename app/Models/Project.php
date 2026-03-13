@@ -60,6 +60,7 @@ class Project extends Model
 
     protected $casts = [
         'solutions' => 'array',
+        'solutions_en' => 'array',
         'date' => 'date'
     ];
 }

@@ -140,38 +140,45 @@
                 <label class="project-editor-label">Solutions</label>
                 <div id="solutionsWrapper">
                     @php
-                        $solutions = old(
-                            'solutions',
-                            $project->solutions ?? [
-                                ['title' => '', 'description' => ''],
-                                ['title' => '', 'description' => ''],
-                            ],
-                        );
-                        $solutions_en = old(
-                            'solutions_en',
-                            $project->solutions_en ?? [
-                                ['title' => '', 'description' => ''],
-                                ['title' => '', 'description' => ''],
-                            ],
-                        );
+                        $normalize = function ($data) {
+                            if (empty($data)) {
+                                return [
+                                    ['title' => '', 'description' => ''],
+                                    ['title' => '', 'description' => ''],
+                                ];
+                            }
+                            return array_map(function ($item) {
+                                if (is_array($item)) {
+                                    return [
+                                        'title' => $item['title'] ?? '',
+                                        'description' => $item['description'] ?? '',
+                                    ];
+                                }
+                                return ['title' => $item, 'description' => ''];
+                            }, (array) $data);
+                        };
+
+                        $solutions = old('solutions', $normalize($project->solutions));
+                        $solutions_en = old('solutions_en', $normalize($project->solutions_en));
                     @endphp
                     @foreach ($solutions as $i => $solution)
                         <div class="solution-card">
                             <div class="solution-field">
                                 <label class="solution-label">Solution Title (ID)</label>
                                 <input type="text" name="solutions[{{ $i }}][title]"
-                                    class="form-control solution-title" value="{{ $solution['title'] }}" required>
+                                    class="form-control solution-title" value="{{ $solution['title'] ?? '' }}" required>
                             </div>
                             <div class="solution-field mt-2">
                                 <label class="solution-label">Solution Title (EN)</label>
                                 <input type="text" name="solutions_en[{{ $i }}][title]"
-                                    class="form-control solution-title" value="{{ $solutions_en[$i]['title'] ?? '' }}">
+                                    class="form-control solution-title"
+                                    value="{{ $solutions_en[$i]['title'] ?? '' }}">
                             </div>
 
                             <div class="solution-field mt-3">
                                 <label class="solution-label">Solution Description (ID)</label>
                                 <textarea name="solutions[{{ $i }}][description]" class="form-control solution-desc" rows="3"
-                                    required>{{ $solution['description'] }}</textarea>
+                                    required>{{ $solution['description'] ?? '' }}</textarea>
                             </div>
                             <div class="solution-field mt-2">
                                 <label class="solution-label">Solution Description (EN)</label>

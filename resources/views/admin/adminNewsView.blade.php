@@ -64,29 +64,9 @@
                                 </div>
                             @endforeach
                         @else
-                            @for ($i = 0; $i < 3; $i++)
-                                <div class="anm-card">
-                                    <p class="anm-card-label">Title</p>
-
-                                    <h3 class="anm-card-title">
-                                        Metal Finishing Techniques: An In-Depth Practical Guide
-                                    </h3>
-
-                                    <div class="anm-card-image-wrapper"><img
-                                            src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b"
-                                            class="anm-card-image" alt="news"></div>
-
-                                    <div class="anm-card-content">
-
-                                        <div class="anm-card-footer">
-                                            <div class="anm-author">
-                                                <span class="anm-author-name">Alexander W.</span>
-                                            </div>
-                                            <span class="anm-date">12 Aug 2025</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endfor
+                            <div class="anm-empty-state" style="grid-column: 1 / -1; text-align: center; padding: 40px; background: #f9fafb; border: 1px dashed #d1d5db; border-radius: 8px;">
+                                <p style="color: #6b7280; font-size: 16px;">Belum ada berita yang tersedia. Klik "Add News" untuk membuat berita pertama.</p>
+                            </div>
                         @endif
                     </div>
                 </div>
@@ -94,6 +74,3 @@
         </div>
     </div>
 @endsection
-<script>
-    console.log('IMAGE URL:', @json($item->image_url));
-</script>

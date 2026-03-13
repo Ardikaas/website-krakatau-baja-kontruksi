@@ -19,7 +19,20 @@
     @if ($heroBanners->count())
         @foreach ($heroBanners as $banner)
             @php
+                // First try to use the banner-specific text if it exists
+                $bannerTitle = $banner->title;
+                $bannerDesc = $banner->description;
+                
+                // If either is missing, grab the default from language files based on slide index
                 $text = $heroTexts[$loop->index] ?? $heroTexts[0];
+                
+                $finalTitle = $bannerTitle ?: $text['title'];
+                // Only replace the | with <br> if the title came from the banner database since the lang file might have its own HTML
+                if ($bannerTitle) {
+                    $finalTitle = str_replace('|', '<br>', $finalTitle);
+                }
+                
+                $finalDesc = $bannerDesc ?: $text['description'];
             @endphp
 
             <div class="slide-item p_relative">
@@ -30,12 +43,12 @@
                     style="background-image: url('{{ route('admin.hero-banners.view', basename($banner->image)) }}');">
                 </div>
 
-                {{-- TEKS STATIS SESUAI URUTAN --}}
+                {{-- TEKS DINAMIS ATAU STATIS SESUAI URUTAN --}}
                 <div class="outer-container clearfix">
                     <div class="content-box">
                         <div class="inner-box">
-                            <h2>{!! $text['title'] !!}</h2>
-                            <p>{{ $text['description'] }}</p>
+                            <h2>{!! $finalTitle !!}</h2>
+                            <p>{{ $finalDesc }}</p>
                         </div>
                     </div>
                 </div>
