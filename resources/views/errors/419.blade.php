@@ -3,7 +3,7 @@
 @section('title', '419 - Page Expired')
 
 @push('styles')
-    @vite(['resources/css/errors.css'])
+    <link rel="stylesheet" href="{{ asset('css/errors.css') }}">
 @endpush
 
 @section('content')

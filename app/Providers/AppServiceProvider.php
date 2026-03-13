@@ -16,12 +16,15 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        if (config('app.url')) {
-            \Illuminate\Support\Facades\URL::forceRootUrl(config('app.url'));
-        }
-        
-        if (app()->environment('production')) {
-            \Illuminate\Support\Facades\URL::forceScheme('https');
+        // Hanya force URL dan HTTPS jika bukan di localhost
+        if (!app()->runningInConsole() && !request()->is('localhost*') && !str_contains(request()->getHost(), '127.0.0.1')) {
+            if (config('app.url')) {
+                \Illuminate\Support\Facades\URL::forceRootUrl(config('app.url'));
+            }
+            
+            if (app()->environment('production')) {
+                \Illuminate\Support\Facades\URL::forceScheme('https');
+            }
         }
     }
 }

@@ -73,6 +73,18 @@ Route::get('/maintenance-bypass', function() {
     return redirect('/admin-bypass');
 });
 
+Route::get('/debug-url', function() {
+    return [
+        'APP_URL' => config('app.url'),
+        'asset_image' => asset('images/logo.png'),
+        'url_root' => url('/'),
+        'current_host' => request()->getHost(),
+        'is_https' => request()->secure(),
+        'public_path' => public_path(),
+        'base_path' => base_path(),
+    ];
+});
+
 Route::get('/lang/{locale}', function ($locale) {
     if (in_array($locale, ['en', 'id'])) {
         session(['locale' => $locale]);
