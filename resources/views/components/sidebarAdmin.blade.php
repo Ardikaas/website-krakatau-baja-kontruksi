@@ -6,41 +6,41 @@
         <!-- Sidebar -->
         <aside class="sidebar" id="sidebar">
             <nav class="sidebar-menu">
-                <a href="/admin" class="menu-item {{ request()->is('admin') ? 'active' : '' }}">
-                    <img src="{{ asset('images/icons/img_home_3_streamline.svg') }}" class="menu-icon">
+                <a href="{{ url('/admin') }}" class="menu-item {{ request()->is('admin') ? 'active' : '' }}">
+                    <i class="fa-solid fa-house menu-icon"></i>
                     <span class="menu-text">Landing Content</span>
                 </a>
 
-                <a href="/admin/aboutus" class="menu-item {{ request()->is('admin/aboutus') ? 'active' : '' }}">
-                    <img src="{{ asset('images/icons/img_bullet_list_streamline.svg') }}" class="menu-icon">
+                <a href="{{ url('/admin/aboutus') }}" class="menu-item {{ request()->is('admin/aboutus') ? 'active' : '' }}">
+                    <i class="fa-solid fa-circle-info menu-icon"></i>
                     <span class="menu-text">About Us Content</span>
                 </a>
 
-                <a href="/admin/productEdit"
+                <a href="{{ url('/admin/productEdit') }}"
                     class="menu-item {{ request()->is('admin/productEdit*') ? 'active' : '' }}">
-                    <img src="{{ asset('images/icons/img_shipment_remove.svg') }}" class="menu-icon">
+                    <i class="fa-solid fa-boxes-stacked menu-icon"></i>
                     <span class="menu-text">Product Management</span>
                 </a>
 
-                <a href="/admin/projects" class="menu-item {{ request()->is('admin/projectEdit*') ? 'active' : '' }}">
-                    <img src="{{ asset('images/icons/img_shipment_remove.svg') }}" class="menu-icon">
+                <a href="{{ url('/admin/projects') }}" class="menu-item {{ request()->is('admin/projectEdit*') ? 'active' : '' }}">
+                    <i class="fa-solid fa-diagram-project menu-icon"></i>
                     <span class="menu-text">Project Management</span>
                 </a>
 
-                <a href="/admin/newsEdit"
+                <a href="{{ url('/admin/newsEdit') }}"
                     class="menu-item {{ request()->is('admin/newsEdit*') || request()->is('admin/addNews*') ? 'active' : '' }}">
-                    <img src="{{ asset('images/icons/img_news_paper_streamline.svg') }}" class="menu-icon">
+                    <i class="fa-solid fa-newspaper menu-icon"></i>
                     <span class="menu-text">News Management</span>
                 </a>
 
-                <a href="/admin/sales"
+                <a href="{{ url('/admin/sales') }}"
                     class="menu-item {{ request()->is('admin/sales*') || request()->is('admin/sales*') ? 'active' : '' }}">
-                    <img src="{{ asset('images/icons/img_megaphone_streamline.svg') }}" class="menu-icon">
+                    <i class="fa-solid fa-money-bill-trend-up menu-icon"></i>
                     <span class="menu-text">Sales Management</span>
                 </a>
 
-                <a href="/admin/wbs" class="menu-item {{ request()->is('admin/wbs*') ? 'active' : '' }}">
-                    <img src="{{ asset('images/icons/img_megaphone_streamline.svg') }}" class="menu-icon">
+                <a href="{{ url('/admin/wbs') }}" class="menu-item {{ request()->is('admin/wbs*') ? 'active' : '' }}">
+                    <i class="fa-solid fa-shield-halved menu-icon"></i>
                     <span class="menu-text">WBS Management</span>
                 </a>
 
@@ -48,7 +48,7 @@
                     <form action="{{ route('admin.logout') }}" method="POST" style="width: 100%;">
                         @csrf
                         <button type="submit" class="menu-item" style="width: 100%; border: none; background: transparent; cursor: pointer; text-align: left;" onclick="return confirm('Are you sure you want to sign out?')">
-                            <img src="{{ asset('images/icons/img_logout_1_streamline.svg') }}" class="menu-icon">
+                            <i class="fa-solid fa-right-from-bracket menu-icon"></i>
                             <span class="menu-text logout">Sign Out</span>
                         </button>
                     </form>
@@ -63,13 +63,6 @@
 
                 <div class="fitur-header">
 
-                    <div class="user-section">
-                        <span class="divider-line"></span>
-                        <div class="user-info">
-                            <img src="{{ asset('images/icons/icon-1.png') }}" class="user-avatar">
-                            <span class="user-name">Admin User</span>
-                        </div>
-                    </div>
                 </div>
             </header>
         </div>

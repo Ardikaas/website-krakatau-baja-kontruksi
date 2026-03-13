@@ -17,9 +17,6 @@
                                     <i class="flaticon-gear"></i>
                                 </div>
 
-                                <div class="block-shape"
-                                    style="background-image: url({{ asset('images/shape/shape-11.png') }});">
-                                </div>
 
                                 <div class="icon-box">
                                     <div class="icon">
@@ -52,8 +49,6 @@
                     <div class="chooseus-block-one">
                         <div class="inner-box">
                             <div class="light-icon"><i class="flaticon-gear"></i></div>
-                            <div class="block-shape"
-                                style="background-image: url({{ asset('images/shape/shape-11.png') }});"></div>
                             <div class="icon-box">
                                 <div class="icon">
                                     <img src="{{ asset('images/iconpage8/manufacturing.png') }}" alt="">
@@ -70,8 +65,6 @@
                     <div class="chooseus-block-one">
                         <div class="inner-box">
                             <div class="light-icon"><i class="flaticon-gear"></i></div>
-                            <div class="block-shape"
-                                style="background-image: url({{ asset('images/shape/shape-11.png') }});"></div>
                             <div class="icon-box">
                                 <div class="icon">
                                     <img src="{{ asset('images/iconpage8/engineer.png') }}" alt="">
@@ -88,8 +81,6 @@
                     <div class="chooseus-block-one">
                         <div class="inner-box">
                             <div class="light-icon"><i class="flaticon-gear"></i></div>
-                            <div class="block-shape"
-                                style="background-image: url({{ asset('images/shape/shape-11.png') }});"></div>
                             <div class="icon-box">
                                 <div class="icon">
                                     <img src="{{ asset('images/iconpage8/productivity.png') }}" alt="">
@@ -106,8 +97,6 @@
                     <div class="chooseus-block-one">
                         <div class="inner-box">
                             <div class="light-icon"><i class="flaticon-gear"></i></div>
-                            <div class="block-shape"
-                                style="background-image: url({{ asset('images/shape/shape-11.png') }});"></div>
                             <div class="icon-box">
                                 <div class="icon">
                                     <img src="{{ asset('images/iconpage8/target.png') }}" alt="">
@@ -124,8 +113,6 @@
                     <div class="chooseus-block-one">
                         <div class="inner-box">
                             <div class="light-icon"><i class="flaticon-gear"></i></div>
-                            <div class="block-shape"
-                                style="background-image: url({{ asset('images/shape/shape-11.png') }});"></div>
                             <div class="icon-box">
                                 <div class="icon">
                                     <img src="{{ asset('images/iconpage8/test.png') }}" alt="">
@@ -142,8 +129,6 @@
                     <div class="chooseus-block-one">
                         <div class="inner-box">
                             <div class="light-icon"><i class="flaticon-gear"></i></div>
-                            <div class="block-shape"
-                                style="background-image: url({{ asset('images/shape/shape-11.png') }});"></div>
                             <div class="icon-box">
                                 <div class="icon">
                                     <img src="{{ asset('images/iconpage8/certificate.png') }}" alt="">

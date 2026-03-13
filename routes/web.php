@@ -8,6 +8,7 @@ use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\NewsController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\Admin\WbsController as AdminWbsController;
 use App\Http\Controllers\Admin\DocumentController as AdminDocumentController;
 use App\Http\Controllers\Front\ProductController as FrontProductController;
@@ -23,6 +24,54 @@ use App\Http\Controllers\Admin\AdminAuthController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// ==========================================
+// CPANEL HELPER ROUTES (No SSH/Terminal)
+// ==========================================
+Route::get('/cc', function() {
+    Artisan::call('optimize:clear');
+    return 'Cache Cleared! <br> <a href="/">Back to Home</a>';
+});
+
+Route::get('/artisan-migrate', function() {
+    // Force is needed to run migrations in production
+    Artisan::call('migrate', ['--force' => true]);
+    return 'Migrate successful! Output: <br><pre>' . Artisan::output() . '</pre><br> <a href="/">Back to Home</a>';
+});
+
+Route::get('/artisan-migrate-fresh', function() {
+    Artisan::call('migrate:fresh', ['--force' => true, '--seed' => true]);
+    return 'Migrate Fresh & Seed successful! Output: <br><pre>' . Artisan::output() . '</pre><br> <a href="/">Back to Home</a>';
+});
+
+Route::get('/artisan-migrate-fresh-empty', function() {
+    Artisan::call('migrate:fresh', ['--force' => true]);
+    return 'Database Cleared (Empty Structure) successful! Output: <br><pre>' . Artisan::output() . '</pre><br> <a href="/">Back to Home</a>';
+});
+
+Route::get('/artisan-storage-link', function() {
+    Artisan::call('storage:link');
+    return 'Storage Linked! Output: <br><pre>' . Artisan::output() . '</pre><br> <a href="/">Back to Home</a>';
+});
+
+Route::get('/artisan-down', function() {
+    // Secret bypass is set to 'admin-bypass'
+    Artisan::call('down', [
+        '--secret' => 'admin-bypass',
+        '--refresh' => 15 // Refresh page every 15 seconds
+    ]);
+    return 'Maintenance Mode ON! <br> <b>Bypass Link:</b> <a href="'.url('/admin-bypass').'">Click here to Bypass</a> <br> <a href="/">Back to Home</a>';
+});
+
+Route::get('/artisan-up', function() {
+    Artisan::call('up');
+    return 'Maintenance Mode OFF! <br> <a href="/">Back to Home</a>';
+});
+
+// Route khusus untuk admin jika ingin bypass mode maintenance secara manual tanpa ke link secret
+Route::get('/maintenance-bypass', function() {
+    return redirect('/admin-bypass');
+});
 
 Route::get('/lang/{locale}', function ($locale) {
     if (in_array($locale, ['en', 'id'])) {
@@ -67,111 +116,73 @@ Route::get('/projects', [ProjectController::class, 'index'])->name('front.projec
 Route::get('/projects/{project}', [ProjectController::class, 'show'])->name('front.projects.show');
 
 // ================================
-// ADMIN ROUTES (No authentication for now)
+// ADMIN ROUTES
 // ================================
 Route::prefix('admin')->name('admin.')->group(function () {
+    // Auth routes
     Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [AdminAuthController::class, 'login'])->name('login.post');
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
 
-    // Admin routes (no middleware)
-    Route::get('/dashboard', [AdminAuthController::class, 'dashboard'])->name('dashboard');
+    // Protected admin routes
+    Route::middleware(['admin.auth'])->group(function () {
+        Route::get('/', [HeroBannerController::class, 'index'])->name('landingEdit');
+        Route::get('/dashboard', [AdminAuthController::class, 'dashboard'])->name('dashboard');
 
-    Route::resource('projects', ProjectPageController::class);
+        Route::resource('projects', ProjectPageController::class);
 
-    // Product routes
-    Route::get('/productEdit', [ProductController::class, 'index'])->name('product.index');
-    Route::get('/addProduct', [ProductController::class, 'create'])->name('product.create');
-    Route::post('/addProduct', [ProductController::class, 'store'])->name('product.store');
-    Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
-    Route::post('/product/{id}', [ProductController::class, 'update'])->name('product.update');
-    Route::delete('/product/{product}', [ProductController::class, 'destroy'])->name('product.delete');
-    Route::get('/product-image/{path}', [ProductController::class, 'viewImage'])->where('path', '.*')->name('product.image');
+        // Product routes
+        Route::get('/productEdit', [ProductController::class, 'index'])->name('product.index');
+        Route::get('/addProduct', [ProductController::class, 'create'])->name('product.create');
+        Route::post('/addProduct', [ProductController::class, 'store'])->name('product.store');
+        Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
+        Route::post('/product/{id}', [ProductController::class, 'update'])->name('product.update');
+        Route::delete('/product/{product}', [ProductController::class, 'destroy'])->name('product.delete');
+        Route::get('/product-image/{path}', [ProductController::class, 'viewImage'])->where('path', '.*')->name('product.image');
 
-    // About Us routes
-    Route::get('/aboutus', [AboutUsController::class, 'index'])->name('aboutus');
-    Route::post('/aboutus/main-images', [AboutUsController::class, 'storeMainImage'])->name('aboutus.main-images.store');
-    Route::delete('/aboutus/main-images/{image}', [AboutUsController::class, 'deleteMainImage'])->name('aboutus.main-images.delete');
-    Route::post('/aboutus/history', [AboutHistoryController::class, 'store'])->name('aboutus.history.store');
-    Route::delete('/aboutus/history/{history}', [AboutHistoryController::class, 'destroy'])->name('aboutus.history.delete');
-    Route::get('/aboutus/people', [AboutPeopleController::class, 'index'])->name('aboutus.people.index');
-    Route::post('/aboutus/people', [AboutPeopleController::class, 'store'])->name('aboutus.people.store');
-    Route::delete('/aboutus/people/{person}', [AboutPeopleController::class, 'destroy'])->name('aboutus.people.delete');
-    Route::post('/aboutus/section-image', [AboutUsController::class, 'storeSectionImage'])->name('aboutus.section-image.store');
-    Route::delete('/aboutus/section-image/{key}', [AboutUsController::class, 'deleteSectionImage'])->name('aboutus.section-image.delete');
+        // About Us routes
+        Route::get('/aboutus', [AboutUsController::class, 'index'])->name('aboutus');
+        Route::post('/aboutus/main-images', [AboutUsController::class, 'storeMainImage'])->name('aboutus.main-images.store');
+        Route::delete('/aboutus/main-images/{image}', [AboutUsController::class, 'deleteMainImage'])->name('aboutus.main-images.delete');
+        Route::post('/aboutus/history', [AboutHistoryController::class, 'store'])->name('aboutus.history.store');
+        Route::delete('/aboutus/history/{history}', [AboutHistoryController::class, 'destroy'])->name('aboutus.history.delete');
+        Route::get('/aboutus/people', [AboutPeopleController::class, 'index'])->name('aboutus.people.index');
+        Route::post('/aboutus/people', [AboutPeopleController::class, 'store'])->name('aboutus.people.store');
+        Route::delete('/aboutus/people/{person}', [AboutPeopleController::class, 'destroy'])->name('aboutus.people.delete');
+        Route::post('/aboutus/section-image', [AboutUsController::class, 'storeSectionImage'])->name('aboutus.section-image.store');
+        Route::delete('/aboutus/section-image/{key}', [AboutUsController::class, 'deleteSectionImage'])->name('aboutus.section-image.delete');
 
-    // Sales routes
-    Route::get('/sales', [SalesController::class, 'index'])->name('sales.index');
-    Route::post('/sales/store', [SalesController::class, 'store'])->name('sales.store');
-    Route::delete('/sales/delete/{id}', [SalesController::class, 'destroy'])->name('sales.destroy');
+        // Sales routes
+        Route::get('/sales', [SalesController::class, 'index'])->name('sales.index');
+        Route::post('/sales/store', [SalesController::class, 'store'])->name('sales.store');
+        Route::delete('/sales/delete/{id}', [SalesController::class, 'destroy'])->name('sales.destroy');
 
-    // News routes
-    Route::get('/newsEdit', [AdminController::class, 'adminNewsView'])->name('adminNewsViews');
-    Route::get('/addNews', function () {
-        return view('admin.adminNewsAdd');
-    })->name('adminNewsAdd');
-    Route::post('/addNews', [AdminController::class, 'storeNews'])->name('adminNewsStore');
-    Route::delete('/news/{id}', [AdminController::class, 'deleteNews'])->name('news.delete');
+        // News routes
+        Route::get('/newsEdit', [AdminController::class, 'adminNewsView'])->name('adminNewsViews');
+        Route::get('/addNews', function () {
+            return view('admin.adminNewsAdd');
+        })->name('adminNewsAdd');
+        Route::post('/addNews', [AdminController::class, 'storeNews'])->name('adminNewsStore');
+        Route::delete('/news/{id}', [AdminController::class, 'deleteNews'])->name('news.delete');
+
+        // WBS routes
+        Route::get('/wbs', [AdminWbsController::class, 'index'])->name('wbs.index');
+        Route::get('/wbs/{id}', [AdminWbsController::class, 'show'])->name('wbs.show');
+
+        // Hero Banners & Why Choose Us & Documents
+        Route::post('/documents', [AdminDocumentController::class, 'store'])->name('documents.store');
+        Route::delete('/documents/{id}', [AdminDocumentController::class, 'destroy'])->name('documents.delete');
+
+        Route::post('/hero-banners', [HeroBannerController::class, 'store'])->name('hero-banners.store');
+        Route::delete('/hero-banners/{id}', [HeroBannerController::class, 'destroy'])->name('hero-banners.destroy');
+        Route::get('/hero-banners/view/{filename}', [HeroBannerController::class, 'viewImage'])->name('hero-banners.view');
+
+        Route::post('/why-choose-us', [WhyChooseUsController::class, 'store'])->name('why-choose-us.store');
+        Route::delete('/why-choose-us/{id}', [WhyChooseUsController::class, 'destroy'])->name('why-choose-us.destroy');
+        Route::get('/why-choose-us/view/{filename}', [WhyChooseUsController::class, 'viewImage'])->name('why-choose-us.view');
+    });
 });
 
-// Additional admin routes (non-protected)
-// Removed duplicate routes to avoid conflicts
-
-Route::prefix('admin')->group(function () {
-    Route::get('/wbs', [AdminWbsController::class, 'index'])
-        ->name('admin.wbs.index');
-
-    Route::get('/wbs/{id}', [AdminWbsController::class, 'show'])
-        ->name('admin.wbs.show');
-});
-
-Route::get('/wbs/{id}/download', [WbsController::class, 'downloadEvidence'])
-    ->name('api.wbs.download');
-
-// Removed duplicate route
-
-Route::get('/admin', [HeroBannerController::class, 'index'])
-    ->name('admin.landingEdit');
-
-Route::post(
-    '/admin/documents',
-    [AdminDocumentController::class, 'store']
-)->name('admin.documents.store');
-
-Route::delete(
-    '/admin/documents/{id}',
-    [AdminDocumentController::class, 'destroy']
-)->name('admin.documents.delete');
-
-Route::post(
-    '/admin/hero-banners',
-    [HeroBannerController::class, 'store']
-)->name('admin.hero-banners.store');
-
-Route::delete(
-    '/admin/hero-banners/{id}',
-    [HeroBannerController::class, 'destroy']
-)->name('admin.hero-banners.destroy');
-
-Route::get(
-    '/admin/hero-banners/view/{filename}',
-    [HeroBannerController::class, 'viewImage']
-)->name('admin.hero-banners.view');
-
-Route::post(
-    '/admin/why-choose-us',
-    [WhyChooseUsController::class, 'store']
-)->name('admin.why-choose-us.store');
-
-Route::delete(
-    '/admin/why-choose-us/{id}',
-    [WhyChooseUsController::class, 'destroy']
-)->name('admin.why-choose-us.destroy');
-
-Route::get(
-    '/admin/why-choose-us/view/{filename}',
-    [WhyChooseUsController::class, 'viewImage']
-)->name('admin.why-choose-us.view');
 
 // Public routes
 Route::get('/product', [FrontProductController::class, 'index'])

@@ -12,7 +12,9 @@ class AdminAuthController extends Controller
 {
   public function showLoginForm()
   {
-    // No redirect for now
+    if (Auth::guard('web')->check() && session('admin_logged_in')) {
+        return redirect()->route('admin.landingEdit');
+    }
     return view('admin.login');
   }
 
@@ -47,8 +49,8 @@ class AdminAuthController extends Controller
     }
 
     \Log::info('Login success', ['email' => $user->email]);
-    // Login user dengan remember token (cookies)
-    Auth::login($user, $request->has('remember'));
+    // Login user dengan remember token (cookies) menggunakan guard web
+    Auth::guard('web')->login($user, $request->has('remember'));
 
     // Regenerate session immediately after login to ensure session IDs and custom vars persist cleanly
     $request->session()->regenerate();
@@ -63,7 +65,7 @@ class AdminAuthController extends Controller
 
   public function logout(Request $request)
   {
-    Auth::logout();
+    Auth::guard('web')->logout();
 
     $request->session()->invalidate();
     $request->session()->regenerateToken();

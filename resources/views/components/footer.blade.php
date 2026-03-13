@@ -74,11 +74,11 @@
                         </div>
                         <div class="widget-content">
                             <ul class="links-list clearfix">
-                                <li><a href="/"><i class="flaticon-right"></i><span>{{ __('messages.home') }}</span></a></li>
-                                <li><a href="about"><i class="flaticon-right"></i><span>{{ __('messages.about_us') }}</span></a></li>
+                                <li><a href="{{ url('/') }}"><i class="flaticon-right"></i><span>{{ __('messages.home') }}</span></a></li>
+                                <li><a href="{{ url('/about') }}"><i class="flaticon-right"></i><span>{{ __('messages.about_us') }}</span></a></li>
                                 <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.product') }}</span></a></li>
-                                <li><a href="news"><i class="flaticon-right"></i><span>{{ __('messages.news') }}</span></a></li>
-                                <li><a href="contact"><i class="flaticon-right"></i><span>{{ __('messages.contact') }}</span></a></li>
+                                <li><a href="{{ url('/news') }}"><i class="flaticon-right"></i><span>{{ __('messages.news') }}</span></a></li>
+                                <li><a href="{{ url('/contact') }}"><i class="flaticon-right"></i><span>{{ __('messages.contact') }}</span></a></li>
                             </ul>
                         </div>
                     </div>

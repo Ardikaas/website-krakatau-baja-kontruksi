@@ -58,21 +58,30 @@
     display: none;
 }
 
-.menu-item.active .menu-text {
+.menu-item.active .menu-text,
+.menu-item.active .menu-icon {
     color: var(--color-00a1d1);
 }
 
 .menu-icon {
-    width: 14px;
-    height: 14px;
+    font-size: 18px;
+    width: 20px; /* Fixed width for alignment */
+    text-align: center;
+    color: var(--color-66696b); /* Default color similar to before */
+    transition: color 0.3s ease;
 }
 
 .sidebar-bottom {
     margin-top: auto;
 }
 
-.logout {
+.logout,
+.menu-item .menu-icon.fa-right-from-bracket {
     color: var(--color-d10000);
+}
+
+.menu-item:hover .menu-icon.fa-right-from-bracket {
+    color: var(--color-ff3131);
 }
 
 /* Header */

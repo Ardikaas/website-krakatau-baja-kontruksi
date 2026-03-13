@@ -13,5 +13,7 @@ class HeroBanner extends Model
 
     protected $fillable = [
         'image',
+        'title',
+        'description',
     ];
 }
