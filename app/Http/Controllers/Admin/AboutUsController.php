@@ -100,4 +100,21 @@ class AboutUsController extends Controller
 
         return response()->json(['success' => true]);
     }
+
+    public function viewImage($filename)
+    {
+        // Decode filename if it contains paths
+        $path = str_replace(['..', '///'], '', $filename);
+
+        if (!Storage::disk('public')->exists($path)) {
+            abort(404);
+        }
+
+        $fullPath = storage_path('app/public/' . $path);
+
+        return response()->file($fullPath, [
+            'Content-Type' => mime_content_type($fullPath),
+            'Cache-Control' => 'public, max-age=86400',
+        ]);
+    }
 }

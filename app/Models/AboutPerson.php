@@ -11,7 +11,12 @@ class AboutPerson extends Model
         'name',
         'position',
         'position_en',
-        'image'
+        'image',
+        'summary',
+        'summary_en',
+        'previous_jobs',
+        'previous_jobs_en',
+        'full_body_image',
     ];
 
     public function getTranslatedPositionAttribute()

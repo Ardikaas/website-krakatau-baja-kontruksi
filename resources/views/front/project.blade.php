@@ -19,7 +19,7 @@
                                         <figure class="image">
                                             <span class="shape-1"></span>
                                             <span class="shape-2"></span>
-                                            <img src="{{ $project->image ? asset('storage/' . $project->image) : asset('images/default_project.png') }}"
+                                            <img src="{{ $project->image ? route('admin.projects.view', ['filename' => basename($project->image)]) : asset('images/default_project.png') }}"
                                                 alt="{{ $project->title }}">
                                         </figure>
                                     </div>

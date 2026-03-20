@@ -25,7 +25,7 @@
     margin-right: -15px;
 }
 
-.row > * {
+.row>* {
     padding-left: 15px;
     padding-right: 15px;
     box-sizing: border-box;
@@ -341,15 +341,13 @@
     color: var(--secondary-color);
     background-color: var(--theme-color);
     margin-bottom: 25px;
-    clip-path: polygon(
-        50% 0%,
-        100% 20%,
-        100% 80%,
-        50% 100%,
-        50% 100%,
-        0 80%,
-        0 20%
-    );
+    clip-path: polygon(50% 0%,
+            100% 20%,
+            100% 80%,
+            50% 100%,
+            50% 100%,
+            0 80%,
+            0 20%);
 }
 
 .about-style-three .content-box .inner-box .left-content h3 {
@@ -376,12 +374,7 @@
     margin-bottom: 10px;
 }
 
-.about-style-three
-    .content-box
-    .inner-box
-    .left-content
-    .list-item
-    li:last-child {
+.about-style-three .content-box .inner-box .left-content .list-item li:last-child {
     margin-bottom: 0px;
 }
 
@@ -871,15 +864,13 @@
     font-size: 40px;
     color: var(--title-color);
     margin-bottom: 22px;
-    clip-path: polygon(
-        50% 0%,
-        100% 20%,
-        100% 80%,
-        50% 100%,
-        50% 100%,
-        0 80%,
-        0 20%
-    );
+    clip-path: polygon(50% 0%,
+            100% 20%,
+            100% 80%,
+            50% 100%,
+            50% 100%,
+            0 80%,
+            0 20%);
     transition: all 500ms ease;
 }
 
@@ -1088,16 +1079,8 @@
     background-color: var(--theme-color);
 }
 
-.features-section
-    .inner-container
-    .left-content
-    .title-box
-    .title-shape::before,
-.features-section
-    .inner-container
-    .left-content
-    .title-box
-    .title-shape::after {
+.features-section .inner-container .left-content .title-box .title-shape::before,
+.features-section .inner-container .left-content .title-box .title-shape::after {
     position: absolute;
     content: "";
     background-color: var(--theme-color);
@@ -1106,19 +1089,11 @@
     bottom: -10px;
 }
 
-.features-section
-    .inner-container
-    .left-content
-    .title-box
-    .title-shape::before {
+.features-section .inner-container .left-content .title-box .title-shape::before {
     left: 0px;
 }
 
-.features-section
-    .inner-container
-    .left-content
-    .title-box
-    .title-shape::after {
+.features-section .inner-container .left-content .title-box .title-shape::after {
     right: 0px;
 }
 
@@ -1474,6 +1449,7 @@
 }
 
 @media only screen and (max-width: 991px) {
+
     .col-lg-3,
     .col-lg-4,
     .col-lg-6,
@@ -1621,6 +1597,7 @@
         align-items: center;
     }
 }
+
 @media only screen and (max-width: 767px) {
     .col-md-6 {
         width: 100%;
@@ -1924,24 +1901,23 @@
 }
 
 /* CARD WRAPPER */
-.simple-product-card{
+.simple-product-card {
     position: relative;
     background: var(--color-ffffff);
     overflow: hidden;
-    margin-bottom: 30px;
     box-shadow: 0 4px 18px var(--color-rgba-0-0-0-0-06);
     transition: 0.3s ease;
     height: 100%;
 }
 
 /* HOVER */
-.simple-product-card:hover{
+.simple-product-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 28px var(--color-rgba-0-0-0-0-12);
 }
 
 /* IMAGE */
-.card-image{
+.card-image {
     width: 100%;
     height: 260px;
     background-size: cover;
@@ -1949,27 +1925,27 @@
 }
 
 /* BODY */
-.card-body{
+.card-body {
     padding: 20px;
 }
 
 /* TITLE */
-.product-title{
+.product-title {
     font-size: 20px;
     margin-bottom: 8px;
 }
 
-.product-title a{
+.product-title a {
     color: var(--color-1a1a1a);
     text-decoration: none;
 }
 
-.product-title a:hover{
+.product-title a:hover {
     color: var(--theme-color);
 }
 
 /* CATEGORY */
-.product-category{
+.product-category {
     display: inline-block;
     font-size: 13px;
     color: var(--color-777777);
@@ -1977,16 +1953,17 @@
 }
 
 /* SALES CONTACT */
-.sales-contact{
+.sales-contact {
     display: flex;
     align-items: center;
     gap: 12px;
     padding-top: 12px;
-    border-top: 1px solid var(--color-eeeeee); /* garis tipis aja */
+    border-top: 1px solid var(--color-eeeeee);
+    /* garis tipis aja */
 }
 
 /* PHOTO */
-.sales-contact img{
+.sales-contact img {
     width: 48px;
     height: 48px;
     object-fit: cover;
@@ -1995,19 +1972,19 @@
 }
 
 /* INFO */
-.sales-info h6{
+.sales-info h6 {
     font-size: 14px;
     margin: 0;
     font-weight: 600;
 }
 
-.sales-info p{
+.sales-info p {
     font-size: 13px;
     margin: 0;
     color: var(--color-555555);
 }
 
-.sales-info small{
+.sales-info small {
     font-size: 12px;
     color: var(--color-888888);
 }

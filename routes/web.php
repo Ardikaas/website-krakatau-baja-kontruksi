@@ -129,6 +129,9 @@ Route::post('/news/{id}/comment', [NewsController::class, 'storeComment'])->name
 Route::get('/about-us', [AboutController::class, 'about'])
     ->name('about');
 
+Route::get('/about-us/cv/{id}', [AboutController::class, 'showCv'])
+    ->name('front.cv.show');
+
 Route::post('/contact/send', [ContactController::class, 'send'])
     ->name('contact.send');
 
@@ -166,11 +169,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::delete('/aboutus/main-images/{image}', [AboutUsController::class, 'deleteMainImage'])->name('aboutus.main-images.delete');
         Route::post('/aboutus/history', [AboutHistoryController::class, 'store'])->name('aboutus.history.store');
         Route::delete('/aboutus/history/{history}', [AboutHistoryController::class, 'destroy'])->name('aboutus.history.delete');
+        Route::post('/aboutus/section-image', [AboutUsController::class, 'storeSectionImage'])->name('aboutus.section-image.store');
+        Route::delete('/aboutus/section-image/{key}', [AboutUsController::class, 'deleteSectionImage'])->name('aboutus.section-image.delete');
         Route::get('/aboutus/people', [AboutPeopleController::class, 'index'])->name('aboutus.people.index');
         Route::post('/aboutus/people', [AboutPeopleController::class, 'store'])->name('aboutus.people.store');
         Route::delete('/aboutus/people/{person}', [AboutPeopleController::class, 'destroy'])->name('aboutus.people.delete');
-        Route::post('/aboutus/section-image', [AboutUsController::class, 'storeSectionImage'])->name('aboutus.section-image.store');
-        Route::delete('/aboutus/section-image/{key}', [AboutUsController::class, 'deleteSectionImage'])->name('aboutus.section-image.delete');
 
         // Sales routes
         Route::get('/sales', [SalesController::class, 'index'])->name('sales.index');
@@ -190,16 +193,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/wbs/{id}', [AdminWbsController::class, 'show'])->name('wbs.show');
 
         // Hero Banners & Why Choose Us & Documents
+        Route::get('/documents/{id}/download', [AdminDocumentController::class, 'download'])->name('documents.download');
         Route::post('/documents', [AdminDocumentController::class, 'store'])->name('documents.store');
         Route::delete('/documents/{id}', [AdminDocumentController::class, 'destroy'])->name('documents.delete');
 
         Route::post('/hero-banners', [HeroBannerController::class, 'store'])->name('hero-banners.store');
         Route::delete('/hero-banners/{id}', [HeroBannerController::class, 'destroy'])->name('hero-banners.destroy');
-        Route::get('/hero-banners/view/{filename}', [HeroBannerController::class, 'viewImage'])->name('hero-banners.view');
 
         Route::post('/why-choose-us', [WhyChooseUsController::class, 'store'])->name('why-choose-us.store');
         Route::delete('/why-choose-us/{id}', [WhyChooseUsController::class, 'destroy'])->name('why-choose-us.destroy');
-        Route::get('/why-choose-us/view/{filename}', [WhyChooseUsController::class, 'viewImage'])->name('why-choose-us.view');
     });
 });
 
@@ -218,3 +220,24 @@ Route::get('/product-image/{filename}', [ProductController::class, 'viewImage'])
 Route::get('/sales-image/{filename}', [SalesController::class, 'viewImage'])
     ->where('filename', '.*')
     ->name('sales.image');
+// About Us Image Bypasses
+Route::get('/aboutus/view/{filename}', [App\Http\Controllers\Admin\AboutUsController::class, 'viewImage'])
+    ->where('filename', '.*')
+    ->name('admin.aboutus.view');
+
+Route::get('/aboutus/history/view/{filename}', [App\Http\Controllers\Admin\AboutHistoryController::class, 'viewImage'])
+    ->name('admin.aboutus.history.view');
+
+Route::get('/aboutus/people/view/{filename}', [App\Http\Controllers\Admin\AboutPeopleController::class, 'viewImage'])
+    ->name('admin.aboutus.people.view');
+
+// Other Bypasses
+Route::get('/why-choose-us/view/{filename}', [App\Http\Controllers\Admin\WhyChooseUsController::class, 'viewImage'])
+    ->name('admin.why-choose-us.view');
+
+Route::get('/hero-banners/view/{filename}', [App\Http\Controllers\Admin\HeroBannerController::class, 'viewImage'])
+    ->name('admin.hero-banners.view');
+
+// Project Image Bypass
+Route::get('/projects/view/{filename}', [App\Http\Controllers\Admin\ProjectPageController::class, 'viewImage'])
+    ->name('admin.projects.view');

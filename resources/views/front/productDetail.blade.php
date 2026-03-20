@@ -23,7 +23,7 @@
                     {{-- IMAGE --}}
                     <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                         <figure class="image-box">
-                            <img src="{{ route('admin.product.image', $images[0]) }}" alt="{{ $product->translated_name }}">
+                            <img src="{{ route('product.image', $images[0]) }}" alt="{{ $product->translated_name }}">
                         </figure>
                     </div>
 
@@ -79,7 +79,7 @@
 
                 <div class="table-wrapper">
                     <div class="table-image">
-                        <img src="{{ route('admin.product.image', $product->spec_image) }}"
+                        <img src="{{ route('product.image', $product->spec_image) }}"
                             alt="Specification {{ $product->translated_name }}">
                     </div>
                 </div>

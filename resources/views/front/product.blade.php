@@ -55,7 +55,7 @@
                                     {{-- IMAGE --}}
                                     <div class="card-image"
                                         style="background-image:url(
-                        {{ $thumbnail ? route('admin.product.image', $thumbnail) : 'https://placehold.co/600x400' }}
+                        {{ $thumbnail ? route('product.image', $thumbnail) : 'https://placehold.co/600x400' }}
                     );">
                                     </div>
 

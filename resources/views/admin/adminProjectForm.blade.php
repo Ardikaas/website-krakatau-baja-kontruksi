@@ -30,7 +30,7 @@
                         style="position:absolute; inset:0; opacity:0; cursor:pointer; z-index:5;">
                     <div class="project-editor-upload-inner" id="uploadInner">
                         @if ($project->image)
-                            <img src="{{ asset('storage/' . $project->image) }}" class="upload-preview"
+                            <img src="{{ route('projects.view', ['filename' => basename($project->image)]) }}" class="upload-preview"
                                 style="max-width:200px; max-height:200px; object-fit:cover; border-radius:8px; display:block; margin:0 auto;">
                             <p class="upload-text" id="uploadText">Current image: {{ basename($project->image) }}</p>
                         @else

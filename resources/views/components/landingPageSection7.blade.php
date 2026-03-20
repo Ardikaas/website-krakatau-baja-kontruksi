@@ -57,13 +57,13 @@
                                             <div class="project-block-one">
                                                 <div class="inner-box">
                                                     <div class="bg-layer"
-                                                        style="background-image: url({{ asset('storage/' . ($product->thumbnail[0] ?? '')) }});">
+                                                        style="background-image: url({{ ($product->thumbnail[0] ?? '') ? route('product.image', ['filename' => $product->thumbnail[0]]) : '' }});">
                                                     </div>
 
                                                     <span class="category">{{ $product->category }}</span>
 
                                                     <div class="content-box">
-                                                        <h3>{{ $product->translated_title }}</h3>
+                                                        <h3>{{ $product->translated_name }}</h3>
                                                         <p>{{ Str::limit($product->translated_description, 80) }}</p>
 
                                                         <h6>{{ __('messages.type') }}</h6>
@@ -83,7 +83,7 @@
                                             <div class="project-block-one">
                                                 <div class="inner-box">
                                                     <div class="bg-layer"
-                                                        style="background-image: url({{ asset('storage/' . $project->image) }});">
+                                                        style="background-image: url({{ $project->image ? route('admin.projects.view', ['filename' => basename($project->image)]) : '' }});">
                                                     </div>
 
                                                     <span class="category">{{ $project->category }}</span>
@@ -114,13 +114,13 @@
                                             <div class="project-block-one">
                                                 <div class="inner-box">
                                                     <div class="bg-layer"
-                                                        style="background-image: url({{ asset('storage/' . ($product->thumbnail[0] ?? '')) }});">
+                                                        style="background-image: url({{ ($product->thumbnail[0] ?? '') ? route('product.image', ['filename' => $product->thumbnail[0]]) : '' }});">
                                                     </div>
 
                                                     <span class="category">{{ $product->category }}</span>
 
                                                     <div class="content-box">
-                                                        <h3>{{ $product->translated_title }}</h3>
+                                                        <h3>{{ $product->translated_name }}</h3>
                                                         <p>{{ Str::limit($product->translated_description, 80) }}</p>
 
                                                         <h6>{{ __('messages.type') }}</h6>
@@ -146,7 +146,7 @@
                                             <div class="project-block-one">
                                                 <div class="inner-box">
                                                     <div class="bg-layer"
-                                                        style="background-image: url({{ asset('storage/' . $project->image) }});">
+                                                        style="background-image: url({{ $project->image ? route('admin.projects.view', ['filename' => basename($project->image)]) : '' }});">
                                                     </div>
 
                                                     <span class="category">{{ $project->category }}</span>

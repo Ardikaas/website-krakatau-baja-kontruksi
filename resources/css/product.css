@@ -153,6 +153,10 @@
   padding: 112px 0px;
 }
 
+.project-style-three .masonry-item{
+  margin-bottom: 30px;
+}
+
 .project-style-three .project-block-two .inner-box .bg-layer::before{
   background: -webkit-linear-gradient(90deg, var(--color-rgba-25-47-66-1) 0%, var(--color-rgba-25-47-66-0-1) 50%);
 }

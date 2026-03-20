@@ -95,4 +95,20 @@ class ProjectPageController extends Controller
         $project->delete();
         return back()->with('success', 'Project berhasil dihapus!');
     }
+
+    public function viewImage($filename)
+    {
+        $path = 'projects/' . $filename;
+
+        if (!Storage::disk('public')->exists($path)) {
+            abort(404);
+        }
+
+        $fullPath = Storage::disk('public')->path($path);
+
+        return response()->file($fullPath, [
+            'Content-Type' => mime_content_type($fullPath),
+            'Cache-Control' => 'public, max-age=86400',
+        ]);
+    }
 }

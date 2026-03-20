@@ -233,7 +233,9 @@
                                             @foreach ($documents as $doc)
                                                 <div class="file-item">
                                                     <span class="file-name">
-                                                        {{ $doc->title }}
+                                                        <a href="{{ route('admin.documents.download', $doc->id) }}" target="_blank">
+                                                            {{ $doc->title }}
+                                                        </a>
                                                     </span>
 
                                                     <form action="{{ url('/admin/documents/' . $doc->id) }}"

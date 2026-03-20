@@ -37,7 +37,7 @@
                         @foreach ($mainImages as $img)
                             <div class="main-image-item">
                                 <div class="main-image-left">
-                                    <img src="{{ asset('storage/' . $img->image) }}" class="main-image-preview">
+                                    <img src="{{ route('admin.aboutus.view', ['filename' => $img->image]) }}" class="main-image-preview">
                                 </div>
 
                                 <div class="main-image-actions">
@@ -82,7 +82,7 @@
 
                                 <div class="history-card-image-wrapper">
                                     @if ($history->image)
-                                        <img src="{{ asset('storage/' . $history->image) }}" class="history-card-image"
+                                        <img src="{{ route('admin.aboutus.history.view', ['filename' => basename($history->image)]) }}" class="history-card-image"
                                             alt="{{ $history->title }}">
                                     @else
                                         <div class="history-card-image-placeholder">
@@ -130,7 +130,7 @@
                         </div>
 
                         <div class="company-image-item" id="companyImageItem" @if($companyImage && $companyImage->value) style="display:flex;" @else style="display:none;" @endif>
-                            <img id="companyImagePreview" alt="preview" @if($companyImage && $companyImage->value) src="{{ asset('storage/' . $companyImage->value) }}" @endif>
+                            <img id="companyImagePreview" alt="preview" @if($companyImage && $companyImage->value) src="{{ route('admin.aboutus.view', ['filename' => $companyImage->value]) }}" @endif>
                             <span id="companyImageName">@if($companyImage && $companyImage->value) Current image @endif</span>
 
                             <div class="company-image-actions">
@@ -168,7 +168,7 @@
                         </div>
 
                         <div class="company-image-item" id="structureImageItem" @if($structureImage && $structureImage->value) style="display:flex;" @else style="display:none;" @endif>
-                            <img id="structureImagePreview" alt="preview" @if($structureImage && $structureImage->value) src="{{ asset('storage/' . $structureImage->value) }}" @endif>
+                            <img id="structureImagePreview" alt="preview" @if($structureImage && $structureImage->value) src="{{ route('admin.aboutus.view', ['filename' => $structureImage->value]) }}" @endif>
                             <span id="structureImageName">@if($structureImage && $structureImage->value) Current image @endif</span>
 
                             <div class="company-image-actions">
@@ -210,7 +210,7 @@
                                     data-id="{{ $person->id }}">Delete</button>
 
                                 <div class="direction-card-image-wrapper">
-                                    <img src="{{ asset('storage/' . $person->image) }}" class="direction-card-image"
+                                    <img src="{{ route('admin.aboutus.people.view', ['filename' => basename($person->image)]) }}" class="direction-card-image"
                                         alt="{{ $person->name }}">
                                 </div>
 
@@ -289,6 +289,28 @@
                                 style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;">
                         </div>
 
+                        <!-- CV Fields -->
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <label>Summary (ID)</label>
+                            <textarea id="peopleSummary" rows="4" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;"></textarea>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <label>Summary (EN)</label>
+                            <textarea id="peopleSummaryEn" rows="4" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;"></textarea>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <label>Previous Jobs (ID)</label>
+                            <textarea id="peoplePrevJobs" rows="4" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;"></textarea>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <label>Previous Jobs (EN)</label>
+                            <textarea id="peoplePrevJobsEn" rows="4" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;"></textarea>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <label>Full Body Image</label>
+                            <input type="file" id="peopleFullBodyImageInput" accept="image/*" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;">
+                        </div>
+
                         <!-- Actions -->
                         <div class="popup-actions"
                             style="display: flex; justify-content: space-between; align-items: center;">
@@ -322,7 +344,7 @@
                                     data-id="{{ $person->id }}">Delete</button>
 
                                 <div class="direction-card-image-wrapper">
-                                    <img src="{{ asset('storage/' . $person->image) }}" class="direction-card-image"
+                                    <img src="{{ route('admin.aboutus.people.view', ['filename' => basename($person->image)]) }}" class="direction-card-image"
                                         alt="{{ $person->name }}">
                                 </div>
 
@@ -399,6 +421,28 @@
                             <label>Position (EN)</label>
                             <input type="text" id="peoplePositionEn2"
                                 style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;">
+                        </div>
+
+                        <!-- CV Fields -->
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <label>Summary (ID)</label>
+                            <textarea id="peopleSummary2" rows="4" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;"></textarea>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <label>Summary (EN)</label>
+                            <textarea id="peopleSummaryEn2" rows="4" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;"></textarea>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <label>Previous Jobs (ID)</label>
+                            <textarea id="peoplePrevJobs2" rows="4" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;"></textarea>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <label>Previous Jobs (EN)</label>
+                            <textarea id="peoplePrevJobsEn2" rows="4" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;"></textarea>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <label>Full Body Image</label>
+                            <input type="file" id="peopleFullBodyImageInput2" accept="image/*" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;">
                         </div>
 
                         <!-- Actions -->
@@ -866,6 +910,11 @@
                 const name = peopleName1.value.trim();
                 const position = peoplePosition1.value.trim();
                 const positionEn = document.getElementById('peoplePositionEn').value.trim();
+                const summary = document.getElementById('peopleSummary').value.trim();
+                const summaryEn = document.getElementById('peopleSummaryEn').value.trim();
+                const prevJobs = document.getElementById('peoplePrevJobs').value.trim();
+                const prevJobsEn = document.getElementById('peoplePrevJobsEn').value.trim();
+                const fullBodyImageInput = document.getElementById('peopleFullBodyImageInput');
 
                 if (!name || !position) {
                     alert('Please fill in all fields');
@@ -883,7 +932,12 @@
                 formData.append('name', name);
                 formData.append('position', position);
                 if (positionEn) formData.append('position_en', positionEn);
+                if (summary) formData.append('summary', summary);
+                if (summaryEn) formData.append('summary_en', summaryEn);
+                if (prevJobs) formData.append('previous_jobs', prevJobs);
+                if (prevJobsEn) formData.append('previous_jobs_en', prevJobsEn);
                 formData.append('image', peopleImageInput1.files[0]);
+                if (fullBodyImageInput.files[0]) formData.append('full_body_image', fullBodyImageInput.files[0]);
 
                 // POST to server
                 fetch('{{ route('admin.aboutus.people.store') }}', {
@@ -1017,6 +1071,11 @@
                 const name = peopleName2.value.trim();
                 const position = peoplePosition2.value.trim();
                 const positionEn = document.getElementById('peoplePositionEn2').value.trim();
+                const summary = document.getElementById('peopleSummary2').value.trim();
+                const summaryEn = document.getElementById('peopleSummaryEn2').value.trim();
+                const prevJobs = document.getElementById('peoplePrevJobs2').value.trim();
+                const prevJobsEn = document.getElementById('peoplePrevJobsEn2').value.trim();
+                const fullBodyImageInput = document.getElementById('peopleFullBodyImageInput2');
 
                 if (!name || !position) {
                     alert('Please fill in all fields');
@@ -1034,7 +1093,12 @@
                 formData.append('name', name);
                 formData.append('position', position);
                 if (positionEn) formData.append('position_en', positionEn);
+                if (summary) formData.append('summary', summary);
+                if (summaryEn) formData.append('summary_en', summaryEn);
+                if (prevJobs) formData.append('previous_jobs', prevJobs);
+                if (prevJobsEn) formData.append('previous_jobs_en', prevJobsEn);
                 formData.append('image', peopleImageInput2.files[0]);
+                if (fullBodyImageInput.files[0]) formData.append('full_body_image', fullBodyImageInput.files[0]);
 
                 // POST to server
                 fetch('{{ route('admin.aboutus.people.store') }}', {
@@ -1152,7 +1216,7 @@
 
                 if (!confirm('Delete this history?')) return;
 
-                fetch('/admin/aboutus/history/' + editHistoryId, {
+                fetch('{{ url('/admin/aboutus/history') }}/' + editHistoryId, {
                         method: 'DELETE',
                         headers: {
                             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content ||
@@ -1179,7 +1243,7 @@
 
                 if (!confirm('Delete this history?')) return;
 
-                fetch('/admin/aboutus/history/' + historyId, {
+                fetch('{{ url('/admin/aboutus/history') }}/' + historyId, {
                         method: 'DELETE',
                         headers: {
                             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content ||
@@ -1205,7 +1269,7 @@
                 const personId = this.dataset.id;
 
                 if (confirm('Delete this person?')) {
-                    fetch('/admin/aboutus/people/' + personId, {
+                    fetch('{{ url('/admin/aboutus/people') }}/' + personId, {
                             method: 'DELETE',
                             headers: {
                                 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')
