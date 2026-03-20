@@ -37,7 +37,7 @@
                                     onclick="window.location='{{ route('admin.projects.edit', $project) }}'"
                                     style="cursor:pointer;">
                                     <div class="apm-card-image-wrapper">
-                                        <img src="{{ $project->image ? asset('storage/' . $project->image) : asset('images/default_project.png') }}"
+                                        <img src="{{ $project->image ? route('projects.view', ['filename' => basename($project->image)]) : asset('images/default_project.png') }}"
                                             alt="{{ $project->title }}" class="apm-card-image">
                                     </div>
 

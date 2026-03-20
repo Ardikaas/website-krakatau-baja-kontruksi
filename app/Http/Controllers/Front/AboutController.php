@@ -26,7 +26,7 @@ class AboutController extends Controller
         for ($i = 0; $i < 3; $i++) {
             if (isset($dbImages[$i])) {
                 $mainImages->push(
-                    asset('storage/' . $dbImages[$i]->image)
+                    route('admin.aboutus.view', ['filename' => $dbImages[$i]->image])
                 );
             } else {
                 $mainImages->push($defaultImages[$i]);
@@ -43,6 +43,14 @@ class AboutController extends Controller
             'structureImage' => AboutSetting::where('key', 'structure_image')->first(),
             'direksi' => $direksi,
             'komisaris' => $komisaris,
+        ]);
+    }
+    public function showCv($id)
+    {
+        $person = AboutPerson::findOrFail($id);
+        
+        return view('front.cv', [
+            'person' => $person
         ]);
     }
 }

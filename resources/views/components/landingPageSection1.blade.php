@@ -13,7 +13,7 @@
                 </div>
             </div>
 
-            <span class="rotate-text">{{ __('messages.established_since_1992') }}</span>
+            {{-- <span class="rotate-text">{{ __('messages.established_since_1992') }}</span> --}}
         </div>
 
         <div class="inner-box">

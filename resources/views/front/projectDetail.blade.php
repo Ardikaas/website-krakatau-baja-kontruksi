@@ -16,7 +16,7 @@
             <div class="upper-box mb_75">
                 <div class="row clearfix">
                     <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                        <figure class="image-box"><img src="{{ $project->image ? asset('storage/' . $project->image) : asset('images/default_project.png') }}" alt="">
+                        <figure class="image-box"><img src="{{ $project->image ? route('admin.projects.view', ['filename' => basename($project->image)]) : asset('images/default_project.png') }}" alt="">
                         </figure>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 content-column">

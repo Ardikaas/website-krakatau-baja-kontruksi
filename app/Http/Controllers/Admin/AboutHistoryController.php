@@ -46,4 +46,20 @@ class AboutHistoryController extends Controller
 
         return back()->with('success', 'History deleted');
     }
+
+    public function viewImage($filename)
+    {
+        $path = 'about/history/' . $filename;
+
+        if (!\Storage::disk('public')->exists($path)) {
+            abort(404);
+        }
+
+        $fullPath = storage_path('app/public/' . $path);
+
+        return response()->file($fullPath, [
+            'Content-Type' => mime_content_type($fullPath),
+            'Cache-Control' => 'public, max-age=86400',
+        ]);
+    }
 }

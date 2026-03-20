@@ -72,7 +72,7 @@
     $historyItems = $histories->count() > 0
         ? $histories->map(fn($h) => [
             'year' => $h->year ?? '',
-            'image' => $h->image ? asset('storage/' . $h->image) : asset('images/resource/present.jpeg'),
+            'image' => $h->image ? route('aboutus.history.view', ['filename' => basename($h->image)]) : asset('images/resource/present.jpeg'),
             'translated_title' => $h->translated_title,
             'translated_description' => $h->translated_description,
         ])->toArray()
@@ -131,7 +131,7 @@
 
 {{-- company-section --}}
 <section class="company-section" id="vision">
-    <div class="bg-layer" style="background-image: url({{ $companyImage && $companyImage->value ? asset('storage/' . $companyImage->value) : asset('images/background/visi-misi-about-us.png') }});"></div>
+    <div class="bg-layer" style="background-image: url({{ $companyImage && $companyImage->value ? route('admin.aboutus.view', ['filename' => $companyImage->value]) : asset('images/background/visi-misi-about-us.png') }});"></div>
     <div class="outer-container">
         <div class="outer-box clearfix">
             <div class="title-column">
@@ -223,7 +223,7 @@
 
         <div class="structure-wrapper">
             <div class="structure-image">
-                <img src="{{ $structureImage && $structureImage->value ? asset('storage/' . $structureImage->value) : asset('images/background/struktur-company.png') }}" alt="Corporate Structure" />
+                <img src="{{ $structureImage && $structureImage->value ? route('admin.aboutus.view', ['filename' => $structureImage->value]) : asset('images/background/struktur-company.png') }}" alt="Corporate Structure" />
             </div>
         </div>
 
@@ -251,10 +251,11 @@
             <div class="image-wrapper active" id="komisaris">
                 @forelse ($komisaris as $person)
                     <div class="image-card">
-                        <img src="{{ asset('storage/' . $person->image) }}" alt="{{ $person->name }}" />
+                        <img src="{{ route('admin.aboutus.people.view', ['filename' => basename($person->image)]) }}" alt="{{ $person->name }}" />
                         <div class="card-overlay">
                             <h4>{{ $person->name }}</h4>
                             <span>{{ $person->translated_position }}</span>
+                            <a href="{{ route('front.cv.show', $person->id) }}" class="theme-btn btn-one mt_15" style="padding: 8px 20px; font-size: 14px; min-width: auto; height: auto; line-height: normal;">View CV</a>
                         </div>
                     </div>
                 @empty
@@ -266,10 +267,11 @@
             <div class="image-wrapper" id="direksi">
                 @forelse ($direksi as $person)
                     <div class="image-card">
-                        <img src="{{ asset('storage/' . $person->image) }}" alt="{{ $person->name }}" />
+                        <img src="{{ route('admin.aboutus.people.view', ['filename' => basename($person->image)]) }}" alt="{{ $person->name }}" />
                         <div class="card-overlay">
                             <h4>{{ $person->name }}</h4>
                             <span>{{ $person->translated_position }}</span>
+                            <a href="{{ route('front.cv.show', $person->id) }}" class="theme-btn btn-one mt_15" style="padding: 8px 20px; font-size: 14px; min-width: auto; height: auto; line-height: normal;">View CV</a>
                         </div>
                     </div>
                 @empty
