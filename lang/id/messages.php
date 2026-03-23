@@ -159,6 +159,10 @@ return [
     'page_news' => 'Berita',
     'page_company_governance' => 'Tata Kelola Perusahaan',
     'page_subholding' => 'Subholding',
+    'project_what' => 'Yang Dibuat',
+    'project_location' => 'Lokasi',
+    'project_description' => 'Deskripsi',
+    'no_projects_yet' => 'Belum ada proyek.',
 
     // Contact Us Page
     'page_contact' => 'Hubungi Kami',

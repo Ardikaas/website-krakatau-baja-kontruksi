@@ -1922,6 +1922,7 @@
     height: 260px;
     background-size: cover;
     background-position: center;
+    background-color: var(--color-06b6d4);
 }
 
 /* BODY */

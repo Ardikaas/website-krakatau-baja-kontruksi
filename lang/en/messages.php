@@ -159,6 +159,10 @@ return [
     'page_news' => 'News',
     'page_company_governance' => 'Company Governance',
     'page_subholding' => 'Subholding',
+    'project_what' => 'What Was Built',
+    'project_location' => 'Location',
+    'project_description' => 'Description',
+    'no_projects_yet' => 'No projects yet.',
 
     // Contact Us Page
     'page_contact' => 'Contact Us',

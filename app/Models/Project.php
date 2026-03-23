@@ -12,20 +12,17 @@ class Project extends Model
     protected $fillable = [
         'title',
         'title_en',
-        'client',
+        'what',
+        'what_en',
         'location',
-        'category',
-        'category_en',
-        'date',
+        'location_en',
         'description',
         'description_en',
-        'scope_of_work',
-        'scope_of_work_en',
-        'challenges',
-        'challenges_en',
-        'solutions',
-        'solutions_en',
-        'image'
+        'images',
+    ];
+
+    protected $casts = [
+        'images' => 'array',
     ];
 
     public function getTranslatedTitleAttribute()
@@ -33,34 +30,18 @@ class Project extends Model
         return app()->getLocale() == 'en' && $this->title_en ? $this->title_en : $this->title;
     }
 
-    public function getTranslatedCategoryAttribute()
+    public function getTranslatedWhatAttribute()
     {
-        return app()->getLocale() == 'en' && $this->category_en ? $this->category_en : $this->category;
+        return app()->getLocale() == 'en' && $this->what_en ? $this->what_en : $this->what;
+    }
+
+    public function getTranslatedLocationAttribute()
+    {
+        return app()->getLocale() == 'en' && $this->location_en ? $this->location_en : $this->location;
     }
 
     public function getTranslatedDescriptionAttribute()
     {
         return app()->getLocale() == 'en' && $this->description_en ? $this->description_en : $this->description;
     }
-
-    public function getTranslatedScopeOfWorkAttribute()
-    {
-        return app()->getLocale() == 'en' && $this->scope_of_work_en ? $this->scope_of_work_en : $this->scope_of_work;
-    }
-
-    public function getTranslatedChallengesAttribute()
-    {
-        return app()->getLocale() == 'en' && $this->challenges_en ? $this->challenges_en : $this->challenges;
-    }
-
-    public function getTranslatedSolutionsAttribute()
-    {
-        return app()->getLocale() == 'en' && $this->solutions_en ? $this->solutions_en : $this->solutions;
-    }
-
-    protected $casts = [
-        'solutions' => 'array',
-        'solutions_en' => 'array',
-        'date' => 'date'
-    ];
 }

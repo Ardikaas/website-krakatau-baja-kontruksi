@@ -21,28 +21,41 @@
                 @method('PUT')
             @endif
 
-            {{-- IMAGE --}}
+            {{-- IMAGES --}}
             <div class="project-editor-card">
-                <label class="project-editor-label">Image Thumbnail</label>
-                <div class="project-editor-upload" style="position:relative" id="uploadContainer">
-                    <input type="file" name="image" accept="image/*" class="project-editor-file-input"
-                        onchange="previewProjectImage(this)"
+                <label class="project-editor-label">Images (min 1, max 3)</label>
+
+                {{-- Existing images --}}
+                @if ($project->exists && $project->images)
+                    <div class="existing-images-grid" id="existingImagesGrid">
+                        @foreach ($project->images as $img)
+                            <div class="existing-image-item" data-path="{{ $img }}">
+                                <img src="{{ route('admin.projects.view', ['filename' => basename($img)]) }}"
+                                    alt="Project Image">
+                                <input type="hidden" name="existing_images[]" value="{{ $img }}">
+                                <button type="button" class="remove-existing-btn" onclick="removeExistingImage(this)">&times;</button>
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
+
+                {{-- New images upload --}}
+                <div class="project-editor-upload" id="uploadContainer">
+                    <input type="file" name="new_images[]" accept="image/jpeg,image/png" multiple
+                        class="project-editor-file-input" onchange="previewNewImages(this)"
                         style="position:absolute; inset:0; opacity:0; cursor:pointer; z-index:5;">
                     <div class="project-editor-upload-inner" id="uploadInner">
-                        @if ($project->image)
-                            <img src="{{ route('projects.view', ['filename' => basename($project->image)]) }}" class="upload-preview"
-                                style="max-width:200px; max-height:200px; object-fit:cover; border-radius:8px; display:block; margin:0 auto;">
-                            <p class="upload-text" id="uploadText">Current image: {{ basename($project->image) }}</p>
-                        @else
-                            <img src="{{ asset('images/icons/img_upload_computer.svg') }}" class="upload-icon">
-                            <p class="upload-text" id="uploadText">
-                                Drop your image here, or <span class="link-text">Click to browse</span>
-                            </p>
-                        @endif
+                        <img src="{{ asset('images/icons/img_upload_computer.svg') }}" class="upload-icon">
+                        <p class="upload-text">
+                            Drop your images here, or <span class="link-text">Click to browse</span>
+                        </p>
                     </div>
                 </div>
-                <p class="project-editor-helper">Upload a project thumbnail image. Max size: 2MB. Supported formats: JPG,
-                    PNG.</p>
+
+                {{-- New image previews --}}
+                <div class="new-images-preview" id="newImagesPreview"></div>
+
+                <p class="project-editor-helper">Upload 1-3 project images. Max size: 2MB each. Formats: JPG, PNG.</p>
                 <div id="fileError" class="error-message"
                     style="color: #dc2626; font-size: 14px; margin-top: 8px; display: none;"></div>
             </div>
@@ -52,140 +65,57 @@
                 $value = fn($field) => old($field, $project->$field ?? '');
             @endphp
 
+            {{-- TITLE --}}
             <div class="project-editor-card">
                 <div class="project-editor-field">
-                    <label class="project-editor-label">Project Title (ID)</label>
+                    <label class="project-editor-label">Nama Project (ID) *</label>
                     <input type="text" name="title" class="project-editor-input form-control"
                         value="{{ $value('title') }}" required>
                 </div>
                 <div class="project-editor-field mt-3">
-                    <label class="project-editor-label">Project Title (EN)</label>
+                    <label class="project-editor-label">Project Name (EN)</label>
                     <input type="text" name="title_en" class="project-editor-input form-control"
                         value="{{ $value('title_en') }}">
                 </div>
             </div>
 
+            {{-- WHAT --}}
             <div class="project-editor-card">
                 <div class="project-editor-field">
-                    <label class="project-editor-label">Category (ID)</label>
-                    <input type="text" name="category" class="project-editor-input form-control"
-                        value="{{ $value('category') }}" required>
+                    <label class="project-editor-label">Yang Dibuat (ID) * <small style="color:#888">Contoh: Jembatan Baja, Masjid Baja</small></label>
+                    <input type="text" name="what" class="project-editor-input form-control"
+                        value="{{ $value('what') }}" required>
                 </div>
                 <div class="project-editor-field mt-3">
-                    <label class="project-editor-label">Category (EN)</label>
-                    <input type="text" name="category_en" class="project-editor-input form-control"
-                        value="{{ $value('category_en') }}">
+                    <label class="project-editor-label">What Was Built (EN)</label>
+                    <input type="text" name="what_en" class="project-editor-input form-control"
+                        value="{{ $value('what_en') }}">
                 </div>
             </div>
 
+            {{-- LOCATION --}}
             <div class="project-editor-card">
                 <div class="project-editor-field">
-                    <label class="project-editor-label">Client</label>
-                    <input type="text" name="client" class="project-editor-input form-control"
-                        value="{{ $value('client') }}" required>
-                </div>
-            </div>
-
-            <div class="project-editor-card">
-                <div class="project-editor-field">
-                    <label class="project-editor-label">Location</label>
+                    <label class="project-editor-label">Lokasi (ID) * <small style="color:#888">Lokasi atau nama PT</small></label>
                     <input type="text" name="location" class="project-editor-input form-control"
                         value="{{ $value('location') }}" required>
                 </div>
-            </div>
-
-            <div class="project-editor-card">
-                <div class="project-editor-field">
-                    <label class="project-editor-label">Date</label>
-                    <input type="datetime-local" name="date" class="project-editor-input form-control"
-                        value="{{ old('date', $project->date ? $project->date->format('Y-m-d\TH:i') : '') }}" required>
+                <div class="project-editor-field mt-3">
+                    <label class="project-editor-label">Location (EN)</label>
+                    <input type="text" name="location_en" class="project-editor-input form-control"
+                        value="{{ $value('location_en') }}">
                 </div>
             </div>
 
+            {{-- DESCRIPTION --}}
             <div class="project-editor-card">
                 <div class="project-editor-field">
-                    <label class="project-editor-label">Description (ID)</label>
+                    <label class="project-editor-label">Deskripsi (ID) *</label>
                     <textarea name="description" class="project-editor-input form-control" rows="4" required>{{ $value('description') }}</textarea>
                 </div>
                 <div class="project-editor-field mt-3">
                     <label class="project-editor-label">Description (EN)</label>
                     <textarea name="description_en" class="project-editor-input form-control" rows="4">{{ $value('description_en') }}</textarea>
-                </div>
-            </div>
-
-            <div class="project-editor-card">
-                <div class="project-editor-field">
-                    <label class="project-editor-label">Scope of Work (ID)</label>
-                    <textarea name="scope_of_work" class="project-editor-input form-control" rows="4" required>{{ $value('scope_of_work') }}</textarea>
-                </div>
-                <div class="project-editor-field mt-3">
-                    <label class="project-editor-label">Scope of Work (EN)</label>
-                    <textarea name="scope_of_work_en" class="project-editor-input form-control" rows="4">{{ $value('scope_of_work_en') }}</textarea>
-                </div>
-            </div>
-
-            <div class="project-editor-card">
-                <div class="project-editor-field">
-                    <label class="project-editor-label">Challenges (ID)</label>
-                    <textarea name="challenges" class="project-editor-input form-control" rows="4" required>{{ $value('challenges') }}</textarea>
-                </div>
-                <div class="project-editor-field mt-3">
-                    <label class="project-editor-label">Challenges (EN)</label>
-                    <textarea name="challenges_en" class="project-editor-input form-control" rows="4">{{ $value('challenges_en') }}</textarea>
-                </div>
-            </div>
-
-            {{-- SOLUTIONS --}}
-            <div class="project-editor-card">
-                <label class="project-editor-label">Solutions</label>
-                <div id="solutionsWrapper">
-                    @php
-                        $normalize = function ($data) {
-                            if (empty($data)) {
-                                return [
-                                    ['title' => '', 'description' => ''],
-                                    ['title' => '', 'description' => ''],
-                                ];
-                            }
-                            return array_map(function ($item) {
-                                if (is_array($item)) {
-                                    return [
-                                        'title' => $item['title'] ?? '',
-                                        'description' => $item['description'] ?? '',
-                                    ];
-                                }
-                                return ['title' => $item, 'description' => ''];
-                            }, (array) $data);
-                        };
-
-                        $solutions = old('solutions', $normalize($project->solutions));
-                        $solutions_en = old('solutions_en', $normalize($project->solutions_en));
-                    @endphp
-                    @foreach ($solutions as $i => $solution)
-                        <div class="solution-card">
-                            <div class="solution-field">
-                                <label class="solution-label">Solution Title (ID)</label>
-                                <input type="text" name="solutions[{{ $i }}][title]"
-                                    class="form-control solution-title" value="{{ $solution['title'] ?? '' }}" required>
-                            </div>
-                            <div class="solution-field mt-2">
-                                <label class="solution-label">Solution Title (EN)</label>
-                                <input type="text" name="solutions_en[{{ $i }}][title]"
-                                    class="form-control solution-title"
-                                    value="{{ $solutions_en[$i]['title'] ?? '' }}">
-                            </div>
-
-                            <div class="solution-field mt-3">
-                                <label class="solution-label">Solution Description (ID)</label>
-                                <textarea name="solutions[{{ $i }}][description]" class="form-control solution-desc" rows="3"
-                                    required>{{ $solution['description'] ?? '' }}</textarea>
-                            </div>
-                            <div class="solution-field mt-2">
-                                <label class="solution-label">Solution Description (EN)</label>
-                                <textarea name="solutions_en[{{ $i }}][description]" class="form-control solution-desc" rows="3">{{ $solutions_en[$i]['description'] ?? '' }}</textarea>
-                            </div>
-                        </div>
-                    @endforeach
                 </div>
             </div>
 
@@ -212,69 +142,114 @@
 
     </section>
 
+    <style>
+        .existing-images-grid {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        .existing-image-item {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid var(--color-e5e7eb, #e5e7eb);
+        }
+        .existing-image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .remove-existing-btn {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: none;
+            background: #dc2626;
+            color: #fff;
+            font-size: 18px;
+            line-height: 28px;
+            text-align: center;
+            cursor: pointer;
+            padding: 0;
+        }
+        .new-images-preview {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+        .new-preview-item {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid var(--color-06b6d4, #06b6d4);
+        }
+        .new-preview-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+
     <script>
-        function previewProjectImage(input) {
-            const file = input.files[0];
-            const uploadInner = document.getElementById('uploadInner');
-            const uploadText = document.getElementById('uploadText');
+        function removeExistingImage(btn) {
+            const item = btn.closest('.existing-image-item');
+            item.remove();
+            updateImageCount();
+        }
+
+        function previewNewImages(input) {
+            const preview = document.getElementById('newImagesPreview');
             const fileError = document.getElementById('fileError');
-
-            // Hide any previous error
             fileError.style.display = 'none';
+            preview.innerHTML = '';
 
-            if (file) {
-                // Validate file size (2MB max)
-                const maxSize = 2 * 1024 * 1024; // 2MB in bytes
-                if (file.size > maxSize) {
-                    fileError.textContent = 'File size must be less than 2MB';
+            const existingCount = document.querySelectorAll('.existing-image-item').length;
+            const maxNew = 3 - existingCount;
+
+            if (input.files.length > maxNew) {
+                fileError.textContent = `Maksimal total 3 gambar. Anda sudah punya ${existingCount} gambar, hanya bisa menambah ${maxNew} lagi.`;
+                fileError.style.display = 'block';
+                input.value = '';
+                return;
+            }
+
+            for (let i = 0; i < input.files.length; i++) {
+                const file = input.files[i];
+
+                if (file.size > 2 * 1024 * 1024) {
+                    fileError.textContent = `File "${file.name}" terlalu besar. Maksimal 2MB.`;
                     fileError.style.display = 'block';
-                    input.value = ''; // Clear the input
+                    input.value = '';
+                    preview.innerHTML = '';
                     return;
                 }
 
-                // Validate file type
-                const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png'];
-                if (!allowedTypes.includes(file.type)) {
-                    fileError.textContent = 'Only JPG and PNG files are allowed';
-                    fileError.style.display = 'block';
-                    input.value = ''; // Clear the input
-                    return;
-                }
-
-                // Create image preview
                 const reader = new FileReader();
                 reader.onload = function(e) {
-                    uploadInner.innerHTML = `
-                        <img src="${e.target.result}" class="upload-preview" style="max-width:200px; max-height:200px; object-fit:cover; border-radius:8px; display:block; margin:0 auto;">
-                        <p class="upload-text" id="uploadText" style="text-align:center; margin-top:8px;">File selected: ${file.name}</p>
-                        <button type="button" onclick="clearImage()" style="margin-top:8px; padding:4px 8px; background:#dc2626; color:white; border:none; border-radius:4px; cursor:pointer; font-size:12px;">Remove</button>
-                    `;
+                    const div = document.createElement('div');
+                    div.className = 'new-preview-item';
+                    div.innerHTML = `<img src="${e.target.result}" alt="Preview">`;
+                    preview.appendChild(div);
                 };
                 reader.readAsDataURL(file);
-
-                // Don't disable the input - allow user to change file if needed
-                // input.disabled = true;
             }
         }
 
-        function clearImage() {
-            const uploadInner = document.getElementById('uploadInner');
-            const fileInput = document.querySelector('input[name="image"]');
-            const fileError = document.getElementById('fileError');
-
-            // Clear the file input
-            fileInput.value = '';
-
-            // Reset to initial state
-            uploadInner.innerHTML = `
-                <img src="{{ asset('images/icons/img_upload_computer.svg') }}" class="upload-icon">
-                <p class="upload-text" id="uploadText">
-                    Drop your image here, or <span class="link-text">Click to browse</span>
-                </p>
-            `;
-
-            // Hide any error
-            fileError.style.display = 'none';
+        function updateImageCount() {
+            const existing = document.querySelectorAll('.existing-image-item').length;
+            const fileInput = document.querySelector('input[name="new_images[]"]');
+            // Reset file input when existing images change
+            if (fileInput) fileInput.value = '';
+            document.getElementById('newImagesPreview').innerHTML = '';
         }
     </script>
 @endsection

@@ -2,103 +2,60 @@
 
 @section('title', 'Project - Krakatau Baja Konstruksi')
 
+@push('styles')
+    @vite(['resources/css/project.css'])
+@endpush
+
 @section('content')
     {{-- Banner --}}
     <x-landingPageSection1 type="page" title="{{ __('messages.page_project') }}" :breadcrumb="[['label' => 'Home', 'url' => url('/')], ['label' => __('messages.page_project')]]" imagePath="images/background/page-title.jpg" />
 
-    <section class="service-page-three-section">
+    {{-- Project Grid --}}
+    <section class="project-section">
         <div class="auto-container">
-            <div class="row clearfix">
-                {{-- Main content --}}
-                <div class="col-lg-8 col-md-12 col-sm-12 content-side">
-                    <div class="main-content">
-                        @foreach ($projects as $index => $project)
-                            <div class="service-block-two">
-                                <div class="inner-box">
-                                    <div class="image-box">
-                                        <figure class="image">
-                                            <span class="shape-1"></span>
-                                            <span class="shape-2"></span>
-                                            <img src="{{ $project->image ? route('admin.projects.view', ['filename' => basename($project->image)]) : asset('images/default_project.png') }}"
-                                                alt="{{ $project->title }}">
-                                        </figure>
+
+            @if ($projects->isEmpty())
+                <div class="project-empty-state">
+                    <p>{{ __('messages.no_projects_yet') }}</p>
+                </div>
+            @else
+                <div class="project-grid">
+                    @foreach ($projects as $project)
+                        @php
+                            $firstImage = $project->images[0] ?? null;
+                        @endphp
+                        <div class="project-card-wrapper">
+                            <a href="{{ route('front.projects.show', $project) }}" class="project-card-link">
+                                <div class="project-card">
+                                    {{-- IMAGE --}}
+                                    <div class="project-card-image"
+                                        style="background-image:url({{ $firstImage ? route('admin.projects.view', ['filename' => basename($firstImage)]) : asset('images/default_project.png') }});">
                                     </div>
 
-                                    <div class="content-box">
-                                        <div class="count-box">
-                                            {{ sprintf('%02d', $index + 1) }}<span>/{{ $projects->count() }}</span>
+                                    {{-- BODY --}}
+                                    <div class="project-card-body">
+                                        <h3 class="project-card-title">{{ $project->translated_title }}</h3>
+
+                                        <div class="project-card-meta">
+                                            <span class="project-card-what">
+                                                <i class="flaticon-nut"></i>
+                                                {{ $project->translated_what }}
+                                            </span>
+                                            <span class="project-card-location">
+                                                <i class="flaticon-home"></i>
+                                                {{ $project->translated_location }}
+                                            </span>
                                         </div>
 
-                                        <h6>{{ __('messages.service') }}</h6>
-                                        <h3>{{ $project->category }}</h3>
-
-                                        <div class="block-title">
-                                            <div class="line-shape"></div>
-                                            <h2>
-                                                <a href="{{ route('front.projects.show', $project) }}">
-                                                    [{{ $project->translated_title }}]
-                                                </a>
-                                            </h2>
-                                        </div>
-
-                                        <p class="project-description">{{ $project->translated_description }}</p>
-
-                                        <div class="link">
-                                            <a href="{{ route('front.projects.show', $project) }}">
-                                                <i class="flaticon-right-arrow"></i>
-                                            </a>
-                                        </div>
-
-                                        {{-- Overlay --}}
-                                        <div class="overlay-content">
-                                            <div class="count-box">
-                                                {{ sprintf('%02d', $index + 1) }}<span>/{{ $projects->count() }}</span>
-                                            </div>
-
-                                            <h3>{{ $project->category }}</h3>
-
-                                            <div class="block-title">
-                                                <div class="line-shape"></div>
-                                                <h2>
-                                                    <a href="{{ route('front.projects.show', $project) }}">
-                                                        [{{ $project->translated_title }}]
-                                                    </a>
-                                                </h2>
-                                            </div>
-
-                                            <p class="project-description">{{ $project->translated_description }}</p>
-
-                                            <div class="btn-box">
-                                                <a href="{{ route('front.projects.show', $project) }}"
-                                                    class="theme-btn btn-one">
-                                                    <i class="flaticon-right-arrow"></i>
-                                                    <span>{{ __('messages.read_more') }}</span>
-                                                </a>
-                                            </div>
-                                        </div>
+                                        <p class="project-card-desc">{{ $project->translated_description }}</p>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-
-                {{-- Sidebar --}}
-                <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
-                    <div class="sidebar-content">
-                        <div class="inner-box centred">
-                            <h2>{!! __('messages.custom_solution_text') !!}</h2>
-                            <div class="icon-box">
-                                <div class="icon"><i class="flaticon-headphones"></i></div>
-                            </div>
-                            <h4><a href="tel:66120003456">+62812 1991 1619</a></h4>
-                            <p><a href="mailto:marketing@bajakonstruksi.co.id">marketing@bajakonstruksi.co.id</a></p>
-                            <a href="{{ url('/contact') }}" class="theme-btn"><i
-                                    class="flaticon-right-arrow"></i><span>{{ __('messages.appointment') }}</span></a>
+                            </a>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
-            </div>
+            @endif
+
         </div>
     </section>
 @endsection
