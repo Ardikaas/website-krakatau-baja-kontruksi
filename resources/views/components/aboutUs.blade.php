@@ -29,7 +29,7 @@
                         <h2>{!! __('messages.about_precision_steel') !!}</h2>
                     </div>
                     <div class="text-box mb_30 text-justify">
-                        <p>{{ __('messages.about_desc') }}</p>
+                        <p>{!! __('messages.about_desc') !!}</p>
                     </div>
                 </div>
             </div>
@@ -252,10 +252,10 @@
                 @forelse ($komisaris as $person)
                     <div class="image-card">
                         <img src="{{ route('admin.aboutus.people.view', ['filename' => basename($person->image)]) }}" alt="{{ $person->name }}" />
+                        <a href="{{ route('front.cv.show', $person->id) }}" class="cv-link-btn">resume</a>
                         <div class="card-overlay">
                             <h4>{{ $person->name }}</h4>
                             <span>{{ $person->translated_position }}</span>
-                            <a href="{{ route('front.cv.show', $person->id) }}" class="theme-btn btn-one mt_15" style="padding: 8px 20px; font-size: 14px; min-width: auto; height: auto; line-height: normal;">View CV</a>
                         </div>
                     </div>
                 @empty
@@ -268,10 +268,10 @@
                 @forelse ($direksi as $person)
                     <div class="image-card">
                         <img src="{{ route('admin.aboutus.people.view', ['filename' => basename($person->image)]) }}" alt="{{ $person->name }}" />
+                        <a href="{{ route('front.cv.show', $person->id) }}" class="cv-link-btn">resume</a>
                         <div class="card-overlay">
                             <h4>{{ $person->name }}</h4>
                             <span>{{ $person->translated_position }}</span>
-                            <a href="{{ route('front.cv.show', $person->id) }}" class="theme-btn btn-one mt_15" style="padding: 8px 20px; font-size: 14px; min-width: auto; height: auto; line-height: normal;">View CV</a>
                         </div>
                     </div>
                 @empty

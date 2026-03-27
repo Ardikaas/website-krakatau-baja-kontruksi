@@ -40,10 +40,10 @@
                 @endif
 
                 {{-- New images upload --}}
-                <div class="project-editor-upload" id="uploadContainer">
+                <div class="project-editor-upload" id="uploadContainer" style="position:relative; overflow:hidden;">
                     <input type="file" name="new_images[]" accept="image/jpeg,image/png" multiple
                         class="project-editor-file-input" onchange="previewNewImages(this)"
-                        style="position:absolute; inset:0; opacity:0; cursor:pointer; z-index:5;">
+                        style="position:absolute; inset:0; width:100%; height:100%; opacity:0; cursor:pointer; z-index:5;">
                     <div class="project-editor-upload-inner" id="uploadInner">
                         <img src="{{ asset('images/icons/img_upload_computer.svg') }}" class="upload-icon">
                         <p class="upload-text">

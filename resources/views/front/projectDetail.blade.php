@@ -92,6 +92,33 @@
                                 <h3>{{ __('messages.project_description') }}</h3>
                                 <p>{{ $project->translated_description }}</p>
                             </div>
+
+                            {{-- CONTACT SALES --}}
+                            @if ($sales && $sales->count() > 0)
+                                <div class="project-sales-box mt_40">
+                                    <h3>Contact Sales</h3>
+                                    <div class="sales-contacts mt_25">
+                                        @foreach ($sales as $sale)
+                                            <div class="sales-contact mb_15">
+                                                @if ($sale->photo)
+                                                    <img src="{{ route('sales.image', $sale->photo) }}"
+                                                        alt="{{ $sale->name }}"
+                                                        style="width: 50px; height: 50px; border-radius: 50%; float: left; margin-right: 15px; object-fit: cover;">
+                                                @else
+                                                    <img src="https://placehold.co/100x100"
+                                                        alt="Sales"
+                                                        style="width: 50px; height: 50px; border-radius: 50%; float: left; margin-right: 15px; object-fit: cover;">
+                                                @endif
+                                                <div style="overflow: hidden;">
+                                                    <p style="margin-bottom: 0;"><strong>{{ $sale->name }}</strong></p>
+                                                    <p style="margin-bottom: 0; font-size: 14px;">Contact: <a href="https://wa.me/{{ '+62' . substr($sale->contact, 1) }}"
+                                                            target="_blank" style="color: var(--theme-color);">{{ $sale->contact }}</a></p>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            @endif
                         </div>
                     </div>
 
@@ -106,11 +133,20 @@
                 let current = 0;
                 const total = {{ $imageCount }};
                 const track = document.getElementById('carouselTrack');
+                const carousel = document.getElementById('projectCarousel');
                 const dots = document.querySelectorAll('.carousel-dot');
                 let autoSlide;
+                
+                let isDragging = false;
+                let startPos = 0;
+                let currentTranslate = 0;
+                let prevTranslate = 0;
+                let animationID = 0;
 
                 function update() {
-                    track.style.transform = `translateX(-${current * 100}%)`;
+                    currentTranslate = current * -100;
+                    prevTranslate = currentTranslate;
+                    track.style.transform = `translateX(${currentTranslate}%)`;
                     dots.forEach((d, i) => d.classList.toggle('active', i === current));
                 }
 
@@ -141,6 +177,61 @@
                 }
 
                 resetAuto();
+
+                // Touch and Mouse Drag Events
+                carousel.addEventListener('mousedown', touchStart);
+                carousel.addEventListener('touchstart', touchStart, {passive: true});
+                carousel.addEventListener('mouseup', touchEnd);
+                carousel.addEventListener('mouseleave', touchEnd);
+                carousel.addEventListener('touchend', touchEnd);
+                carousel.addEventListener('mousemove', touchMove);
+                carousel.addEventListener('touchmove', touchMove, {passive: true});
+
+                function getPositionX(event) {
+                    return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+                }
+
+                function touchStart(event) {
+                    isDragging = true;
+                    startPos = getPositionX(event);
+                    animationID = requestAnimationFrame(animation);
+                    track.style.transition = 'none';
+                    clearInterval(autoSlide);
+                }
+
+                function touchMove(event) {
+                    if (isDragging) {
+                        const currentPosition = getPositionX(event);
+                        const diff = currentPosition - startPos;
+                        // convert pixel diff to percentage
+                        const diffPercent = (diff / carousel.clientWidth) * 100;
+                        currentTranslate = prevTranslate + diffPercent;
+                    }
+                }
+
+                function touchEnd() {
+                    isDragging = false;
+                    cancelAnimationFrame(animationID);
+                    
+                    const movedBy = currentTranslate - prevTranslate;
+                    
+                    // If moved enough, change slide
+                    if (movedBy < -10 && current < total - 1) current += 1;
+                    else if (movedBy > 10 && current > 0) current -= 1;
+                    // Wrap around
+                    else if (movedBy < -10 && current === total -1) current = 0;
+                    else if (movedBy > 10 && current === 0) current = total - 1;
+
+                    track.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1)';
+                    update();
+                    resetAuto();
+                }
+
+                function animation() {
+                    track.style.transform = `translateX(${currentTranslate}%)`;
+                    if (isDragging) requestAnimationFrame(animation);
+                }
+
             })();
         </script>
     @endif

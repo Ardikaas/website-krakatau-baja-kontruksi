@@ -25,16 +25,20 @@
                             $firstImage = $project->images[0] ?? null;
                         @endphp
                         <div class="project-card-wrapper">
-                            <a href="{{ route('front.projects.show', $project) }}" class="project-card-link">
+                            <div class="project-card-link" style="display: block; height: 100%;">
                                 <div class="project-card">
                                     {{-- IMAGE --}}
-                                    <div class="project-card-image"
-                                        style="background-image:url({{ $firstImage ? route('admin.projects.view', ['filename' => basename($firstImage)]) : asset('images/default_project.png') }});">
-                                    </div>
+                                    <a href="{{ route('front.projects.show', $project) }}" style="display: block; text-decoration: none;">
+                                        <div class="project-card-image"
+                                            style="background-image:url({{ $firstImage ? route('admin.projects.view', ['filename' => basename($firstImage)]) : asset('images/default_project.png') }});">
+                                        </div>
+                                    </a>
 
                                     {{-- BODY --}}
                                     <div class="project-card-body">
-                                        <h3 class="project-card-title">{{ $project->translated_title }}</h3>
+                                        <a href="{{ route('front.projects.show', $project) }}" style="color: inherit; text-decoration: none;">
+                                            <h3 class="project-card-title">{{ $project->translated_title }}</h3>
+                                        </a>
 
                                         <div class="project-card-meta">
                                             <span class="project-card-what">
@@ -48,9 +52,25 @@
                                         </div>
 
                                         <p class="project-card-desc">{{ $project->translated_description }}</p>
+
+                                        {{-- CONTACT SALES --}}
+                                        @if ($sales && $sales->count() > 0)
+                                            <div class="sales-contact-list mt_15">
+                                                @php $salesPerson = $sales->first(); @endphp
+                                                <div class="sales-contact d-flex align-items-center mb_10" style="margin-bottom: 10px;">
+                                                    <img src="{{ $salesPerson->photo ? route('sales.image', $salesPerson->photo) : 'https://placehold.co/100x100' }}"
+                                                        alt="Sales" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 15px;">
+                                                    <div class="sales-info">
+                                                        <h6 style="margin-bottom:0; font-size:14px;">{{ $salesPerson->name }}</h6>
+                                                        <a href="https://wa.me/{{ '+62' . substr($salesPerson->contact, 1) }}"
+                                                            target="_blank" style="font-size:13px; color:#4a4a4a;">{{ $salesPerson->contact }}</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                     @endforeach
                 </div>

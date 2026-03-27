@@ -14,6 +14,12 @@ class SalesController extends Controller
     {
         $sales = Sales::latest()->get();
         $categories = Product::select('category')->distinct()->pluck('category');
+        
+        // Add 'Project' manually so admin can select it for Project Sales Contacts
+        if (!$categories->contains('Project')) {
+            $categories->push('Project');
+        }
+
         return view('admin.adminSalesView', compact('sales', 'categories'));
     }
 

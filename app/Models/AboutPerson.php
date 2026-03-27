@@ -11,12 +11,19 @@ class AboutPerson extends Model
         'name',
         'position',
         'position_en',
+        'start_date',
+        'end_date',
         'image',
-        'summary',
-        'summary_en',
-        'previous_jobs',
-        'previous_jobs_en',
+        'career_history',
+        'organization_history',
         'full_body_image',
+    ];
+
+    protected $casts = [
+        'start_date' => 'date',
+        'end_date' => 'date',
+        'career_history' => 'array',
+        'organization_history' => 'array',
     ];
 
     public function getTranslatedPositionAttribute()

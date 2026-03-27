@@ -2,14 +2,13 @@
 
 .project-details {
     position: relative;
-    padding: 120px 0px 0px 0px;
+    padding: 40px 0px 0px 0px;
 }
 
 /* ===== SINGLE IMAGE ===== */
 .project-details .upper-box .image-box {
     height: 420px;
     overflow: hidden;
-    border-radius: 8px;
     background-color: var(--color-f0f4f8);
 }
 
@@ -25,9 +24,14 @@
     position: relative;
     width: 100%;
     height: 420px;
-    border-radius: 8px;
     overflow: hidden;
     background-color: var(--color-f0f4f8);
+    /* For Dragging */
+    cursor: grab;
+}
+
+.project-carousel:active {
+    cursor: grabbing;
 }
 
 .carousel-track {
@@ -51,6 +55,7 @@
 
 /* CAROUSEL BUTTONS */
 .carousel-btn {
+    display: none;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -94,8 +99,8 @@
 }
 
 .carousel-dot {
-    width: 10px;
-    height: 10px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.5);
     cursor: pointer;
@@ -183,6 +188,7 @@
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 991px) {
+
     .project-carousel,
     .project-details .upper-box .image-box {
         height: 320px;
@@ -196,6 +202,7 @@
 }
 
 @media (max-width: 767px) {
+
     .project-carousel,
     .project-details .upper-box .image-box {
         height: 260px;

@@ -173,6 +173,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::delete('/aboutus/section-image/{key}', [AboutUsController::class, 'deleteSectionImage'])->name('aboutus.section-image.delete');
         Route::get('/aboutus/people', [AboutPeopleController::class, 'index'])->name('aboutus.people.index');
         Route::post('/aboutus/people', [AboutPeopleController::class, 'store'])->name('aboutus.people.store');
+        Route::post('/aboutus/people/{person}', [AboutPeopleController::class, 'update'])->name('aboutus.people.update');
         Route::delete('/aboutus/people/{person}', [AboutPeopleController::class, 'destroy'])->name('aboutus.people.delete');
 
         // Sales routes
