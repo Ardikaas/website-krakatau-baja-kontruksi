@@ -8,6 +8,7 @@
 .project-details .upper-box .image-box {
     height: 420px;
     overflow: hidden;
+    background-color: var(--color-06b6d4);
 }
 
 .project-details .upper-box .image-box img {

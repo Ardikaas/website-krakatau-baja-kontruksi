@@ -14,6 +14,7 @@ export default defineConfig({
                 "resources/css/adminProjectView.css",
                 "resources/css/adminProjectForm.css",
                 "resources/css/projectDetail.css",
+                "resources/css/project.css",
                 "resources/css/productDetail.css",
                 "resources/css/product.css",
                 "resources/css/contact.css",

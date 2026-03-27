@@ -535,10 +535,22 @@
 }
 
 
-.admin-aboutUs-management .direction-delete-btn {
+.admin-aboutUs-management .direction-actions {
     position: absolute;
     top: 12px;
     right: 12px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.admin-aboutUs-management .direction-card:hover .direction-actions {
+    opacity: 1;
+}
+
+.admin-aboutUs-management .direction-delete-btn {
     background: var(--color-rgba-239-68-68-0-9);
     color: var(--color-ffffff);
     border: none;
@@ -546,13 +558,16 @@
     padding: 6px 12px;
     font-size: 12px;
     cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    z-index: 2;
 }
 
-.admin-aboutUs-management .direction-card:hover .direction-delete-btn {
-    opacity: 1;
+.admin-aboutUs-management .direction-edit-btn {
+    background: #eab308;
+    color: var(--color-ffffff);
+    border: none;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
 }
 
 .admin-aboutUs-management .direction-card {

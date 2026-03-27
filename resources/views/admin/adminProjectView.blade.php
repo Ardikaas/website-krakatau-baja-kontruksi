@@ -33,18 +33,21 @@
                     @else
                         <div class="apm-card-grid">
                             @foreach ($projects as $project)
+                                @php
+                                    $firstImage = $project->images[0] ?? null;
+                                @endphp
                                 <div class="apm-card"
                                     onclick="window.location='{{ route('admin.projects.edit', $project) }}'"
                                     style="cursor:pointer;">
                                     <div class="apm-card-image-wrapper">
-                                        <img src="{{ $project->image ? route('projects.view', ['filename' => basename($project->image)]) : asset('images/default_project.png') }}"
+                                        <img src="{{ $firstImage ? route('admin.projects.view', ['filename' => basename($firstImage)]) : asset('images/default_project.png') }}"
                                             alt="{{ $project->title }}" class="apm-card-image">
                                     </div>
 
                                     <div class="apm-card-content">
                                         <h3 class="apm-card-title">{{ $project->title }}</h3>
-                                        <p class="apm-card-category">{{ $project->category }}</p>
-                                        <p class="apm-card-client">{{ $project->client }}</p>
+                                        <p class="apm-card-category">{{ $project->what }}</p>
+                                        <p class="apm-card-client">{{ $project->location }}</p>
                                     </div>
 
                                     <div class="apm-card-actions">

@@ -9,13 +9,16 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $projects = Project::orderBy('date', 'desc')->get();
+        $projects = Project::orderBy('created_at', 'desc')->get();
+        $sales = \App\Models\Sales::where('categories', 'like', '%Project%')->take(2)->get();
 
-        return view('front.project', compact('projects'));
+        return view('front.project', compact('projects', 'sales'));
     }
 
     public function show(Project $project)
     {
-        return view('front.projectDetail', compact('project'));
+        $sales = \App\Models\Sales::where('categories', 'like', '%Project%')->take(2)->get();
+
+        return view('front.projectDetail', compact('project', 'sales'));
     }
 }

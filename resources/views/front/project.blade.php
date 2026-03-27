@@ -2,103 +2,80 @@
 
 @section('title', 'Project - Krakatau Baja Konstruksi')
 
+@push('styles')
+    @vite(['resources/css/project.css'])
+@endpush
+
 @section('content')
     {{-- Banner --}}
     <x-landingPageSection1 type="page" title="{{ __('messages.page_project') }}" :breadcrumb="[['label' => 'Home', 'url' => url('/')], ['label' => __('messages.page_project')]]" imagePath="images/background/page-title.jpg" />
 
-    <section class="service-page-three-section">
+    {{-- Project Grid --}}
+    <section class="project-section">
         <div class="auto-container">
-            <div class="row clearfix">
-                {{-- Main content --}}
-                <div class="col-lg-8 col-md-12 col-sm-12 content-side">
-                    <div class="main-content">
-                        @foreach ($projects as $index => $project)
-                            <div class="service-block-two">
-                                <div class="inner-box">
-                                    <div class="image-box">
-                                        <figure class="image">
-                                            <span class="shape-1"></span>
-                                            <span class="shape-2"></span>
-                                            <img src="{{ $project->image ? route('admin.projects.view', ['filename' => basename($project->image)]) : asset('images/default_project.png') }}"
-                                                alt="{{ $project->title }}">
-                                        </figure>
-                                    </div>
 
-                                    <div class="content-box">
-                                        <div class="count-box">
-                                            {{ sprintf('%02d', $index + 1) }}<span>/{{ $projects->count() }}</span>
+            @if ($projects->isEmpty())
+                <div class="project-empty-state">
+                    <p>{{ __('messages.no_projects_yet') }}</p>
+                </div>
+            @else
+                <div class="project-grid">
+                    @foreach ($projects as $project)
+                        @php
+                            $firstImage = $project->images[0] ?? null;
+                        @endphp
+                        <div class="project-card-wrapper">
+                            <div class="project-card-link" style="display: block; height: 100%;">
+                                <div class="project-card">
+                                    {{-- IMAGE --}}
+                                    <a href="{{ route('front.projects.show', $project) }}" style="display: block; text-decoration: none;">
+                                        <div class="project-card-image"
+                                            style="background-image:url({{ $firstImage ? route('admin.projects.view', ['filename' => basename($firstImage)]) : asset('images/default_project.png') }});">
+                                        </div>
+                                    </a>
+
+                                    {{-- BODY --}}
+                                    <div class="project-card-body">
+                                        <a href="{{ route('front.projects.show', $project) }}" style="color: inherit; text-decoration: none;">
+                                            <h3 class="project-card-title">{{ $project->translated_title }}</h3>
+                                        </a>
+
+                                        <div class="project-card-meta">
+                                            <span class="project-card-what">
+                                                <i class="flaticon-nut"></i>
+                                                {{ $project->translated_what }}
+                                            </span>
+                                            <span class="project-card-location">
+                                                <i class="flaticon-home"></i>
+                                                {{ $project->translated_location }}
+                                            </span>
                                         </div>
 
-                                        <h6>{{ __('messages.service') }}</h6>
-                                        <h3>{{ $project->category }}</h3>
+                                        <p class="project-card-desc">{{ $project->translated_description }}</p>
 
-                                        <div class="block-title">
-                                            <div class="line-shape"></div>
-                                            <h2>
-                                                <a href="{{ route('front.projects.show', $project) }}">
-                                                    [{{ $project->translated_title }}]
-                                                </a>
-                                            </h2>
-                                        </div>
-
-                                        <p class="project-description">{{ $project->translated_description }}</p>
-
-                                        <div class="link">
-                                            <a href="{{ route('front.projects.show', $project) }}">
-                                                <i class="flaticon-right-arrow"></i>
-                                            </a>
-                                        </div>
-
-                                        {{-- Overlay --}}
-                                        <div class="overlay-content">
-                                            <div class="count-box">
-                                                {{ sprintf('%02d', $index + 1) }}<span>/{{ $projects->count() }}</span>
+                                        {{-- CONTACT SALES --}}
+                                        @if ($sales && $sales->count() > 0)
+                                            <div class="sales-contact-list mt_15">
+                                                @php $salesPerson = $sales->first(); @endphp
+                                                <div class="sales-contact d-flex align-items-center mb_10" style="margin-bottom: 10px;">
+                                                    <img src="{{ $salesPerson->photo ? route('sales.image', $salesPerson->photo) : 'https://placehold.co/100x100' }}"
+                                                        alt="Sales" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 15px;">
+                                                    <div class="sales-info">
+                                                        <h6 style="margin-bottom:0; font-size:14px;">{{ $salesPerson->name }}</h6>
+                                                        <a href="https://wa.me/{{ '+62' . substr($salesPerson->contact, 1) }}"
+                                                            target="_blank" style="font-size:13px; color:#4a4a4a;">{{ $salesPerson->contact }}</a>
+                                                    </div>
+                                                </div>
                                             </div>
-
-                                            <h3>{{ $project->category }}</h3>
-
-                                            <div class="block-title">
-                                                <div class="line-shape"></div>
-                                                <h2>
-                                                    <a href="{{ route('front.projects.show', $project) }}">
-                                                        [{{ $project->translated_title }}]
-                                                    </a>
-                                                </h2>
-                                            </div>
-
-                                            <p class="project-description">{{ $project->translated_description }}</p>
-
-                                            <div class="btn-box">
-                                                <a href="{{ route('front.projects.show', $project) }}"
-                                                    class="theme-btn btn-one">
-                                                    <i class="flaticon-right-arrow"></i>
-                                                    <span>{{ __('messages.read_more') }}</span>
-                                                </a>
-                                            </div>
-                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
-                    </div>
-                </div>
-
-                {{-- Sidebar --}}
-                <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
-                    <div class="sidebar-content">
-                        <div class="inner-box centred">
-                            <h2>{!! __('messages.custom_solution_text') !!}</h2>
-                            <div class="icon-box">
-                                <div class="icon"><i class="flaticon-headphones"></i></div>
-                            </div>
-                            <h4><a href="tel:66120003456">+62812 1991 1619</a></h4>
-                            <p><a href="mailto:marketing@bajakonstruksi.co.id">marketing@bajakonstruksi.co.id</a></p>
-                            <a href="{{ url('/contact') }}" class="theme-btn"><i
-                                    class="flaticon-right-arrow"></i><span>{{ __('messages.appointment') }}</span></a>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
-            </div>
+            @endif
+
         </div>
     </section>
 @endsection

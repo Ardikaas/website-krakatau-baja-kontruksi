@@ -80,20 +80,21 @@
                                     {{-- PROJECTS --}}
                                     @if ($projects->count())
                                         @foreach ($projects as $project)
+                                            @php $firstImg = $project->images[0] ?? null; @endphp
                                             <div class="project-block-one">
                                                 <div class="inner-box">
                                                     <div class="bg-layer"
-                                                        style="background-image: url({{ $project->image ? route('admin.projects.view', ['filename' => basename($project->image)]) : '' }});">
+                                                        style="background-image: url({{ $firstImg ? route('admin.projects.view', ['filename' => basename($firstImg)]) : '' }});">
                                                     </div>
 
-                                                    <span class="category">{{ $project->category }}</span>
+                                                    <span class="category">{{ $project->translated_what }}</span>
 
                                                     <div class="content-box">
                                                         <h3>{{ $project->translated_title }}</h3>
                                                         <p>{{ Str::limit($project->translated_description, 80) }}</p>
 
-                                                        <h6>{{ __('messages.client') }}</h6>
-                                                        <span class="text">{{ $project->client }}</span>
+                                                        <h6>{{ __('messages.project_location') }}</h6>
+                                                        <span class="text">{{ $project->translated_location }}</span>
 
                                                         <a href="{{ route('front.projects.show', $project->id) }}"><i
                                                                 class="flaticon-right-arrow"></i></a>
@@ -143,20 +144,21 @@
                                 <div class="single-item-carousel owl-carousel owl-theme nav-style-one">
                                     @if ($projects->count())
                                         @foreach ($projects as $project)
+                                            @php $firstImg = $project->images[0] ?? null; @endphp
                                             <div class="project-block-one">
                                                 <div class="inner-box">
                                                     <div class="bg-layer"
-                                                        style="background-image: url({{ $project->image ? route('admin.projects.view', ['filename' => basename($project->image)]) : '' }});">
+                                                        style="background-image: url({{ $firstImg ? route('admin.projects.view', ['filename' => basename($firstImg)]) : '' }});">
                                                     </div>
 
-                                                    <span class="category">{{ $project->category }}</span>
+                                                    <span class="category">{{ $project->translated_what }}</span>
 
                                                     <div class="content-box">
                                                         <h3>{{ $project->translated_title }}</h3>
                                                         <p>{{ Str::limit($project->translated_description, 80) }}</p>
 
-                                                        <h6>{{ __('messages.client') }}</h6>
-                                                        <span class="text">{{ $project->client }}</span>
+                                                        <h6>{{ __('messages.project_location') }}</h6>
+                                                        <span class="text">{{ $project->translated_location }}</span>
 
                                                         <a href="{{ route('front.projects.show', $project->id) }}"><i
                                                                 class="flaticon-right-arrow"></i></a>

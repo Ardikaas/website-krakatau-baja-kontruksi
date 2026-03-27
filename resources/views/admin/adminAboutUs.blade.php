@@ -4,6 +4,42 @@
 @section('meta_description', 'Official website of PT Krakatau Baja Konstruksi')
 
 @section('content')
+    <style>
+        /* Fallback button styles for cached browsers */
+        .admin-aboutUs-management .direction-actions {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        .admin-aboutUs-management .direction-card:hover .direction-actions {
+            opacity: 1;
+        }
+        .admin-aboutUs-management .direction-delete-btn {
+            position: static !important;
+            background: rgba(239, 68, 68, 0.9) !important;
+            color: #ffffff !important;
+            border: none !important;
+            border-radius: 10px !important;
+            padding: 6px 12px !important;
+            font-size: 12px !important;
+            cursor: pointer !important;
+        }
+        .admin-aboutUs-management .direction-edit-btn {
+            position: static !important;
+            background: #eab308 !important; /* Standout Yellow */
+            color: #ffffff !important;
+            border: none !important;
+            border-radius: 10px !important;
+            padding: 6px 12px !important;
+            font-size: 12px !important;
+            cursor: pointer !important;
+        }
+    </style>
     <div class="admin-news-page">
         <div class="main-container">
             <section class="admin-aboutUs-management">
@@ -206,8 +242,12 @@
                                 data-name="{{ $person->name }}" data-position="{{ $person->position }}"
                                 data-image="{{ $person->image }}">
 
-                                <button class="direction-delete-btn" type="button"
-                                    data-id="{{ $person->id }}">Delete</button>
+                                <div class="direction-actions">
+                                    <button class="direction-edit-btn" type="button" 
+                                        data-person="{{ json_encode($person) }}" data-type="direksi">Edit</button>
+                                    <button class="direction-delete-btn" type="button" 
+                                        data-id="{{ $person->id }}">Delete</button>
+                                </div>
 
                                 <div class="direction-card-image-wrapper">
                                     <img src="{{ route('admin.aboutus.people.view', ['filename' => basename($person->image)]) }}" class="direction-card-image"
@@ -290,22 +330,32 @@
                         </div>
 
                         <!-- CV Fields -->
-                        <div class="form-group" style="margin-bottom: 24px;">
-                            <label>Summary (ID)</label>
-                            <textarea id="peopleSummary" rows="4" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;"></textarea>
+                        <div class="form-group" style="margin-bottom: 24px; display: flex; gap: 16px;">
+                            <div style="flex: 1;">
+                                <label>Start Date</label>
+                                <input type="date" id="peopleStartDate" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;">
+                            </div>
+                            <div style="flex: 1;">
+                                <label>End Date</label>
+                                <input type="date" id="peopleEndDate" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;">
+                                <small style="color: #6b7280; display: block; margin-top: 4px;">Kosongkan jika masih menjabat ("Sekarang")</small>
+                            </div>
                         </div>
-                        <div class="form-group" style="margin-bottom: 24px;">
-                            <label>Summary (EN)</label>
-                            <textarea id="peopleSummaryEn" rows="4" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;"></textarea>
+
+                        <!-- Top Career History -->
+                        <div class="form-group" style="margin-bottom: 24px; border: 1px solid #e5e7eb; padding: 16px; border-radius: 10px; background: #fff;">
+                            <label style="font-weight: 600; display: block; margin-bottom: 12px;">Top Career History (Max 10)</label>
+                            <div id="peopleCareerList" style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 16px;"></div>
+                            <button type="button" class="btn-primary" id="addPeopleCareerBtn" style="background: #00a1d1; color: #fff; border: none; border-radius: 14px; padding: 10px 22px; cursor: pointer; font-size: 14px; width: max-content;">+ Add Career</button>
                         </div>
-                        <div class="form-group" style="margin-bottom: 24px;">
-                            <label>Previous Jobs (ID)</label>
-                            <textarea id="peoplePrevJobs" rows="4" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;"></textarea>
+
+                        <!-- Top Organization History -->
+                        <div class="form-group" style="margin-bottom: 24px; border: 1px solid #e5e7eb; padding: 16px; border-radius: 10px; background: #fff;">
+                            <label style="font-weight: 600; display: block; margin-bottom: 12px;">Top Organization History (Max 10)</label>
+                            <div id="peopleOrgList" style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 16px;"></div>
+                            <button type="button" class="btn-primary" id="addPeopleOrgBtn" style="background: #00a1d1; color: #fff; border: none; border-radius: 14px; padding: 10px 22px; cursor: pointer; font-size: 14px; width: max-content;">+ Add Organization</button>
                         </div>
-                        <div class="form-group" style="margin-bottom: 24px;">
-                            <label>Previous Jobs (EN)</label>
-                            <textarea id="peoplePrevJobsEn" rows="4" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;"></textarea>
-                        </div>
+
                         <div class="form-group" style="margin-bottom: 24px;">
                             <label>Full Body Image</label>
                             <input type="file" id="peopleFullBodyImageInput" accept="image/*" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;">
@@ -340,8 +390,12 @@
                                 data-name="{{ $person->name }}" data-position="{{ $person->position }}"
                                 data-image="{{ $person->image }}">
 
-                                <button class="direction-delete-btn" type="button"
-                                    data-id="{{ $person->id }}">Delete</button>
+                                <div class="direction-actions">
+                                    <button class="direction-edit-btn" type="button" 
+                                        data-person="{{ json_encode($person) }}" data-type="komisaris">Edit</button>
+                                    <button class="direction-delete-btn" type="button" 
+                                        data-id="{{ $person->id }}">Delete</button>
+                                </div>
 
                                 <div class="direction-card-image-wrapper">
                                     <img src="{{ route('admin.aboutus.people.view', ['filename' => basename($person->image)]) }}" class="direction-card-image"
@@ -424,22 +478,32 @@
                         </div>
 
                         <!-- CV Fields -->
-                        <div class="form-group" style="margin-bottom: 24px;">
-                            <label>Summary (ID)</label>
-                            <textarea id="peopleSummary2" rows="4" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;"></textarea>
+                        <div class="form-group" style="margin-bottom: 24px; display: flex; gap: 16px;">
+                            <div style="flex: 1;">
+                                <label>Start Date</label>
+                                <input type="date" id="peopleStartDate2" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;">
+                            </div>
+                            <div style="flex: 1;">
+                                <label>End Date</label>
+                                <input type="date" id="peopleEndDate2" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;">
+                                <small style="color: #6b7280; display: block; margin-top: 4px;">Kosongkan jika masih menjabat ("Sekarang")</small>
+                            </div>
                         </div>
-                        <div class="form-group" style="margin-bottom: 24px;">
-                            <label>Summary (EN)</label>
-                            <textarea id="peopleSummaryEn2" rows="4" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;"></textarea>
+
+                        <!-- Top Career History -->
+                        <div class="form-group" style="margin-bottom: 24px; border: 1px solid #e5e7eb; padding: 16px; border-radius: 10px; background: #fff;">
+                            <label style="font-weight: 600; display: block; margin-bottom: 12px;">Top Career History (Max 10)</label>
+                            <div id="peopleCareerList2" style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 16px;"></div>
+                            <button type="button" class="btn-primary" id="addPeopleCareerBtn2" style="background: #00a1d1; color: #fff; border: none; border-radius: 14px; padding: 10px 22px; cursor: pointer; font-size: 14px; width: max-content;">+ Add Career</button>
                         </div>
-                        <div class="form-group" style="margin-bottom: 24px;">
-                            <label>Previous Jobs (ID)</label>
-                            <textarea id="peoplePrevJobs2" rows="4" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;"></textarea>
+
+                        <!-- Top Organization History -->
+                        <div class="form-group" style="margin-bottom: 24px; border: 1px solid #e5e7eb; padding: 16px; border-radius: 10px; background: #fff;">
+                            <label style="font-weight: 600; display: block; margin-bottom: 12px;">Top Organization History (Max 10)</label>
+                            <div id="peopleOrgList2" style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 16px;"></div>
+                            <button type="button" class="btn-primary" id="addPeopleOrgBtn2" style="background: #00a1d1; color: #fff; border: none; border-radius: 14px; padding: 10px 22px; cursor: pointer; font-size: 14px; width: max-content;">+ Add Organization</button>
                         </div>
-                        <div class="form-group" style="margin-bottom: 24px;">
-                            <label>Previous Jobs (EN)</label>
-                            <textarea id="peoplePrevJobsEn2" rows="4" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;"></textarea>
-                        </div>
+
                         <div class="form-group" style="margin-bottom: 24px;">
                             <label>Full Body Image</label>
                             <input type="file" id="peopleFullBodyImageInput2" accept="image/*" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;">
@@ -801,6 +865,56 @@
             });
         });
 
+        // Utility functions for dynamic CV lists
+        function setupDynamicList(addBtnId, listContainerId) {
+            const addBtn = document.getElementById(addBtnId);
+            const container = document.getElementById(listContainerId);
+            
+            if(addBtn && container) {
+                addBtn.addEventListener('click', () => {
+                    if(container.children.length >= 10) {
+                        alert('Maximum 10 allowed');
+                        return;
+                    }
+                    const row = document.createElement('div');
+                    row.style.cssText = 'display:flex; flex-wrap:wrap; gap:10px; margin-bottom:10px; border-bottom:1px solid #f3f4f6; padding-bottom:10px;';
+                    row.innerHTML = `
+                        <input type="number" class="item-start-year" placeholder="Start Year (YYYY)" min="1900" max="2100" style="flex:1; padding: 8px; border:1px solid #d1d5db; border-radius:6px;">
+                        <input type="number" class="item-end-year" placeholder="End (YYYY/Blank=Present)" min="1900" max="2100" style="flex:1; padding: 8px; border:1px solid #d1d5db; border-radius:6px;">
+                        <input type="text" class="item-desc-id" placeholder="Description (ID)" style="flex:2; padding: 8px; border:1px solid #d1d5db; border-radius:6px;">
+                        <input type="text" class="item-desc-en" placeholder="Description (EN)" style="flex:2; padding: 8px; border:1px solid #d1d5db; border-radius:6px;">
+                        <button type="button" onclick="this.parentElement.remove()" style="background:#ef4444; color:#fff; border:none; border-radius:6px; padding:0 12px; cursor:pointer;">X</button>
+                    `;
+                    container.appendChild(row);
+                });
+            }
+        }
+        
+        setupDynamicList('addPeopleCareerBtn', 'peopleCareerList');
+        setupDynamicList('addPeopleOrgBtn', 'peopleOrgList');
+        setupDynamicList('addPeopleCareerBtn2', 'peopleCareerList2');
+        setupDynamicList('addPeopleOrgBtn2', 'peopleOrgList2');
+        
+        function extractDynamicList(containerId) {
+            const container = document.getElementById(containerId);
+            if(!container) return null;
+            const items = [];
+            container.querySelectorAll('div').forEach(row => {
+                const startYear = row.querySelector('.item-start-year')?.value.trim();
+                const endYear = row.querySelector('.item-end-year')?.value.trim();
+                const descId = row.querySelector('.item-desc-id')?.value.trim();
+                const descEn = row.querySelector('.item-desc-en')?.value.trim();
+                
+                const start_date = startYear ? startYear + '-01-01' : '';
+                const end_date = endYear ? endYear + '-01-01' : '';
+
+                if(start_date || descId) {
+                    items.push({ start_date, end_date, descId, descEn });
+                }
+            });
+            return items.length > 0 ? JSON.stringify(items) : null;
+        }
+
         // ===== PEOPLE FORM SECTION 1 (DIREKSI) =====
         const peopleFormSection1 = document.getElementById('peopleFormSection');
         const openPeopleBtn1 = document.querySelectorAll('.open-people-popup')[0];
@@ -822,16 +936,141 @@
         const removePeopleImage1 = document.getElementById('removePeopleImage');
 
         let editMode1 = false;
+        let editPersonId1 = null;
+
+        // Edit button handler (shared for both direksi and komisaris)
+        document.querySelectorAll('.direction-edit-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const personData = JSON.parse(this.dataset.person);
+                const type = this.dataset.type;
+
+                if (type === 'direksi') {
+                    editMode1 = true;
+                    editPersonId1 = personData.id;
+                    peopleFormTitle1.textContent = 'Edit People';
+                    peopleName1.value = personData.name || '';
+                    peoplePosition1.value = personData.position || '';
+                    document.getElementById('peoplePositionEn').value = personData.position_en || '';
+                    document.getElementById('peopleStartDate').value = personData.start_date ? personData.start_date.split('T')[0] : '';
+                    document.getElementById('peopleEndDate').value = personData.end_date ? personData.end_date.split('T')[0] : '';
+                    
+                    // Populate careers
+                    const careerList = document.getElementById('peopleCareerList');
+                    careerList.innerHTML = '';
+                    if(personData.career_history) {
+                        personData.career_history.forEach(item => {
+                            careerList.insertAdjacentHTML('beforeend', `
+                                <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:10px; border-bottom:1px solid #f3f4f6; padding-bottom:10px;">
+                                    <input type="number" class="item-start-year" value="${item.start_date ? item.start_date.split('-')[0] : ''}" placeholder="Start Year" min="1900" max="2100" style="flex:1; padding: 8px; border:1px solid #d1d5db; border-radius:6px;">
+                                    <input type="number" class="item-end-year" value="${item.end_date ? item.end_date.split('-')[0] : ''}" placeholder="End (Blank=Present)" min="1900" max="2100" style="flex:1; padding: 8px; border:1px solid #d1d5db; border-radius:6px;">
+                                    <input type="text" class="item-desc-id" value="${item.descId || ''}" placeholder="Description (ID)" style="flex:2; padding: 8px; border:1px solid #d1d5db; border-radius:6px;">
+                                    <input type="text" class="item-desc-en" value="${item.descEn || ''}" placeholder="Description (EN)" style="flex:2; padding: 8px; border:1px solid #d1d5db; border-radius:6px;">
+                                    <button type="button" onclick="this.parentElement.remove()" style="background:#ef4444; color:#fff; border:none; border-radius:6px; padding:0 12px; cursor:pointer;">X</button>
+                                </div>
+                            `);
+                        });
+                    }
+
+                    // Populate orgs
+                    const orgList = document.getElementById('peopleOrgList');
+                    orgList.innerHTML = '';
+                    if(personData.organization_history) {
+                        personData.organization_history.forEach(item => {
+                            orgList.insertAdjacentHTML('beforeend', `
+                                <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:10px; border-bottom:1px solid #f3f4f6; padding-bottom:10px;">
+                                    <input type="number" class="item-start-year" value="${item.start_date ? item.start_date.split('-')[0] : ''}" placeholder="Start Year" min="1900" max="2100" style="flex:1; padding: 8px; border:1px solid #d1d5db; border-radius:6px;">
+                                    <input type="number" class="item-end-year" value="${item.end_date ? item.end_date.split('-')[0] : ''}" placeholder="End (Blank=Present)" min="1900" max="2100" style="flex:1; padding: 8px; border:1px solid #d1d5db; border-radius:6px;">
+                                    <input type="text" class="item-desc-id" value="${item.descId || ''}" placeholder="Description (ID)" style="flex:2; padding: 8px; border:1px solid #d1d5db; border-radius:6px;">
+                                    <input type="text" class="item-desc-en" value="${item.descEn || ''}" placeholder="Description (EN)" style="flex:2; padding: 8px; border:1px solid #d1d5db; border-radius:6px;">
+                                    <button type="button" onclick="this.parentElement.remove()" style="background:#ef4444; color:#fff; border:none; border-radius:6px; padding:0 12px; cursor:pointer;">X</button>
+                                </div>
+                            `);
+                        });
+                    }
+
+                    // Set image
+                    if(personData.image) {
+                        let filename = personData.image.split('/').pop();
+                        peopleImagePreview1.src = "{{ route('admin.aboutus.people.view', ['filename' => 'DUMMY']) }}".replace('DUMMY', filename);
+                        peopleImageName1.textContent = 'Current Image';
+                        peopleImageEmpty1.style.display = 'none';
+                        peopleImageItem1.style.display = 'flex';
+                    }
+
+                    peopleFormSection1.style.display = 'block';
+                } else {
+                    editMode2 = true;
+                    editPersonId2 = personData.id;
+                    peopleFormTitle2.textContent = 'Edit People';
+                    peopleName2.value = personData.name || '';
+                    peoplePosition2.value = personData.position || '';
+                    document.getElementById('peoplePositionEn2').value = personData.position_en || '';
+                    document.getElementById('peopleStartDate2').value = personData.start_date ? personData.start_date.split('T')[0] : '';
+                    document.getElementById('peopleEndDate2').value = personData.end_date ? personData.end_date.split('T')[0] : '';
+                    
+                    // Populate careers
+                    const careerList = document.getElementById('peopleCareerList2');
+                    careerList.innerHTML = '';
+                    if(personData.career_history) {
+                        personData.career_history.forEach(item => {
+                            careerList.insertAdjacentHTML('beforeend', `
+                                <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:10px; border-bottom:1px solid #f3f4f6; padding-bottom:10px;">
+                                    <input type="number" class="item-start-year" value="${item.start_date ? item.start_date.split('-')[0] : ''}" placeholder="Start Year" min="1900" max="2100" style="flex:1; padding: 8px; border:1px solid #d1d5db; border-radius:6px;">
+                                    <input type="number" class="item-end-year" value="${item.end_date ? item.end_date.split('-')[0] : ''}" placeholder="End (Blank=Present)" min="1900" max="2100" style="flex:1; padding: 8px; border:1px solid #d1d5db; border-radius:6px;">
+                                    <input type="text" class="item-desc-id" value="${item.descId || ''}" placeholder="Description (ID)" style="flex:2; padding: 8px; border:1px solid #d1d5db; border-radius:6px;">
+                                    <input type="text" class="item-desc-en" value="${item.descEn || ''}" placeholder="Description (EN)" style="flex:2; padding: 8px; border:1px solid #d1d5db; border-radius:6px;">
+                                    <button type="button" onclick="this.parentElement.remove()" style="background:#ef4444; color:#fff; border:none; border-radius:6px; padding:0 12px; cursor:pointer;">X</button>
+                                </div>
+                            `);
+                        });
+                    }
+
+                    // Populate orgs
+                    const orgList = document.getElementById('peopleOrgList2');
+                    orgList.innerHTML = '';
+                    if(personData.organization_history) {
+                        personData.organization_history.forEach(item => {
+                            orgList.insertAdjacentHTML('beforeend', `
+                                <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:10px; border-bottom:1px solid #f3f4f6; padding-bottom:10px;">
+                                    <input type="number" class="item-start-year" value="${item.start_date ? item.start_date.split('-')[0] : ''}" placeholder="Start Year" min="1900" max="2100" style="flex:1; padding: 8px; border:1px solid #d1d5db; border-radius:6px;">
+                                    <input type="number" class="item-end-year" value="${item.end_date ? item.end_date.split('-')[0] : ''}" placeholder="End (Blank=Present)" min="1900" max="2100" style="flex:1; padding: 8px; border:1px solid #d1d5db; border-radius:6px;">
+                                    <input type="text" class="item-desc-id" value="${item.descId || ''}" placeholder="Description (ID)" style="flex:2; padding: 8px; border:1px solid #d1d5db; border-radius:6px;">
+                                    <input type="text" class="item-desc-en" value="${item.descEn || ''}" placeholder="Description (EN)" style="flex:2; padding: 8px; border:1px solid #d1d5db; border-radius:6px;">
+                                    <button type="button" onclick="this.parentElement.remove()" style="background:#ef4444; color:#fff; border:none; border-radius:6px; padding:0 12px; cursor:pointer;">X</button>
+                                </div>
+                            `);
+                        });
+                    }
+
+                    // Set image
+                    if(personData.image) {
+                        let filename = personData.image.split('/').pop();
+                        peopleImagePreview2.src = "{{ route('admin.aboutus.people.view', ['filename' => 'DUMMY']) }}".replace('DUMMY', filename);
+                        peopleImageName2.textContent = 'Current Image';
+                        peopleImageEmpty2.style.display = 'none';
+                        peopleImageItem2.style.display = 'flex';
+                    }
+
+                    peopleFormSection2.style.display = 'block';
+                }
+            });
+        });
 
         // Open form handler
         if (openPeopleBtn1) {
             openPeopleBtn1.addEventListener('click', (e) => {
                 e.preventDefault();
                 editMode1 = false;
+                editPersonId1 = null;
                 peopleFormTitle1.textContent = 'Add New People';
                 peopleName1.value = '';
                 peoplePosition1.value = '';
                 document.getElementById('peoplePositionEn').value = '';
+                document.getElementById('peopleStartDate').value = '';
+                document.getElementById('peopleEndDate').value = '';
+                document.getElementById('peopleCareerList').innerHTML = '';
+                document.getElementById('peopleOrgList').innerHTML = '';
                 deletePeopleBtn1.style.display = 'none';
 
                 // Reset image
@@ -910,10 +1149,10 @@
                 const name = peopleName1.value.trim();
                 const position = peoplePosition1.value.trim();
                 const positionEn = document.getElementById('peoplePositionEn').value.trim();
-                const summary = document.getElementById('peopleSummary').value.trim();
-                const summaryEn = document.getElementById('peopleSummaryEn').value.trim();
-                const prevJobs = document.getElementById('peoplePrevJobs').value.trim();
-                const prevJobsEn = document.getElementById('peoplePrevJobsEn').value.trim();
+                const startDate = document.getElementById('peopleStartDate').value.trim();
+                const endDate = document.getElementById('peopleEndDate').value.trim();
+                const careerHistoryData = extractDynamicList('peopleCareerList');
+                const orgHistoryData = extractDynamicList('peopleOrgList');
                 const fullBodyImageInput = document.getElementById('peopleFullBodyImageInput');
 
                 if (!name || !position) {
@@ -921,7 +1160,7 @@
                     return;
                 }
 
-                if (!peopleImageInput1.files[0]) {
+                if (!peopleImageInput1.files[0] && !editMode1) {
                     alert('Please upload an image');
                     return;
                 }
@@ -932,15 +1171,20 @@
                 formData.append('name', name);
                 formData.append('position', position);
                 if (positionEn) formData.append('position_en', positionEn);
-                if (summary) formData.append('summary', summary);
-                if (summaryEn) formData.append('summary_en', summaryEn);
-                if (prevJobs) formData.append('previous_jobs', prevJobs);
-                if (prevJobsEn) formData.append('previous_jobs_en', prevJobsEn);
-                formData.append('image', peopleImageInput1.files[0]);
+                if (startDate) formData.append('start_date', startDate);
+                if (endDate) formData.append('end_date', endDate);
+                if (careerHistoryData) formData.append('career_history', careerHistoryData);
+                if (orgHistoryData) formData.append('organization_history', orgHistoryData);
+                if(peopleImageInput1.files[0]) formData.append('image', peopleImageInput1.files[0]);
                 if (fullBodyImageInput.files[0]) formData.append('full_body_image', fullBodyImageInput.files[0]);
 
+                let url = '{{ route('admin.aboutus.people.store') }}';
+                if (editMode1) {
+                    url = '{{ route("admin.aboutus.people.update", ["person" => "DUMMY_ID"]) }}'.replace('DUMMY_ID', editPersonId1);
+                }
+
                 // POST to server
-                fetch('{{ route('admin.aboutus.people.store') }}', {
+                fetch(url, {
                         method: 'POST',
                         headers: {
                             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content ||
@@ -983,16 +1227,22 @@
         const removePeopleImage2 = document.getElementById('removePeopleImage2');
 
         let editMode2 = false;
+        let editPersonId2 = null;
 
         // Open form handler
         if (openPeopleBtn2) {
             openPeopleBtn2.addEventListener('click', (e) => {
                 e.preventDefault();
                 editMode2 = false;
+                editPersonId2 = null;
                 peopleFormTitle2.textContent = 'Add New People';
                 peopleName2.value = '';
                 peoplePosition2.value = '';
                 document.getElementById('peoplePositionEn2').value = '';
+                document.getElementById('peopleStartDate2').value = '';
+                document.getElementById('peopleEndDate2').value = '';
+                document.getElementById('peopleCareerList2').innerHTML = '';
+                document.getElementById('peopleOrgList2').innerHTML = '';
                 deletePeopleBtn2.style.display = 'none';
 
                 // Reset image
@@ -1071,10 +1321,10 @@
                 const name = peopleName2.value.trim();
                 const position = peoplePosition2.value.trim();
                 const positionEn = document.getElementById('peoplePositionEn2').value.trim();
-                const summary = document.getElementById('peopleSummary2').value.trim();
-                const summaryEn = document.getElementById('peopleSummaryEn2').value.trim();
-                const prevJobs = document.getElementById('peoplePrevJobs2').value.trim();
-                const prevJobsEn = document.getElementById('peoplePrevJobsEn2').value.trim();
+                const startDate = document.getElementById('peopleStartDate2').value.trim();
+                const endDate = document.getElementById('peopleEndDate2').value.trim();
+                const careerHistoryData = extractDynamicList('peopleCareerList2');
+                const orgHistoryData = extractDynamicList('peopleOrgList2');
                 const fullBodyImageInput = document.getElementById('peopleFullBodyImageInput2');
 
                 if (!name || !position) {
@@ -1082,7 +1332,7 @@
                     return;
                 }
 
-                if (!peopleImageInput2.files[0]) {
+                if (!peopleImageInput2.files[0] && !editMode2) {
                     alert('Please upload an image');
                     return;
                 }
@@ -1093,15 +1343,20 @@
                 formData.append('name', name);
                 formData.append('position', position);
                 if (positionEn) formData.append('position_en', positionEn);
-                if (summary) formData.append('summary', summary);
-                if (summaryEn) formData.append('summary_en', summaryEn);
-                if (prevJobs) formData.append('previous_jobs', prevJobs);
-                if (prevJobsEn) formData.append('previous_jobs_en', prevJobsEn);
-                formData.append('image', peopleImageInput2.files[0]);
+                if (startDate) formData.append('start_date', startDate);
+                if (endDate) formData.append('end_date', endDate);
+                if (careerHistoryData) formData.append('career_history', careerHistoryData);
+                if (orgHistoryData) formData.append('organization_history', orgHistoryData);
+                if(peopleImageInput2.files[0]) formData.append('image', peopleImageInput2.files[0]);
                 if (fullBodyImageInput.files[0]) formData.append('full_body_image', fullBodyImageInput.files[0]);
 
+                let url2 = '{{ route('admin.aboutus.people.store') }}';
+                if (editMode2) {
+                    url2 = '{{ route("admin.aboutus.people.update", ["person" => "DUMMY_ID"]) }}'.replace('DUMMY_ID', editPersonId2);
+                }
+
                 // POST to server
-                fetch('{{ route('admin.aboutus.people.store') }}', {
+                fetch(url2, {
                         method: 'POST',
                         headers: {
                             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content ||

@@ -49,22 +49,26 @@
 
                         <div class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all {{ $catClass }}">
 
-                            <a href="{{ route('product.detail', $product->slug) }}" class="product-card-link">
+                            <div class="product-card-link" style="display: block; height: 100%;">
                                 <div class="simple-product-card">
 
                                     {{-- IMAGE --}}
-                                    <div class="card-image"
-                                        style="background-image:url(
-                        {{ $thumbnail ? route('product.image', $thumbnail) : 'https://placehold.co/600x400' }}
-                    );">
-                                    </div>
+                                    <a href="{{ route('product.detail', $product->slug) }}" style="display: block;">
+                                        <div class="card-image"
+                                            style="background-image:url(
+                            {{ $thumbnail ? route('product.image', $thumbnail) : 'https://placehold.co/600x400' }}
+                        );">
+                                        </div>
+                                    </a>
 
                                     {{-- BODY --}}
                                     <div class="card-body">
 
-                                        <h3 class="product-title">
-                                            {{ $product->translated_name }}
-                                        </h3>
+                                        <a href="{{ route('product.detail', $product->slug) }}" style="color: inherit; text-decoration: none;">
+                                            <h3 class="product-title">
+                                                {{ $product->translated_name }}
+                                            </h3>
+                                        </a>
 
                                         {{-- CATEGORY --}}
                                         <span class="product-category">
@@ -97,7 +101,7 @@
 
                                     </div>
                                 </div>
-                            </a>
+                            </div>
 
                         </div>
                     @endforeach
