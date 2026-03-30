@@ -2,6 +2,8 @@
 @inject('documentService', \App\Services\DocumentService::class)
 @php
     $footerDocuments = $documentService->list()->take(2);
+    $footerProducts = \App\Models\Product::inRandomOrder()->take(6)->get();
+    $footerProjects = \App\Models\Project::inRandomOrder()->take(6)->get();
 @endphp
 
 @if ($footerDocuments->count())
@@ -92,13 +94,11 @@
                         </div>
                         <div class="widget-content">
                             <ul class="links-list clearfix">
-                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_fabrication') }}</span></a></li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_metal_processing') }}</span></a>
-                                </li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_cnc_machining') }}</span></a></li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_metal_casting') }}</span></a></li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_metal_welding') }}</span></a></li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_punching') }}</span></a></li>
+                                @forelse ($footerProducts as $fp)
+                                <li><a href="{{ route('product.detail', $fp->slug) }}"><i class="flaticon-right"></i><span>{{ $fp->translated_name }}</span></a></li>
+                                @empty
+                                <li><span>{{ __('messages.no_data') }}</span></li>
+                                @endforelse
                             </ul>
                         </div>
                     </div>
@@ -111,13 +111,11 @@
                         </div>
                         <div class="widget-content">
                             <ul class="links-list clearfix">
-                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_fabrication') }}</span></a></li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_metal_processing') }}</span></a>
-                                </li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_cnc_machining') }}</span></a></li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_metal_casting') }}</span></a></li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_metal_welding') }}</span></a></li>
-                                <li><a href="#"><i class="flaticon-right"></i><span>{{ __('messages.inquiry_punching') }}</span></a></li>
+                                @forelse ($footerProjects as $fpr)
+                                <li><a href="{{ route('front.projects.show', $fpr->id) }}"><i class="flaticon-right"></i><span>{{ $fpr->translated_title }}</span></a></li>
+                                @empty
+                                <li><span>{{ __('messages.no_data') }}</span></li>
+                                @endforelse
                             </ul>
                         </div>
                     </div>

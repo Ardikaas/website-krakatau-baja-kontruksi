@@ -252,11 +252,11 @@
                 @forelse ($komisaris as $person)
                     <div class="image-card">
                         <img src="{{ route('admin.aboutus.people.view', ['filename' => basename($person->image)]) }}" alt="{{ $person->name }}" />
-                        <a href="{{ route('front.cv.show', $person->id) }}" class="cv-link-btn">resume</a>
                         <div class="card-overlay">
                             <h4>{{ $person->name }}</h4>
                             <span>{{ $person->translated_position }}</span>
                         </div>
+                        <a href="{{ route('front.cv.show', $person->id) }}" class="cv-link-btn">resume</a>
                     </div>
                 @empty
                     <p class="text-center">No data available</p>
@@ -268,11 +268,11 @@
                 @forelse ($direksi as $person)
                     <div class="image-card">
                         <img src="{{ route('admin.aboutus.people.view', ['filename' => basename($person->image)]) }}" alt="{{ $person->name }}" />
-                        <a href="{{ route('front.cv.show', $person->id) }}" class="cv-link-btn">resume</a>
                         <div class="card-overlay">
                             <h4>{{ $person->name }}</h4>
                             <span>{{ $person->translated_position }}</span>
                         </div>
+                        <a href="{{ route('front.cv.show', $person->id) }}" class="cv-link-btn">resume</a>
                     </div>
                 @empty
                     <p class="text-center">No data available</p>
@@ -525,3 +525,38 @@
         </div>
     </div>
 </section>
+
+<style>
+/* CSS Cache-Buster Override for Resume Button */
+.image-card .cv-link-btn {
+    position: absolute !important;
+    bottom: 8px !important;
+    right: 8px !important;
+    padding: 1px 2px !important;
+    background-color: var(--theme-color, #00a1d1) !important;
+    color: #ffffff !important;
+    border-radius: 4px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 9px !important;
+    font-weight: 400 !important;
+    z-index: 20 !important;
+    text-decoration: none !important;
+    transition: all 0.4s ease !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: none !important;
+}
+
+.image-card:hover .cv-link-btn {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+.image-card .cv-link-btn:hover {
+    background-color: var(--secondary-color, #001f3f) !important;
+    transform: scale(1.05) !important;
+}
+</style>

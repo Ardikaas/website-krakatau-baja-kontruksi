@@ -45,13 +45,13 @@
                             </span>
                         </div>
 
-                        <div class="experience-box" style="margin-top: 50px;">
-                            <h4 style="font-size: 24px; font-weight: 700; color: var(--color-1a1a1a); margin-bottom: 25px; position: relative; padding-bottom: 10px;">
+                        <div class="experience-box" style="margin-top: 35px;">
+                            <h4 style="font-size: 20px; font-weight: 700; color: var(--color-1a1a1a); margin-bottom: 15px; position: relative; padding-bottom: 10px;">
                                 {{ app()->getLocale() == 'id' ? '10 Top Karier' : 'Top Career History' }}
                                 <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: var(--color-00a1d1);"></span>
                             </h4>
                             
-                            <div class="jobs-timeline" style="background: var(--color-ffffff); padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                            <div class="jobs-timeline" style="background: var(--color-ffffff); padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
                                 @php
                                     $careers = is_array($person->career_history) ? $person->career_history : [];
                                     $locale = app()->getLocale();
@@ -59,17 +59,16 @@
                                 @if(count($careers) > 0)
                                     <ul class="history-list" style="list-style: none; padding: 0; margin: 0;">
                                         @foreach($careers as $career)
-                                            <li style="margin-bottom: 20px; border-bottom: 1px dashed #eaeaea; padding-bottom: 15px;">
+                                            <li style="display: flex; gap: 15px; margin-bottom: 12px; border-bottom: 1px dashed #eaeaea; padding-bottom: 12px; align-items: flex-start;">
                                                 @php
                                                     $cStart = isset($career['start_date']) && $career['start_date'] ? \Carbon\Carbon::parse($career['start_date'])->locale($locale)->translatedFormat('Y') : '';
                                                     $cEnd = isset($career['end_date']) && $career['end_date'] ? \Carbon\Carbon::parse($career['end_date'])->locale($locale)->translatedFormat('Y') : ($locale == 'en' ? 'Present' : 'Sekarang');
                                                     $cDuration = $cStart ? $cStart . ' - ' . $cEnd : '-';
                                                 @endphp
-                                                <div style="font-weight: 700; color: var(--color-00a1d1); font-size: 16px; margin-bottom: 5px;">
-                                                    <i class="fa fa-calendar-alt mr-2" style="margin-right: 8px;"></i>
+                                                <div style="font-weight: 700; color: var(--color-00a1d1); font-size: 15px; min-width: 100px; flex-shrink: 0;">
                                                     {{ $cDuration }}
                                                 </div>
-                                                <div style="font-size: 16px; color: var(--color-555555); font-weight: 600;">
+                                                <div style="font-size: 15px; color: var(--color-555555); font-weight: 600;">
                                                     {{ $locale == 'en' && !empty($career['descEn']) ? $career['descEn'] : (empty($career['descId']) ? '-' : $career['descId']) }}
                                                 </div>
                                             </li>
@@ -81,30 +80,29 @@
                             </div>
                         </div>
 
-                        <div class="organization-box" style="margin-top: 50px;">
-                            <h4 style="font-size: 24px; font-weight: 700; color: var(--color-1a1a1a); margin-bottom: 25px; position: relative; padding-bottom: 10px;">
+                        <div class="organization-box" style="margin-top: 35px;">
+                            <h4 style="font-size: 20px; font-weight: 700; color: var(--color-1a1a1a); margin-bottom: 15px; position: relative; padding-bottom: 10px;">
                                 {{ app()->getLocale() == 'id' ? '10 Top Organisasi' : 'Top Organization History' }}
                                 <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: var(--color-00a1d1);"></span>
                             </h4>
                             
-                            <div class="orgs-timeline" style="background: var(--color-ffffff); padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-left: 3px solid var(--color-00a1d1);">
+                            <div class="orgs-timeline" style="background: var(--color-ffffff); padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-left: 3px solid var(--color-00a1d1);">
                                 @php
                                     $orgs = is_array($person->organization_history) ? $person->organization_history : [];
                                 @endphp
                                 @if(count($orgs) > 0)
                                     <ul class="history-list" style="list-style: none; padding: 0; margin: 0;">
                                         @foreach($orgs as $org)
-                                            <li style="margin-bottom: 20px; border-bottom: 1px dashed #eaeaea; padding-bottom: 15px;">
+                                            <li style="display: flex; gap: 15px; margin-bottom: 12px; border-bottom: 1px dashed #eaeaea; padding-bottom: 12px; align-items: flex-start;">
                                                 @php
                                                     $oStart = isset($org['start_date']) && $org['start_date'] ? \Carbon\Carbon::parse($org['start_date'])->locale($locale)->translatedFormat('Y') : '';
                                                     $oEnd = isset($org['end_date']) && $org['end_date'] ? \Carbon\Carbon::parse($org['end_date'])->locale($locale)->translatedFormat('Y') : ($locale == 'en' ? 'Present' : 'Sekarang');
                                                     $oDuration = $oStart ? $oStart . ' - ' . $oEnd : '-';
                                                 @endphp
-                                                <div style="font-weight: 700; color: var(--color-00a1d1); font-size: 16px; margin-bottom: 5px;">
-                                                    <i class="fa fa-calendar-alt mr-2" style="margin-right: 8px;"></i>
+                                                <div style="font-weight: 700; color: var(--color-00a1d1); font-size: 15px; min-width: 100px; flex-shrink: 0;">
                                                     {{ $oDuration }}
                                                 </div>
-                                                <div style="font-size: 16px; color: var(--color-555555); font-weight: 600;">
+                                                <div style="font-size: 15px; color: var(--color-555555); font-weight: 600;">
                                                     {{ $locale == 'en' && !empty($org['descEn']) ? $org['descEn'] : (empty($org['descId']) ? '-' : $org['descId']) }}
                                                 </div>
                                             </li>
