@@ -1903,34 +1903,34 @@
 /* CV Button */
 .cv-link-btn {
     position: absolute;
-    bottom: 16px;
-    right: 16px;
-    padding: 6px 12px;
+    bottom: 8px;
+    right: 8px;
+    padding: 1px 2px;
     background-color: var(--theme-color);
     color: var(--color-ffffff);
-    border-radius: 0;
-    display: flex;
+    border-radius: 4px;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
-    font-weight: 700;
-    z-index: 10;
+    font-size: 9px;
+    font-weight: 400;
+    z-index: 20;
     text-decoration: none;
     transition: all 0.4s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     opacity: 0;
-    transform: translateY(100%);
+    pointer-events: none;
 }
 
 .image-card:hover .cv-link-btn {
     opacity: 1;
-    transform: translateY(0);
+    pointer-events: auto;
 }
 
 .cv-link-btn:hover {
     background-color: var(--secondary-color);
     color: var(--color-ffffff);
-    transform: scale(1.1) !important;
+    transform: scale(1.05) !important;
 }
 
 /* CARD WRAPPER */
