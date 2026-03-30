@@ -26,72 +26,59 @@ use App\Http\Controllers\Admin\AdminAuthController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // ==========================================
-// CPANEL HELPER ROUTES (No SSH/Terminal)
+// CPANEL HELPER ROUTES (Protected)
 // ==========================================
-Route::get('/cc', function() {
-    Artisan::call('optimize:clear');
-    return 'Cache Cleared! <br> <a href="/">Back to Home</a>';
-});
+if (config('app.debug')) {
+    // Accessible without login but ONLY in DEBUG MODE
+    Route::get('/artisan-db-seed-admin', function () {
+        Artisan::call('db:seed', [
+            '--class' => 'AdminUserSeeder',
+            '--force' => true
+        ]);
+        return 'Admin Seeding Done! <br> <a href="/admin/login">Go to Login</a>';
+    });
 
-Route::get('/artisan-migrate', function() {
-    // Force is needed to run migrations in production
-    Artisan::call('migrate', ['--force' => true]);
-    return 'Migrate successful! Output: <br><pre>' . Artisan::output() . '</pre><br> <a href="/">Back to Home</a>';
-});
+    // Restricted to AUTHENTICATED ADMIN + DEBUG MODE
+    Route::middleware(['admin.auth'])->group(function () {
+        Route::get('/cc', function () {
+            Artisan::call('optimize:clear');
+            return 'Cache Cleared! <br> <a href="/">Back to Home</a>';
+        });
 
-Route::get('/artisan-migrate-fresh', function() {
-    Artisan::call('migrate:fresh', ['--force' => true, '--seed' => true]);
-    return 'Migrate Fresh & Seed successful! Output: <br><pre>' . Artisan::output() . '</pre><br> <a href="/">Back to Home</a>';
-});
+        Route::get('/artisan-migrate', function () {
+            Artisan::call('migrate', ['--force' => true]);
+            return 'Migrate successful! Output: <br><pre>' . Artisan::output() . '</pre><br> <a href="/">Back to Home</a>';
+        });
 
-Route::get('/artisan-migrate-fresh-empty', function() {
-    Artisan::call('migrate:fresh', ['--force' => true]);
-    return 'Database Cleared (Empty Structure) successful! Output: <br><pre>' . Artisan::output() . '</pre><br> <a href="/">Back to Home</a>';
-});
+        Route::get('/artisan-migrate-fresh', function () {
+            Artisan::call('migrate:fresh', ['--force' => true, '--seed' => true]);
+            return 'Migrate Fresh & Seed successful! Output: <br><pre>' . Artisan::output() . '</pre><br> <a href="/">Back to Home</a>';
+        });
 
-Route::get('/artisan-storage-link', function() {
-    Artisan::call('storage:link');
-    return 'Storage Linked! Output: <br><pre>' . Artisan::output() . '</pre><br> <a href="/">Back to Home</a>';
-});
+        Route::get('/artisan-migrate-fresh-empty', function () {
+            Artisan::call('migrate:fresh', ['--force' => true]);
+            return 'Database Cleared (Empty Structure) successful! Output: <br><pre>' . Artisan::output() . '</pre><br> <a href="/">Back to Home</a>';
+        });
 
-Route::get('/artisan-db-seed-admin', function() {
-    Artisan::call('db:seed', [
-        '--class' => 'AdminUserSeeder',
-        '--force' => true
-    ]);
-    return 'Admin Seeding Done! <br> <a href="/admin/login">Go to Login</a>';
-});
+        Route::get('/artisan-storage-link', function () {
+            Artisan::call('storage:link');
+            return 'Storage Linked! Output: <br><pre>' . Artisan::output() . '</pre><br> <a href="/">Back to Home</a>';
+        });
 
-Route::get('/artisan-down', function() {
-    // Secret bypass is set to 'admin-bypass'
-    Artisan::call('down', [
-        '--secret' => 'admin-bypass',
-        '--refresh' => 15 // Refresh page every 15 seconds
-    ]);
-    return 'Maintenance Mode ON! <br> <b>Bypass Link:</b> <a href="'.url('/admin-bypass').'">Click here to Bypass</a> <br> <a href="/">Back to Home</a>';
-});
+        Route::get('/artisan-down', function () {
+            Artisan::call('down', [
+                '--secret' => 'admin-bypass',
+                '--refresh' => 15
+            ]);
+            return 'Maintenance Mode ON! <br> <b>Bypass Link:</b> <a href="' . url('/admin-bypass') . '">Click here to Bypass</a> <br> <a href="/">Back to Home</a>';
+        });
 
-Route::get('/artisan-up', function() {
-    Artisan::call('up');
-    return 'Maintenance Mode OFF! <br> <a href="/">Back to Home</a>';
-});
-
-// Route khusus untuk admin jika ingin bypass mode maintenance secara manual tanpa ke link secret
-Route::get('/maintenance-bypass', function() {
-    return redirect('/admin-bypass');
-});
-
-Route::get('/debug-url', function() {
-    return [
-        'APP_URL' => config('app.url'),
-        'asset_image' => asset('images/logo.png'),
-        'url_root' => url('/'),
-        'current_host' => request()->getHost(),
-        'is_https' => request()->secure(),
-        'public_path' => public_path(),
-        'base_path' => base_path(),
-    ];
-});
+        Route::get('/artisan-up', function () {
+            Artisan::call('up');
+            return 'Maintenance Mode OFF! <br> <a href="/">Back to Home</a>';
+        });
+    });
+}
 
 Route::get('/lang/{locale}', function ($locale) {
     if (in_array($locale, ['en', 'id'])) {
@@ -180,6 +167,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/sales', [SalesController::class, 'index'])->name('sales.index');
         Route::post('/sales/store', [SalesController::class, 'store'])->name('sales.store');
         Route::delete('/sales/delete/{id}', [SalesController::class, 'destroy'])->name('sales.destroy');
+
+        // System Utilities
+        Route::get('/utilities', [\App\Http\Controllers\Admin\SystemUtilityController::class, 'index'])->name('utilities.index');
+        Route::post('/utilities/run/{command}', [\App\Http\Controllers\Admin\SystemUtilityController::class, 'runCommand'])->name('utilities.run');
 
         // News routes
         Route::get('/newsEdit', [AdminController::class, 'adminNewsView'])->name('adminNewsViews');

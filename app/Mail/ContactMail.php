@@ -19,7 +19,7 @@ class ContactMail extends Mailable
 
     public function build()
     {
-        return $this->subject('Contact Us Message')
-                    ->view('front.contact');
+        return $this->subject('Contact Us Message — PT Krakatau Baja Konstruksi')
+                    ->view('components.email-contact');
     }
 }

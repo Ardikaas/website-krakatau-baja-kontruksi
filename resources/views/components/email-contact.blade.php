@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konfirmasi Laporan WBS</title>
+    <title>Contact Us Message</title>
 </head>
 <body style="margin:0; padding:0; background-color:#f4f6f9; font-family: Arial, Helvetica, sans-serif;">
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color:#f4f6f9; padding:40px 0;">
@@ -15,10 +15,10 @@
                     <tr>
                         <td style="background: linear-gradient(135deg, #003d6b 0%, #00a1d1 100%); padding:32px 40px; text-align:center;">
                             <h1 style="margin:0; color:#ffffff; font-size:22px; font-weight:700; letter-spacing:0.5px;">
-                                ✅ Laporan WBS Diterima
+                                New Contact Message
                             </h1>
-                            <p style="margin:8px 0 0; color:rgba(255,255,255,0.85); font-size:13px;">
-                                Whistle Blowing System — PT Krakatau Baja Konstruksi
+                            <p style="margin:6px 0 0; color:rgba(255,255,255,0.85); font-size:13px;">
+                                PT Krakatau Baja Konstruksi — Company Website
                             </p>
                         </td>
                     </tr>
@@ -27,60 +27,53 @@
                     <tr>
                         <td style="padding:32px 40px;">
 
-                            {{-- Ticket Number --}}
+                            {{-- Sender Info --}}
                             <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-bottom:24px;">
                                 <tr>
-                                    <td style="padding:18px; background-color:#f0f7fc; border-left:4px solid #00a1d1; border-radius:6px; text-align:center;">
-                                        <p style="margin:0 0 4px; font-size:11px; color:#666; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Nomor Tiket Anda</p>
-                                        <p style="margin:0; font-size:22px; color:#003d6b; font-weight:700; font-family: 'Courier New', monospace; letter-spacing:2px;">{{ $data['ticket'] }}</p>
+                                    <td style="padding:14px 18px; background-color:#f0f7fc; border-left:4px solid #00a1d1; border-radius:6px;">
+                                        <p style="margin:0 0 4px; font-size:11px; color:#666; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Pengirim</p>
+                                        <p style="margin:0; font-size:16px; color:#1a1a1a; font-weight:600;">{{ $data['username'] }}</p>
                                     </td>
                                 </tr>
                             </table>
 
-                            {{-- Summary --}}
+                            {{-- Detail Table --}}
                             <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border:1px solid #e8ecf0; border-radius:8px; overflow:hidden; margin-bottom:24px;">
                                 <tr>
                                     <td style="padding:12px 18px; background-color:#f8f9fb; border-bottom:1px solid #e8ecf0; font-size:12px; color:#888; text-transform:uppercase; letter-spacing:0.8px; font-weight:600; width:140px;">
-                                        Judul Kasus
+                                        Email
                                     </td>
-                                    <td style="padding:12px 18px; border-bottom:1px solid #e8ecf0; font-size:14px; color:#333; font-weight:600;">
-                                        {{ $data['judul'] }}
+                                    <td style="padding:12px 18px; border-bottom:1px solid #e8ecf0; font-size:14px; color:#333;">
+                                        <a href="mailto:{{ $data['email'] }}" style="color:#00a1d1; text-decoration:none;">{{ $data['email'] }}</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:12px 18px; background-color:#f8f9fb; border-bottom:1px solid #e8ecf0; font-size:12px; color:#888; text-transform:uppercase; letter-spacing:0.8px; font-weight:600;">
+                                        Telepon
+                                    </td>
+                                    <td style="padding:12px 18px; border-bottom:1px solid #e8ecf0; font-size:14px; color:#333;">
+                                        {{ $data['phone'] }}
                                     </td>
                                 </tr>
                                 <tr>
                                     <td style="padding:12px 18px; background-color:#f8f9fb; font-size:12px; color:#888; text-transform:uppercase; letter-spacing:0.8px; font-weight:600;">
-                                        Tipe Insiden
+                                        Jenis Inquiry
                                     </td>
                                     <td style="padding:12px 18px; font-size:14px; color:#333;">
-                                        {{ $data['tipe'] }}
+                                        <span style="display:inline-block; background-color:#e8f5fa; color:#006d96; padding:4px 12px; border-radius:20px; font-size:12px; font-weight:600;">
+                                            {{ $data['inquiry_type'] }}
+                                        </span>
                                     </td>
                                 </tr>
                             </table>
 
-                            {{-- Deskripsi --}}
+                            {{-- Message --}}
                             <div style="margin-bottom:24px;">
-                                <p style="margin:0 0 8px; font-size:12px; color:#888; text-transform:uppercase; letter-spacing:0.8px; font-weight:600;">Deskripsi Laporan</p>
+                                <p style="margin:0 0 8px; font-size:12px; color:#888; text-transform:uppercase; letter-spacing:0.8px; font-weight:600;">Pesan</p>
                                 <div style="padding:16px 18px; background-color:#fafbfc; border:1px solid #e8ecf0; border-radius:8px; font-size:14px; color:#333; line-height:1.7;">
-                                    {{ $data['kejadian'] }}
+                                    {{ $data['message'] }}
                                 </div>
                             </div>
-
-                            @if(!empty($data['isUser']))
-                            {{-- Thank You --}}
-                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-bottom:24px;">
-                                <tr>
-                                    <td style="padding:18px; background-color:#f0faf0; border:1px solid #d0e8d0; border-radius:8px;">
-                                        <p style="margin:0 0 8px; font-size:15px; color:#2d6a2d; font-weight:600;">
-                                            Terima kasih telah menyampaikan laporan Anda.
-                                        </p>
-                                        <p style="margin:0; font-size:13px; color:#555; line-height:1.6;">
-                                            Laporan Anda telah kami terima dan akan ditindaklanjuti oleh tim yang berwenang. 
-                                            Simpan nomor tiket di atas sebagai referensi untuk tindak lanjut.
-                                        </p>
-                                    </td>
-                                </tr>
-                            </table>
-                            @endif
 
                         </td>
                     </tr>
@@ -89,11 +82,8 @@
                     <tr>
                         <td style="padding:20px 40px; background-color:#f8f9fb; border-top:1px solid #e8ecf0; text-align:center;">
                             <p style="margin:0; font-size:12px; color:#999; line-height:1.6;">
-                                Email ini dikirim otomatis dari sistem Whistle Blowing
-                                <a href="https://bajakonstruksi.co.id" style="color:#00a1d1; text-decoration:none;">PT Krakatau Baja Konstruksi</a>
-                            </p>
-                            <p style="margin:8px 0 0; font-size:11px; color:#ccc;">
-                                Jangan membalas email ini. Untuk pertanyaan, silakan hubungi pihak berwenang.
+                                Email ini dikirim otomatis dari formulir Contact Us di website
+                                <a href="https://bajakonstruksi.co.id" style="color:#00a1d1; text-decoration:none;">bajakonstruksi.co.id</a>
                             </p>
                             <p style="margin:6px 0 0; font-size:11px; color:#bbb;">
                                 &copy; {{ date('Y') }} PT Krakatau Baja Konstruksi. All rights reserved.

@@ -44,6 +44,13 @@
                     <span class="menu-text">WBS Management</span>
                 </a>
 
+                @if(config('app.debug'))
+                <a href="{{ route('admin.utilities.index') }}" class="menu-item {{ request()->is('admin/utilities*') ? 'active' : '' }}">
+                    <i class="fa-solid fa-screwdriver-wrench menu-icon"></i>
+                    <span class="menu-text">System Utilities</span>
+                </a>
+                @endif
+
                 <div class="sidebar-bottom">
                     <form action="{{ route('admin.logout') }}" method="POST" style="width: 100%;">
                         @csrf
