@@ -49,8 +49,11 @@
                                 <div class="sales-contacts mt_25">
                                     @foreach ($sales as $sale)
                                         <div class="sales-contact mb_15">
+                                            @php
+                                                $waText = "Salam sukses berniaga Bapak/Ibu " . $sale->name . ",\n\nSaya tertarik dengan produk Anda *\"" . $product->translated_name . "\"* yang saya lihat di website Krakatau Baja Konstruksi.\nBoleh minta informasi lebih lanjut?\n\nLink referensi: " . url()->current();
+                                            @endphp
                                             <p><strong>{{ $sale->name }}</strong></p>
-                                            <p>Contact: <a href="https://wa.me/{{ '+62' . substr($sale->contact, 1) }}"
+                                            <p>Contact: <a href="https://wa.me/{{ '62' . substr($sale->contact, 1) }}?text={{ urlencode($waText) }}"
                                                     target="_blank">{{ $sale->contact }}</a></p>
                                             @if ($sale->photo)
                                                 <img src="{{ route('sales.image', $sale->photo) }}"
