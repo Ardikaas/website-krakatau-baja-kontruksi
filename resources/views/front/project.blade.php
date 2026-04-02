@@ -61,8 +61,12 @@
                                                     <img src="{{ $salesPerson->photo ? route('sales.image', $salesPerson->photo) : 'https://placehold.co/100x100' }}"
                                                         alt="Sales" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 15px;">
                                                     <div class="sales-info">
+                                                        @php
+                                                            $projectUrl = route('front.projects.show', $project);
+                                                            $waText = "Salam sukses berniaga Bapak/Ibu " . $salesPerson->name . ",\n\nSaya tertarik dengan project Anda *\"" . $project->translated_title . "\"* yang saya lihat di website Krakatau Baja Konstruksi.\nBoleh minta informasi lebih lanjut?\n\nLink referensi: " . $projectUrl;
+                                                        @endphp
                                                         <h6 style="margin-bottom:0; font-size:14px;">{{ $salesPerson->name }}</h6>
-                                                        <a href="https://wa.me/{{ '+62' . substr($salesPerson->contact, 1) }}"
+                                                        <a href="https://wa.me/{{ '62' . substr($salesPerson->contact, 1) }}?text={{ urlencode($waText) }}"
                                                             target="_blank" style="font-size:13px; color:#4a4a4a;">{{ $salesPerson->contact }}</a>
                                                     </div>
                                                 </div>

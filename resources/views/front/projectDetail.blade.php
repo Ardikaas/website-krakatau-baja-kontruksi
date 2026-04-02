@@ -100,6 +100,9 @@
                                     <div class="sales-contacts mt_25">
                                         @foreach ($sales as $sale)
                                             <div class="sales-contact mb_15">
+                                                @php
+                                                    $waText = "Salam sukses berniaga Bapak/Ibu " . $sale->name . ",\n\nSaya tertarik dengan project Anda *\"" . $project->translated_title . "\"* yang saya lihat di website Krakatau Baja Konstruksi.\nBoleh minta informasi lebih lanjut?\n\nLink referensi: " . url()->current();
+                                                @endphp
                                                 @if ($sale->photo)
                                                     <img src="{{ route('sales.image', $sale->photo) }}"
                                                         alt="{{ $sale->name }}"
@@ -111,7 +114,7 @@
                                                 @endif
                                                 <div style="overflow: hidden;">
                                                     <p style="margin-bottom: 0;"><strong>{{ $sale->name }}</strong></p>
-                                                    <p style="margin-bottom: 0; font-size: 14px;">Contact: <a href="https://wa.me/{{ '+62' . substr($sale->contact, 1) }}"
+                                                    <p style="margin-bottom: 0; font-size: 14px;">Contact: <a href="https://wa.me/{{ '62' . substr($sale->contact, 1) }}?text={{ urlencode($waText) }}"
                                                             target="_blank" style="color: var(--theme-color);">{{ $sale->contact }}</a></p>
                                                 </div>
                                             </div>

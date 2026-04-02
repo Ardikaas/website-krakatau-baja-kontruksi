@@ -82,8 +82,12 @@
                                                     <img src="{{ $salesPerson->photo ? route('sales.image', $salesPerson->photo) : 'https://placehold.co/100x100' }}"
                                                         alt="Sales">
                                                     <div class="sales-info">
+                                                        @php
+                                                            $productUrl = route('product.detail', $product->slug);
+                                                            $waText = "Salam sukses berniaga Bapak/Ibu " . $salesPerson->name . ",\n\nSaya tertarik dengan produk Anda *\"" . $product->translated_name . "\"* yang saya lihat di website Krakatau Baja Konstruksi.\nBoleh minta informasi lebih lanjut?\n\nLink referensi: " . $productUrl;
+                                                        @endphp
                                                         <h6>{{ $salesPerson->name }}</h6>
-                                                        <a href="https://wa.me/{{ '+62' . substr($salesPerson->contact, 1) }}"
+                                                        <a href="https://wa.me/{{ '62' . substr($salesPerson->contact, 1) }}?text={{ urlencode($waText) }}"
                                                             target="_blank">{{ $salesPerson->contact }}</a>
                                                     </div>
                                                 </div>
