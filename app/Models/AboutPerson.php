@@ -17,6 +17,9 @@ class AboutPerson extends Model
         'career_history',
         'organization_history',
         'full_body_image',
+        'summary',
+        'summary_en',
+        'cv_mode',
     ];
 
     protected $casts = [

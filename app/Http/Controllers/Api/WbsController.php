@@ -81,34 +81,39 @@ class WbsController extends Controller
             ]
         ));
 
-        Mail::to(env('WBS_ADMIN_EMAIL'))
-        ->send(new WbsReportMail([
-            'type' => 'admin',
-            'ticket' => $ticketNumber,
-            'judul' => $report->judul_kasus,
-            'tipe' => $report->tipe_insiden,
-            'kejadian' => $report->kejadian,
-            'nama_terlapor' => $report->nama_terlapor,
-            'jabatan_terlapor' => $report->jabatan_terlapor,
-            'lokasi' => $report->lokasi_kejadian,
-            'tanggal' => $report->tanggal_kejadian,
-            'kerugian' => $report->perkiraan_kerugian,
-            'nama_pelapor' => $report->nama_pelapor,
-            'email_pelapor' => $report->email_pelapor,
-            'kontak' => $report->kontak_pelapor,
-            'file' => $filePath,
-        ]));
+        try {
+            Mail::to(env('WBS_ADMIN_EMAIL', 'wbs@bajakonstruksi.co.id'))
+                ->send(new WbsReportMail([
+                    'type' => 'admin',
+                    'ticket' => $ticketNumber,
+                    'judul' => $report->judul_kasus,
+                    'tipe' => $report->tipe_insiden,
+                    'kejadian' => $report->kejadian,
+                    'nama_terlapor' => $report->nama_terlapor,
+                    'jabatan_terlapor' => $report->jabatan_terlapor,
+                    'lokasi' => $report->lokasi_kejadian,
+                    'tanggal' => $report->tanggal_kejadian,
+                    'kerugian' => $report->perkiraan_kerugian,
+                    'nama_pelapor' => $report->nama_pelapor,
+                    'email_pelapor' => $report->email_pelapor,
+                    'kontak' => $report->kontak_pelapor,
+                    'file' => $filePath,
+                ]));
 
-        if ($report->email_pelapor) {
-        Mail::to($report->email_pelapor)
-            ->send(new WbsReportMail([
-                'ticket' => $ticketNumber,
-                'judul' => $report->judul_kasus,
-                'tipe' => $report->tipe_insiden,
-                'kejadian' => $report->kejadian,
-                'isUser' => true
-            ]));
-    }
+            if ($report->email_pelapor) {
+                Mail::to($report->email_pelapor)
+                    ->send(new WbsReportMail([
+                        'ticket' => $ticketNumber,
+                        'judul' => $report->judul_kasus,
+                        'tipe' => $report->tipe_insiden,
+                        'kejadian' => $report->kejadian,
+                        'isUser' => true
+                    ]));
+            }
+        } catch (\Exception $e) {
+            \Illuminate\Support\Facades\Log::error('WBS Mail Failed: ' . $e->getMessage());
+            // Laporan tetap masuk ke DB meskipun email gagal terkirim (menghindari error 500)
+        }
 
         return ApiResponse::success(
             $report,

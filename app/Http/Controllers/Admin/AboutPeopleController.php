@@ -28,7 +28,10 @@ class AboutPeopleController extends Controller
             'image' => 'nullable|image|mimes:jpg,jpeg,png',
             'career_history' => 'nullable|json',
             'organization_history' => 'nullable|json',
-            'full_body_image' => 'nullable|image|mimes:jpg,jpeg,png'
+            'full_body_image' => 'nullable|image|mimes:jpg,jpeg,png',
+            'summary' => 'nullable|string',
+            'summary_en' => 'nullable|string',
+            'cv_mode' => 'nullable|string|in:summary_only,points_only,both'
         ]);
 
         if (isset($data['career_history'])) {
@@ -66,7 +69,10 @@ class AboutPeopleController extends Controller
             'image' => 'nullable|image|mimes:jpg,jpeg,png',
             'career_history' => 'nullable|json',
             'organization_history' => 'nullable|json',
-            'full_body_image' => 'nullable|image|mimes:jpg,jpeg,png'
+            'full_body_image' => 'nullable|image|mimes:jpg,jpeg,png',
+            'summary' => 'nullable|string',
+            'summary_en' => 'nullable|string',
+            'cv_mode' => 'nullable|string|in:summary_only,points_only,both'
         ]);
 
         if (isset($data['career_history'])) {

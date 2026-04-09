@@ -45,6 +45,27 @@
                             </span>
                         </div>
 
+                        @php
+                            $locale = app()->getLocale();
+                            $summary = $locale == 'en' ? ($person->summary_en ?: $person->summary) : ($person->summary ?: $person->summary_en);
+                        @endphp
+
+                        @if(!empty($summary) && ($person->cv_mode == 'summary_only' || $person->cv_mode == 'both' || empty($person->cv_mode)))
+                        <div class="summary-box" style="margin-top: 35px; background: var(--color-ffffff); padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-radius: 10px; border-top: 4px solid var(--color-00a1d1);">
+                            <h4 style="font-size: 20px; font-weight: 700; color: var(--color-1a1a1a); margin-bottom: 15px; position: relative; padding-bottom: 10px;">
+                                {{ $locale == 'id' ? 'Profil Singkat' : 'Profile Summary' }}
+                                <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: var(--color-00a1d1);"></span>
+                            </h4>
+                            <div style="font-size: 16px; color: var(--color-555555); line-height: 1.8;">
+                                {!! nl2br(e($summary)) !!}
+                            </div>
+                        </div>
+                        @endif
+
+                        @php
+                            $careers = is_array($person->career_history) ? $person->career_history : [];
+                        @endphp
+                        @if(count($careers) > 0 && ($person->cv_mode == 'points_only' || $person->cv_mode == 'both' || empty($person->cv_mode)))
                         <div class="experience-box" style="margin-top: 35px;">
                             <h4 style="font-size: 20px; font-weight: 700; color: var(--color-1a1a1a); margin-bottom: 15px; position: relative; padding-bottom: 10px;">
                                 {{ app()->getLocale() == 'id' ? '10 Top Karier' : 'Top Career History' }}
@@ -79,7 +100,12 @@
                                 @endif
                             </div>
                         </div>
+                        @endif
 
+                        @php
+                            $orgs = is_array($person->organization_history) ? $person->organization_history : [];
+                        @endphp
+                        @if(count($orgs) > 0 && ($person->cv_mode == 'points_only' || $person->cv_mode == 'both' || empty($person->cv_mode)))
                         <div class="organization-box" style="margin-top: 35px;">
                             <h4 style="font-size: 20px; font-weight: 700; color: var(--color-1a1a1a); margin-bottom: 15px; position: relative; padding-bottom: 10px;">
                                 {{ app()->getLocale() == 'id' ? '10 Top Organisasi' : 'Top Organization History' }}
@@ -113,6 +139,7 @@
                                 @endif
                             </div>
                         </div>
+                        @endif
 
                         <div class="btn-box mt_40" style="margin-top: 40px;">
                             <a href="{{ route('about') }}" class="theme-btn btn-one" style="padding: 12px 30px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
