@@ -24,8 +24,12 @@ class ContactController extends Controller
             $sanitizedData[$key] = is_string($value) ? htmlspecialchars(strip_tags($value), ENT_QUOTES, 'UTF-8') : $value;
         }
 
-        Mail::to('marketing@bajakonstruksi.co.id')
-            ->send(new ContactMail($sanitizedData));
+        try {
+            Mail::to(env('CONTACT_ADMIN_EMAIL', 'marketing@bajakonstruksi.co.id'))
+                ->send(new ContactMail($sanitizedData));
+        } catch (\Exception $e) {
+            \Illuminate\Support\Facades\Log::error('Contact Mail Failed: ' . $e->getMessage());
+        }
 
         return back()->with('success', 'Message sent successfully!');
     }

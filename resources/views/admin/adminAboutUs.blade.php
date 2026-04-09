@@ -342,6 +342,29 @@
                             </div>
                         </div>
 
+                        <!-- CV Mode Choice -->
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <label>CV Display Mode</label>
+                            <select id="peopleCvMode" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px; background: #fff;">
+                                <option value="both">Both (Summary & Points)</option>
+                                <option value="summary_only">Summary Only (Hide Points)</option>
+                                <option value="points_only">Points Only (Hide Summary)</option>
+                            </select>
+                            <small style="color: #6b7280; display: block; margin-top: 4px;">Pilih bagian CV mana yang ingin ditampilkan pada halaman depan</small>
+                        </div>
+
+                        <!-- Summary Fields -->
+                        <div class="form-group" style="margin-bottom: 24px; display: flex; gap: 16px;">
+                            <div style="flex: 1;">
+                                <label>Summary (ID)</label>
+                                <textarea id="peopleSummary" rows="4" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;"></textarea>
+                            </div>
+                            <div style="flex: 1;">
+                                <label>Summary (EN)</label>
+                                <textarea id="peopleSummaryEn" rows="4" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;"></textarea>
+                            </div>
+                        </div>
+
                         <!-- Top Career History -->
                         <div class="form-group" style="margin-bottom: 24px; border: 1px solid #e5e7eb; padding: 16px; border-radius: 10px; background: #fff;">
                             <label style="font-weight: 600; display: block; margin-bottom: 12px;">Top Career History (Max 10)</label>
@@ -487,6 +510,29 @@
                                 <label>End Date</label>
                                 <input type="date" id="peopleEndDate2" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;">
                                 <small style="color: #6b7280; display: block; margin-top: 4px;">Kosongkan jika masih menjabat ("Sekarang")</small>
+                            </div>
+                        </div>
+
+                        <!-- CV Mode Choice -->
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <label>CV Display Mode</label>
+                            <select id="peopleCvMode2" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px; background: #fff;">
+                                <option value="both">Both (Summary & Points)</option>
+                                <option value="summary_only">Summary Only (Hide Points)</option>
+                                <option value="points_only">Points Only (Hide Summary)</option>
+                            </select>
+                            <small style="color: #6b7280; display: block; margin-top: 4px;">Pilih bagian CV mana yang ingin ditampilkan pada halaman depan</small>
+                        </div>
+
+                        <!-- Summary Fields -->
+                        <div class="form-group" style="margin-bottom: 24px; display: flex; gap: 16px;">
+                            <div style="flex: 1;">
+                                <label>Summary (ID)</label>
+                                <textarea id="peopleSummary2" rows="4" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;"></textarea>
+                            </div>
+                            <div style="flex: 1;">
+                                <label>Summary (EN)</label>
+                                <textarea id="peopleSummaryEn2" rows="4" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px;"></textarea>
                             </div>
                         </div>
 
@@ -952,6 +998,9 @@
                     peopleName1.value = personData.name || '';
                     peoplePosition1.value = personData.position || '';
                     document.getElementById('peoplePositionEn').value = personData.position_en || '';
+                    document.getElementById('peopleSummary').value = personData.summary || '';
+                    document.getElementById('peopleSummaryEn').value = personData.summary_en || '';
+                    document.getElementById('peopleCvMode').value = personData.cv_mode || 'both';
                     document.getElementById('peopleStartDate').value = personData.start_date ? personData.start_date.split('T')[0] : '';
                     document.getElementById('peopleEndDate').value = personData.end_date ? personData.end_date.split('T')[0] : '';
                     
@@ -1006,6 +1055,9 @@
                     peopleName2.value = personData.name || '';
                     peoplePosition2.value = personData.position || '';
                     document.getElementById('peoplePositionEn2').value = personData.position_en || '';
+                    document.getElementById('peopleSummary2').value = personData.summary || '';
+                    document.getElementById('peopleSummaryEn2').value = personData.summary_en || '';
+                    document.getElementById('peopleCvMode2').value = personData.cv_mode || 'both';
                     document.getElementById('peopleStartDate2').value = personData.start_date ? personData.start_date.split('T')[0] : '';
                     document.getElementById('peopleEndDate2').value = personData.end_date ? personData.end_date.split('T')[0] : '';
                     
@@ -1067,6 +1119,9 @@
                 peopleName1.value = '';
                 peoplePosition1.value = '';
                 document.getElementById('peoplePositionEn').value = '';
+                document.getElementById('peopleSummary').value = '';
+                document.getElementById('peopleSummaryEn').value = '';
+                document.getElementById('peopleCvMode').value = 'both';
                 document.getElementById('peopleStartDate').value = '';
                 document.getElementById('peopleEndDate').value = '';
                 document.getElementById('peopleCareerList').innerHTML = '';
@@ -1149,6 +1204,9 @@
                 const name = peopleName1.value.trim();
                 const position = peoplePosition1.value.trim();
                 const positionEn = document.getElementById('peoplePositionEn').value.trim();
+                const summary = document.getElementById('peopleSummary').value.trim();
+                const summaryEn = document.getElementById('peopleSummaryEn').value.trim();
+                const cvMode = document.getElementById('peopleCvMode').value.trim();
                 const startDate = document.getElementById('peopleStartDate').value.trim();
                 const endDate = document.getElementById('peopleEndDate').value.trim();
                 const careerHistoryData = extractDynamicList('peopleCareerList');
@@ -1171,6 +1229,9 @@
                 formData.append('name', name);
                 formData.append('position', position);
                 if (positionEn) formData.append('position_en', positionEn);
+                if (summary) formData.append('summary', summary);
+                if (summaryEn) formData.append('summary_en', summaryEn);
+                if (cvMode) formData.append('cv_mode', cvMode);
                 if (startDate) formData.append('start_date', startDate);
                 if (endDate) formData.append('end_date', endDate);
                 if (careerHistoryData) formData.append('career_history', careerHistoryData);
@@ -1239,6 +1300,9 @@
                 peopleName2.value = '';
                 peoplePosition2.value = '';
                 document.getElementById('peoplePositionEn2').value = '';
+                document.getElementById('peopleSummary2').value = '';
+                document.getElementById('peopleSummaryEn2').value = '';
+                document.getElementById('peopleCvMode2').value = 'both';
                 document.getElementById('peopleStartDate2').value = '';
                 document.getElementById('peopleEndDate2').value = '';
                 document.getElementById('peopleCareerList2').innerHTML = '';
@@ -1321,6 +1385,9 @@
                 const name = peopleName2.value.trim();
                 const position = peoplePosition2.value.trim();
                 const positionEn = document.getElementById('peoplePositionEn2').value.trim();
+                const summary2 = document.getElementById('peopleSummary2').value.trim();
+                const summaryEn2 = document.getElementById('peopleSummaryEn2').value.trim();
+                const cvMode2 = document.getElementById('peopleCvMode2').value.trim();
                 const startDate = document.getElementById('peopleStartDate2').value.trim();
                 const endDate = document.getElementById('peopleEndDate2').value.trim();
                 const careerHistoryData = extractDynamicList('peopleCareerList2');
@@ -1343,6 +1410,9 @@
                 formData.append('name', name);
                 formData.append('position', position);
                 if (positionEn) formData.append('position_en', positionEn);
+                if (summary2) formData.append('summary', summary2);
+                if (summaryEn2) formData.append('summary_en', summaryEn2);
+                if (cvMode2) formData.append('cv_mode', cvMode2);
                 if (startDate) formData.append('start_date', startDate);
                 if (endDate) formData.append('end_date', endDate);
                 if (careerHistoryData) formData.append('career_history', careerHistoryData);
