@@ -70,7 +70,7 @@
 
         @if ($report->dokumen_pendukung)
         <h3 class="section-title">Lampiran</h3>
-        <a href="{{ route('api.wbs.download', $report->id) }}" class="attachment-file">
+        <a href="{{ url('/api/wbs/' . $report->id . '/download') }}" class="attachment-file">
             Download Dokumen
         </a>
         @endif
