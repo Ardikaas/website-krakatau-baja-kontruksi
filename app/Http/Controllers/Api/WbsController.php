@@ -82,7 +82,7 @@ class WbsController extends Controller
         ));
 
         try {
-            Mail::to(env('WBS_ADMIN_EMAIL', 'wbs@bajakonstruksi.co.id'))
+            Mail::to(config('mail.admin_email.wbs', 'wbs@bajakonstruksi.co.id'))
                 ->send(new WbsReportMail([
                     'type' => 'admin',
                     'ticket' => $ticketNumber,

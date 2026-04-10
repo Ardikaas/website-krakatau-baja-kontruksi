@@ -45,8 +45,16 @@ return [
             'port' => env('MAIL_PORT', 2525),
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
+            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url((string) env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
+            'stream' => [
+                'ssl' => [
+                    'allow_self_signed' => true,
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                ],
+            ],
         ],
 
         'ses' => [
@@ -113,6 +121,20 @@ return [
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Admin Notification Emails
+    |--------------------------------------------------------------------------
+    |
+    | These addresses are used for internal notifications when WBS reports
+    | or contact forms are submitted.
+    |
+    */
+    'admin_email' => [
+        'wbs' => env('WBS_ADMIN_EMAIL'),
+        'contact' => env('CONTACT_ADMIN_EMAIL'),
     ],
 
 ];

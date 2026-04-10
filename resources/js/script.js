@@ -218,7 +218,9 @@
 
     //nice select
     $(document).ready(function () {
-        $("select:not(.ignore)").niceSelect();
+        if ($.fn.niceSelect) {
+            $("select:not(.ignore)").niceSelect();
+        }
     });
 
     //Sortable Masonary with Filters

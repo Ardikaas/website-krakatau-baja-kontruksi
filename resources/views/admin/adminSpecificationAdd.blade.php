@@ -1,22 +1,36 @@
 @extends('layouts.admin')
 
-@section('title', 'Admin Products Editor')
+@section('title', isset($product) ? 'Edit Product' : 'Admin Products Editor')
 
 @section('content')
     <div class="admin-specifications-page">
         <div class="main-container">
-            <form method="POST" action="{{ route('admin.product.store') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ isset($product) ? route('admin.product.update', $product->id) : route('admin.product.store') }}" enctype="multipart/form-data">
                 @csrf
                 <section class="admin-add-specifications">
 
                     {{-- HEADER --}}
                     <header class="page-header">
-                        <h1>Products Editor</h1>
+                        <h1>{{ isset($product) ? 'Edit Product' : 'Products Editor' }}</h1>
                     </header>
 
                     {{-- IMAGE --}}
                     <section class="spec-section">
                         <h2 class="section-title">Image</h2>
+
+                        {{-- EXISTING IMAGES (EDIT MODE) --}}
+                        @if (isset($product) && $product->thumbnail && count($product->thumbnail) > 0)
+                            <div style="margin-bottom: 16px;">
+                                <label style="font-size:13px; color:#6b7280; font-weight:500; display:block; margin-bottom:8px;">Current Images:</label>
+                                <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                                    @foreach ($product->thumbnail as $img)
+                                        <img src="{{ route('product.image', $img) }}" alt="Current"
+                                            style="width:120px; height:120px; object-fit:cover; border-radius:10px; border:1px solid #e5e7eb;">
+                                    @endforeach
+                                </div>
+                                <small style="color:#9ca3af; font-size:12px;">Upload gambar baru di bawah untuk mengganti semua gambar.</small>
+                            </div>
+                        @endif
 
                         <div class="upload-list" id="imageUploadList">
 
@@ -52,19 +66,19 @@
                         <div class="info-grid">
                             <div class="info-group">
                                 <label>Title (Bahasa Indonesia)</label>
-                                <input type="text" name="name" required>
+                                <input type="text" name="name" value="{{ old('name', $product->name ?? '') }}" required>
 
                                 <label>Title (English)</label>
-                                <input type="text" name="name_en">
+                                <input type="text" name="name_en" value="{{ old('name_en', $product->name_en ?? '') }}">
 
                                 <label>Category</label>
-                                <input type="text" name="category" required>
+                                <input type="text" name="category" value="{{ old('category', $product->category ?? '') }}" required>
 
                                 <label>Description (Bahasa Indonesia)</label>
-                                <textarea name="description" rows="4" required></textarea>
+                                <textarea name="description" rows="4" required>{{ old('description', $product->description ?? '') }}</textarea>
 
                                 <label>Description (English)</label>
-                                <textarea name="description_en" rows="4"></textarea>
+                                <textarea name="description_en" rows="4">{{ old('description_en', $product->description_en ?? '') }}</textarea>
                             </div>
                         </div>
                     </section>
@@ -72,6 +86,17 @@
                     {{-- TABLE --}}
                     <section class="spec-section">
                         <h2 class="section-title">Table Informations</h2>
+
+                        {{-- EXISTING TABLE IMAGE (EDIT MODE) --}}
+                        @if (isset($product) && $product->spec_image)
+                            <div style="margin-bottom: 16px;">
+                                <label style="font-size:13px; color:#6b7280; font-weight:500; display:block; margin-bottom:8px;">Current Table Image:</label>
+                                <img src="{{ route('product.image', $product->spec_image) }}" alt="Current Table"
+                                    style="max-width:300px; height:auto; border-radius:10px; border:1px solid #e5e7eb;">
+                                <br>
+                                <small style="color:#9ca3af; font-size:12px;">Upload gambar baru di bawah untuk mengganti.</small>
+                            </div>
+                        @endif
 
                         <div class="table-wrap">
 
@@ -96,8 +121,8 @@
 
                     {{-- ACTION --}}
                     <div class="form-actions">
-                        <button class="btn-cancel">Cancel</button>
-                        <button class="btn-primary">Save Changes</button>
+                        <a href="{{ route('admin.product.index') }}" class="btn-cancel">Cancel</a>
+                        <button class="btn-primary">{{ isset($product) ? 'Update Product' : 'Save Changes' }}</button>
                     </div>
 
                     <div class="tableSpec-overlay" id="editSpec">

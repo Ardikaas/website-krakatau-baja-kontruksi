@@ -30,7 +30,10 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = Product::latest()->paginate(6);
+        $products = Product::orderByDesc('is_top')
+            ->orderBy('sort_order')
+            ->latest()
+            ->paginate(20);
         return view('admin.adminSpecificationView', compact('products'));
     }
 
@@ -82,9 +85,10 @@ class ProductController extends Controller
     }
 
 
-    public function edit(Product $product)
+    public function edit($id)
     {
-        return view('admin.product.edit', compact('product'));
+        $product = Product::findOrFail($id);
+        return view('admin.adminSpecificationAdd', compact('product'));
     }
 
     public function update(Request $request, Product $product)
@@ -165,6 +169,40 @@ class ProductController extends Controller
 
         return redirect()->route('admin.product.index')
             ->with('success', 'Product berhasil dihapus');
+    }
+
+    public function toggleTop(Product $product)
+    {
+        $product->is_top = !$product->is_top;
+
+        // If marking as top, set sort_order to 0 (highest priority)
+        if ($product->is_top) {
+            $maxOrder = Product::where('is_top', true)->max('sort_order') ?? 0;
+            $product->sort_order = $maxOrder + 1;
+        } else {
+            $product->sort_order = 0;
+        }
+
+        $product->save();
+
+        return redirect()->route('admin.product.index')
+            ->with('success', $product->is_top
+                ? 'Product ditandai sebagai Top Product'
+                : 'Product dihapus dari Top Product');
+    }
+
+    public function updateOrder(Request $request)
+    {
+        $request->validate([
+            'order' => 'required|array',
+            'order.*' => 'integer|exists:products,id',
+        ]);
+
+        foreach ($request->order as $index => $id) {
+            Product::where('id', $id)->update(['sort_order' => $index + 1]);
+        }
+
+        return response()->json(['success' => true]);
     }
 
     public function viewImage($path)
