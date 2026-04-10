@@ -70,6 +70,33 @@ Route::get('/contact', function () {
 })->name('contact');
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
 
+Route::get('/debug-mail', function () {
+    $to = 'ardikaajisetiawan@gmail.com';
+    try {
+        // Force settings for diagnostic
+        config(['mail.mailers.smtp.stream' => [
+            'ssl' => [
+                'allow_self_signed' => true,
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+            ],
+        ]]);
+        
+        \Illuminate\Support\Facades\Mail::raw("Mail Test Connection at " . now(), function ($msg) use ($to) {
+            $msg->to($to)->subject('DIAGNOSTIC - Mail System Check');
+        });
+        return "<h1>SUCCESS!</h1><p>Email successfully sent to: <b>$to</b></p><hr><p>Check your inbox/spam folder.</p>";
+    } catch (\Exception $e) {
+        return "<h1>MAIL FAILED!</h1><p>Error: <b>" . $e->getMessage() . "</b></p><hr><p>Configuration used:</p><pre>" . 
+               "Mailer: " . config('mail.default') . "\n" .
+               "Host: " . config('mail.mailers.smtp.host') . "\n" .
+               "Port: " . config('mail.mailers.smtp.port') . "\n" .
+               "Encryption: " . config('mail.mailers.smtp.encryption') . "\n" .
+               "Verify Peer: " . (config('mail.mailers.smtp.stream.ssl.verify_peer') ? 'YES' : 'NO') . "\n" .
+               "From: " . config('mail.from.address') . "</pre>";
+    }
+});
+
 // ==========================================
 // 2. PUBLIC IMAGE / FILE ACCESSORY ROUTES
 // ==========================================
@@ -110,8 +137,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/productEdit', [ProductController::class, 'index'])->name('product.index');
         Route::get('/addProduct', [ProductController::class, 'create'])->name('product.create');
         Route::post('/addProduct', [ProductController::class, 'store'])->name('product.store');
+        Route::post('/product/update-order', [ProductController::class, 'updateOrder'])->name('product.updateOrder');
         Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
         Route::post('/product/{id}', [ProductController::class, 'update'])->name('product.update');
+        Route::post('/product/{product}/toggle-top', [ProductController::class, 'toggleTop'])->name('product.toggleTop');
         Route::delete('/product/{product}', [ProductController::class, 'destroy'])->name('product.delete');
 
         // Projects

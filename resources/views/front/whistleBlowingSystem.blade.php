@@ -159,17 +159,20 @@
     </div>
 </div>
 
-{{-- ================= AJAX SCRIPT ================= --}}
+@push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 document.getElementById('wbsForm').addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const form = this;
     const btn = document.getElementById('submitBtn');
-    const responseBox = document.getElementById('formResponse');
+    
+    // Simpan text default
+    const originalText = btn.innerHTML;
 
     btn.disabled = true;
-    btn.innerText = '{{ __('messages.wbs_submitting') }}';
+    btn.innerHTML = `<i class="fa fa-spinner fa-spin"></i> {{ __('messages.wbs_submitting') }}...`;
 
     const formData = new FormData(form);
 
@@ -182,30 +185,31 @@ document.getElementById('wbsForm').addEventListener('submit', async function (e)
         const result = await response.json();
 
         if (response.ok) {
-            responseBox.style.display = 'block';
-            responseBox.innerHTML = `
-                <div class="alert-success">
-                    <strong>{{ __('messages.wbs_success') }}</strong><br>
-                    {{ __('messages.wbs_ticket') }} <b>${result.data.ticket_number}</b>
-                </div>
-            `;
+            Swal.fire({
+                title: '{{ __('messages.wbs_success') }}',
+                html: `{{ __('messages.wbs_ticket') }} <b>${result.data.ticket_number}</b><br><br>Laporan Anda berhasil dikirim!`,
+                icon: 'success',
+                confirmButtonColor: '#0056b3',
+                confirmButtonText: 'OK'
+            });
             form.reset();
         } else {
             throw result;
         }
 
     } catch (error) {
-        responseBox.style.display = 'block';
-        responseBox.innerHTML = `
-            <div class="alert-error">
-                <strong>{{ __('messages.wbs_failed') }}</strong><br>
-                ${error.message ?? '{{ __('messages.wbs_check_data') }}'}
-            </div>
-        `;
+        Swal.fire({
+            title: '{{ __('messages.wbs_failed') }}',
+            text: error.message ?? '{{ __('messages.wbs_check_data') }}',
+            icon: 'error',
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'Tutup'
+        });
     }
 
     btn.disabled = false;
-    btn.innerText = '{{ __('messages.wbs_submit') }}';
+    btn.innerHTML = originalText;
 });
 </script>
+@endpush
 @endsection

@@ -110,12 +110,6 @@
                             <h2>{!! __('messages.have_questions') !!}</h2>
                         </div>
                         <div class="form-inner">
-                            @if (session('success'))
-                                <div class="alert alert-success">
-                                    {{ session('success') }}
-                                </div>
-                            @endif
-
                             <form method="POST" action="{{ route('contact.send') }}" id="contact-form">
                                 @csrf
                                 <div class="row clearfix">
@@ -152,18 +146,6 @@
                                                     <option value="Metal Casting">{{ __('messages.inquiry_metal_casting') }}</option>
                                                     <option value="Metal Welding">{{ __('messages.inquiry_metal_welding') }}</option>
                                                 </select>
-
-                                                {{-- <div class="nice-select wide" tabindex="0"><span class="current">Inquiry
-                                                        Type</span>
-                                                    <ul class="list">
-                                                        <li data-value="Inquiry Type" data-display="Inquiry Type"
-                                                            class="option selected">Inquiry Type</li>
-                                                        <li data-value="1" class="option">Fabrication</li>
-                                                        <li data-value="2" class="option">Metal Processing</li>
-                                                        <li data-value="3" class="option">Metal Casting</li>
-                                                        <li data-value="4" class="option">Metal Welding</li>
-                                                    </ul>
-                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -177,8 +159,9 @@
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 single-column">
                                         <div class="message-btn">
-                                            <button type="submit" class="theme-btn btn-one" name="submit-form"><i
-                                                    class="flaticon-right-arrow"></i><span>{{ __('messages.submit_now') }}</span></button>
+                                            <button type="submit" class="theme-btn btn-one" name="submit-form" id="contactSubmitBtn">
+                                                <i class="flaticon-right-arrow"></i><span>{{ __('messages.submit_now') }}</span>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -192,5 +175,92 @@
 @endsection
 
 @push('scripts')
-    {{-- @vite(['resources/js/news.js']) --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const btn = document.getElementById('contactSubmitBtn');
+                    const originalContent = btn.innerHTML;
+                    
+                    btn.disabled = true;
+                    btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i><span> Mengirim...</span>';
+                    
+                    const formData = new FormData(this);
+                    
+                    try {
+                        const response = await fetch(this.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'X-Requested-With': 'XMLHttpRequest',
+                                'Accept': 'application/json'
+                            }
+                        });
+                        
+                        const result = await response.json();
+                        
+                        if (response.ok) {
+                            Swal.fire({
+                                title: 'Berhasil!',
+                                text: result.message || 'Pesan Anda telah berhasil dikirim!',
+                                icon: 'success',
+                                confirmButtonColor: '#0056b3',
+                                confirmButtonText: 'OK'
+                            });
+                            this.reset();
+                        } else {
+                            let errorMessage = result.message || 'Terjadi kesalahan saat mengirim pesan.';
+                            if (result.errors) {
+                                const errorList = Object.values(result.errors).flat().join('<br>');
+                                errorMessage = errorList;
+                            }
+                            Swal.fire({
+                                title: 'Gagal!',
+                                html: errorMessage,
+                                icon: 'error',
+                                confirmButtonColor: '#d33',
+                                confirmButtonText: 'Tutup'
+                            });
+                        }
+                    } catch (error) {
+                        Swal.fire({
+                            title: 'Gagal!',
+                            text: 'Terjadi gangguan koneksi. Silakan coba lagi nanti.',
+                            icon: 'error',
+                            confirmButtonColor: '#d33',
+                            confirmButtonText: 'Tutup'
+                        });
+                    } finally {
+                        btn.disabled = false;
+                        btn.innerHTML = originalContent;
+                    }
+                });
+            }
+
+            // Fallback for session messages (if any non-AJAX submissions remain)
+            @if(session('success'))
+                Swal.fire({
+                    title: 'Berhasil!',
+                    text: '{{ session('success') }}',
+                    icon: 'success',
+                    confirmButtonColor: '#0056b3',
+                    confirmButtonText: 'OK'
+                });
+            @endif
+
+            @if(session('error'))
+                Swal.fire({
+                    title: 'Gagal!',
+                    text: '{{ session('error') }}',
+                    icon: 'error',
+                    confirmButtonColor: '#d33',
+                    confirmButtonText: 'Tutup'
+                });
+            @endif
+        });
+    </script>
 @endpush

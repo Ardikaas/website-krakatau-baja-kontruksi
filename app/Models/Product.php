@@ -15,6 +15,8 @@ class Product extends Model
         'description_en',
         'thumbnail',
         'spec_image',
+        'is_top',
+        'sort_order',
     ];
 
     public function getTranslatedNameAttribute()
@@ -30,5 +32,6 @@ class Product extends Model
 
     protected $casts = [
         'thumbnail' => 'array',
+        'is_top' => 'boolean',
     ];
 }

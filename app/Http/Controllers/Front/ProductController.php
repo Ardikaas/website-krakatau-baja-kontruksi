@@ -10,7 +10,10 @@ class ProductController extends Controller
 {
   public function index()
   {
-    $products = Product::latest()->paginate(9);
+    $products = Product::orderByDesc('is_top')
+      ->orderBy('sort_order')
+      ->latest()
+      ->paginate(9);
 
     $categories = Product::select('category')
       ->distinct()
